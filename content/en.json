@@ -1,0 +1,283 @@
+{
+  "lang": "en",
+  "lang_name": "English",
+  "meta": {
+    "title": "J++ — A native code editor for the Mac",
+    "description": "J++ is a fast, native code editor for macOS. Edit in 95 languages, run and debug your code, query databases with SQL, work with GitHub and ask an AI assistant, with nothing extra to install."
+  },
+  "nav": {
+    "why": "Why J++",
+    "features": "Features",
+    "privacy": "Privacy",
+    "support": "Support",
+    "download": "Download"
+  },
+  "hero": {
+    "eyebrow": "Version {version} for macOS",
+    "title": "Everything around your code. <span class=\"grad\">Nothing in the way.</span>",
+    "text": "J++ is a fast, native code editor for the Mac. Write in 95 languages, run and debug your code, query your data with SQL, push to GitHub and ask an AI assistant, all in one small app.",
+    "primary": "Download for Mac",
+    "secondary": "See what it does",
+    "app_store": "Get it on the Mac App Store",
+    "note": "Free download · {size} · macOS 12 or later · Apple silicon and Intel",
+    "image_alt": "The J++ window: a file explorer on the left, tabs, and a Python file with syntax colouring."
+  },
+  "stats": [
+    {
+      "value": "95",
+      "label": "languages with syntax colouring"
+    },
+    {
+      "value": "< 10 MB",
+      "label": "the whole download"
+    },
+    {
+      "value": "0",
+      "label": "extensions to install"
+    },
+    {
+      "value": "0",
+      "label": "data collected"
+    }
+  ],
+  "why": {
+    "eyebrow": "Why J++",
+    "title": "What makes it different.",
+    "text": "Most editors start empty and ask you to assemble the rest. J++ starts complete, and it is made for the Mac and nothing else.",
+    "items": [
+      {
+        "icon": "native",
+        "title": "Truly native",
+        "text": "Built with Cocoa for macOS, not a web page inside a wrapper. It starts fast, behaves like the rest of your Mac, and the whole app is a download of less than 10 MB."
+      },
+      {
+        "icon": "box",
+        "title": "Complete from the first launch",
+        "text": "Run, debug, IntelliSense, SQL, GitHub and AI are part of the app. There is no marketplace to search and no extensions to choose, set up and keep updated."
+      },
+      {
+        "icon": "data",
+        "title": "Your data is one query away",
+        "text": "Run SQL on Databricks, Snowflake, PostgreSQL, MySQL, SQL Server and SQLite. Even an Excel workbook or a CSV file becomes a table you can query."
+      },
+      {
+        "icon": "ai",
+        "title": "AI on your terms",
+        "text": "Connect your own Claude API key, any OpenAI-compatible service, or a model running on your Mac. J++ has no subscription, and your code is sent only when you ask."
+      },
+      {
+        "icon": "lock",
+        "title": "Private by design",
+        "text": "No account, no analytics, no advertising, no tracking. Passwords, tokens and API keys are kept in the macOS Keychain."
+      },
+      {
+        "icon": "mac",
+        "title": "At home on your Mac",
+        "text": "Liquid Glass on macOS 26, SF Symbols, SF Mono, and light and dark appearances that follow the system. One app for Apple silicon and Intel."
+      }
+    ]
+  },
+  "features": {
+    "eyebrow": "Features",
+    "title": "One window. The whole job.",
+    "items": [
+      {
+        "id": "edit",
+        "eyebrow": "Edit",
+        "title": "An editor that keeps up with you.",
+        "text": "The editing engine is Scintilla, known for its speed with large files. Around it, J++ adds the tools you use all day.",
+        "bullets": [
+          "Syntax colouring and code folding for 95 languages",
+          "Multiple cursors, column editing, macros and bookmarks",
+          "Find, replace and mark with regular expressions, across all open files",
+          "A file explorer that follows the folder as it changes",
+          "Session restore that keeps even your unsaved text"
+        ],
+        "image": "overview",
+        "alt": "The J++ editor with the explorer sidebar and a Python file."
+      },
+      {
+        "id": "intellisense",
+        "eyebrow": "IntelliSense",
+        "title": "It knows your code.",
+        "text": "Completion as you type, parameter hints, descriptions when the pointer rests on a name, and marks under errors and warnings.",
+        "bullets": [
+          "C, C++, Objective-C and Swift work at once, with the language servers that come with Xcode",
+          "Python works with no server at all: J++ reads your file and your installed modules",
+          "Go, Rust, TypeScript, Java, Ruby, Lua and more are used when their servers are on your Mac"
+        ],
+        "image": "intellisense-complete",
+        "alt": "A completion list showing the members of a Python object."
+      },
+      {
+        "id": "run",
+        "eyebrow": "Run and debug",
+        "title": "Press F5. In any language.",
+        "text": "Compile and Run work for every language in the menu. The output appears under your code, and after an error the caret jumps to the line the compiler names.",
+        "bullets": [
+          "A Python debugger with breakpoints, stepping, the variables of the frame and an expression field",
+          "Built-in checks for JSON, XML, YAML, TOML, HTML, CSS and more",
+          "Manage Compilers shows what is installed and downloads what is missing with Homebrew, npm or pip"
+        ],
+        "image": "debug",
+        "alt": "The Python debugger paused on a line, with the variables listed beside the output."
+      },
+      {
+        "id": "sql",
+        "eyebrow": "Databases",
+        "title": "SQL, right next to your code.",
+        "text": "Save your connections once, then press ⌘↩ in a SQL tab. The results arrive in a grid you can copy or export as CSV.",
+        "bullets": [
+          "Databricks and Snowflake through their own SQL APIs",
+          "PostgreSQL, MySQL, MariaDB, SQL Server and Azure SQL",
+          "SQLite files, with nothing to install",
+          "Excel workbooks and CSV files: every sheet becomes a table"
+        ],
+        "image": "excel",
+        "alt": "A SQL query over an Excel workbook, with the results in a grid under the code."
+      },
+      {
+        "id": "ai",
+        "eyebrow": "AI assistant",
+        "title": "An assistant that sees what you see.",
+        "text": "Ask a question and the assistant reads the file in front of you and your selection. Insert and Replace Selection put the answer's code into the editor as one undo step.",
+        "bullets": [
+          "Ready-made questions: Explain Code, Find Problems, Improve Code, Add Comments, Write Tests",
+          "Claude models with your own API key, with answers that appear as they are written",
+          "Any OpenAI-compatible endpoint, including a local model such as Ollama"
+        ],
+        "image": "assistant",
+        "alt": "The assistant panel beside the editor, explaining a bug in the selected function."
+      },
+      {
+        "id": "github",
+        "eyebrow": "GitHub",
+        "title": "From clone to push, without leaving.",
+        "text": "Connect your account and J++ lists your repositories. The status bar shows the branch, what there is to push or pull, and how many files changed.",
+        "bullets": [
+          "Clone, commit, push, pull and fetch",
+          "Publish a folder to a new repository",
+          "Create a gist from a file, or copy a link to the current line"
+        ],
+        "image": "github-clone",
+        "alt": "The Clone Repository window with the list of the account's repositories.",
+        "dialog": true
+      }
+    ]
+  },
+  "less": {
+    "title": "What you will not find in J++.",
+    "items": [
+      {
+        "title": "No extensions",
+        "text": "Everything on this page is in the app the first time you open it."
+      },
+      {
+        "title": "No account",
+        "text": "You never sign in to J++. There is nothing to create."
+      },
+      {
+        "title": "No subscription",
+        "text": "The AI assistant uses your own key or your own local model."
+      },
+      {
+        "title": "No telemetry",
+        "text": "J++ does not measure you, and sends nothing to its author."
+      }
+    ]
+  },
+  "guide": {
+    "title": "A guide for every feature, in English and Spanish.",
+    "text": "Help ▸ J++ Guide describes each feature step by step, with screenshots in light and dark, and a table of every keyboard shortcut."
+  },
+  "cta": {
+    "title": "Give your code a better home.",
+    "text": "Download J++ and start working in under a minute.",
+    "primary": "Download J++ {version}",
+    "note": "macOS 12 or later · Apple silicon and Intel · {size}",
+    "requirements": "Compile, Run and Git use Apple's developer tools. Install Xcode, or its command line tools, to use them."
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "support": "Support",
+    "contact": "Contact",
+    "donate": "Support J++ with a donation",
+    "rights": "All rights reserved.",
+    "credits": "Scintilla and Lexilla are © Neil Hodgson and are used under their own licence. Mac, macOS and Xcode are trademarks of Apple Inc."
+  },
+  "privacy_page": {
+    "title": "Privacy Policy",
+    "description": "J++ does not collect any data about you.",
+    "updated": "Last updated: 13 November 2026",
+    "intro": "J++ is a code editor for the Mac made by Jason Leiton. It does not collect any data about you.",
+    "sections": [
+      {
+        "title": "What J++ does not do",
+        "body": "<p>J++ has no accounts, no analytics, no advertising and no tracking. It does not send your files, your code, or any information about how you use the app to the developer or to anyone else.</p>"
+      },
+      {
+        "title": "Your files",
+        "body": "<p>J++ opens only the files and folders you choose. They stay on your Mac. To reopen your previous session, J++ keeps a list of those files, and a copy of unsaved text, in its own private folder on your Mac.</p>"
+      },
+      {
+        "title": "Services you connect",
+        "body": "<p>J++ talks to other services only when you set them up and ask for something:</p><ul><li><strong>Databases.</strong> If you add a database connection, your queries go directly from your Mac to the server you entered.</li><li><strong>GitHub.</strong> If you connect a GitHub account, J++ uses it to list your repositories, to clone, push and pull, and to create gists when you ask.</li><li><strong>AI models.</strong> If you connect a model, the question you type, and the file and selection you chose to include, are sent to that model's provider (for example Anthropic) when you press Send. That provider's own terms and privacy policy apply to what it receives.</li></ul><p>Connection details are stored on your Mac, and passwords, tokens and API keys are stored in the macOS Keychain. None of this passes through the developer of J++.</p>"
+      },
+      {
+        "title": "This website",
+        "body": "<p>This website uses no cookies, no analytics and no third-party scripts.</p>"
+      },
+      {
+        "title": "Changes",
+        "body": "<p>If this policy changes, the new version will be published on this page with a new date.</p>"
+      },
+      {
+        "title": "Contact",
+        "body": "<p>Questions about this policy: <a href=\"mailto:{email}?subject=J%2B%2B\">{email}</a></p>"
+      }
+    ]
+  },
+  "support_page": {
+    "title": "Support",
+    "description": "Answers to the most common questions about J++.",
+    "updated": "",
+    "intro": "This page answers the most common questions. The full guide is inside the app: choose Help ▸ J++ Guide.",
+    "sections": [
+      {
+        "title": "Installing J++",
+        "body": "<p>Open the downloaded disk image and drag J++ to your Applications folder. J++ needs macOS 12 or later and runs on Apple silicon and Intel Macs.</p><p>If macOS says it cannot check the app the first time you open it, open <strong>System Settings ▸ Privacy &amp; Security</strong>, find the message about J++ and press <strong>Open Anyway</strong>.</p>"
+      },
+      {
+        "title": "Compile or Run says a tool comes with Xcode",
+        "body": "<p>J++ uses Apple's developer tools for C, C++, Objective-C, Swift, Python and Git. Install Xcode from the App Store, or run <code>xcode-select --install</code> in Terminal, then try again.</p>"
+      },
+      {
+        "title": "A language has no compiler yet",
+        "body": "<p>Choose <strong>Run ▸ Manage Compilers…</strong>. The list shows which compilers are installed; tick the missing ones and press Install Selected to download them with Homebrew, npm or pip.</p>"
+      },
+      {
+        "title": "Running SQL",
+        "body": "<p>Open <strong>Database ▸ Manage Connections…</strong> (<code>⇧⌘D</code>), add a connection, then press <code>⌘↩</code> in a SQL tab. Results appear under your code. PostgreSQL, MySQL and SQL Server need their command line clients, which you can install with Homebrew.</p>"
+      },
+      {
+        "title": "Debugging Python",
+        "body": "<p>Click the margin next to a line to set a breakpoint, then press <code>F6</code>. Use the toolbar to step through the code.</p>"
+      },
+      {
+        "title": "The Mac App Store version",
+        "body": "<p>Apple requires App Store apps to run in a sandbox, so that version uses only the tools from macOS and Xcode. It cannot start a program it has just built from C, C++ or Objective-C, and it does not offer PostgreSQL, MySQL or SQL Server connections. When a compiler needs other files in the same folder, press <strong>Allow Folder Access…</strong> in the output pane.</p>"
+      },
+      {
+        "title": "Contact",
+        "body": "<p>Write to <a href=\"mailto:{email}?subject=J%2B%2B\">{email}</a>. Please include your macOS version and what you were doing.</p>"
+      }
+    ]
+  },
+  "soon": {
+    "soon": "Coming soon",
+    "note_soon": "For macOS 12 or later · Apple silicon and Intel",
+    "cta_text": "J++ {version} is almost ready. The download will be available on this page.",
+    "notify": "Tell me when it is ready",
+    "notify_subject": "Tell me when J++ is ready"
+  }
+}

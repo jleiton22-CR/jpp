@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>J++ — Soporte</title>
+<meta name="description" content="Respuestas a las preguntas más comunes sobre J++.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="J++ — Soporte">
+<meta property="og:description" content="Respuestas a las preguntas más comunes sobre J++.">
+<link rel="canonical" href="https://jleiton22-cr.github.io/jpp/es/support.html">
+<link rel="alternate" hreflang="en" href="https://jleiton22-cr.github.io/jpp/support.html">
+<link rel="alternate" hreflang="es" href="https://jleiton22-cr.github.io/jpp/es/support.html">
+<meta property="og:image" content="https://jleiton22-cr.github.io/jpp/img/og.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="../img/favicon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="page-support">
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><picture><source srcset="../img/icon-dark.png" media="(prefers-color-scheme: dark)"><img class="brand-icon" src="../img/icon-light.png" alt="" width="28" height="28"></picture><span>J++</span></a>
+    <nav class="nav-links" aria-label="Funciones">
+      <a href="index.html#why">Por qué J++</a>
+      <a href="index.html#features">Funciones</a>
+      <a href="privacy.html">Privacidad</a>
+      <a href="support.html">Soporte</a>
+    </nav>
+    <div class="nav-end">
+      <a class="lang" href="../support.html" lang="en" hreflang="en">English</a>
+      <span class="btn btn-small btn-soon">Próximamente</span>
+    </div>
+  </div>
+</header>
+<main id="top">
+<article class="doc wrap">
+<h1>Soporte</h1>
+<p class="lead">Esta página responde las preguntas más comunes. La guía completa está dentro de la app: elige Help ▸ J++ Guide.</p>
+<h2>Instalar J++</h2>
+<p>Abre la imagen de disco descargada y arrastra J++ a tu carpeta Aplicaciones. J++ necesita macOS 12 o posterior y funciona en Mac con Apple Silicon y con Intel.</p><p>Si macOS dice que no puede comprobar la app la primera vez que la abres, abre <strong>Ajustes del Sistema ▸ Privacidad y seguridad</strong>, busca el mensaje sobre J++ y pulsa <strong>Abrir igualmente</strong>.</p>
+<h2>Compilar o Ejecutar dice que una herramienta viene con Xcode</h2>
+<p>J++ usa las herramientas de desarrollo de Apple para C, C++, Objective-C, Swift, Python y Git. Instala Xcode desde el App Store, o ejecuta <code>xcode-select --install</code> en Terminal, y vuelve a intentarlo.</p>
+<h2>Un lenguaje aún no tiene compilador</h2>
+<p>Elige <strong>Run ▸ Manage Compilers…</strong>. La lista muestra qué compiladores están instalados; marca los que faltan y pulsa Install Selected para descargarlos con Homebrew, npm o pip.</p>
+<h2>Ejecutar SQL</h2>
+<p>Abre <strong>Database ▸ Manage Connections…</strong> (<code>⇧⌘D</code>), añade una conexión y pulsa <code>⌘↩</code> en una pestaña SQL. Los resultados aparecen debajo de tu código. PostgreSQL, MySQL y SQL Server necesitan sus clientes de línea de comandos, que puedes instalar con Homebrew.</p>
+<h2>Depurar Python</h2>
+<p>Haz clic en el margen junto a una línea para poner un punto de interrupción y pulsa <code>F6</code>. Usa la barra de herramientas para avanzar paso a paso.</p>
+<h2>La versión del Mac App Store</h2>
+<p>Apple exige que las apps del App Store funcionen en un entorno aislado, así que esa versión usa solo las herramientas de macOS y de Xcode. No puede iniciar un programa que acaba de compilar en C, C++ u Objective-C, y no ofrece conexiones a PostgreSQL, MySQL ni SQL Server. Cuando un compilador necesite otros archivos de la misma carpeta, pulsa <strong>Allow Folder Access…</strong> en el panel de salida.</p>
+<h2>Contacto</h2>
+<p>Escribe a <a href="mailto:leiton@live.com?subject=J%2B%2B">leiton@live.com</a>. Incluye tu versión de macOS y lo que estabas haciendo.</p>
+</article>
+
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="brand" href="index.html"><picture><source srcset="../img/icon-dark.png" media="(prefers-color-scheme: dark)"><img class="brand-icon" src="../img/icon-light.png" alt="" width="28" height="28"></picture><span>J++</span></a>
+      <nav class="footer-links">
+        <a href="privacy.html">Política de privacidad</a>
+        <a href="support.html">Soporte</a>
+        <a href="mailto:leiton@live.com?subject=J%2B%2B">Contacto</a>
+        <a href="https://www.paypal.com/donate/?business=leiton%40live.com&amp;no_recurring=0&amp;item_name=J%2B%2B&amp;currency_code=USD" rel="noopener">Apoya a J++ con una donación</a>
+        <a href="../support.html" lang="en" hreflang="en">English</a>
+      </nav>
+    </div>
+    <p class="fine">© 2026 Jason Leiton. Todos los derechos reservados.</p>
+    <p class="fine">Scintilla y Lexilla son © Neil Hodgson y se usan bajo su propia licencia. Mac, macOS y Xcode son marcas comerciales de Apple Inc.</p>
+  </div>
+</footer>
+<script src="../js/main.js" defer></script>
+</body>
+</html>

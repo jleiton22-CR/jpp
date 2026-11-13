@@ -1,0 +1,294 @@
+#!/usr/bin/env python3
+"""Builds the J++ website into public/.
+
+    python3 build.py           build the site
+    python3 build.py serve     build it and preview it at http://localhost:8080
+
+Texts are in content/en.json and content/es.json, settings in site.json, and the
+style, script, images and downloads in assets/. Only Python 3 is needed.
+"""
+import functools
+import http.server
+import json
+import shutil
+import sys
+from html import escape
+from pathlib import Path
+from urllib.parse import quote
+
+ROOT = Path(__file__).resolve().parent
+OUT = ROOT / "public"
+LANGS = ["en", "es"]          # the first one is published at the top of the site
+PAGES = {"home": "index.html", "privacy": "privacy.html", "support": "support.html"}
+
+ICONS = {
+    "native": '<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
+    "box": '<path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/>',
+    "data": '<ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v6.5c0 1.7 3.6 3 8 3s8-1.3 8-3V5.5M4 12v6.500c0 1.700 3.600 3 8 3s8-1.300 8-3V12"/>',
+    "ai": '<path d="M10 3 11.800 8.200 17 10l-5.200 1.800L10 17l-1.800-5.200L3 10l5.200-1.800z"/><path d="M18 14l.9 2.100L21 17l-2.100.9L18 20l-.9-2.100L15 17l2.100-.9z"/>',
+    "lock": '<rect x="5" y="11" width="14" height="10" rx="2.500"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+    "mac": '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+}
+
+
+def load(name):
+    return json.loads((ROOT / name).read_text(encoding="utf-8"))
+
+
+def fill(text, site):
+    """Replaces the {placeholders} a text may use."""
+    return (text.replace("{version}", site["version"]).replace("{size}", site["download_size"])
+            .replace("{email}", site["contact_email"]).replace("{year}", site["year"]))
+
+
+def download_link(site, root):
+    """The address of the installer, or "" while there is nothing to download."""
+    url = site.get("download_url", "")
+    return url if url.startswith("http") or not url else root + url
+
+
+def lang_dir(lang):
+    return "" if lang == LANGS[0] else lang + "/"
+
+
+def picture(root, name, alt, w, h, lazy=True, cls=""):
+    """A screenshot that follows the light or dark appearance of the visitor's system."""
+    loading = ' loading="lazy" decoding="async"' if lazy else ' fetchpriority="high"'
+    return (f'<picture><source srcset="{root}img/{name}-dark.jpg" media="(prefers-color-scheme: dark)">'
+            f'<img class="shot {cls}" src="{root}img/{name}-light.jpg" alt="{escape(alt)}" width="{w}" height="{h}"{loading}></picture>')
+
+
+def icon_img(root, size, cls="", alt=""):
+    return (f'<picture><source srcset="{root}img/icon-dark.png" media="(prefers-color-scheme: dark)">'
+            f'<img class="{cls}" src="{root}img/icon-light.png" alt="{escape(alt)}" width="{size}" height="{size}"></picture>')
+
+
+def image_size(name):
+    """Width and height of a screenshot, read from the JPEG file itself."""
+    data = (ROOT / "assets" / "img" / f"{name}-light.jpg").read_bytes()
+    i = 2
+    while i < len(data):
+        if data[i] != 0xFF:
+            i += 1
+            continue
+        marker = data[i + 1]
+        if 0xC0 <= marker <= 0xCF and marker not in (0xC4, 0xC8, 0xCC):
+            return int.from_bytes(data[i + 7:i + 9], "big"), int.from_bytes(data[i + 5:i + 7], "big")
+        i += 2 + int.from_bytes(data[i + 2:i + 4], "big")
+    return 1500, 1000
+
+
+def layout(site, t, lang, page, title, description, body):
+    root = "" if lang == LANGS[0] else "../"
+    here = PAGES[page]
+    home = "index.html" if page != "home" else ""
+    other = [l for l in LANGS if l != lang][0]
+    other_t = load(f"content/{other}.json")
+    other_href = f"{root}{lang_dir(other)}{here}"
+    base = site.get("base_url", "").rstrip("/")
+    seo = ""
+    if base:
+        seo += f'<link rel="canonical" href="{base}/{lang_dir(lang)}{here if page != "home" else ""}">\n'
+        for l in LANGS:
+            seo += f'<link rel="alternate" hreflang="{l}" href="{base}/{lang_dir(l)}{here if page != "home" else ""}">\n'
+        seo += f'<meta property="og:image" content="{base}/img/og.png">\n<meta name="twitter:card" content="summary">\n'
+    download = download_link(site, root)
+    n, f = t["nav"], t["footer"]
+    nav_button = (f'<a class="btn btn-small" href="{download}" download>{n["download"]}</a>' if download
+                  else f'<span class="btn btn-small btn-soon">{t["soon"]["soon"]}</span>')
+    donate = f'<a href="{escape(site["donate_url"])}" rel="noopener">{f["donate"]}</a>' if site.get("donate_url") else ""
+    return f"""<!doctype html>
+<html lang="{lang}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{escape(title)}</title>
+<meta name="description" content="{escape(description)}">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{escape(title)}">
+<meta property="og:description" content="{escape(description)}">
+{seo}<link rel="icon" type="image/png" href="{root}img/favicon.png">
+<link rel="apple-touch-icon" href="{root}img/apple-touch-icon.png">
+<link rel="stylesheet" href="{root}css/styles.css">
+</head>
+<body class="page-{page}">
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="{home or '#top'}">{icon_img(root, 28, "brand-icon")}<span>{site["app_name"]}</span></a>
+    <nav class="nav-links" aria-label="{escape(n['features'])}">
+      <a href="{home}#why">{n["why"]}</a>
+      <a href="{home}#features">{n["features"]}</a>
+      <a href="privacy.html">{n["privacy"]}</a>
+      <a href="support.html">{n["support"]}</a>
+    </nav>
+    <div class="nav-end">
+      <a class="lang" href="{other_href}" lang="{other}" hreflang="{other}">{other_t["lang_name"]}</a>
+      {nav_button}
+    </div>
+  </div>
+</header>
+<main id="top">
+{body}
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="brand" href="{home or '#top'}">{icon_img(root, 28, "brand-icon")}<span>{site["app_name"]}</span></a>
+      <nav class="footer-links">
+        <a href="privacy.html">{f["privacy"]}</a>
+        <a href="support.html">{f["support"]}</a>
+        <a href="mailto:{site["contact_email"]}?subject=J%2B%2B">{f["contact"]}</a>
+        {donate}
+        <a href="{other_href}" lang="{other}" hreflang="{other}">{other_t["lang_name"]}</a>
+      </nav>
+    </div>
+    <p class="fine">© {site["year"]} {site["author"]}. {f["rights"]}</p>
+    <p class="fine">{f["credits"]}</p>
+  </div>
+</footer>
+<script src="{root}js/main.js" defer></script>
+</body>
+</html>
+"""
+
+
+def home(site, t, lang):
+    root = "" if lang == LANGS[0] else "../"
+    download = download_link(site, root)
+    h, w, fe, c, soon = t["hero"], t["why"], t["features"], t["cta"], t["soon"]
+    notify = f'mailto:{site["contact_email"]}?subject={quote(soon["notify_subject"])}'
+    store = (f'<a class="btn btn-ghost" href="{escape(site["app_store_url"])}" rel="noopener">{h["app_store"]}</a>'
+             if site.get("app_store_url") else f'<a class="btn btn-ghost" href="#features">{h["secondary"]}</a>')
+    ow, oh = image_size("overview")
+    out = f"""<section class="hero">
+  <div class="wrap">
+    {icon_img(root, 128, "hero-icon reveal", site["app_name"])}
+    <p class="eyebrow reveal">{fill(h["eyebrow"], site)}</p>
+    <h1 class="reveal">{h["title"]}</h1>
+    <p class="lead reveal">{h["text"]}</p>
+    <div class="actions reveal">
+      {f'<a class="btn" href="{download}" download>{h["primary"]}</a>' if download else f'<span class="btn btn-soon">{soon["soon"]}</span>'}
+      {store}
+    </div>
+    <p class="note reveal">{fill(h["note"], site) if download else soon["note_soon"]}</p>
+  </div>
+  <div class="hero-shot reveal">{picture(root, "overview", h["image_alt"], ow, oh, lazy=False)}</div>
+</section>
+
+<section class="stats" aria-label="J++">
+  <div class="wrap stats-grid">
+"""
+    for s in t["stats"]:
+        out += f'    <div class="stat reveal"><strong>{escape(s["value"])}</strong><span>{s["label"]}</span></div>\n'
+    out += f"""  </div>
+</section>
+
+<section class="section alt" id="why">
+  <div class="wrap">
+    <p class="eyebrow reveal">{w["eyebrow"]}</p>
+    <h2 class="reveal">{w["title"]}</h2>
+    <p class="lead reveal">{w["text"]}</p>
+    <div class="tiles">
+"""
+    for it in w["items"]:
+        out += (f'      <article class="tile reveal"><svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true">{ICONS[it["icon"]]}</svg>'
+                f'<h3>{it["title"]}</h3><p>{it["text"]}</p></article>\n')
+    out += f"""    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="wrap">
+    <p class="eyebrow reveal">{fe["eyebrow"]}</p>
+    <h2 class="reveal">{fe["title"]}</h2>
+  </div>
+"""
+    for i, it in enumerate(fe["items"]):
+        iw, ih = image_size(it["image"])
+        bullets = "".join(f"<li>{b}</li>" for b in it["bullets"])
+        cls = "feature" + (" flip" if i % 2 else "") + (" dialog" if it.get("dialog") else "")
+        out += f"""  <article class="{cls}" id="{it["id"]}">
+    <div class="feature-text reveal">
+      <p class="eyebrow">{it["eyebrow"]}</p>
+      <h3>{it["title"]}</h3>
+      <p>{it["text"]}</p>
+      <ul>{bullets}</ul>
+    </div>
+    <div class="feature-shot reveal">{picture(root, it["image"], it["alt"], iw, ih)}</div>
+  </article>
+"""
+    out += f"""</section>
+
+<section class="section alt" id="less">
+  <div class="wrap">
+    <h2 class="reveal">{t["less"]["title"]}</h2>
+    <div class="less-grid">
+"""
+    for it in t["less"]["items"]:
+        out += f'      <div class="less reveal"><h3>{it["title"]}</h3><p>{it["text"]}</p></div>\n'
+    out += f"""    </div>
+    <div class="guide reveal"><h3>{t["guide"]["title"]}</h3><p>{t["guide"]["text"]}</p></div>
+  </div>
+</section>
+
+<section class="section cta" id="download">
+  <div class="wrap">
+    {icon_img(root, 96, "cta-icon reveal")}
+    <h2 class="reveal">{c["title"]}</h2>
+    <p class="lead reveal">{c["text"] if download else fill(soon["cta_text"], site)}</p>
+    <div class="actions reveal">{f'<a class="btn btn-large" href="{download}" download>{fill(c["primary"], site)}</a>' if download else f'<a class="btn btn-large" href="{notify}">{soon["notify"]}</a>'}</div>
+    <p class="note reveal">{fill(c["note"], site) if download else soon["note_soon"]}</p>
+    <p class="note reveal">{c["requirements"]}</p>
+  </div>
+</section>
+"""
+    return layout(site, t, lang, "home", t["meta"]["title"], t["meta"]["description"], out)
+
+
+def article(site, t, lang, page):
+    p = t[f"{page}_page"]
+    body = f'<article class="doc wrap">\n<h1>{p["title"]}</h1>\n'
+    if p.get("updated"):
+        body += f'<p class="fine">{p["updated"]}</p>\n'
+    body += f'<p class="lead">{p["intro"]}</p>\n'
+    for s in p["sections"]:
+        body += f'<h2>{s["title"]}</h2>\n{fill(s["body"], site)}\n'
+    body += "</article>\n"
+    return layout(site, t, lang, page, f'{site["app_name"]} — {p["title"]}', p["description"], body)
+
+
+def build():
+    site = load("site.json")
+    if OUT.exists():
+        shutil.rmtree(OUT)
+    shutil.copytree(ROOT / "assets", OUT, ignore=shutil.ignore_patterns(".DS_Store"))
+    urls = []
+    for lang in LANGS:
+        t = load(f"content/{lang}.json")
+        d = OUT / lang_dir(lang)
+        d.mkdir(parents=True, exist_ok=True)
+        (d / "index.html").write_text(home(site, t, lang), encoding="utf-8")
+        for page in ("privacy", "support"):
+            (d / PAGES[page]).write_text(article(site, t, lang, page), encoding="utf-8")
+        urls += [f"{lang_dir(lang)}", f"{lang_dir(lang)}privacy.html", f"{lang_dir(lang)}support.html"]
+    base = site.get("base_url", "").rstrip("/")
+    if base:
+        items = "".join(f"<url><loc>{base}/{u}</loc></url>\n" for u in urls)
+        (OUT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{items}</urlset>\n', encoding="utf-8")
+        (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n", encoding="utf-8")
+    target = OUT / site["download_url"]
+    if site["download_url"] and not site["download_url"].startswith("http") and not target.exists():
+        print(f"warning: the download {site['download_url']} is not in assets/")
+    print(f"built {len(urls)} pages in {OUT}")
+
+
+if __name__ == "__main__":
+    build()
+    if sys.argv[1:2] == ["serve"]:
+        port = int(sys.argv[2]) if len(sys.argv) > 2 else 8080
+        handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(OUT))
+        print(f"preview at http://localhost:{port}  (Ctrl-C to stop)")
+        http.server.ThreadingHTTPServer(("127.0.0.1", port), handler).serve_forever()
