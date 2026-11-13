@@ -68,8 +68,14 @@ h1, h2, h3 { text-wrap: balance; }
 .brand:hover { text-decoration: none; }
 .brand-icon { width: 28px; height: 28px; }
 .nav-links { display: flex; gap: 28px; margin-left: auto; }
-.nav-links a, .lang { color: var(--text); opacity: 0.8; font-size: 13px; }
-.nav-links a:hover, .lang:hover { opacity: 1; text-decoration: none; }
+.nav-links a { color: var(--text); opacity: 0.8; font-size: 13px; }
+.nav-links a:hover { opacity: 1; text-decoration: none; }
+/* language switch: two halves, the current language is the raised one */
+.lang-toggle { display: inline-flex; padding: 2px; border-radius: 999px; background: color-mix(in srgb, var(--text) 9%, transparent); font-size: 12px; font-weight: 600; letter-spacing: 0.02em; line-height: 1; }
+.lang-toggle a, .lang-toggle span { padding: 6px 10px; border-radius: 999px; color: var(--muted); transition: color 0.2s; }
+.lang-toggle a:hover { color: var(--text); text-decoration: none; }
+.lang-toggle .on { background: var(--card); color: var(--text); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18); }
+@media (prefers-color-scheme: dark) { .lang-toggle .on { background: color-mix(in srgb, var(--text) 26%, transparent); box-shadow: none; } }
 .nav-end { display: flex; align-items: center; gap: 16px; }
 
 /* buttons */

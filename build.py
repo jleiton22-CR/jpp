@@ -83,13 +83,34 @@ def layout(site, t, lang, page, title, description, body):
     home = "index.html" if page != "home" else ""
     other = [l for l in LANGS if l != lang][0]
     other_t = load(f"content/{other}.json")
-    other_href = f"{root}{lang_dir(other)}{here}"
+    # the address of this same page in the other language; ?lang= records that the visitor chose it
+    plain = f"{root}{lang_dir(other)}{here if page != 'home' else ''}" or "./"
+    other_href = f"{plain}?lang={other}"
+    names = {l: (t if l == lang else other_t)["lang_name"] for l in LANGS}
+    toggle = f'<div class="lang-toggle" role="group" aria-label="{names[LANGS[0]]} / {names[LANGS[1]]}">'
+    for l in LANGS:
+        if l == lang:
+            toggle += f'<span class="on" aria-current="true" title="{names[l]}">{l.upper()}</span>'
+        else:
+            toggle += f'<a href="{other_href}" lang="{l}" hreflang="{l}" title="{names[l]}" aria-label="{names[l]}">{l.upper()}</a>'
+    toggle += "</div>"
+    # runs before the page is drawn: a first visit opens in the language of the visitor's system, and later
+    # visits in the language chosen with the switch
+    detect = ("<script>(function(){try{var here='%s',store=null,q=/[?&]lang=(%s)/.exec(location.search);"
+              "try{store=localStorage.getItem('jpp-lang')}catch(e){}"
+              "if(q){try{localStorage.setItem('jpp-lang',q[1])}catch(e){}"
+              "history.replaceState(null,'',location.pathname+location.hash);return}"
+              "var sys=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase().slice(0,2);"
+              "var want=store||(sys==='%s'?sys:'%s');"
+              "if(want!==here)location.replace('%s'+location.hash)}catch(e){}})();</script>"
+              % (lang, "|".join(LANGS), LANGS[1], LANGS[0], plain))
     base = site.get("base_url", "").rstrip("/")
     seo = ""
     if base:
         seo += f'<link rel="canonical" href="{base}/{lang_dir(lang)}{here if page != "home" else ""}">\n'
         for l in LANGS:
             seo += f'<link rel="alternate" hreflang="{l}" href="{base}/{lang_dir(l)}{here if page != "home" else ""}">\n'
+        seo += f'<link rel="alternate" hreflang="x-default" href="{base}/{here if page != "home" else ""}">\n'
         seo += f'<meta property="og:image" content="{base}/img/og.png">\n<meta name="twitter:card" content="summary">\n'
     download = download_link(site, root)
     n, f = t["nav"], t["footer"]
@@ -101,6 +122,7 @@ def layout(site, t, lang, page, title, description, body):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{detect}
 <title>{escape(title)}</title>
 <meta name="description" content="{escape(description)}">
 <meta name="color-scheme" content="light dark">
@@ -124,7 +146,7 @@ def layout(site, t, lang, page, title, description, body):
       <a href="support.html">{n["support"]}</a>
     </nav>
     <div class="nav-end">
-      <a class="lang" href="{other_href}" lang="{other}" hreflang="{other}">{other_t["lang_name"]}</a>
+      {toggle}
       {nav_button}
     </div>
   </div>

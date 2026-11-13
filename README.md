@@ -50,6 +50,12 @@ Pon la dirección de la app en `app_store_url` de `site.json`. El segundo botón
 "Consíguelo en el Mac App Store". Las páginas `privacy.html` y `support.html` sirven como "Privacy Policy URL" y
 "Support URL" en App Store Connect.
 
+### Idiomas
+
+La primera vez que alguien entra, el sitio se abre en el idioma de su sistema: español si el sistema está en
+español, inglés en cualquier otro caso. El interruptor **EN | ES** de la barra cambia de idioma, y el navegador
+del visitante recuerda esa elección para las siguientes visitas.
+
 ### Cambiar las capturas de pantalla
 
 Las capturas están en `assets/img/`, cada una en dos versiones: `nombre-light.jpg` y `nombre-dark.jpg`. El sitio
