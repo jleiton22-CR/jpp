@@ -13,7 +13,7 @@ datos ni programas en el servidor, así que funciona en cualquier servidor web.
 | `assets/` | Estilo (`css/styles.css`), script (`js/main.js`), imágenes (`img/`) e instalador (`downloads/`). |
 | `build.py` | Genera `public/` a partir de lo anterior. Solo necesita Python 3. |
 
-`public/` se borra y se vuelve a crear en cada generación: no edites nada allí, edita `content/`, `site.json` o `assets/`.
+`public/` se genera de nuevo cada vez, y lo que no venga de las otras carpetas se borra: no edites nada allí, edita `content/`, `site.json` o `assets/`.
 
 ## Ver el sitio en tu Mac
 

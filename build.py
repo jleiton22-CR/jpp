@@ -10,7 +10,6 @@ style, script, images and downloads in assets/. Only Python 3 is needed.
 import functools
 import http.server
 import json
-import shutil
 import sys
 from html import escape
 from pathlib import Path
@@ -262,23 +261,36 @@ def article(site, t, lang, page):
 
 def build():
     site = load("site.json")
-    if OUT.exists():
-        shutil.rmtree(OUT)
-    shutil.copytree(ROOT / "assets", OUT, ignore=shutil.ignore_patterns(".DS_Store"))
+    # public/ is updated in place (only what changed is written), which is kinder to iCloud and to Git
+    written = set()
+
+    def put(path, data):
+        written.add(path)
+        if not path.exists() or path.read_bytes() != data:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(data)
+
+    for src in (ROOT / "assets").rglob("*"):
+        if src.is_file() and src.name != ".DS_Store":
+            put(OUT / src.relative_to(ROOT / "assets"), src.read_bytes())
     urls = []
     for lang in LANGS:
         t = load(f"content/{lang}.json")
         d = OUT / lang_dir(lang)
-        d.mkdir(parents=True, exist_ok=True)
-        (d / "index.html").write_text(home(site, t, lang), encoding="utf-8")
+        put(d / "index.html", home(site, t, lang).encode("utf-8"))
         for page in ("privacy", "support"):
-            (d / PAGES[page]).write_text(article(site, t, lang, page), encoding="utf-8")
+            put(d / PAGES[page], article(site, t, lang, page).encode("utf-8"))
         urls += [f"{lang_dir(lang)}", f"{lang_dir(lang)}privacy.html", f"{lang_dir(lang)}support.html"]
     base = site.get("base_url", "").rstrip("/")
     if base:
         items = "".join(f"<url><loc>{base}/{u}</loc></url>\n" for u in urls)
-        (OUT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{items}</urlset>\n', encoding="utf-8")
-        (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n", encoding="utf-8")
+        put(OUT / "sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{items}</urlset>\n'.encode("utf-8"))
+        put(OUT / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n".encode("utf-8"))
+    for old in sorted(OUT.rglob("*"), reverse=True):      # whatever is no longer part of the site
+        if old.is_file() and old not in written:
+            old.unlink()
+        elif old.is_dir() and not any(old.iterdir()):
+            old.rmdir()
     target = OUT / site["download_url"]
     if site["download_url"] and not site["download_url"].startswith("http") and not target.exists():
         print(f"warning: the download {site['download_url']} is not in assets/")
