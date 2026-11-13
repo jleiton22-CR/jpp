@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var here='en',store=null,q=/[?&]lang=(en|es)/.exec(location.search);try{store=localStorage.getItem('jpp-lang')}catch(e){}if(q){try{localStorage.setItem('jpp-lang',q[1])}catch(e){}history.replaceState(null,'',location.pathname+location.hash);return}var sys=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase().slice(0,2);var want=store||(sys==='es'?sys:'en');if(want!==here)location.replace('es/support.html'+location.hash)}catch(e){}})();</script>
 <title>J++ — Support</title>
 <meta name="description" content="Answers to the most common questions about J++.">
 <meta name="color-scheme" content="light dark">
@@ -14,6 +15,7 @@
 <link rel="canonical" href="https://jplus2.com/support.html">
 <link rel="alternate" hreflang="en" href="https://jplus2.com/support.html">
 <link rel="alternate" hreflang="es" href="https://jplus2.com/es/support.html">
+<link rel="alternate" hreflang="x-default" href="https://jplus2.com/support.html">
 <meta property="og:image" content="https://jplus2.com/img/og.png">
 <meta name="twitter:card" content="summary">
 <link rel="icon" type="image/png" href="img/favicon.png">
@@ -31,7 +33,7 @@
       <a href="support.html">Support</a>
     </nav>
     <div class="nav-end">
-      <a class="lang" href="es/support.html" lang="es" hreflang="es">Español</a>
+      <div class="lang-toggle" role="group" aria-label="English / Español"><span class="on" aria-current="true" title="English">EN</span><a href="es/support.html?lang=es" lang="es" hreflang="es" title="Español" aria-label="Español">ES</a></div>
       <span class="btn btn-small btn-soon">Coming soon</span>
     </div>
   </div>
@@ -66,7 +68,7 @@
         <a href="support.html">Support</a>
         <a href="mailto:leiton@live.com?subject=J%2B%2B">Contact</a>
         <a href="https://www.paypal.com/donate/?business=leiton%40live.com&amp;no_recurring=0&amp;item_name=J%2B%2B&amp;currency_code=USD" rel="noopener">Support J++ with a donation</a>
-        <a href="es/support.html" lang="es" hreflang="es">Español</a>
+        <a href="es/support.html?lang=es" lang="es" hreflang="es">Español</a>
       </nav>
     </div>
     <p class="fine">© 2026 Jason Leiton. All rights reserved.</p>
