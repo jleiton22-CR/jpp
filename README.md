@@ -62,7 +62,9 @@ Los colores están al principio de `assets/css/styles.css`, una vez para el modo
 
 ## Publicar (GitHub Pages)
 
-El sitio está en https://jleiton22-cr.github.io/jpp/ y se publica desde el repositorio `jleiton22-CR/jpp`.
+El sitio está en https://jplus2.com y se publica desde el repositorio `jleiton22-CR/jpp` con GitHub Pages.
+El dominio `jplus2.com` está registrado en Squarespace; sus registros DNS (cuatro A y un CNAME para `www`) apuntan a
+GitHub, y el archivo `assets/CNAME` le dice a GitHub qué dominio usar.
 Después de cualquier cambio:
 
 ```bash

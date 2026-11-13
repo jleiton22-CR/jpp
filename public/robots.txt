@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://jleiton22-cr.github.io/jpp/sitemap.xml
+Sitemap: https://jplus2.com/sitemap.xml
