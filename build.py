@@ -114,6 +114,9 @@ def layout(site, t, lang, page, title, description, body):
         seo += f'<meta property="og:image" content="{base}/img/og.png">\n<meta name="twitter:card" content="summary">\n'
     download = download_link(site, root)
     n, f = t["nav"], t["footer"]
+    donate_btn = (f'<a class="btn btn-small btn-donate" href="{escape(site["donate_url"])}" target="_blank" rel="noopener" '
+                  f'aria-label="{escape(n["donate_label"])}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.3 3 5 6.2 5c2 0 3.4 1.1 4.2 2.4h.2C11.4 6.1 12.800 5 14.8 5 18 5 19.900 8.300 18.500 11.700 16.500 16.400 12 21 12 21z" transform="translate(1 0)" fill="currentColor"/></svg><span>{n["donate"]}</span></a>'
+                  if site.get("donate_url") else "")
     nav_button = (f'<a class="btn btn-small" href="{download}" download>{n["download"]}</a>' if download
                   else f'<span class="btn btn-small btn-soon">{t["soon"]["soon"]}</span>')
     donate = f'<a href="{escape(site["donate_url"])}" rel="noopener">{f["donate"]}</a>' if site.get("donate_url") else ""
@@ -143,11 +146,13 @@ def layout(site, t, lang, page, title, description, body):
       <a href="{home}#why">{n["why"]}</a>
       <a href="{home}#features">{n["features"]}</a>
       <a href="{home}#editions">{n["editions"]}</a>
+      <a href="{home}#ipad">{n["ipad"]}</a>
       <a href="privacy.html">{n["privacy"]}</a>
       <a href="support.html">{n["support"]}</a>
     </nav>
     <div class="nav-end">
       {toggle}
+      {donate_btn}
       {nav_button}
     </div>
   </div>
@@ -245,7 +250,8 @@ def ipad_html(t, root):
     <p class="eyebrow reveal">{p["eyebrow"]}</p>
     <h2 class="reveal">{p["title"]}</h2>
     <p class="lead reveal">{p["text"]}</p>
-    <p class="badge reveal">{p["badge"]}</p>
+    <p class="reveal"><span class="soon-badge">{p["badge"]}</span></p>
+    <p class="note reveal">{p["badge_note"]}</p>
     <div class="ipad-shot reveal">{picture(root, "ipad", p["image_alt"], iw, ih)}</div>
     <div class="tiles">
 {tiles}    </div>

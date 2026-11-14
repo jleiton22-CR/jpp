@@ -11,7 +11,10 @@
     "privacy": "Privacy",
     "support": "Support",
     "download": "Download Lite",
-    "editions": "Lite & Full"
+    "editions": "Lite & Full",
+    "donate": "Donate",
+    "donate_label": "Donate with PayPal",
+    "ipad": "iPadOS"
   },
   "hero": {
     "eyebrow": "Version {version} for macOS",
@@ -427,10 +430,10 @@
     "note": "The App Store version runs in Apple's sandbox, so Compile and Run use the tools that come with macOS and Xcode. Both versions can be installed side by side."
   },
   "ipad": {
-    "eyebrow": "Coming next",
-    "title": "J++ is coming to the iPad.",
-    "text": "The next release brings J++ to the iPad: the same editing engine as on the Mac, built natively for touch, keyboard and the Files app.",
-    "badge": "Planned for the next release · details may change",
+    "eyebrow": "Coming soon",
+    "title": "J++ for iPadOS. Coming soon.",
+    "text": "The next release brings J++ to the iPad: the same editing engine as on the Mac, built natively for touch, keyboard and the Files app. These are the features it will have.",
+    "badge": "Coming soon",
     "items": [
       {
         "title": "The same engine",
@@ -457,7 +460,8 @@
         "text": "Portrait and landscape, light and dark that follow the system, word wrap, line numbers and text size you can change, and keyboard shortcuts."
       }
     ],
-    "note": "It begins as a focused editor. The extra tools of the Mac App Store version are not promised for the iPad yet.",
-    "image_alt": "J++ on iPad: a C++ file open in a tab, with the Find, New and More buttons on the toolbar."
+    "note": "It begins as a focused editor. The extra tools of the Mac App Store version are not promised for iPadOS yet.",
+    "image_alt": "J++ on iPadOS, coming soon: a C++ file open in a tab, with the Find, New and More buttons on the toolbar.",
+    "badge_note": "Planned for the next release. Details may change before it is published."
   }
 }

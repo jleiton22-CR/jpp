@@ -223,3 +223,15 @@ code { font-family: var(--mono); font-size: 0.9em; background: var(--bg-alt); pa
 .ipad-shot { max-width: 760px; margin: 48px auto 0; }
 .ipad-shot .shot { width: 100%; height: auto; border-radius: 18px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22); }
 @media (max-width: 900px) { .editions { grid-template-columns: 1fr; } }
+
+/* Donate button in the navigation bar */
+.btn-donate { background: transparent; color: var(--accent); border-color: currentColor; display: inline-flex; align-items: center; gap: 6px; }
+.btn-donate svg { width: 14px; height: 14px; }
+.btn-donate:hover { filter: none; background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.soon-badge { display: inline-block; margin-top: 20px; padding: 6px 16px; border-radius: 980px; background: var(--accent); color: #fff; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.02em; }
+@media (max-width: 600px) { .btn-donate span { display: none; } }
+
+.nav-end .btn { white-space: nowrap; }
+
+.brand, .brand picture, .brand-icon { flex-shrink: 0; }
+@media (max-width: 400px) { .nav-end { gap: 8px; } .lang-toggle a { padding-left: 8px; padding-right: 8px; } }

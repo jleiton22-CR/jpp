@@ -11,7 +11,10 @@
     "privacy": "Privacidad",
     "support": "Soporte",
     "download": "Descargar Lite",
-    "editions": "Lite y Completa"
+    "editions": "Lite y Completa",
+    "donate": "Donar",
+    "donate_label": "Donar con PayPal",
+    "ipad": "iPadOS"
   },
   "hero": {
     "eyebrow": "Versión {version} para macOS",
@@ -428,9 +431,9 @@
   },
   "ipad": {
     "eyebrow": "Próximamente",
-    "title": "J++ llega al iPad.",
-    "text": "El próximo lanzamiento trae J++ al iPad: el mismo motor de edición que en el Mac, hecho a medida para el tacto, el teclado y la app Archivos.",
-    "badge": "Planeado para el próximo lanzamiento · los detalles pueden cambiar",
+    "title": "J++ para iPadOS. Próximamente.",
+    "text": "El próximo lanzamiento trae J++ al iPad: el mismo motor de edición que en el Mac, hecho a medida para el tacto, el teclado y la app Archivos. Estas son las características que tendrá.",
+    "badge": "Próximamente",
     "items": [
       {
         "title": "El mismo motor",
@@ -457,7 +460,8 @@
         "text": "Vertical y horizontal, claro y oscuro según el sistema, ajuste de línea, números de línea, tamaño de texto cambiable y atajos de teclado."
       }
     ],
-    "note": "Empieza como un editor enfocado. Las herramientas extra de la versión del Mac App Store todavía no están prometidas para el iPad.",
-    "image_alt": "J++ en iPad: un archivo C++ abierto en una pestaña, con los botones Buscar, Nuevo y Más en la barra de herramientas."
+    "note": "Empieza como un editor enfocado. Las herramientas extra de la versión del Mac App Store todavía no están prometidas para iPadOS.",
+    "image_alt": "J++ en iPadOS, próximamente: un archivo C++ abierto en una pestaña, con los botones Buscar, Nuevo y Más en la barra de herramientas.",
+    "badge_note": "Planeado para el próximo lanzamiento. Los detalles pueden cambiar antes de publicarlo."
   }
 }
