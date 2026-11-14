@@ -40,11 +40,29 @@ Los textos pueden usar `{version}`, `{size}` y `{email}`, que se rellenan con lo
 
 El sitio ofrece **J++ Lite** (gratis); la versión completa solo se consigue en el Mac App Store, así que su instalador no debe estar en este sitio ni en el repositorio.
 
-1. Copia el instalador Lite a `assets/downloads/` (por ejemplo `J++-Lite-1.0.0.dmg`, desde `dmg/` del proyecto "J++ Lite") y borra el anterior.
-2. En `site.json` cambia `version`, `download_url` (por ejemplo `downloads/J++-Lite-1.0.0.dmg`) y `download_size`.
+El instalador Lite **no está en el sitio**: se aloja como archivo de un Release de GitHub, y GitHub cuenta cada descarga.
+
+1. Crea el Release con el instalador (desde `dmg/` del proyecto "J++ Lite"):
+
+```bash
+gh release create lite-1.0.1 "/ruta/J++-Lite-1.0.1.dmg" --repo jleiton22-CR/jpp --title "J++ Lite 1.0.1" --notes "J++ Lite 1.0.1" --latest=false
+```
+
+2. En `site.json` cambia `version`, `download_size` y `download_url` a la dirección del archivo del Release
+   (`https://github.com/jleiton22-CR/jpp/releases/download/lite-1.0.1/J%2B%2B-Lite-1.0.1.dmg`; el `+` se escribe `%2B`).
 3. Genera y publica.
 
 Mientras `download_url` esté vacío, los botones de descarga dicen "Próximamente".
+
+### Contador de descargas
+
+```bash
+./contador.sh
+```
+
+Muestra cuántas veces se ha descargado cada instalador de cada Release y el total. Es el contador de GitHub: suma
+cada descarga completa del archivo, así que una misma persona que descargue dos veces cuenta dos, y a veces puede
+tardar unos minutos en actualizarse. El sitio no usa analíticas ni scripts de terceros.
 
 ### Cuando J++ esté en el Mac App Store
 
@@ -103,7 +121,7 @@ idioma para los buscadores, `sitemap.xml` y `robots.txt`.
 
 ## Notas
 
-- **El sitio ofrece solo J++ Lite** (`assets/downloads/J++-Lite-1.0.0.dmg`). La sección "Lite y Completa" compara las
+- **El sitio ofrece solo J++ Lite** (Release `lite-1.0.0` de GitHub, enlazado desde `site.json`). La sección "Lite y Completa" compara las
   dos versiones; si cambian las funciones de Lite, edita `editions` en `content/*.json`.
 - **La sección del iPad** (`ipad` en `content/*.json`) anuncia una versión para el próximo lanzamiento, marcada como
   "planeada, los detalles pueden cambiar". Su captura (`ipad-light.jpg`, `ipad-dark.jpg`) viene del autotest del proyecto "J++ Ipad".
