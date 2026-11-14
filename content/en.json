@@ -28,7 +28,7 @@
       "label": "languages with syntax colouring"
     },
     {
-      "value": "< 10 MB",
+      "value": "10 MB",
       "label": "the whole download"
     },
     {
@@ -48,7 +48,7 @@
       {
         "icon": "native",
         "title": "Truly native",
-        "text": "Built with Cocoa for macOS, not a web page inside a wrapper. It starts fast, behaves like the rest of your Mac, and the whole app is a download of less than 10 MB."
+        "text": "Built with Cocoa for macOS, not a web page inside a wrapper. It starts fast, behaves like the rest of your Mac, and the whole app is a download of about 10 MB."
       },
       {
         "icon": "box",
@@ -73,7 +73,7 @@
       {
         "icon": "mac",
         "title": "At home on your Mac",
-        "text": "Liquid Glass on macOS 26, SF Symbols, SF Mono, and light and dark appearances that follow the system. One app for Apple silicon and Intel."
+        "text": "Liquid Glass on macOS 26, SF Symbols and SF Mono. The appearance follows macOS, or stays Light or Dark if you prefer. One app for Apple silicon and Intel."
       }
     ]
   },
@@ -91,10 +91,25 @@
           "Multiple cursors, column editing, macros and bookmarks",
           "Find, replace and mark with regular expressions, across all open files",
           "A file explorer that follows the folder as it changes",
+          "A compact toolbar: the debugging buttons appear only when you can use them",
           "Session restore that keeps even your unsaved text"
         ],
         "image": "overview",
         "alt": "The J++ editor with the explorer sidebar and a Python file."
+      },
+      {
+        "id": "goto",
+        "eyebrow": "Go to Anything",
+        "title": "Type a few letters. You are there.",
+        "text": "Press ⌘P and type. J++ finds a file from a few of its letters in order, so <code>mpy</code> finds <code>src/main.py</code>, and <code>name:42</code> opens it at line 42.",
+        "bullets": [
+          "In the same panel, <code>@</code> lists the symbols of the file, <code>:</code> goes to a line and <code>#</code> finds text",
+          "The Command Palette (⇧⌘P) runs any menu command by name, and shows where it lives and its shortcut",
+          "A minimap of the whole file beside the editor: click or drag on it to scroll"
+        ],
+        "image": "palette-commands",
+        "alt": "The Command Palette listing the Sort Lines commands after typing “sort lines”.",
+        "dialog": true
       },
       {
         "id": "intellisense",
@@ -144,7 +159,8 @@
         "bullets": [
           "Ready-made questions: Explain Code, Find Problems, Improve Code, Add Comments, Write Tests",
           "Claude models with your own API key, with answers that appear as they are written",
-          "Any OpenAI-compatible endpoint, including a local model such as Ollama"
+          "Any OpenAI-compatible endpoint, including a local model such as Ollama",
+          "No model connected yet? If Claude CLI is installed, the same button opens it in Terminal, in your project's folder"
         ],
         "image": "assistant",
         "alt": "The assistant panel beside the editor, explaining a bug in the selected function."
@@ -152,12 +168,13 @@
       {
         "id": "github",
         "eyebrow": "GitHub",
-        "title": "From clone to push, without leaving.",
+        "title": "From browse to merge, without leaving.",
         "text": "Connect your account and J++ lists your repositories. The status bar shows the branch, what there is to push or pull, and how many files changed.",
         "bullets": [
+          "Browse the folders and files of your repositories without cloning them",
+          "Create a pull request, and merge it with merge, squash or rebase",
           "Clone, commit, push, pull and fetch",
-          "Publish a folder to a new repository",
-          "Create a gist from a file, or copy a link to the current line"
+          "Publish a folder to a new repository, create a gist, or copy a link to the current line"
         ],
         "image": "github-clone",
         "alt": "The Clone Repository window with the list of the account's repositories.",
@@ -221,7 +238,7 @@
       },
       {
         "title": "Services you connect",
-        "body": "<p>J++ talks to other services only when you set them up and ask for something:</p><ul><li><strong>Databases.</strong> If you add a database connection, your queries go directly from your Mac to the server you entered.</li><li><strong>GitHub.</strong> If you connect a GitHub account, J++ uses it to list your repositories, to clone, push and pull, and to create gists when you ask.</li><li><strong>AI models.</strong> If you connect a model, the question you type, and the file and selection you chose to include, are sent to that model's provider (for example Anthropic) when you press Send. That provider's own terms and privacy policy apply to what it receives.</li></ul><p>Connection details are stored on your Mac, and passwords, tokens and API keys are stored in the macOS Keychain. None of this passes through the developer of J++.</p>"
+        "body": "<p>J++ talks to other services only when you set them up and ask for something:</p><ul><li><strong>Databases.</strong> If you add a database connection, your queries go directly from your Mac to the server you entered.</li><li><strong>GitHub.</strong> If you connect a GitHub account, J++ uses it to list your repositories and show their folders and files, to create and merge pull requests, to clone, push and pull, and to create gists when you ask. Files you open from GitHub are saved as temporary copies on your Mac.</li><li><strong>AI models.</strong> If you connect a model, the question you type, and the file and selection you chose to include, are sent to that model's provider (for example Anthropic) when you press Send. That provider's own terms and privacy policy apply to what it receives.</li></ul><p>Connection details are stored on your Mac, and passwords, tokens and API keys are stored in the macOS Keychain. None of this passes through the developer of J++.</p>"
       },
       {
         "title": "This website",
@@ -264,8 +281,20 @@
         "body": "<p>Click the margin next to a line to set a breakpoint, then press <code>F6</code>. Use the toolbar to step through the code.</p>"
       },
       {
+        "title": "Finding files, symbols and commands",
+        "body": "<p>Press <code>⌘P</code> to open a file by typing a few of its letters. Inside the same panel, <code>@</code> lists the symbols of the current file, <code>:</code> goes to a line, <code>#</code> searches the file's text and <code>&gt;</code> (or <code>⇧⌘P</code>) runs any menu command. <strong>View ▸ Show Minimap</strong> shows or hides the map of the file.</p>"
+      },
+      {
+        "title": "GitHub",
+        "body": "<p>Connect your account with <strong>GitHub ▸ Account…</strong>. Then <strong>GitHub ▸ Browse Repositories…</strong> (<code>⌥⌘G</code>) shows the folders and files of your repositories without cloning them, and lets you create or merge pull requests.</p>"
+      },
+      {
+        "title": "Light or dark appearance",
+        "body": "<p>Choose <strong>J++ ▸ Settings ▸ Appearance</strong>: <strong>Match macOS</strong> (the default), <strong>Light</strong> or <strong>Dark</strong>. The choice sets the whole app and the colours of the code.</p>"
+      },
+      {
         "title": "The Mac App Store version",
-        "body": "<p>Apple requires App Store apps to run in a sandbox, so that version uses only the tools from macOS and Xcode. It cannot start a program it has just built from C, C++ or Objective-C, and it does not offer PostgreSQL, MySQL or SQL Server connections. When a compiler needs other files in the same folder, press <strong>Allow Folder Access…</strong> in the output pane.</p>"
+        "body": "<p>Apple requires App Store apps to run in a sandbox, so that version uses only the tools from macOS and Xcode. It cannot start a program it has just built from C, C++ or Objective-C, and it does not offer PostgreSQL, MySQL or SQL Server connections. When a compiler needs other files in the same folder, press <strong>Allow Folder Access…</strong> in the output pane. Claude CLI cannot be started from the sandbox either, so the assistant button always opens the chat.</p>"
       },
       {
         "title": "Contact",

@@ -28,7 +28,7 @@
       "label": "lenguajes con resaltado de sintaxis"
     },
     {
-      "value": "< 10 MB",
+      "value": "10 MB",
       "label": "toda la descarga"
     },
     {
@@ -48,7 +48,7 @@
       {
         "icon": "native",
         "title": "Nativo de verdad",
-        "text": "Hecho con Cocoa para macOS, no una página web dentro de un envoltorio. Arranca rápido, se comporta como el resto de tu Mac, y toda la app es una descarga de menos de 10 MB."
+        "text": "Hecho con Cocoa para macOS, no una página web dentro de un envoltorio. Arranca rápido, se comporta como el resto de tu Mac, y toda la app es una descarga de unos 10 MB."
       },
       {
         "icon": "box",
@@ -73,7 +73,7 @@
       {
         "icon": "mac",
         "title": "En casa en tu Mac",
-        "text": "Liquid Glass en macOS 26, SF Symbols, SF Mono y apariencias clara y oscura que siguen al sistema. Una sola app para Apple Silicon e Intel."
+        "text": "Liquid Glass en macOS 26, SF Symbols y SF Mono. La apariencia sigue a macOS, o se queda en clara u oscura si lo prefieres. Una sola app para Apple Silicon e Intel."
       }
     ]
   },
@@ -91,10 +91,25 @@
           "Cursores múltiples, edición en columna, macros y marcadores",
           "Buscar, reemplazar y marcar con expresiones regulares en todos los archivos abiertos",
           "Un explorador de archivos que se actualiza cuando la carpeta cambia",
+          "Una barra de herramientas compacta: los botones de depuración aparecen solo cuando puedes usarlos",
           "Restauración de la sesión que conserva hasta el texto sin guardar"
         ],
         "image": "overview",
         "alt": "El editor de J++ con el explorador lateral y un archivo de Python."
+      },
+      {
+        "id": "goto",
+        "eyebrow": "Ir a cualquier cosa",
+        "title": "Escribe unas letras. Ya estás ahí.",
+        "text": "Pulsa ⌘P y escribe. J++ encuentra un archivo con unas pocas de sus letras en orden, así que <code>mpy</code> encuentra <code>src/main.py</code>, y <code>nombre:42</code> lo abre en la línea 42.",
+        "bullets": [
+          "En el mismo panel, <code>@</code> muestra los símbolos del archivo, <code>:</code> va a una línea y <code>#</code> busca texto",
+          "La paleta de comandos (⇧⌘P) ejecuta cualquier comando de los menús por su nombre, y muestra dónde está y su atajo",
+          "Un minimapa de todo el archivo junto al editor: haz clic o arrastra sobre él para desplazarte"
+        ],
+        "image": "palette-commands",
+        "alt": "La paleta de comandos con los comandos Sort Lines después de escribir «sort lines».",
+        "dialog": true
       },
       {
         "id": "intellisense",
@@ -144,7 +159,8 @@
         "bullets": [
           "Preguntas listas para explicar el código, buscar problemas, mejorarlo, añadir comentarios o escribir pruebas",
           "Modelos Claude con tu propia clave de API, con respuestas que aparecen mientras se escriben",
-          "Cualquier servicio compatible con OpenAI, incluido un modelo local como Ollama"
+          "Cualquier servicio compatible con OpenAI, incluido un modelo local como Ollama",
+          "¿Aún no hay un modelo conectado? Si Claude CLI está instalado, el mismo botón lo abre en Terminal, en la carpeta de tu proyecto"
         ],
         "image": "assistant",
         "alt": "El panel del asistente junto al editor, explicando un error en la función seleccionada."
@@ -152,12 +168,13 @@
       {
         "id": "github",
         "eyebrow": "GitHub",
-        "title": "De clonar a publicar, sin salir.",
+        "title": "De explorar a fusionar, sin salir.",
         "text": "Conecta tu cuenta y J++ muestra tus repositorios. La barra de estado indica la rama, lo que hay por enviar o recibir y cuántos archivos cambiaron.",
         "bullets": [
+          "Explora las carpetas y los archivos de tus repositorios sin clonarlos",
+          "Crea un pull request y fusiónalo con merge, squash o rebase",
           "Clonar, confirmar, enviar, recibir y actualizar",
-          "Publicar una carpeta en un repositorio nuevo",
-          "Crear un gist desde un archivo o copiar un enlace a la línea actual"
+          "Publica una carpeta en un repositorio nuevo, crea un gist o copia un enlace a la línea actual"
         ],
         "image": "github-clone",
         "alt": "La ventana Clonar repositorio con la lista de repositorios de la cuenta.",
@@ -221,7 +238,7 @@
       },
       {
         "title": "Servicios que conectas",
-        "body": "<p>J++ se comunica con otros servicios solo cuando tú los configuras y pides algo:</p><ul><li><strong>Bases de datos.</strong> Si añades una conexión a una base de datos, tus consultas van directamente de tu Mac al servidor que indicaste.</li><li><strong>GitHub.</strong> Si conectas una cuenta de GitHub, J++ la usa para mostrar tus repositorios, para clonar, enviar y recibir cambios, y para crear gists cuando lo pides.</li><li><strong>Modelos de IA.</strong> Si conectas un modelo, la pregunta que escribes, y el archivo y la selección que elegiste incluir, se envían al proveedor de ese modelo (por ejemplo, Anthropic) cuando pulsas Enviar. A lo que ese proveedor recibe se aplican sus propios términos y su política de privacidad.</li></ul><p>Los datos de conexión se guardan en tu Mac, y las contraseñas, los tokens y las claves de API se guardan en el Llavero de macOS. Nada de esto pasa por el desarrollador de J++.</p>"
+        "body": "<p>J++ se comunica con otros servicios solo cuando tú los configuras y pides algo:</p><ul><li><strong>Bases de datos.</strong> Si añades una conexión a una base de datos, tus consultas van directamente de tu Mac al servidor que indicaste.</li><li><strong>GitHub.</strong> Si conectas una cuenta de GitHub, J++ la usa para mostrar tus repositorios con sus carpetas y archivos, para crear y fusionar pull requests, para clonar, enviar y recibir cambios, y para crear gists cuando lo pides. Los archivos que abres desde GitHub se guardan como copias temporales en tu Mac.</li><li><strong>Modelos de IA.</strong> Si conectas un modelo, la pregunta que escribes, y el archivo y la selección que elegiste incluir, se envían al proveedor de ese modelo (por ejemplo, Anthropic) cuando pulsas Enviar. A lo que ese proveedor recibe se aplican sus propios términos y su política de privacidad.</li></ul><p>Los datos de conexión se guardan en tu Mac, y las contraseñas, los tokens y las claves de API se guardan en el Llavero de macOS. Nada de esto pasa por el desarrollador de J++.</p>"
       },
       {
         "title": "Este sitio web",
@@ -264,8 +281,20 @@
         "body": "<p>Haz clic en el margen junto a una línea para poner un punto de interrupción y pulsa <code>F6</code>. Usa la barra de herramientas para avanzar paso a paso.</p>"
       },
       {
+        "title": "Encontrar archivos, símbolos y comandos",
+        "body": "<p>Pulsa <code>⌘P</code> para abrir un archivo escribiendo unas pocas de sus letras. En el mismo panel, <code>@</code> muestra los símbolos del archivo actual, <code>:</code> va a una línea, <code>#</code> busca en el texto del archivo y <code>&gt;</code> (o <code>⇧⌘P</code>) ejecuta cualquier comando de los menús. <strong>View ▸ Show Minimap</strong> muestra u oculta el mapa del archivo.</p>"
+      },
+      {
+        "title": "GitHub",
+        "body": "<p>Conecta tu cuenta con <strong>GitHub ▸ Account…</strong>. Después, <strong>GitHub ▸ Browse Repositories…</strong> (<code>⌥⌘G</code>) muestra las carpetas y los archivos de tus repositorios sin clonarlos, y permite crear o fusionar pull requests.</p>"
+      },
+      {
+        "title": "Apariencia clara u oscura",
+        "body": "<p>Elige <strong>J++ ▸ Settings ▸ Appearance</strong>: <strong>Match macOS</strong> (el valor por defecto), <strong>Light</strong> o <strong>Dark</strong>. La elección cambia toda la app y los colores del código.</p>"
+      },
+      {
         "title": "La versión del Mac App Store",
-        "body": "<p>Apple exige que las apps del App Store funcionen en un entorno aislado, así que esa versión usa solo las herramientas de macOS y de Xcode. No puede iniciar un programa que acaba de compilar en C, C++ u Objective-C, y no ofrece conexiones a PostgreSQL, MySQL ni SQL Server. Cuando un compilador necesite otros archivos de la misma carpeta, pulsa <strong>Allow Folder Access…</strong> en el panel de salida.</p>"
+        "body": "<p>Apple exige que las apps del App Store funcionen en un entorno aislado, así que esa versión usa solo las herramientas de macOS y de Xcode. No puede iniciar un programa que acaba de compilar en C, C++ u Objective-C, y no ofrece conexiones a PostgreSQL, MySQL ni SQL Server. Cuando un compilador necesite otros archivos de la misma carpeta, pulsa <strong>Allow Folder Access…</strong> en el panel de salida. Claude CLI tampoco se puede iniciar desde el entorno aislado, así que el botón del asistente siempre abre el chat.</p>"
       },
       {
         "title": "Contacto",

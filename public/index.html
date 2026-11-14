@@ -57,7 +57,7 @@
 <section class="stats" aria-label="J++">
   <div class="wrap stats-grid">
     <div class="stat reveal"><strong>95</strong><span>languages with syntax colouring</span></div>
-    <div class="stat reveal"><strong>&lt; 10 MB</strong><span>the whole download</span></div>
+    <div class="stat reveal"><strong>10 MB</strong><span>the whole download</span></div>
     <div class="stat reveal"><strong>0</strong><span>extensions to install</span></div>
     <div class="stat reveal"><strong>0</strong><span>data collected</span></div>
   </div>
@@ -69,12 +69,12 @@
     <h2 class="reveal">What makes it different.</h2>
     <p class="lead reveal">Most editors start empty and ask you to assemble the rest. J++ starts complete, and it is made for the Mac and nothing else.</p>
     <div class="tiles">
-      <article class="tile reveal"><svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><h3>Truly native</h3><p>Built with Cocoa for macOS, not a web page inside a wrapper. It starts fast, behaves like the rest of your Mac, and the whole app is a download of less than 10 MB.</p></article>
+      <article class="tile reveal"><svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><h3>Truly native</h3><p>Built with Cocoa for macOS, not a web page inside a wrapper. It starts fast, behaves like the rest of your Mac, and the whole app is a download of about 10 MB.</p></article>
       <article class="tile reveal"><svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg><h3>Complete from the first launch</h3><p>Run, debug, IntelliSense, SQL, GitHub and AI are part of the app. There is no marketplace to search and no extensions to choose, set up and keep updated.</p></article>
       <article class="tile reveal"><svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v6.5c0 1.7 3.6 3 8 3s8-1.3 8-3V5.5M4 12v6.500c0 1.700 3.600 3 8 3s8-1.300 8-3V12"/></svg><h3>Your data is one query away</h3><p>Run SQL on Databricks, Snowflake, PostgreSQL, MySQL, SQL Server and SQLite. Even an Excel workbook or a CSV file becomes a table you can query.</p></article>
       <article class="tile reveal"><svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3 11.800 8.200 17 10l-5.200 1.800L10 17l-1.800-5.200L3 10l5.200-1.800z"/><path d="M18 14l.9 2.100L21 17l-2.100.9L18 20l-.9-2.100L15 17l2.100-.9z"/></svg><h3>AI on your terms</h3><p>Connect your own Claude API key, any OpenAI-compatible service, or a model running on your Mac. J++ has no subscription, and your code is sent only when you ask.</p></article>
       <article class="tile reveal"><svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.500"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><h3>Private by design</h3><p>No account, no analytics, no advertising, no tracking. Passwords, tokens and API keys are kept in the macOS Keychain.</p></article>
-      <article class="tile reveal"><svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><h3>At home on your Mac</h3><p>Liquid Glass on macOS 26, SF Symbols, SF Mono, and light and dark appearances that follow the system. One app for Apple silicon and Intel.</p></article>
+      <article class="tile reveal"><svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><h3>At home on your Mac</h3><p>Liquid Glass on macOS 26, SF Symbols and SF Mono. The appearance follows macOS, or stays Light or Dark if you prefer. One app for Apple silicon and Intel.</p></article>
     </div>
   </div>
 </section>
@@ -89,11 +89,20 @@
       <p class="eyebrow">Edit</p>
       <h3>An editor that keeps up with you.</h3>
       <p>The editing engine is Scintilla, known for its speed with large files. Around it, J++ adds the tools you use all day.</p>
-      <ul><li>Syntax colouring and code folding for 95 languages</li><li>Multiple cursors, column editing, macros and bookmarks</li><li>Find, replace and mark with regular expressions, across all open files</li><li>A file explorer that follows the folder as it changes</li><li>Session restore that keeps even your unsaved text</li></ul>
+      <ul><li>Syntax colouring and code folding for 95 languages</li><li>Multiple cursors, column editing, macros and bookmarks</li><li>Find, replace and mark with regular expressions, across all open files</li><li>A file explorer that follows the folder as it changes</li><li>A compact toolbar: the debugging buttons appear only when you can use them</li><li>Session restore that keeps even your unsaved text</li></ul>
     </div>
     <div class="feature-shot reveal"><picture><source srcset="img/overview-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot " src="img/overview-light.jpg" alt="The J++ editor with the explorer sidebar and a Python file." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
   </article>
-  <article class="feature flip" id="intellisense">
+  <article class="feature flip dialog" id="goto">
+    <div class="feature-text reveal">
+      <p class="eyebrow">Go to Anything</p>
+      <h3>Type a few letters. You are there.</h3>
+      <p>Press ⌘P and type. J++ finds a file from a few of its letters in order, so <code>mpy</code> finds <code>src/main.py</code>, and <code>name:42</code> opens it at line 42.</p>
+      <ul><li>In the same panel, <code>@</code> lists the symbols of the file, <code>:</code> goes to a line and <code>#</code> finds text</li><li>The Command Palette (⇧⌘P) runs any menu command by name, and shows where it lives and its shortcut</li><li>A minimap of the whole file beside the editor: click or drag on it to scroll</li></ul>
+    </div>
+    <div class="feature-shot reveal"><picture><source srcset="img/palette-commands-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot " src="img/palette-commands-light.jpg" alt="The Command Palette listing the Sort Lines commands after typing “sort lines”." width="1280" height="580" loading="lazy" decoding="async"></picture></div>
+  </article>
+  <article class="feature" id="intellisense">
     <div class="feature-text reveal">
       <p class="eyebrow">IntelliSense</p>
       <h3>It knows your code.</h3>
@@ -102,7 +111,7 @@
     </div>
     <div class="feature-shot reveal"><picture><source srcset="img/intellisense-complete-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot " src="img/intellisense-complete-light.jpg" alt="A completion list showing the members of a Python object." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
   </article>
-  <article class="feature" id="run">
+  <article class="feature flip" id="run">
     <div class="feature-text reveal">
       <p class="eyebrow">Run and debug</p>
       <h3>Press F5. In any language.</h3>
@@ -111,7 +120,7 @@
     </div>
     <div class="feature-shot reveal"><picture><source srcset="img/debug-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot " src="img/debug-light.jpg" alt="The Python debugger paused on a line, with the variables listed beside the output." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
   </article>
-  <article class="feature flip" id="sql">
+  <article class="feature" id="sql">
     <div class="feature-text reveal">
       <p class="eyebrow">Databases</p>
       <h3>SQL, right next to your code.</h3>
@@ -120,21 +129,21 @@
     </div>
     <div class="feature-shot reveal"><picture><source srcset="img/excel-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot " src="img/excel-light.jpg" alt="A SQL query over an Excel workbook, with the results in a grid under the code." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
   </article>
-  <article class="feature" id="ai">
+  <article class="feature flip" id="ai">
     <div class="feature-text reveal">
       <p class="eyebrow">AI assistant</p>
       <h3>An assistant that sees what you see.</h3>
       <p>Ask a question and the assistant reads the file in front of you and your selection. Insert and Replace Selection put the answer's code into the editor as one undo step.</p>
-      <ul><li>Ready-made questions: Explain Code, Find Problems, Improve Code, Add Comments, Write Tests</li><li>Claude models with your own API key, with answers that appear as they are written</li><li>Any OpenAI-compatible endpoint, including a local model such as Ollama</li></ul>
+      <ul><li>Ready-made questions: Explain Code, Find Problems, Improve Code, Add Comments, Write Tests</li><li>Claude models with your own API key, with answers that appear as they are written</li><li>Any OpenAI-compatible endpoint, including a local model such as Ollama</li><li>No model connected yet? If Claude CLI is installed, the same button opens it in Terminal, in your project's folder</li></ul>
     </div>
     <div class="feature-shot reveal"><picture><source srcset="img/assistant-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot " src="img/assistant-light.jpg" alt="The assistant panel beside the editor, explaining a bug in the selected function." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
   </article>
-  <article class="feature flip dialog" id="github">
+  <article class="feature dialog" id="github">
     <div class="feature-text reveal">
       <p class="eyebrow">GitHub</p>
-      <h3>From clone to push, without leaving.</h3>
+      <h3>From browse to merge, without leaving.</h3>
       <p>Connect your account and J++ lists your repositories. The status bar shows the branch, what there is to push or pull, and how many files changed.</p>
-      <ul><li>Clone, commit, push, pull and fetch</li><li>Publish a folder to a new repository</li><li>Create a gist from a file, or copy a link to the current line</li></ul>
+      <ul><li>Browse the folders and files of your repositories without cloning them</li><li>Create a pull request, and merge it with merge, squash or rebase</li><li>Clone, commit, push, pull and fetch</li><li>Publish a folder to a new repository, create a gist, or copy a link to the current line</li></ul>
     </div>
     <div class="feature-shot reveal"><picture><source srcset="img/github-clone-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot " src="img/github-clone-light.jpg" alt="The Clone Repository window with the list of the account&#x27;s repositories." width="1280" height="920" loading="lazy" decoding="async"></picture></div>
   </article>
