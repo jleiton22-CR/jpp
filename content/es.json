@@ -22,7 +22,7 @@
     "app_store": "Versión completa en el Mac App Store",
     "note": "Gratis · {size} · macOS 12 o posterior · Apple Silicon e Intel",
     "image_alt": "La ventana de J++: un explorador de archivos a la izquierda, pestañas y un archivo de Python con resaltado de sintaxis.",
-    "store_note": "¿Quieres todo lo de esta página? Consigue el J++ completo en el Mac App Store."
+    "store_note": "¿Quieres todo lo de esta página? El J++ completo viene en camino al Mac App Store."
   },
   "stats": [
     {
@@ -215,8 +215,8 @@
     "primary": "Descargar J++ Lite {version}",
     "note": "Gratis · macOS 12 o posterior · Apple Silicon e Intel · {size}",
     "requirements": "En la versión completa, Compilar, Ejecutar y Git usan las herramientas de desarrollo de Apple. Instala Xcode, o sus herramientas de línea de comandos, para usarlas.",
-    "store": "Consigue el J++ completo en el Mac App Store",
-    "store_soon": "Versión completa: Mac App Store, enlace próximamente"
+    "store": "El J++ completo llega al Mac App Store",
+    "store_soon": "Versión completa: Mac App Store, próximamente"
   },
   "footer": {
     "privacy": "Política de privacidad",
@@ -328,7 +328,7 @@
   "editions": {
     "eyebrow": "Lite y Completa",
     "title": "Dos formas de tener J++.",
-    "text": "J++ Lite es una descarga gratuita desde esta página: un editor ligero y rápido para el texto y el código de todos los días. El J++ completo viene del Mac App Store y añade las herramientas que convierten un editor en un taller.",
+    "text": "J++ Lite es una descarga gratuita desde esta página: un editor ligero y rápido para el texto y el código de todos los días. El J++ completo se obtiene en el Mac App Store, adonde llega pronto, y añade las herramientas que convierten un editor en un taller.",
     "lite": {
       "name": "J++ Lite",
       "tag": "Gratis · descarga desde esta página",
@@ -352,7 +352,7 @@
         "Se instala y se actualiza desde el App Store, sin aviso de «desarrollador no identificado»"
       ],
       "button": "Consíguelo en el Mac App Store",
-      "button_soon": "Mac App Store · enlace próximamente"
+      "button_soon": "Mac App Store · próximamente"
     },
     "table_title": "Lo que añade la versión completa",
     "head": [

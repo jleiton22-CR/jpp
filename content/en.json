@@ -22,7 +22,7 @@
     "app_store": "Full version on the Mac App Store",
     "note": "Free · {size} · macOS 12 or later · Apple silicon and Intel",
     "image_alt": "The J++ window: a file explorer on the left, tabs, and a Python file with syntax colouring.",
-    "store_note": "Want everything on this page? Get the full J++ on the Mac App Store."
+    "store_note": "Want everything on this page? The full J++ is on its way to the Mac App Store."
   },
   "stats": [
     {
@@ -215,8 +215,8 @@
     "primary": "Download J++ Lite {version}",
     "note": "Free · macOS 12 or later · Apple silicon and Intel · {size}",
     "requirements": "In the full version, Compile, Run and Git use Apple's developer tools. Install Xcode, or its command line tools, to use them.",
-    "store": "Get the full J++ on the Mac App Store",
-    "store_soon": "Full version: Mac App Store, link coming soon"
+    "store": "The full J++ is coming to the Mac App Store",
+    "store_soon": "Full version: Mac App Store, coming soon"
   },
   "footer": {
     "privacy": "Privacy Policy",
@@ -328,7 +328,7 @@
   "editions": {
     "eyebrow": "Lite & Full",
     "title": "Two ways to get J++.",
-    "text": "J++ Lite is a free download from this page: a light, fast editor for everyday text and code. The full J++ comes from the Mac App Store and adds the tools that turn an editor into a workshop.",
+    "text": "J++ Lite is a free download from this page: a light, fast editor for everyday text and code. The full J++ is obtained from the Mac App Store, where it is coming soon, and adds the tools that turn an editor into a workshop.",
     "lite": {
       "name": "J++ Lite",
       "tag": "Free · download from this page",
@@ -352,7 +352,7 @@
         "Installs and updates through the App Store, with no “unidentified developer” warning"
       ],
       "button": "Get it on the Mac App Store",
-      "button_soon": "Mac App Store · link coming soon"
+      "button_soon": "Mac App Store · coming soon"
     },
     "table_title": "What the full version adds",
     "head": [
