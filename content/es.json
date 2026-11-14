@@ -3,24 +3,26 @@
   "lang_name": "Español",
   "meta": {
     "title": "J++ — Un editor de código nativo para Mac",
-    "description": "J++ es un editor de código rápido y nativo para macOS. Edita en 95 lenguajes, ejecuta y depura tu código, consulta bases de datos con SQL, trabaja con GitHub y pregunta a un asistente de IA, sin instalar nada más."
+    "description": "J++ es un editor de código nativo para macOS. Descarga J++ Lite gratis, o consigue el J++ completo en el Mac App Store: ejecuta y depura tu código, SQL, GitHub y un asistente de IA. J++ para iPad viene en camino."
   },
   "nav": {
     "why": "Por qué J++",
     "features": "Funciones",
     "privacy": "Privacidad",
     "support": "Soporte",
-    "download": "Descargar"
+    "download": "Descargar Lite",
+    "editions": "Lite y Completa"
   },
   "hero": {
     "eyebrow": "Versión {version} para macOS",
     "title": "Todo lo que rodea a tu código. <span class=\"grad\">Nada que estorbe.</span>",
     "text": "J++ es un editor de código rápido y nativo para Mac. Escribe en 95 lenguajes, ejecuta y depura tu código, consulta tus datos con SQL, sube tus cambios a GitHub y pregunta a un asistente de IA, todo en una sola app pequeña.",
-    "primary": "Descargar para Mac",
+    "primary": "Descargar J++ Lite — gratis",
     "secondary": "Mira lo que hace",
-    "app_store": "Consíguelo en el Mac App Store",
-    "note": "Descarga gratuita · {size} · macOS 12 o posterior · Apple Silicon e Intel",
-    "image_alt": "La ventana de J++: un explorador de archivos a la izquierda, pestañas y un archivo de Python con resaltado de sintaxis."
+    "app_store": "Versión completa en el Mac App Store",
+    "note": "Gratis · {size} · macOS 12 o posterior · Apple Silicon e Intel",
+    "image_alt": "La ventana de J++: un explorador de archivos a la izquierda, pestañas y un archivo de Python con resaltado de sintaxis.",
+    "store_note": "¿Quieres todo lo de esta página? Consigue el J++ completo en el Mac App Store."
   },
   "stats": [
     {
@@ -208,11 +210,13 @@
     "text": "Help ▸ J++ Guide describe cada función paso a paso, con capturas en claro y oscuro, y una tabla con todos los atajos de teclado."
   },
   "cta": {
-    "title": "Dale a tu código un mejor hogar.",
-    "text": "Descarga J++ y empieza a trabajar en menos de un minuto.",
-    "primary": "Descargar J++ {version}",
-    "note": "macOS 12 o posterior · Apple Silicon e Intel · {size}",
-    "requirements": "Compilar, Ejecutar y Git usan las herramientas de desarrollo de Apple. Instala Xcode, o sus herramientas de línea de comandos, para usarlos."
+    "title": "Empieza gratis. Pasa a la completa cuando quieras.",
+    "text": "Descarga J++ Lite hoy, o consigue el J++ completo en el Mac App Store.",
+    "primary": "Descargar J++ Lite {version}",
+    "note": "Gratis · macOS 12 o posterior · Apple Silicon e Intel · {size}",
+    "requirements": "En la versión completa, Compilar, Ejecutar y Git usan las herramientas de desarrollo de Apple. Instala Xcode, o sus herramientas de línea de comandos, para usarlas.",
+    "store": "Consigue el J++ completo en el Mac App Store",
+    "store_soon": "Versión completa: Mac App Store, enlace próximamente"
   },
   "footer": {
     "privacy": "Política de privacidad",
@@ -235,6 +239,10 @@
       {
         "title": "Tus archivos",
         "body": "<p>J++ abre solo los archivos y carpetas que tú eliges. Se quedan en tu Mac. Para reabrir tu sesión anterior, J++ guarda una lista de esos archivos, y una copia del texto sin guardar, en su propia carpeta privada en tu Mac.</p>"
+      },
+      {
+        "title": "J++ Lite",
+        "body": "<p>J++ Lite no tiene funciones de red. Nunca se conecta a internet por sí sola; el menú Ayuda solo abre este sitio web, un mensaje de correo o la página de donaciones en tu propio navegador cuando tú los eliges.</p>"
       },
       {
         "title": "Servicios que conectas",
@@ -262,7 +270,15 @@
     "sections": [
       {
         "title": "Instalar J++",
-        "body": "<p>Abre la imagen de disco descargada y arrastra J++ a tu carpeta Aplicaciones. J++ necesita macOS 12 o posterior y funciona en Mac con Apple Silicon y con Intel.</p><p>Si macOS dice que no puede comprobar la app la primera vez que la abres, abre <strong>Ajustes del Sistema ▸ Privacidad y seguridad</strong>, busca el mensaje sobre J++ y pulsa <strong>Abrir igualmente</strong>.</p>"
+        "body": "<p>Abre la imagen de disco descargada y arrastra <strong>J++ Lite</strong> a tu carpeta Aplicaciones. J++ necesita macOS 12 o posterior y funciona en Mac con Apple Silicon e Intel.</p><p>Si macOS dice que no puede comprobar la app la primera vez que la abres, abre <strong>Ajustes del Sistema ▸ Privacidad y seguridad</strong>, busca el mensaje sobre J++ Lite y pulsa <strong>Abrir igualmente</strong>. La versión del Mac App Store no muestra este mensaje.</p>"
+      },
+      {
+        "title": "¿J++ Lite o la versión completa?",
+        "body": "<p><strong>J++ Lite</strong> es gratis y se puede descargar desde este sitio web. Es un editor: resaltado de sintaxis para 95 lenguajes, pestañas, buscar y reemplazar, explorador de archivos, Ir a cualquier cosa, paleta de comandos y minimapa.</p><p>El <strong>J++ completo</strong> está disponible en el Mac App Store. Añade IntelliSense, Compilar y Ejecutar, el depurador de Python, SQL, GitHub, el asistente de IA y la guía integrada. Puedes tener las dos instaladas.</p>"
+      },
+      {
+        "title": "J++ para iPad",
+        "body": "<p>Una versión para iPad está planeada para el próximo lanzamiento. Empieza como un editor enfocado, con pestañas, buscar y reemplazar, autocompletado y compatibilidad con Archivos. Los detalles pueden cambiar antes de publicarla.</p>"
       },
       {
         "title": "Compilar o Ejecutar dice que una herramienta viene con Xcode",
@@ -308,5 +324,140 @@
     "cta_text": "J++ {version} está casi listo. La descarga estará disponible en esta página.",
     "notify": "Avísame cuando esté listo",
     "notify_subject": "Avísame cuando J++ esté listo"
+  },
+  "editions": {
+    "eyebrow": "Lite y Completa",
+    "title": "Dos formas de tener J++.",
+    "text": "J++ Lite es una descarga gratuita desde esta página: un editor ligero y rápido para el texto y el código de todos los días. El J++ completo viene del Mac App Store y añade las herramientas que convierten un editor en un taller.",
+    "lite": {
+      "name": "J++ Lite",
+      "tag": "Gratis · descarga desde esta página",
+      "text": "Todo lo necesario para leer y escribir código, en una descarga de unos 5.6 MB.",
+      "items": [
+        "Resaltado de sintaxis y plegado para 95 lenguajes",
+        "Pestañas, restauración de la sesión, buscar y reemplazar, varios archivos a la vez",
+        "Explorador de archivos, Ir a cualquier cosa, paleta de comandos y minimapa",
+        "Apariencia clara y oscura que sigue a macOS",
+        "Nunca se conecta a una red: no envía nada a ningún sitio"
+      ],
+      "button": "Descargar J++ Lite"
+    },
+    "full": {
+      "name": "J++",
+      "tag": "Versión completa · Mac App Store",
+      "text": "El J++ completo, con todo lo de Lite y las funciones que siguen.",
+      "items": [
+        "IntelliSense, ejecutar y depurar, SQL, GitHub y el asistente de IA",
+        "La guía de J++ integrada, en inglés y español",
+        "Se instala y se actualiza desde el App Store, sin aviso de «desarrollador no identificado»"
+      ],
+      "button": "Consíguelo en el Mac App Store",
+      "button_soon": "Mac App Store · enlace próximamente"
+    },
+    "table_title": "Lo que añade la versión completa",
+    "head": [
+      "Función",
+      "Lite",
+      "Completa"
+    ],
+    "rows": [
+      [
+        "Resaltado de sintaxis, plegado y 95 lenguajes",
+        "yes",
+        "yes"
+      ],
+      [
+        "Pestañas, buscar y reemplazar, macros, marcadores, codificaciones",
+        "yes",
+        "yes"
+      ],
+      [
+        "Explorador de archivos, Ir a cualquier cosa, paleta de comandos, minimapa",
+        "yes",
+        "yes"
+      ],
+      [
+        "Apariencia clara y oscura",
+        "yes",
+        "yes"
+      ],
+      [
+        "IntelliSense: autocompletado, ayuda de parámetros y marcas de error",
+        "no",
+        "yes"
+      ],
+      [
+        "Compilar y Ejecutar para todos los lenguajes del menú",
+        "no",
+        "yes"
+      ],
+      [
+        "Depurador de Python con puntos de interrupción y ejecución paso a paso",
+        "no",
+        "yes"
+      ],
+      [
+        "Comprobaciones integradas para JSON, XML, YAML, TOML, HTML y CSS",
+        "no",
+        "yes"
+      ],
+      [
+        "SQL en Databricks, Snowflake, SQLite, Excel y CSV",
+        "no",
+        "yes"
+      ],
+      [
+        "GitHub: explorar, clonar, confirmar, enviar, pull requests",
+        "no",
+        "yes"
+      ],
+      [
+        "Asistente de IA que ve tu archivo",
+        "no",
+        "yes"
+      ],
+      [
+        "Guía de J++ con capturas y todos los atajos",
+        "no",
+        "yes"
+      ]
+    ],
+    "yes": "Incluido",
+    "no": "No está en Lite",
+    "note": "La versión del App Store funciona en el entorno aislado de Apple, así que Compilar y Ejecutar usan las herramientas que vienen con macOS y Xcode. Puedes tener las dos versiones instaladas a la vez."
+  },
+  "ipad": {
+    "eyebrow": "Próximamente",
+    "title": "J++ llega al iPad.",
+    "text": "El próximo lanzamiento trae J++ al iPad: el mismo motor de edición que en el Mac, hecho a medida para el tacto, el teclado y la app Archivos.",
+    "badge": "Planeado para el próximo lanzamiento · los detalles pueden cambiar",
+    "items": [
+      {
+        "title": "El mismo motor",
+        "text": "Resaltado de sintaxis y plegado de código para 95 lenguajes, con el editor Scintilla que impulsa J++ en el Mac."
+      },
+      {
+        "title": "Pestañas que recuerdan",
+        "text": "Abre varios archivos en pestañas. Al volver, cada pestaña sigue ahí, incluso el texto que no habías guardado."
+      },
+      {
+        "title": "Buscar y reemplazar",
+        "text": "Una barra de búsqueda con el número de coincidencias, siguiente y anterior, y Reemplazar o Reemplazar todo."
+      },
+      {
+        "title": "Autocompletado al escribir",
+        "text": "Una lista con las palabras clave del lenguaje y las palabras que ya están en tu archivo, junto al cursor."
+      },
+      {
+        "title": "Funciona con Archivos",
+        "text": "Abre archivos desde la app Archivos y edítalos donde están, incluidos UTF-16 y los finales de línea de Windows o Unix."
+      },
+      {
+        "title": "Hecho para iPad",
+        "text": "Vertical y horizontal, claro y oscuro según el sistema, ajuste de línea, números de línea, tamaño de texto cambiable y atajos de teclado."
+      }
+    ],
+    "note": "Empieza como un editor enfocado. Las herramientas extra de la versión del Mac App Store todavía no están prometidas para el iPad.",
+    "image_alt": "J++ en iPad: un archivo C++ abierto en una pestaña, con los botones Buscar, Nuevo y Más en la barra de herramientas."
   }
 }

@@ -142,6 +142,7 @@ def layout(site, t, lang, page, title, description, body):
     <nav class="nav-links" aria-label="{escape(n['features'])}">
       <a href="{home}#why">{n["why"]}</a>
       <a href="{home}#features">{n["features"]}</a>
+      <a href="{home}#editions">{n["editions"]}</a>
       <a href="privacy.html">{n["privacy"]}</a>
       <a href="support.html">{n["support"]}</a>
     </nav>
@@ -176,6 +177,83 @@ def layout(site, t, lang, page, title, description, body):
 """
 
 
+def store_button(site, label, label_soon, cls):
+    """The Mac App Store button: a link once app_store_url is set, otherwise a quiet "coming soon" label."""
+    url = site.get("app_store_url", "")
+    if url:
+        return f'<a class="{cls}" href="{escape(url)}" rel="noopener">{label}</a>'
+    return f'<span class="btn btn-soon">{label_soon}</span>'
+
+
+def editions_html(site, t, root):
+    e = t["editions"]
+    lite, full = e["lite"], e["full"]
+    download = download_link(site, root)
+    li = lambda items: "".join(f"<li>{x}</li>" for x in items)
+    lite_btn = (f'<a class="btn" href="{download}" download>{lite["button"]}</a>' if download
+                else f'<span class="btn btn-soon">{t["soon"]["soon"]}</span>')
+    full_btn = store_button(site, full["button"], full["button_soon"], "btn btn-ghost")
+    rows = ""
+    for name, a, b in e["rows"]:
+        mark = lambda v: (f'<span class="yes" role="img" aria-label="{escape(e["yes"])}">&#10003;</span>' if v == "yes"
+                          else f'<span class="no" role="img" aria-label="{escape(e["no"])}">&mdash;</span>')
+        rows += f'<tr><th scope="row">{name}</th><td>{mark(a)}</td><td>{mark(b)}</td></tr>\n'
+    return f"""</section>
+
+<section class="section" id="editions">
+  <div class="wrap">
+    <p class="eyebrow reveal">{e["eyebrow"]}</p>
+    <h2 class="reveal">{e["title"]}</h2>
+    <p class="lead reveal">{e["text"]}</p>
+    <div class="editions">
+      <article class="edition reveal">
+        <p class="tag">{lite["tag"]}</p>
+        <h3>{lite["name"]}</h3>
+        <p>{lite["text"]}</p>
+        <ul>{li(lite["items"])}</ul>
+        <div class="actions">{lite_btn}</div>
+      </article>
+      <article class="edition full reveal">
+        <p class="tag">{full["tag"]}</p>
+        <h3>{full["name"]}</h3>
+        <p>{full["text"]}</p>
+        <ul>{li(full["items"])}</ul>
+        <div class="actions">{full_btn}</div>
+      </article>
+    </div>
+    <h3 class="table-title reveal">{e["table_title"]}</h3>
+    <div class="table-wrap reveal">
+      <table class="compare">
+        <thead><tr><th scope="col">{e["head"][0]}</th><th scope="col">{e["head"][1]}</th><th scope="col">{e["head"][2]}</th></tr></thead>
+        <tbody>
+{rows}        </tbody>
+      </table>
+    </div>
+    <p class="note reveal">{e["note"]}</p>
+  </div>
+"""
+
+
+def ipad_html(t, root):
+    p = t["ipad"]
+    iw, ih = image_size("ipad")
+    tiles = "".join(f'      <article class="tile reveal"><h3>{it["title"]}</h3><p>{it["text"]}</p></article>\n' for it in p["items"])
+    return f"""</section>
+
+<section class="section alt" id="ipad">
+  <div class="wrap">
+    <p class="eyebrow reveal">{p["eyebrow"]}</p>
+    <h2 class="reveal">{p["title"]}</h2>
+    <p class="lead reveal">{p["text"]}</p>
+    <p class="badge reveal">{p["badge"]}</p>
+    <div class="ipad-shot reveal">{picture(root, "ipad", p["image_alt"], iw, ih)}</div>
+    <div class="tiles">
+{tiles}    </div>
+    <p class="note reveal">{p["note"]}</p>
+  </div>
+"""
+
+
 def home(site, t, lang):
     root = "" if lang == LANGS[0] else "../"
     download = download_link(site, root)
@@ -195,6 +273,7 @@ def home(site, t, lang):
       {store}
     </div>
     <p class="note reveal">{fill(h["note"], site) if download else soon["note_soon"]}</p>
+    <p class="note reveal"><a href="#editions">{h["store_note"]}</a></p>
   </div>
   <div class="hero-shot reveal">{picture(root, "overview", h["image_alt"], ow, oh, lazy=False)}</div>
 </section>
@@ -241,6 +320,8 @@ def home(site, t, lang):
     <div class="feature-shot reveal">{picture(root, it["image"], it["alt"], iw, ih)}</div>
   </article>
 """
+    out += editions_html(site, t, root)
+    out += ipad_html(t, root)
     out += f"""</section>
 
 <section class="section alt" id="less">
@@ -262,6 +343,7 @@ def home(site, t, lang):
     <p class="lead reveal">{c["text"] if download else fill(soon["cta_text"], site)}</p>
     <div class="actions reveal">{f'<a class="btn btn-large" href="{download}" download>{fill(c["primary"], site)}</a>' if download else f'<a class="btn btn-large" href="{notify}">{soon["notify"]}</a>'}</div>
     <p class="note reveal">{fill(c["note"], site) if download else soon["note_soon"]}</p>
+    <div class="actions reveal">{store_button(site, c["store"], c["store_soon"], "btn btn-ghost")}</div>
     <p class="note reveal">{c["requirements"]}</p>
   </div>
 </section>

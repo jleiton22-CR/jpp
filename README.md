@@ -36,18 +36,21 @@ python3 build.py
 
 Los textos pueden usar `{version}`, `{size}` y `{email}`, que se rellenan con los valores de `site.json`.
 
-### Publicar una versión nueva de J++
+### Publicar una versión nueva de J++ Lite
 
-1. Copia el instalador a `assets/downloads/` (por ejemplo `J++-1.0.0.dmg`) y borra el anterior si lo hay.
-2. En `site.json` cambia `version`, `download_url` (por ejemplo `downloads/J++-1.0.0.dmg`) y `download_size`.
+El sitio ofrece **J++ Lite** (gratis); la versión completa solo se consigue en el Mac App Store, así que su instalador no debe estar en este sitio ni en el repositorio.
+
+1. Copia el instalador Lite a `assets/downloads/` (por ejemplo `J++-Lite-1.0.0.dmg`, desde `dmg/` del proyecto "J++ Lite") y borra el anterior.
+2. En `site.json` cambia `version`, `download_url` (por ejemplo `downloads/J++-Lite-1.0.0.dmg`) y `download_size`.
 3. Genera y publica.
 
 Mientras `download_url` esté vacío, los botones de descarga dicen "Próximamente".
 
 ### Cuando J++ esté en el Mac App Store
 
-Pon la dirección de la app en `app_store_url` de `site.json`. El segundo botón de la portada pasa a ser
-"Consíguelo en el Mac App Store". Las páginas `privacy.html` y `support.html` sirven como "Privacy Policy URL" y
+Pon la dirección de la app en `app_store_url` de `site.json`. Mientras esté vacía, la sección "Lite y Completa"
+y el final de la página muestran "Mac App Store · enlace próximamente"; con la dirección puesta, esos botones
+pasan a ser enlaces al Mac App Store. Las páginas `privacy.html` y `support.html` sirven como "Privacy Policy URL" y
 "Support URL" en App Store Connect.
 
 ### Idiomas
@@ -100,8 +103,10 @@ idioma para los buscadores, `sitemap.xml` y `robots.txt`.
 
 ## Notas
 
-- **Por ahora el sitio no ofrece la descarga**: `download_url` está vacío en `site.json`, los botones dicen
-  "Próximamente" y el instalador no está en el sitio. Para abrir la descarga, sigue "Publicar una versión nueva de J++".
+- **El sitio ofrece solo J++ Lite** (`assets/downloads/J++-Lite-1.0.0.dmg`). La sección "Lite y Completa" compara las
+  dos versiones; si cambian las funciones de Lite, edita `editions` en `content/*.json`.
+- **La sección del iPad** (`ipad` en `content/*.json`) anuncia una versión para el próximo lanzamiento, marcada como
+  "planeada, los detalles pueden cambiar". Su captura (`ipad-light.jpg`, `ipad-dark.jpg`) viene del autotest del proyecto "J++ Ipad".
 - El instalador que genera el proyecto J++ está firmado de forma local (ad hoc), así que en otros Mac macOS muestra
   el aviso de "desarrollador no identificado". La página de soporte explica cómo abrirlo. Para evitar el aviso,
   firma el instalador con un Developer ID de Apple (ver `scripts/make-installer.sh` en el proyecto J++).
