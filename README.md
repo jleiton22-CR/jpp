@@ -1,6 +1,6 @@
-# Sitio web de J++
+# Sitio web de jplus2
 
-Sitio promocional de J++, en inglés y español. Es un sitio estático: HTML, CSS y un script pequeño, sin base de
+Sitio promocional de jplus2, en inglés y español. Es un sitio estático: HTML, CSS y un script pequeño, sin base de
 datos ni programas en el servidor, así que funciona en cualquier servidor web.
 
 ## Qué hay en esta carpeta
@@ -36,16 +36,16 @@ python3 build.py
 
 Los textos pueden usar `{version}`, `{size}` y `{email}`, que se rellenan con los valores de `site.json`.
 
-### Publicar una versión nueva de J++ Lite
+### Publicar una versión nueva de jplus2 Lite
 
-El sitio ofrece **J++ Lite** (gratis); la versión completa solo se consigue en el Mac App Store, así que su instalador no debe estar en este sitio ni en el repositorio.
+El sitio ofrece **jplus2 Lite** (gratis); la versión completa solo se consigue en el Mac App Store, así que su instalador no debe estar en este sitio ni en el repositorio.
 
 El instalador Lite **no está en el sitio**: se aloja como archivo de un Release de GitHub, y GitHub cuenta cada descarga.
 
 1. Crea el Release con el instalador (desde `dmg/` del proyecto "J++ Lite"):
 
 ```bash
-gh release create lite-1.0.1 "/ruta/J++-Lite-1.0.1.dmg" --repo jleiton22-CR/jpp --title "J++ Lite 1.0.1" --notes "J++ Lite 1.0.1" --latest=false
+gh release create lite-1.0.1 "/ruta/J++-Lite-1.0.1.dmg" --repo jleiton22-CR/jpp --title "jplus2 Lite 1.0.1" --notes "jplus2 Lite 1.0.1" --latest=false
 ```
 
 2. En `site.json` cambia `version`, `download_size`, `download_sha256` y `download_url` a la dirección del archivo
@@ -82,7 +82,7 @@ El sitio puede contar visitas con [GoatCounter](https://www.goatcounter.com): gr
 No cuenta a quien envía "No rastrear", ni cuando abres el sitio en tu Mac con `python3 build.py serve`.
 Para apagarlo, deja `goatcounter_code` vacío y publica de nuevo. Las descargas se siguen contando con `./contador.sh`.
 
-### Cuando J++ esté en el Mac App Store
+### Cuando jplus2 esté en el Mac App Store
 
 Pon la dirección de la app en `app_store_url` de `site.json`. Mientras esté vacía, la sección "Lite y Completa"
 y el final de la página muestran "Mac App Store · enlace próximamente"; con la dirección puesta, esos botones
@@ -134,12 +134,23 @@ rsync -av --delete public/ usuario@servidor:/var/www/jpp/
 - **GitHub Pages, Netlify o Cloudflare Pages:** publica la carpeta `public/`; no necesitan ningún paso de compilación.
 
 Cuando tengas el dominio, escribe su dirección en `base_url` de `site.json` (por ejemplo `https://www.ejemplo.com`)
-y genera de nuevo. Con eso el sitio añade la imagen para compartir en redes (el icono de J++), las etiquetas de
+y genera de nuevo. Con eso el sitio añade la imagen para compartir en redes (el icono de jplus2), las etiquetas de
 idioma para los buscadores, `sitemap.xml` y `robots.txt`.
+
+## Marca (jplus2)
+
+El producto se llama **jplus2** (en minúsculas, igual que la app de macOS) y su icono es la J con "+" sobre un "2". El nombre sale
+de `app_name` en `site.json` y de los textos de `content/*.json`. Los iconos del sitio (`assets/img/icon-*.png`, `favicon.png`,
+`apple-touch-icon.png`, `og.png` y `favicon.ico`) se generan de `appstore/icon/icon-light-1024.png` e `icon-dark-1024.png` del proyecto de la app.
+
+**Pendiente cuando se reconstruya Lite con la marca nueva:** hoy el instalador Lite todavía se llama "J++ Lite" por dentro (archivo
+`J++-Lite-1.0.0.dmg`, app "J++ Lite" y su icono viejo), así que los pasos de instalación de `thanks.html` y `support.html`
+citan esos nombres reales. Al publicar el nuevo instalador, cambia en `content/*.json` las frases que dicen "J++ Lite" y
+"J++-Lite" (están en `thanks.steps`, `thanks`, `support_page` y en `build.py`, en el comando `shasum`).
 
 ## Notas
 
-- **El sitio ofrece solo J++ Lite** (Release `lite-1.0.0` de GitHub, enlazado desde `site.json`). La sección "Lite y Completa" compara las
+- **El sitio ofrece solo jplus2 Lite** (Release `lite-1.0.0` de GitHub, enlazado desde `site.json`). La sección "Lite y Completa" compara las
   dos versiones; si cambian las funciones de Lite, edita `editions` en `content/*.json`.
 - **La sección del iPad** (`ipad` en `content/*.json`) anuncia una versión para el próximo lanzamiento, marcada como
   "planeada, los detalles pueden cambiar". Su captura (`ipad-light.jpg`, `ipad-dark.jpg`) viene del autotest del proyecto "J++ Ipad".
@@ -148,5 +159,5 @@ idioma para los buscadores, `sitemap.xml` y `robots.txt`.
   firma el instalador con un Developer ID de Apple (ver `scripts/make-installer.sh` en el proyecto J++).
 - El sitio no usa cookies, analíticas ni scripts de terceros, y así lo dice la política de privacidad. Si añades
   alguno, actualiza `privacy_page` en los dos archivos de `content/`.
-- Las capturas vienen de `help/images/` del proyecto J++. A las que traían marcadores numerados de la guía se les
+- Las capturas vienen de `help/images/` del proyecto jplus2. A las que traían marcadores numerados de la guía se les
   quitaron los marcadores.

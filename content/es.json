@@ -2,11 +2,11 @@
   "lang": "es",
   "lang_name": "Español",
   "meta": {
-    "title": "J++ — Un editor de código nativo para Mac",
-    "description": "J++ es un editor de código nativo para macOS. Descarga J++ Lite gratis, o consigue el J++ completo en el Mac App Store con SQL, GitHub y asistente de IA."
+    "title": "jplus2 — Un editor de código nativo para Mac",
+    "description": "jplus2 es un editor de código nativo para macOS. Descarga jplus2 Lite gratis, o consigue el jplus2 completo en el Mac App Store con SQL, GitHub y asistente de IA."
   },
   "nav": {
-    "why": "Por qué J++",
+    "why": "Por qué jplus2",
     "features": "Funciones",
     "privacy": "Privacidad",
     "support": "Soporte",
@@ -22,13 +22,13 @@
   "hero": {
     "eyebrow": "Versión {version} para macOS",
     "title": "Todo lo que rodea a tu código. <span class=\"grad\">Nada que estorbe.</span>",
-    "text": "J++ es un editor de código rápido y nativo para Mac. Descarga la Lite gratis para escribir en 95 lenguajes, o consigue el J++ completo para además ejecutar y depurar tu código, consultar tus datos con SQL, subir a GitHub y preguntar a un asistente de IA.",
-    "primary": "Descargar J++ Lite — gratis",
+    "text": "jplus2 es un editor de código rápido y nativo para Mac. Descarga la Lite gratis para escribir en 95 lenguajes, o consigue el jplus2 completo para además ejecutar y depurar tu código, consultar tus datos con SQL, subir a GitHub y preguntar a un asistente de IA.",
+    "primary": "Descargar jplus2 Lite — gratis",
     "secondary": "Mira lo que hace",
     "app_store": "Versión completa en el Mac App Store",
     "note": "Gratis · {size} · macOS 12 o posterior · Apple Silicon e Intel",
-    "image_alt": "La ventana de J++: un explorador de archivos a la izquierda, pestañas y un archivo de Python con resaltado de sintaxis.",
-    "store_note": "¿Quieres todo lo de esta página? El J++ completo viene en camino al Mac App Store."
+    "image_alt": "La ventana de jplus2: un explorador de archivos a la izquierda, pestañas y un archivo de Python con resaltado de sintaxis.",
+    "store_note": "¿Quieres todo lo de esta página? El jplus2 completo viene en camino al Mac App Store."
   },
   "stats": [
     {
@@ -49,9 +49,9 @@
     }
   ],
   "why": {
-    "eyebrow": "Por qué J++",
+    "eyebrow": "Por qué jplus2",
     "title": "Lo que lo hace diferente.",
-    "text": "La mayoría de los editores empiezan vacíos y te piden armar el resto. J++ empieza completo, y está hecho para Mac y para nada más.",
+    "text": "La mayoría de los editores empiezan vacíos y te piden armar el resto. jplus2 empieza completo, y está hecho para Mac y para nada más.",
     "items": [
       {
         "icon": "native",
@@ -71,7 +71,7 @@
       {
         "icon": "ai",
         "title": "IA en tus términos",
-        "text": "Conecta tu propia clave de la API de Claude, cualquier servicio compatible con OpenAI o un modelo que corre en tu Mac. J++ no tiene suscripción, y tu código se envía solo cuando tú lo pides."
+        "text": "Conecta tu propia clave de la API de Claude, cualquier servicio compatible con OpenAI o un modelo que corre en tu Mac. jplus2 no tiene suscripción, y tu código se envía solo cuando tú lo pides."
       },
       {
         "icon": "lock",
@@ -93,7 +93,7 @@
         "id": "edit",
         "eyebrow": "Editar",
         "title": "Un editor que te sigue el ritmo.",
-        "text": "El motor de edición es Scintilla, conocido por su rapidez con archivos grandes. A su alrededor, J++ añade las herramientas que usas todo el día.",
+        "text": "El motor de edición es Scintilla, conocido por su rapidez con archivos grandes. A su alrededor, jplus2 añade las herramientas que usas todo el día.",
         "bullets": [
           "Resaltado de sintaxis y plegado de código para 95 lenguajes",
           "Cursores múltiples, edición en columna, macros y marcadores",
@@ -103,14 +103,14 @@
           "Restauración de la sesión que conserva hasta el texto sin guardar"
         ],
         "image": "overview",
-        "alt": "El editor de J++ con el explorador lateral y un archivo de Python.",
+        "alt": "El editor de jplus2 con el explorador lateral y un archivo de Python.",
         "edition": "both"
       },
       {
         "id": "goto",
         "eyebrow": "Ir a cualquier cosa",
         "title": "Escribe unas letras. Ya estás ahí.",
-        "text": "Pulsa ⌘P y escribe. J++ encuentra un archivo con unas pocas de sus letras en orden, así que <code>mpy</code> encuentra <code>src/main.py</code>, y <code>nombre:42</code> lo abre en la línea 42.",
+        "text": "Pulsa ⌘P y escribe. jplus2 encuentra un archivo con unas pocas de sus letras en orden, así que <code>mpy</code> encuentra <code>src/main.py</code>, y <code>nombre:42</code> lo abre en la línea 42.",
         "bullets": [
           "En el mismo panel, <code>@</code> muestra los símbolos del archivo, <code>:</code> va a una línea y <code>#</code> busca texto",
           "La paleta de comandos (⇧⌘P) ejecuta cualquier comando de los menús por su nombre, y muestra dónde está y su atajo",
@@ -128,7 +128,7 @@
         "text": "Autocompletado mientras escribes, ayuda de parámetros, descripciones al dejar el puntero sobre un nombre y subrayado de errores y advertencias.",
         "bullets": [
           "C, C++, Objective-C y Swift funcionan de inmediato, con los servidores de lenguaje que trae Xcode",
-          "Python funciona sin ningún servidor: J++ lee tu archivo y tus módulos instalados",
+          "Python funciona sin ningún servidor: jplus2 lee tu archivo y tus módulos instalados",
           "Go, Rust, TypeScript, Java, Ruby, Lua y más se usan cuando sus servidores están en tu Mac"
         ],
         "image": "intellisense-complete",
@@ -183,7 +183,7 @@
         "id": "github",
         "eyebrow": "GitHub",
         "title": "De explorar a fusionar, sin salir.",
-        "text": "Conecta tu cuenta y J++ muestra tus repositorios. La barra de estado indica la rama, lo que hay por enviar o recibir y cuántos archivos cambiaron.",
+        "text": "Conecta tu cuenta y jplus2 muestra tus repositorios. La barra de estado indica la rama, lo que hay por enviar o recibir y cuántos archivos cambiaron.",
         "bullets": [
           "Explora las carpetas y los archivos de tus repositorios sin clonarlos",
           "Crea un pull request y fusiónalo con merge, squash o rebase",
@@ -198,7 +198,7 @@
     ]
   },
   "less": {
-    "title": "Lo que no vas a encontrar en J++.",
+    "title": "Lo que no vas a encontrar en jplus2.",
     "items": [
       {
         "title": "Sin extensiones",
@@ -206,7 +206,7 @@
       },
       {
         "title": "Sin cuenta",
-        "text": "Nunca inicias sesión en J++. No hay nada que crear."
+        "text": "Nunca inicias sesión en jplus2. No hay nada que crear."
       },
       {
         "title": "Sin suscripción",
@@ -214,57 +214,57 @@
       },
       {
         "title": "Sin telemetría",
-        "text": "J++ no te mide ni envía nada a su autor."
+        "text": "jplus2 no te mide ni envía nada a su autor."
       }
     ]
   },
   "guide": {
     "title": "Una guía para cada función, en español e inglés.",
-    "text": "Help ▸ J++ Guide describe cada función paso a paso, con capturas en claro y oscuro, y una tabla con todos los atajos de teclado."
+    "text": "Help ▸ jplus2 Guide describe cada función paso a paso, con capturas en claro y oscuro, y una tabla con todos los atajos de teclado."
   },
   "cta": {
     "title": "Empieza gratis. Pasa a la completa cuando quieras.",
-    "text": "Descarga J++ Lite hoy, o consigue el J++ completo en el Mac App Store.",
-    "primary": "Descargar J++ Lite {version}",
+    "text": "Descarga jplus2 Lite hoy, o consigue el jplus2 completo en el Mac App Store.",
+    "primary": "Descargar jplus2 Lite {version}",
     "note": "Gratis · macOS 12 o posterior · Apple Silicon e Intel · {size}",
     "requirements": "En la versión completa, Compilar, Ejecutar y Git usan las herramientas de desarrollo de Apple. Instala Xcode, o sus herramientas de línea de comandos, para usarlas.",
-    "store": "El J++ completo llega al Mac App Store",
+    "store": "El jplus2 completo llega al Mac App Store",
     "store_soon": "Versión completa: Mac App Store, próximamente"
   },
   "footer": {
     "privacy": "Política de privacidad",
     "support": "Soporte",
     "contact": "Contacto",
-    "donate": "Apoya a J++ con una donación",
+    "donate": "Apoya a jplus2 con una donación",
     "rights": "Todos los derechos reservados.",
     "credits": "Scintilla y Lexilla son © Neil Hodgson y se usan bajo su propia licencia. Mac, macOS y Xcode son marcas comerciales de Apple Inc.",
     "nav_label": "Enlaces del pie"
   },
   "privacy_page": {
     "title": "Política de privacidad",
-    "description": "J++ no recopila ningún dato sobre ti.",
+    "description": "jplus2 no recopila ningún dato sobre ti.",
     "updated": "Última actualización: 13 de noviembre de 2026",
-    "intro": "J++ es un editor de código para Mac creado por Jason Leiton. No recopila ningún dato sobre ti.",
+    "intro": "jplus2 es un editor de código para Mac creado por Jason Leiton. No recopila ningún dato sobre ti.",
     "sections": [
       {
-        "title": "Lo que J++ no hace",
-        "body": "<p>J++ no tiene cuentas, analíticas, publicidad ni rastreo. No envía tus archivos, tu código ni información sobre cómo usas la app al desarrollador ni a nadie más.</p>"
+        "title": "Lo que jplus2 no hace",
+        "body": "<p>jplus2 no tiene cuentas, analíticas, publicidad ni rastreo. No envía tus archivos, tu código ni información sobre cómo usas la app al desarrollador ni a nadie más.</p>"
       },
       {
         "title": "Tus archivos",
-        "body": "<p>J++ abre solo los archivos y carpetas que tú eliges. Se quedan en tu Mac. Para reabrir tu sesión anterior, J++ guarda una lista de esos archivos, y una copia del texto sin guardar, en su propia carpeta privada en tu Mac.</p>"
+        "body": "<p>jplus2 abre solo los archivos y carpetas que tú eliges. Se quedan en tu Mac. Para reabrir tu sesión anterior, jplus2 guarda una lista de esos archivos, y una copia del texto sin guardar, en su propia carpeta privada en tu Mac.</p>"
       },
       {
-        "title": "J++ Lite",
-        "body": "<p>J++ Lite no tiene funciones de red. Nunca se conecta a internet por sí sola; el menú Ayuda solo abre este sitio web, un mensaje de correo o la página de donaciones en tu propio navegador cuando tú los eliges.</p>"
+        "title": "jplus2 Lite",
+        "body": "<p>jplus2 Lite no tiene funciones de red. Nunca se conecta a internet por sí sola; el menú Ayuda solo abre este sitio web, un mensaje de correo o la página de donaciones en tu propio navegador cuando tú los eliges.</p>"
       },
       {
         "title": "Servicios que conectas",
-        "body": "<p>J++ se comunica con otros servicios solo cuando tú los configuras y pides algo:</p><ul><li><strong>Bases de datos.</strong> Si añades una conexión a una base de datos, tus consultas van directamente de tu Mac al servidor que indicaste.</li><li><strong>GitHub.</strong> Si conectas una cuenta de GitHub, J++ la usa para mostrar tus repositorios con sus carpetas y archivos, para crear y fusionar pull requests, para clonar, enviar y recibir cambios, y para crear gists cuando lo pides. Los archivos que abres desde GitHub se guardan como copias temporales en tu Mac.</li><li><strong>Modelos de IA.</strong> Si conectas un modelo, la pregunta que escribes, y el archivo y la selección que elegiste incluir, se envían al proveedor de ese modelo (por ejemplo, Anthropic) cuando pulsas Enviar. A lo que ese proveedor recibe se aplican sus propios términos y su política de privacidad.</li></ul><p>Los datos de conexión se guardan en tu Mac, y las contraseñas, los tokens y las claves de API se guardan en el Llavero de macOS. Nada de esto pasa por el desarrollador de J++.</p>"
+        "body": "<p>jplus2 se comunica con otros servicios solo cuando tú los configuras y pides algo:</p><ul><li><strong>Bases de datos.</strong> Si añades una conexión a una base de datos, tus consultas van directamente de tu Mac al servidor que indicaste.</li><li><strong>GitHub.</strong> Si conectas una cuenta de GitHub, jplus2 la usa para mostrar tus repositorios con sus carpetas y archivos, para crear y fusionar pull requests, para clonar, enviar y recibir cambios, y para crear gists cuando lo pides. Los archivos que abres desde GitHub se guardan como copias temporales en tu Mac.</li><li><strong>Modelos de IA.</strong> Si conectas un modelo, la pregunta que escribes, y el archivo y la selección que elegiste incluir, se envían al proveedor de ese modelo (por ejemplo, Anthropic) cuando pulsas Enviar. A lo que ese proveedor recibe se aplican sus propios términos y su política de privacidad.</li></ul><p>Los datos de conexión se guardan en tu Mac, y las contraseñas, los tokens y las claves de API se guardan en el Llavero de macOS. Nada de esto pasa por el desarrollador de jplus2.</p>"
       },
       {
         "title": "Este sitio web",
-        "body": "<p>Este sitio web no usa cookies, analíticas ni scripts de terceros. El idioma que eliges con el interruptor EN | ES se recuerda en tu propio navegador y no se envía a ningún lado. El instalador gratuito de J++ Lite está alojado en GitHub, que cuenta cuántas veces se descarga; el autor solo ve ese total. Mientras lo descargas se aplica la declaración de privacidad de GitHub.</p>"
+        "body": "<p>Este sitio web no usa cookies, analíticas ni scripts de terceros. El idioma que eliges con el interruptor EN | ES se recuerda en tu propio navegador y no se envía a ningún lado. El instalador gratuito de jplus2 Lite está alojado en GitHub, que cuenta cuántas veces se descarga; el autor solo ve ese total. Mientras lo descargas se aplica la declaración de privacidad de GitHub.</p>"
       },
       {
         "title": "Cambios",
@@ -280,25 +280,25 @@
   },
   "support_page": {
     "title": "Soporte",
-    "description": "Respuestas a las preguntas más comunes sobre J++.",
+    "description": "Respuestas a las preguntas más comunes sobre jplus2.",
     "updated": "",
-    "intro": "Esta página responde las preguntas más comunes. La guía completa está dentro de la app: elige Help ▸ J++ Guide.",
+    "intro": "Esta página responde las preguntas más comunes. La guía completa está dentro de la app: elige Help ▸ jplus2 Guide.",
     "sections": [
       {
-        "title": "Instalar J++",
-        "body": "<p>Abre la imagen de disco descargada y arrastra <strong>J++ Lite</strong> a tu carpeta Aplicaciones. J++ necesita macOS 12 o posterior y funciona en Mac con Apple Silicon e Intel.</p><p>Si macOS dice que no puede comprobar la app la primera vez que la abres, abre <strong>Ajustes del Sistema ▸ Privacidad y seguridad</strong>, busca el mensaje sobre J++ Lite y pulsa <strong>Abrir igualmente</strong>. La versión del Mac App Store no muestra este mensaje.</p>"
+        "title": "Instalar jplus2",
+        "body": "<p>Abre la imagen de disco descargada y arrastra <strong>J++ Lite</strong> a tu carpeta Aplicaciones. jplus2 necesita macOS 12 o posterior y funciona en Mac con Apple Silicon e Intel.</p><p>Si macOS dice que no puede comprobar la app la primera vez que la abres, abre <strong>Ajustes del Sistema ▸ Privacidad y seguridad</strong>, busca el mensaje sobre J++ Lite y pulsa <strong>Abrir igualmente</strong>. La versión del Mac App Store no muestra este mensaje.</p>"
       },
       {
-        "title": "¿J++ Lite o la versión completa?",
-        "body": "<p><strong>J++ Lite</strong> es gratis y se puede descargar desde este sitio web. Es un editor: resaltado de sintaxis para 95 lenguajes, pestañas, buscar y reemplazar, explorador de archivos, Ir a cualquier cosa, paleta de comandos y minimapa.</p><p>El <strong>J++ completo</strong> está disponible en el Mac App Store. Añade IntelliSense, Compilar y Ejecutar, el depurador de Python, SQL, GitHub, el asistente de IA y la guía integrada. Puedes tener las dos instaladas.</p>"
+        "title": "¿jplus2 Lite o la versión completa?",
+        "body": "<p><strong>jplus2 Lite</strong> es gratis y se puede descargar desde este sitio web. Es un editor: resaltado de sintaxis para 95 lenguajes, pestañas, buscar y reemplazar, explorador de archivos, Ir a cualquier cosa, paleta de comandos y minimapa.</p><p>El <strong>jplus2 completo</strong> está disponible en el Mac App Store. Añade IntelliSense, Compilar y Ejecutar, el depurador de Python, SQL, GitHub, el asistente de IA y la guía integrada. Puedes tener las dos instaladas.</p>"
       },
       {
-        "title": "J++ para iPad",
+        "title": "jplus2 para iPad",
         "body": "<p>Una versión para iPad está planeada para el próximo lanzamiento. Empieza como un editor enfocado, con pestañas, buscar y reemplazar, autocompletado y compatibilidad con Archivos. Los detalles pueden cambiar antes de publicarla.</p>"
       },
       {
         "title": "Compilar o Ejecutar dice que una herramienta viene con Xcode",
-        "body": "<p>J++ usa las herramientas de desarrollo de Apple para C, C++, Objective-C, Swift, Python y Git. Instala Xcode desde el App Store, o ejecuta <code>xcode-select --install</code> en Terminal, y vuelve a intentarlo.</p>"
+        "body": "<p>jplus2 usa las herramientas de desarrollo de Apple para C, C++, Objective-C, Swift, Python y Git. Instala Xcode desde el App Store, o ejecuta <code>xcode-select --install</code> en Terminal, y vuelve a intentarlo.</p>"
       },
       {
         "title": "Un lenguaje aún no tiene compilador",
@@ -322,7 +322,7 @@
       },
       {
         "title": "Apariencia clara u oscura",
-        "body": "<p>Elige <strong>J++ ▸ Settings ▸ Appearance</strong>: <strong>Match macOS</strong> (el valor por defecto), <strong>Light</strong> o <strong>Dark</strong>. La elección cambia toda la app y los colores del código.</p>"
+        "body": "<p>Elige <strong>jplus2 ▸ Settings ▸ Appearance</strong>: <strong>Match macOS</strong> (el valor por defecto), <strong>Light</strong> o <strong>Dark</strong>. La elección cambia toda la app y los colores del código.</p>"
       },
       {
         "title": "La versión del Mac App Store",
@@ -337,16 +337,16 @@
   "soon": {
     "soon": "Próximamente",
     "note_soon": "Para macOS 12 o posterior · Apple Silicon e Intel",
-    "cta_text": "J++ {version} está casi listo. La descarga estará disponible en esta página.",
+    "cta_text": "jplus2 {version} está casi listo. La descarga estará disponible en esta página.",
     "notify": "Avísame cuando esté listo",
-    "notify_subject": "Avísame cuando J++ esté listo"
+    "notify_subject": "Avísame cuando jplus2 esté listo"
   },
   "editions": {
     "eyebrow": "Lite y Completa",
-    "title": "Dos formas de tener J++.",
-    "text": "J++ Lite es una descarga gratuita desde esta página: un editor ligero y rápido para el texto y el código de todos los días. El J++ completo se obtiene en el Mac App Store, adonde llega pronto, y añade las herramientas que convierten un editor en un taller.",
+    "title": "Dos formas de tener jplus2.",
+    "text": "jplus2 Lite es una descarga gratuita desde esta página: un editor ligero y rápido para el texto y el código de todos los días. El jplus2 completo se obtiene en el Mac App Store, adonde llega pronto, y añade las herramientas que convierten un editor en un taller.",
     "lite": {
-      "name": "J++ Lite",
+      "name": "jplus2 Lite",
       "tag": "Gratis · descarga desde esta página",
       "text": "Todo lo necesario para leer y escribir código, en una descarga de unos 5.6 MB.",
       "items": [
@@ -356,15 +356,15 @@
         "Apariencia clara y oscura que sigue a macOS",
         "Nunca se conecta a una red: no envía nada a ningún sitio"
       ],
-      "button": "Descargar J++ Lite"
+      "button": "Descargar jplus2 Lite"
     },
     "full": {
-      "name": "J++",
+      "name": "jplus2",
       "tag": "Versión completa · Mac App Store",
-      "text": "El J++ completo, con todo lo de Lite y las funciones que siguen.",
+      "text": "El jplus2 completo, con todo lo de Lite y las funciones que siguen.",
       "items": [
         "IntelliSense, ejecutar y depurar, SQL, GitHub y el asistente de IA",
-        "La guía de J++ integrada, en inglés y español",
+        "La guía de jplus2 integrada, en inglés y español",
         "Se instala y se actualiza desde el App Store, sin aviso de «desarrollador no identificado»"
       ],
       "button": "Consíguelo en el Mac App Store",
@@ -433,7 +433,7 @@
         "yes"
       ],
       [
-        "Guía de J++ con capturas y todos los atajos",
+        "Guía de jplus2 con capturas y todos los atajos",
         "no",
         "yes"
       ]
@@ -446,13 +446,13 @@
   },
   "ipad": {
     "eyebrow": "Próximamente",
-    "title": "J++ para iPadOS. Próximamente.",
-    "text": "El próximo lanzamiento trae J++ al iPad: el mismo motor de edición que en el Mac, hecho a medida para el tacto, el teclado y la app Archivos. Estas son las características que tendrá.",
+    "title": "jplus2 para iPadOS. Próximamente.",
+    "text": "El próximo lanzamiento trae jplus2 al iPad: el mismo motor de edición que en el Mac, hecho a medida para el tacto, el teclado y la app Archivos. Estas son las características que tendrá.",
     "badge": "Próximamente",
     "items": [
       {
         "title": "El mismo motor",
-        "text": "Resaltado de sintaxis y plegado de código para 95 lenguajes, con el editor Scintilla que impulsa J++ en el Mac."
+        "text": "Resaltado de sintaxis y plegado de código para 95 lenguajes, con el editor Scintilla que impulsa jplus2 en el Mac."
       },
       {
         "title": "Pestañas que recuerdan",
@@ -476,19 +476,19 @@
       }
     ],
     "note": "Empieza como un editor enfocado. Las herramientas extra de la versión del Mac App Store todavía no están prometidas para iPadOS.",
-    "image_alt": "J++ en iPadOS, próximamente: un archivo C++ abierto en una pestaña, con los botones Buscar, Nuevo y Más en la barra de herramientas.",
+    "image_alt": "jplus2 en iPadOS, próximamente: un archivo C++ abierto en una pestaña, con los botones Buscar, Nuevo y Más en la barra de herramientas.",
     "badge_note": "Planeado para el próximo lanzamiento. Los detalles pueden cambiar antes de publicarlo."
   },
   "notfound": {
     "text": "Esa página no existe. Puede que se haya movido, o que la dirección sea incorrecta.",
-    "home": "Volver a J++"
+    "home": "Volver a jplus2"
   },
   "thanks": {
-    "meta_title": "Gracias por descargar J++ Lite",
-    "meta_desc": "La descarga de J++ Lite está empezando. Instálala en tres pasos.",
-    "title": "Gracias por descargar J++ Lite.",
+    "meta_title": "Gracias por descargar jplus2 Lite",
+    "meta_desc": "La descarga de jplus2 Lite está empezando. Instálala en tres pasos.",
+    "title": "Gracias por descargar jplus2 Lite.",
     "status": "Tu descarga está empezando. Si no pasa nada en unos segundos, usa el botón de abajo.",
-    "button": "Descargar J++ Lite {version}",
+    "button": "Descargar jplus2 Lite {version}",
     "note": "{size} · macOS 12 o posterior · Apple Silicon e Intel",
     "steps_title": "Instálala en tres pasos",
     "steps": [
@@ -511,13 +511,13 @@
     "next_title": "Y ahora qué",
     "next": [
       [
-        "El J++ completo llega al Mac App Store",
+        "El jplus2 completo llega al Mac App Store",
         "SQL, GitHub, el asistente de IA, ejecutar y depurar código y más.",
         "index.html#editions",
         "Ver lo que añade la versión completa"
       ],
       [
-        "J++ para iPadOS llega pronto",
+        "jplus2 para iPadOS llega pronto",
         "El mismo motor de edición, hecho para el tacto, el teclado y la app Archivos.",
         "index.html#ipad",
         "Ver las características de iPadOS"
@@ -529,7 +529,7 @@
         "Abrir Soporte"
       ]
     ],
-    "donate_text": "¿Te gusta J++? Puedes apoyar su desarrollo con una donación.",
+    "donate_text": "¿Te gusta jplus2? Puedes apoyar su desarrollo con una donación.",
     "donate": "Donar con PayPal",
     "back": "Volver a la página principal"
   }

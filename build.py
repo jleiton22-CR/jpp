@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds the J++ website into public/.
+"""Builds the jplus2 website into public/.
 
     python3 build.py           build the site
     python3 build.py serve     build it and preview it at http://localhost:8080
@@ -202,7 +202,7 @@ def layout(site, t, lang, page, title, description, body):
       <nav class="footer-links" aria-label="{escape(f["nav_label"])}">
         <a href="privacy.html">{f["privacy"]}</a>
         <a href="support.html">{f["support"]}</a>
-        <a href="mailto:{site["contact_email"]}?subject=J%2B%2B">{f["contact"]}</a>
+        <a href="mailto:{site["contact_email"]}?subject=jplus2">{f["contact"]}</a>
         {donate}
         <a href="{other_href}" lang="{other}" hreflang="{other}">{other_t["lang_name"]}</a>
       </nav>
@@ -231,7 +231,7 @@ def not_found(site):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>404 — J++</title>
+<title>404 — jplus2</title>
 <meta name="robots" content="noindex">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" type="image/png" href="/img/favicon.png">
@@ -402,7 +402,7 @@ def home(site, t, lang):
   <div class="hero-shot reveal">{picture(root, "overview", h["image_alt"], ow, oh, lazy=False)}</div>
 </section>
 
-<section class="stats" aria-label="J++">
+<section class="stats" aria-label="{site["app_name"]}">
   <div class="wrap stats-grid">
 """
     for s in t["stats"]:
