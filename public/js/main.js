@@ -1,4 +1,4 @@
-// J++ website: a line under the navigation after scrolling, and sections that appear as they come into view.
+// jplus2 website: a line under the navigation after scrolling, and sections that appear as they come into view.
 (function () {
   var root = document.documentElement;
   var nav = document.getElementById("nav");
