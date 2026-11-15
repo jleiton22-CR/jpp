@@ -544,6 +544,8 @@
     "button": "Download jplus2 Lite {version}",
     "after": "Your download is starting. If a new tab opened asking you to confirm your email, that is normal: you can close it whenever you like.",
     "notice": "We use your email only to send occasional jplus2 news, such as when the full version is released. Every message has a one-click unsubscribe link. Details in the <a href=\"privacy.html\">privacy policy</a>.",
-    "noscript": "Continue to the download"
+    "noscript": "Continue to the download",
+    "hint": "Enter your email to turn on the button.",
+    "invalid": "That email does not look right. It should look like name@example.com."
   }
 }

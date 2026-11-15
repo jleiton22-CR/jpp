@@ -544,6 +544,8 @@
     "button": "Descargar jplus2 Lite {version}",
     "after": "Tu descarga está empezando. Si se abrió una pestaña nueva pidiéndote confirmar tu correo, es normal: puedes cerrarla cuando quieras.",
     "notice": "Usamos tu correo solo para enviarte novedades ocasionales de jplus2, como cuando salga la versión completa. Cada mensaje trae un enlace para darte de baja con un clic. Detalles en la <a href=\"privacy.html\">política de privacidad</a>.",
-    "noscript": "Continuar a la descarga"
+    "noscript": "Continuar a la descarga",
+    "hint": "Escribe tu correo para activar el botón.",
+    "invalid": "Ese correo no parece válido. Debe verse como nombre@ejemplo.com."
   }
 }

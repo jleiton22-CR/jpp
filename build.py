@@ -277,21 +277,36 @@ def get_page(site, t, lang):
   {icon_img(root, 96, "cta-icon")}
   <h1>{k["title"]}</h1>
   <p class="lead">{fill(k["lead"], site)}</p>
-  <form class="emailform" id="emailform" method="post" action="{action}" target="_blank" rel="noopener">
+  <form class="emailform" id="emailform" method="post" action="{action}" target="_blank" rel="noopener" novalidate>
     <label for="email">{k["label"]}</label>
-    <input id="email" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="{escape(k["placeholder"])}">
+    <input id="email" name="email" type="email" required autocomplete="email" inputmode="email" spellcheck="false" autocapitalize="off"
+      pattern="[^@\\s]+@[^@\\s]+\\.[^@\\s]{{2,}}" aria-describedby="hint" placeholder="{escape(k["placeholder"])}">
     <input type="hidden" name="embed" value="1">
     <input type="hidden" name="tag" value="download-lite">
-    <button class="btn btn-large" type="submit">{fill(k["button"], site)}</button>
+    <p class="hint" id="hint" role="status" aria-live="polite" data-empty="{escape(k["hint"])}" data-invalid="{escape(k["invalid"])}"></p>
+    <button class="btn btn-large" id="send" type="submit" aria-describedby="hint">{fill(k["button"], site)}</button>
   </form>
   <p class="note" id="after" hidden>{k["after"]}</p>
   <p class="note">{k["notice"]}</p>
   <noscript><p class="note"><a href="thanks.html">{k["noscript"]}</a></p></noscript>
 </section>
-<script>(function(){{var f=document.getElementById("emailform");if(!f)return;f.addEventListener("submit",function(){{
-try{{sessionStorage.removeItem("jpp-dl")}}catch(e){{}}
-document.getElementById("after").hidden=false;f.querySelector("button").disabled=true;
-setTimeout(function(){{location.href="thanks.html"}},1200)}})}})();</script>
+<script>(function(){{
+var f=document.getElementById("emailform"),i=document.getElementById("email"),b=document.getElementById("send"),h=document.getElementById("hint");
+if(!f||!i||!b)return;
+var re=/^[^@\\s]+@[^@\\s]+\\.[^@\\s]{{2,}}$/;
+function ok(){{return re.test(i.value.trim())}}
+function sync(){{var v=i.value.trim(),good=ok();b.disabled=!good;b.setAttribute("aria-disabled",good?"false":"true");
+h.textContent=good?"":(v?h.dataset.invalid:h.dataset.empty);i.setAttribute("aria-invalid",(!good&&v)?"true":"false")}}
+["input","change","keyup","blur","paste"].forEach(function(n){{i.addEventListener(n,sync)}});
+var last=null;function watch(){{if(i.value!==last){{last=i.value;sync()}}}}
+watch();setInterval(watch,400);   // some browsers fill the field (autofill, password managers) without firing an event
+f.addEventListener("submit",function(e){{
+if(!ok()){{e.preventDefault();sync();i.focus();return}}
+i.value=i.value.trim();
+try{{sessionStorage.removeItem("jpp-dl")}}catch(x){{}}
+document.getElementById("after").hidden=false;b.disabled=true;
+setTimeout(function(){{location.href="thanks.html"}},1200)}});
+}})();</script>
 """
     return layout(site, t, lang, "get", k["meta_title"], k["meta_desc"], body)
 
