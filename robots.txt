@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /thanks.html
+Disallow: /es/thanks.html
 Sitemap: https://jplus2.com/sitemap.xml
