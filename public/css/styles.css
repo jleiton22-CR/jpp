@@ -9,6 +9,7 @@
   --accent: #4257f5;
   --accent-2: #6a3de8;
   --warm: #ef6f6c;
+  --eyebrow: #c23b37;
   --btn-text: #ffffff;
   --nav-bg: rgba(255, 255, 255, 0.72);
   --shadow: 0 30px 80px -20px rgba(30, 30, 80, 0.28), 0 0 0 1px rgba(0, 0, 0, 0.08);
@@ -28,6 +29,7 @@
     --accent: #7d8cff;
     --accent-2: #a98bff;
     --warm: #ff8f7d;
+    --eyebrow: #ff8f7d;
     --btn-text: #0b0b12;
     --nav-bg: rgba(0, 0, 0, 0.7);
     --shadow: 0 30px 90px -20px rgba(90, 100, 255, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.14);
@@ -96,7 +98,7 @@ h1, h2, h3 { text-wrap: balance; }
 .btn-ghost:hover { filter: none; background: color-mix(in srgb, var(--accent) 10%, transparent); }
 
 /* type */
-.eyebrow { color: var(--warm); font-size: 15px; font-weight: 600; letter-spacing: 0.01em; margin-bottom: 12px; }
+.eyebrow { color: var(--eyebrow); font-size: 15px; font-weight: 600; letter-spacing: 0.01em; margin-bottom: 12px; }
 h1 { font-size: clamp(40px, 7.2vw, 84px); line-height: 1.04; font-weight: 700; letter-spacing: -0.035em; }
 h2 { font-size: clamp(32px, 5vw, 56px); line-height: 1.08; font-weight: 700; letter-spacing: -0.03em; }
 h3 { font-size: 21px; line-height: 1.2; font-weight: 600; letter-spacing: -0.01em; }
@@ -235,3 +237,36 @@ code { font-family: var(--mono); font-size: 0.9em; background: var(--bg-alt); pa
 
 .brand, .brand picture, .brand-icon { flex-shrink: 0; }
 @media (max-width: 400px) { .nav-end { gap: 8px; } .lang-toggle a { padding-left: 8px; padding-right: 8px; } }
+
+/* Accessibility: skip link, larger touch targets, labelled chips */
+.skip { position: absolute; left: 16px; top: -64px; z-index: 100; background: var(--accent); color: var(--btn-text); padding: 10px 18px; border-radius: 999px; font-weight: 600; }
+.skip:focus { top: 12px; text-decoration: none; }
+.nav-links a { display: inline-block; padding: 6px 2px; }
+.footer-links a { display: inline-block; padding: 6px 0; }
+.lang-toggle a, .lang-toggle span { display: inline-block; padding: 8px 12px; }
+.chip { display: inline-block; vertical-align: 2px; margin-left: 8px; padding: 2px 10px; border-radius: 999px; background: var(--bg-alt); color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: 0.01em; }
+.chip-full { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1px currentColor; }
+.notfound { min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 48px 0; }
+.notfound h1 { font-size: 96px; margin: 8px 0 12px; }
+.notfound .actions { margin-top: 28px; }
+
+/* Menu button and drop-down on small screens */
+.nav-toggle { display: none; width: 44px; height: 44px; border: 0; background: transparent; border-radius: 999px; cursor: pointer; position: relative; color: var(--text); }
+.nav-toggle span, .nav-toggle span::before, .nav-toggle span::after { content: ""; position: absolute; left: 13px; right: 13px; height: 2px; border-radius: 2px; background: currentColor; transition: transform 0.2s, opacity 0.2s; }
+.nav-toggle span { top: 21px; }
+.nav-toggle span::before { left: 0; right: 0; top: -6px; }
+.nav-toggle span::after { left: 0; right: 0; top: 6px; }
+.nav.open .nav-toggle span { background: transparent; }
+.nav.open .nav-toggle span::before { top: 0; transform: rotate(45deg); }
+.nav.open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
+.menu-only { display: none !important; }
+@media (max-width: 900px) {
+  .nav-js .nav-toggle { display: block; }
+  .nav-js .nav-links { display: none; }
+  .nav-js .nav.open .nav-links { display: flex; flex-direction: column; gap: 0; position: absolute; left: 0; right: 0; top: 100%; margin: 0; padding: 8px 16px 16px; background: var(--bg); border-bottom: 1px solid var(--line); box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.3); }
+  .nav-js .nav.open .nav-links a { font-size: 17px; opacity: 1; padding: 14px 4px; border-bottom: 1px solid var(--line); }
+  .nav-js .nav.open .nav-links a.menu-only { display: block !important; margin-top: 14px; border: 0; text-align: center; background: var(--accent); color: var(--btn-text); border-radius: 999px; font-weight: 600; }
+  html:not(.nav-js) .nav-in { flex-wrap: wrap; }
+  html:not(.nav-js) .nav-links { display: flex; order: 3; width: 100%; margin: 0; padding: 6px 0; gap: 16px; overflow-x: auto; }
+}
+@media (max-width: 480px) { .nav-end .btn:not(.btn-donate) { display: none; } }

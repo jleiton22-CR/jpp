@@ -10,6 +10,8 @@ style, script, images and downloads in assets/. Only Python 3 is needed.
 import functools
 import http.server
 import json
+import re
+import datetime
 import sys
 from html import escape
 from pathlib import Path
@@ -53,7 +55,10 @@ def lang_dir(lang):
 def picture(root, name, alt, w, h, lazy=True, cls=""):
     """A screenshot that follows the light or dark appearance of the visitor's system."""
     loading = ' loading="lazy" decoding="async"' if lazy else ' fetchpriority="high"'
-    return (f'<picture><source srcset="{root}img/{name}-dark.jpg" media="(prefers-color-scheme: dark)">'
+    dark = "(prefers-color-scheme: dark)"
+    return (f'<picture><source srcset="{root}img/{name}-dark.webp" type="image/webp" media="{dark}">'
+            f'<source srcset="{root}img/{name}-dark.jpg" media="{dark}">'
+            f'<source srcset="{root}img/{name}-light.webp" type="image/webp">'
             f'<img class="shot {cls}" src="{root}img/{name}-light.jpg" alt="{escape(alt)}" width="{w}" height="{h}"{loading}></picture>')
 
 
@@ -107,11 +112,30 @@ def layout(site, t, lang, page, title, description, body):
     base = site.get("base_url", "").rstrip("/")
     seo = ""
     if base:
+        locale = {"en": "en_US", "es": "es_ES"}
+        url = f'{base}/{lang_dir(lang)}{here if page != "home" else ""}'
+        seo += f'<meta property="og:url" content="{url}">\n<meta property="og:site_name" content="{escape(site["app_name"])}">\n'
+        seo += f'<meta property="og:locale" content="{locale.get(lang, lang)}">\n'
+        seo += "".join(f'<meta property="og:locale:alternate" content="{locale.get(l, l)}">\n' for l in LANGS if l != lang)
         seo += f'<link rel="canonical" href="{base}/{lang_dir(lang)}{here if page != "home" else ""}">\n'
         for l in LANGS:
             seo += f'<link rel="alternate" hreflang="{l}" href="{base}/{lang_dir(l)}{here if page != "home" else ""}">\n'
         seo += f'<link rel="alternate" hreflang="x-default" href="{base}/{here if page != "home" else ""}">\n'
-        seo += f'<meta property="og:image" content="{base}/img/og.png">\n<meta name="twitter:card" content="summary">\n'
+        seo += (f'<meta property="og:image" content="{base}/img/og.png">\n<meta property="og:image:width" content="1200">\n'
+                f'<meta property="og:image:height" content="630">\n<meta property="og:image:alt" content="{escape(site["app_name"])}">\n'
+                f'<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:title" content="{escape(title)}">\n'
+                f'<meta name="twitter:description" content="{escape(description)}">\n<meta name="twitter:image" content="{base}/img/og.png">\n')
+        if page == "home":
+            ld = {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": site["app_name"] + " Lite",
+                  "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS 12 or later",
+                  "softwareVersion": site["version"], "description": description, "inLanguage": lang,
+                  "url": url, "image": f"{base}/img/og.png",
+                  "author": {"@type": "Person", "name": site["author"]},
+                  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+                  "featureList": [re.sub("<[^>]+>", "", x) for x in t["editions"]["lite"]["items"]]}
+            if site.get("download_url"):
+                ld["downloadUrl"] = site["download_url"] if site["download_url"].startswith("http") else f"{base}/{site['download_url']}"
+            seo += '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + "</script>\n"
     download = download_link(site, root)
     n, f = t["nav"], t["footer"]
     donate_btn = (f'<a class="btn btn-small btn-donate" href="{escape(site["donate_url"])}" target="_blank" rel="noopener" '
@@ -125,6 +149,7 @@ def layout(site, t, lang, page, title, description, body):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add("nav-js")</script>
 {detect}
 <title>{escape(title)}</title>
 <meta name="description" content="{escape(description)}">
@@ -139,21 +164,24 @@ def layout(site, t, lang, page, title, description, body):
 <link rel="stylesheet" href="{root}css/styles.css">
 </head>
 <body class="page-{page}">
+<a class="skip" href="#top">{n["skip"]}</a>
 <header class="nav" id="nav">
   <div class="nav-in">
     <a class="brand" href="{home or '#top'}">{icon_img(root, 28, "brand-icon")}<span>{site["app_name"]}</span></a>
-    <nav class="nav-links" aria-label="{escape(n['features'])}">
+    <nav class="nav-links" id="menu" aria-label="{escape(n['main_label'])}">
       <a href="{home}#why">{n["why"]}</a>
       <a href="{home}#features">{n["features"]}</a>
       <a href="{home}#editions">{n["editions"]}</a>
       <a href="{home}#ipad">{n["ipad"]}</a>
       <a href="privacy.html">{n["privacy"]}</a>
       <a href="support.html">{n["support"]}</a>
+      {f'<a class="menu-only" href="{download}" download>{n["download"]}</a>' if download else ""}
     </nav>
     <div class="nav-end">
       {toggle}
       {donate_btn}
       {nav_button}
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="{escape(n["menu"])}"><span></span></button>
     </div>
   </div>
 </header>
@@ -164,7 +192,7 @@ def layout(site, t, lang, page, title, description, body):
   <div class="wrap">
     <div class="footer-top">
       <a class="brand" href="{home or '#top'}">{icon_img(root, 28, "brand-icon")}<span>{site["app_name"]}</span></a>
-      <nav class="footer-links">
+      <nav class="footer-links" aria-label="{escape(f["nav_label"])}">
         <a href="privacy.html">{f["privacy"]}</a>
         <a href="support.html">{f["support"]}</a>
         <a href="mailto:{site["contact_email"]}?subject=J%2B%2B">{f["contact"]}</a>
@@ -177,6 +205,44 @@ def layout(site, t, lang, page, title, description, body):
   </div>
 </footer>
 <script src="{root}js/main.js" defer></script>
+</body>
+</html>
+"""
+
+
+def chip(t, edition):
+    e = t["editions"]
+    return (f'<span class="chip chip-full">{e["chip_full"]}</span>' if edition == "full"
+            else f'<span class="chip">{e["chip_both"]}</span>')
+
+
+def not_found(site):
+    """404.html: GitHub Pages shows it for any address that does not exist, so everything here is absolute."""
+    en, es = load("content/en.json"), load("content/es.json")
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — J++</title>
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="page-404">
+<main id="top" class="notfound">
+  <div class="wrap">
+    <picture><source srcset="/img/icon-dark.png" media="(prefers-color-scheme: dark)"><img class="hero-icon" src="/img/icon-light.png" alt="" width="96" height="96"></picture>
+    <h1>404</h1>
+    <p class="lead" lang="en">{en["notfound"]["text"]}</p>
+    <p class="lead" lang="es">{es["notfound"]["text"]}</p>
+    <div class="actions">
+      <a class="btn" href="/" lang="en">{en["notfound"]["home"]}</a>
+      <a class="btn btn-ghost" href="/es/" lang="es">{es["notfound"]["home"]}</a>
+    </div>
+  </div>
+</main>
 </body>
 </html>
 """
@@ -318,7 +384,7 @@ def home(site, t, lang):
         cls = "feature" + (" flip" if i % 2 else "") + (" dialog" if it.get("dialog") else "")
         out += f"""  <article class="{cls}" id="{it["id"]}">
     <div class="feature-text reveal">
-      <p class="eyebrow">{it["eyebrow"]}</p>
+      <p class="eyebrow">{it["eyebrow"]} {chip(t, it.get("edition", "both"))}</p>
       <h3>{it["title"]}</h3>
       <p>{it["text"]}</p>
       <ul>{bullets}</ul>
@@ -391,9 +457,11 @@ def build():
         for page in ("privacy", "support"):
             put(d / PAGES[page], article(site, t, lang, page).encode("utf-8"))
         urls += [f"{lang_dir(lang)}", f"{lang_dir(lang)}privacy.html", f"{lang_dir(lang)}support.html"]
+    put(OUT / "404.html", not_found(site).encode("utf-8"))
     base = site.get("base_url", "").rstrip("/")
     if base:
-        items = "".join(f"<url><loc>{base}/{u}</loc></url>\n" for u in urls)
+        today = datetime.date.today().isoformat()
+        items = "".join(f"<url><loc>{base}/{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls)
         put(OUT / "sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{items}</urlset>\n'.encode("utf-8"))
         put(OUT / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n".encode("utf-8"))
     for old in sorted(OUT.rglob("*"), reverse=True):      # whatever is no longer part of the site

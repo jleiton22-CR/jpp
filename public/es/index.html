@@ -3,41 +3,56 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add("nav-js")</script>
 <script>(function(){try{var here='es',store=null,q=/[?&]lang=(en|es)/.exec(location.search);try{store=localStorage.getItem('jpp-lang')}catch(e){}if(q){try{localStorage.setItem('jpp-lang',q[1])}catch(e){}history.replaceState(null,'',location.pathname+location.hash);return}var sys=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase().slice(0,2);var want=store||(sys==='es'?sys:'en');if(want!==here)location.replace('../'+location.hash)}catch(e){}})();</script>
 <title>J++ — Un editor de código nativo para Mac</title>
-<meta name="description" content="J++ es un editor de código nativo para macOS. Descarga J++ Lite gratis, o consigue el J++ completo en el Mac App Store: ejecuta y depura tu código, SQL, GitHub y un asistente de IA. J++ para iPad viene en camino.">
+<meta name="description" content="J++ es un editor de código nativo para macOS. Descarga J++ Lite gratis, o consigue el J++ completo en el Mac App Store con SQL, GitHub y asistente de IA.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:title" content="J++ — Un editor de código nativo para Mac">
-<meta property="og:description" content="J++ es un editor de código nativo para macOS. Descarga J++ Lite gratis, o consigue el J++ completo en el Mac App Store: ejecuta y depura tu código, SQL, GitHub y un asistente de IA. J++ para iPad viene en camino.">
+<meta property="og:description" content="J++ es un editor de código nativo para macOS. Descarga J++ Lite gratis, o consigue el J++ completo en el Mac App Store con SQL, GitHub y asistente de IA.">
+<meta property="og:url" content="https://jplus2.com/es/">
+<meta property="og:site_name" content="J++">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
 <link rel="canonical" href="https://jplus2.com/es/">
 <link rel="alternate" hreflang="en" href="https://jplus2.com/">
 <link rel="alternate" hreflang="es" href="https://jplus2.com/es/">
 <link rel="alternate" hreflang="x-default" href="https://jplus2.com/">
 <meta property="og:image" content="https://jplus2.com/img/og.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="J++">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="J++ — Un editor de código nativo para Mac">
+<meta name="twitter:description" content="J++ es un editor de código nativo para macOS. Descarga J++ Lite gratis, o consigue el J++ completo en el Mac App Store con SQL, GitHub y asistente de IA.">
+<meta name="twitter:image" content="https://jplus2.com/img/og.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "J++ Lite", "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS 12 or later", "softwareVersion": "1.0.0", "description": "J++ es un editor de código nativo para macOS. Descarga J++ Lite gratis, o consigue el J++ completo en el Mac App Store con SQL, GitHub y asistente de IA.", "inLanguage": "es", "url": "https://jplus2.com/es/", "image": "https://jplus2.com/img/og.png", "author": {"@type": "Person", "name": "Jason Leiton"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "featureList": ["Resaltado de sintaxis y plegado para 95 lenguajes", "Pestañas, restauración de la sesión, buscar y reemplazar, varios archivos a la vez", "Explorador de archivos, Ir a cualquier cosa, paleta de comandos y minimapa", "Apariencia clara y oscura que sigue a macOS", "Nunca se conecta a una red: no envía nada a ningún sitio"], "downloadUrl": "https://github.com/jleiton22-CR/jpp/releases/download/lite-1.0.0/J%2B%2B-Lite-1.0.0.dmg"}</script>
 <link rel="icon" type="image/png" href="../img/favicon.png">
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
 <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body class="page-home">
+<a class="skip" href="#top">Saltar al contenido</a>
 <header class="nav" id="nav">
   <div class="nav-in">
     <a class="brand" href="#top"><picture><source srcset="../img/icon-dark.png" media="(prefers-color-scheme: dark)"><img class="brand-icon" src="../img/icon-light.png" alt="" width="28" height="28"></picture><span>J++</span></a>
-    <nav class="nav-links" aria-label="Funciones">
+    <nav class="nav-links" id="menu" aria-label="Principal">
       <a href="#why">Por qué J++</a>
       <a href="#features">Funciones</a>
       <a href="#editions">Lite y Completa</a>
       <a href="#ipad">iPadOS</a>
       <a href="privacy.html">Privacidad</a>
       <a href="support.html">Soporte</a>
+      <a class="menu-only" href="https://github.com/jleiton22-CR/jpp/releases/download/lite-1.0.0/J%2B%2B-Lite-1.0.0.dmg" download>Descargar Lite</a>
     </nav>
     <div class="nav-end">
       <div class="lang-toggle" role="group" aria-label="English / Español"><a href="../?lang=en" lang="en" hreflang="en" title="English" aria-label="English">EN</a><span class="on" aria-current="true" title="Español">ES</span></div>
       <a class="btn btn-small btn-donate" href="https://www.paypal.com/donate/?business=leiton%40live.com&amp;no_recurring=0&amp;item_name=J%2B%2B&amp;currency_code=USD" target="_blank" rel="noopener" aria-label="Donar con PayPal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.3 3 5 6.2 5c2 0 3.4 1.1 4.2 2.4h.2C11.4 6.1 12.800 5 14.8 5 18 5 19.900 8.300 18.500 11.700 16.500 16.400 12 21 12 21z" transform="translate(1 0)" fill="currentColor"/></svg><span>Donar</span></a>
       <a class="btn btn-small" href="https://github.com/jleiton22-CR/jpp/releases/download/lite-1.0.0/J%2B%2B-Lite-1.0.0.dmg" download>Descargar Lite</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menú"><span></span></button>
     </div>
   </div>
 </header>
@@ -47,7 +62,7 @@
     <picture><source srcset="../img/icon-dark.png" media="(prefers-color-scheme: dark)"><img class="hero-icon reveal" src="../img/icon-light.png" alt="J++" width="128" height="128"></picture>
     <p class="eyebrow reveal">Versión 1.0.0 para macOS</p>
     <h1 class="reveal">Todo lo que rodea a tu código. <span class="grad">Nada que estorbe.</span></h1>
-    <p class="lead reveal">J++ es un editor de código rápido y nativo para Mac. Escribe en 95 lenguajes, ejecuta y depura tu código, consulta tus datos con SQL, sube tus cambios a GitHub y pregunta a un asistente de IA, todo en una sola app pequeña.</p>
+    <p class="lead reveal">J++ es un editor de código rápido y nativo para Mac. Descarga la Lite gratis para escribir en 95 lenguajes, o consigue el J++ completo para además ejecutar y depurar tu código, consultar tus datos con SQL, subir a GitHub y preguntar a un asistente de IA.</p>
     <div class="actions reveal">
       <a class="btn" href="https://github.com/jleiton22-CR/jpp/releases/download/lite-1.0.0/J%2B%2B-Lite-1.0.0.dmg" download>Descargar J++ Lite — gratis</a>
       <a class="btn btn-ghost" href="#features">Mira lo que hace</a>
@@ -55,7 +70,7 @@
     <p class="note reveal">Gratis · 5.6 MB · macOS 12 o posterior · Apple Silicon e Intel</p>
     <p class="note reveal"><a href="#editions">¿Quieres todo lo de esta página? El J++ completo viene en camino al Mac App Store.</a></p>
   </div>
-  <div class="hero-shot reveal"><picture><source srcset="../img/overview-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot " src="../img/overview-light.jpg" alt="La ventana de J++: un explorador de archivos a la izquierda, pestañas y un archivo de Python con resaltado de sintaxis." width="1500" height="1001" fetchpriority="high"></picture></div>
+  <div class="hero-shot reveal"><picture><source srcset="../img/overview-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../img/overview-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="../img/overview-light.webp" type="image/webp"><img class="shot " src="../img/overview-light.jpg" alt="La ventana de J++: un explorador de archivos a la izquierda, pestañas y un archivo de Python con resaltado de sintaxis." width="1500" height="1001" fetchpriority="high"></picture></div>
 </section>
 
 <section class="stats" aria-label="J++">
@@ -90,66 +105,66 @@
   </div>
   <article class="feature" id="edit">
     <div class="feature-text reveal">
-      <p class="eyebrow">Editar</p>
+      <p class="eyebrow">Editar <span class="chip">Lite y Completa</span></p>
       <h3>Un editor que te sigue el ritmo.</h3>
       <p>El motor de edición es Scintilla, conocido por su rapidez con archivos grandes. A su alrededor, J++ añade las herramientas que usas todo el día.</p>
       <ul><li>Resaltado de sintaxis y plegado de código para 95 lenguajes</li><li>Cursores múltiples, edición en columna, macros y marcadores</li><li>Buscar, reemplazar y marcar con expresiones regulares en todos los archivos abiertos</li><li>Un explorador de archivos que se actualiza cuando la carpeta cambia</li><li>Una barra de herramientas compacta: los botones de depuración aparecen solo cuando puedes usarlos</li><li>Restauración de la sesión que conserva hasta el texto sin guardar</li></ul>
     </div>
-    <div class="feature-shot reveal"><picture><source srcset="../img/overview-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot " src="../img/overview-light.jpg" alt="El editor de J++ con el explorador lateral y un archivo de Python." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
+    <div class="feature-shot reveal"><picture><source srcset="../img/overview-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../img/overview-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="../img/overview-light.webp" type="image/webp"><img class="shot " src="../img/overview-light.jpg" alt="El editor de J++ con el explorador lateral y un archivo de Python." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
   </article>
   <article class="feature flip dialog" id="goto">
     <div class="feature-text reveal">
-      <p class="eyebrow">Ir a cualquier cosa</p>
+      <p class="eyebrow">Ir a cualquier cosa <span class="chip">Lite y Completa</span></p>
       <h3>Escribe unas letras. Ya estás ahí.</h3>
       <p>Pulsa ⌘P y escribe. J++ encuentra un archivo con unas pocas de sus letras en orden, así que <code>mpy</code> encuentra <code>src/main.py</code>, y <code>nombre:42</code> lo abre en la línea 42.</p>
       <ul><li>En el mismo panel, <code>@</code> muestra los símbolos del archivo, <code>:</code> va a una línea y <code>#</code> busca texto</li><li>La paleta de comandos (⇧⌘P) ejecuta cualquier comando de los menús por su nombre, y muestra dónde está y su atajo</li><li>Un minimapa de todo el archivo junto al editor: haz clic o arrastra sobre él para desplazarte</li></ul>
     </div>
-    <div class="feature-shot reveal"><picture><source srcset="../img/palette-commands-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot " src="../img/palette-commands-light.jpg" alt="La paleta de comandos con los comandos Sort Lines después de escribir «sort lines»." width="1280" height="580" loading="lazy" decoding="async"></picture></div>
+    <div class="feature-shot reveal"><picture><source srcset="../img/palette-commands-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../img/palette-commands-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="../img/palette-commands-light.webp" type="image/webp"><img class="shot " src="../img/palette-commands-light.jpg" alt="La paleta de comandos con los comandos Sort Lines después de escribir «sort lines»." width="1280" height="580" loading="lazy" decoding="async"></picture></div>
   </article>
   <article class="feature" id="intellisense">
     <div class="feature-text reveal">
-      <p class="eyebrow">IntelliSense</p>
+      <p class="eyebrow">IntelliSense <span class="chip chip-full">Solo versión completa</span></p>
       <h3>Conoce tu código.</h3>
       <p>Autocompletado mientras escribes, ayuda de parámetros, descripciones al dejar el puntero sobre un nombre y subrayado de errores y advertencias.</p>
       <ul><li>C, C++, Objective-C y Swift funcionan de inmediato, con los servidores de lenguaje que trae Xcode</li><li>Python funciona sin ningún servidor: J++ lee tu archivo y tus módulos instalados</li><li>Go, Rust, TypeScript, Java, Ruby, Lua y más se usan cuando sus servidores están en tu Mac</li></ul>
     </div>
-    <div class="feature-shot reveal"><picture><source srcset="../img/intellisense-complete-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot " src="../img/intellisense-complete-light.jpg" alt="Una lista de autocompletado con los miembros de un objeto de Python." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
+    <div class="feature-shot reveal"><picture><source srcset="../img/intellisense-complete-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../img/intellisense-complete-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="../img/intellisense-complete-light.webp" type="image/webp"><img class="shot " src="../img/intellisense-complete-light.jpg" alt="Una lista de autocompletado con los miembros de un objeto de Python." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
   </article>
   <article class="feature flip" id="run">
     <div class="feature-text reveal">
-      <p class="eyebrow">Ejecutar y depurar</p>
+      <p class="eyebrow">Ejecutar y depurar <span class="chip chip-full">Solo versión completa</span></p>
       <h3>Pulsa F5. En cualquier lenguaje.</h3>
       <p>Compilar y Ejecutar funcionan con todos los lenguajes del menú. La salida aparece debajo de tu código y, tras un error, el cursor salta a la línea que indica el compilador.</p>
       <ul><li>Un depurador de Python con puntos de interrupción, ejecución paso a paso, las variables del marco y un campo de expresiones</li><li>Comprobaciones integradas para JSON, XML, YAML, TOML, HTML, CSS y más</li><li>Manage Compilers muestra lo que está instalado y descarga lo que falta con Homebrew, npm o pip</li></ul>
     </div>
-    <div class="feature-shot reveal"><picture><source srcset="../img/debug-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot " src="../img/debug-light.jpg" alt="El depurador de Python detenido en una línea, con las variables junto a la salida." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
+    <div class="feature-shot reveal"><picture><source srcset="../img/debug-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../img/debug-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="../img/debug-light.webp" type="image/webp"><img class="shot " src="../img/debug-light.jpg" alt="El depurador de Python detenido en una línea, con las variables junto a la salida." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
   </article>
   <article class="feature" id="sql">
     <div class="feature-text reveal">
-      <p class="eyebrow">Bases de datos</p>
+      <p class="eyebrow">Bases de datos <span class="chip chip-full">Solo versión completa</span></p>
       <h3>SQL, justo al lado de tu código.</h3>
       <p>Guarda tus conexiones una vez y pulsa ⌘↩ en una pestaña SQL. Los resultados llegan a una tabla que puedes copiar o exportar como CSV.</p>
       <ul><li>Databricks y Snowflake mediante sus propias API de SQL</li><li>PostgreSQL, MySQL, MariaDB, SQL Server y Azure SQL</li><li>Archivos SQLite, sin instalar nada</li><li>Libros de Excel y archivos CSV: cada hoja se convierte en una tabla</li></ul>
     </div>
-    <div class="feature-shot reveal"><picture><source srcset="../img/excel-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot " src="../img/excel-light.jpg" alt="Una consulta SQL sobre un libro de Excel, con los resultados en una tabla bajo el código." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
+    <div class="feature-shot reveal"><picture><source srcset="../img/excel-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../img/excel-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="../img/excel-light.webp" type="image/webp"><img class="shot " src="../img/excel-light.jpg" alt="Una consulta SQL sobre un libro de Excel, con los resultados en una tabla bajo el código." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
   </article>
   <article class="feature flip" id="ai">
     <div class="feature-text reveal">
-      <p class="eyebrow">Asistente de IA</p>
+      <p class="eyebrow">Asistente de IA <span class="chip chip-full">Solo versión completa</span></p>
       <h3>Un asistente que ve lo que tú ves.</h3>
       <p>Haz una pregunta y el asistente lee el archivo que tienes delante y tu selección. Insert y Replace Selection llevan el código de la respuesta al editor en un solo paso de deshacer.</p>
       <ul><li>Preguntas listas para explicar el código, buscar problemas, mejorarlo, añadir comentarios o escribir pruebas</li><li>Modelos Claude con tu propia clave de API, con respuestas que aparecen mientras se escriben</li><li>Cualquier servicio compatible con OpenAI, incluido un modelo local como Ollama</li><li>¿Aún no hay un modelo conectado? Si Claude CLI está instalado, el mismo botón lo abre en Terminal, en la carpeta de tu proyecto</li></ul>
     </div>
-    <div class="feature-shot reveal"><picture><source srcset="../img/assistant-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot " src="../img/assistant-light.jpg" alt="El panel del asistente junto al editor, explicando un error en la función seleccionada." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
+    <div class="feature-shot reveal"><picture><source srcset="../img/assistant-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../img/assistant-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="../img/assistant-light.webp" type="image/webp"><img class="shot " src="../img/assistant-light.jpg" alt="El panel del asistente junto al editor, explicando un error en la función seleccionada." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
   </article>
   <article class="feature dialog" id="github">
     <div class="feature-text reveal">
-      <p class="eyebrow">GitHub</p>
+      <p class="eyebrow">GitHub <span class="chip chip-full">Solo versión completa</span></p>
       <h3>De explorar a fusionar, sin salir.</h3>
       <p>Conecta tu cuenta y J++ muestra tus repositorios. La barra de estado indica la rama, lo que hay por enviar o recibir y cuántos archivos cambiaron.</p>
       <ul><li>Explora las carpetas y los archivos de tus repositorios sin clonarlos</li><li>Crea un pull request y fusiónalo con merge, squash o rebase</li><li>Clonar, confirmar, enviar, recibir y actualizar</li><li>Publica una carpeta en un repositorio nuevo, crea un gist o copia un enlace a la línea actual</li></ul>
     </div>
-    <div class="feature-shot reveal"><picture><source srcset="../img/github-clone-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot " src="../img/github-clone-light.jpg" alt="La ventana Clonar repositorio con la lista de repositorios de la cuenta." width="1280" height="920" loading="lazy" decoding="async"></picture></div>
+    <div class="feature-shot reveal"><picture><source srcset="../img/github-clone-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../img/github-clone-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="../img/github-clone-light.webp" type="image/webp"><img class="shot " src="../img/github-clone-light.jpg" alt="La ventana Clonar repositorio con la lista de repositorios de la cuenta." width="1280" height="920" loading="lazy" decoding="async"></picture></div>
   </article>
 </section>
 
@@ -205,7 +220,7 @@
     <p class="lead reveal">El próximo lanzamiento trae J++ al iPad: el mismo motor de edición que en el Mac, hecho a medida para el tacto, el teclado y la app Archivos. Estas son las características que tendrá.</p>
     <p class="reveal"><span class="soon-badge">Próximamente</span></p>
     <p class="note reveal">Planeado para el próximo lanzamiento. Los detalles pueden cambiar antes de publicarlo.</p>
-    <div class="ipad-shot reveal"><picture><source srcset="../img/ipad-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot " src="../img/ipad-light.jpg" alt="J++ en iPadOS, próximamente: un archivo C++ abierto en una pestaña, con los botones Buscar, Nuevo y Más en la barra de herramientas." width="1200" height="690" loading="lazy" decoding="async"></picture></div>
+    <div class="ipad-shot reveal"><picture><source srcset="../img/ipad-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../img/ipad-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="../img/ipad-light.webp" type="image/webp"><img class="shot " src="../img/ipad-light.jpg" alt="J++ en iPadOS, próximamente: un archivo C++ abierto en una pestaña, con los botones Buscar, Nuevo y Más en la barra de herramientas." width="1200" height="690" loading="lazy" decoding="async"></picture></div>
     <div class="tiles">
       <article class="tile reveal"><h3>El mismo motor</h3><p>Resaltado de sintaxis y plegado de código para 95 lenguajes, con el editor Scintilla que impulsa J++ en el Mac.</p></article>
       <article class="tile reveal"><h3>Pestañas que recuerdan</h3><p>Abre varios archivos en pestañas. Al volver, cada pestaña sigue ahí, incluso el texto que no habías guardado.</p></article>
@@ -248,7 +263,7 @@
   <div class="wrap">
     <div class="footer-top">
       <a class="brand" href="#top"><picture><source srcset="../img/icon-dark.png" media="(prefers-color-scheme: dark)"><img class="brand-icon" src="../img/icon-light.png" alt="" width="28" height="28"></picture><span>J++</span></a>
-      <nav class="footer-links">
+      <nav class="footer-links" aria-label="Enlaces del pie">
         <a href="privacy.html">Política de privacidad</a>
         <a href="support.html">Soporte</a>
         <a href="mailto:leiton@live.com?subject=J%2B%2B">Contacto</a>

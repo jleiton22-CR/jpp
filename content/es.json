@@ -3,7 +3,7 @@
   "lang_name": "Español",
   "meta": {
     "title": "J++ — Un editor de código nativo para Mac",
-    "description": "J++ es un editor de código nativo para macOS. Descarga J++ Lite gratis, o consigue el J++ completo en el Mac App Store: ejecuta y depura tu código, SQL, GitHub y un asistente de IA. J++ para iPad viene en camino."
+    "description": "J++ es un editor de código nativo para macOS. Descarga J++ Lite gratis, o consigue el J++ completo en el Mac App Store con SQL, GitHub y asistente de IA."
   },
   "nav": {
     "why": "Por qué J++",
@@ -14,12 +14,15 @@
     "editions": "Lite y Completa",
     "donate": "Donar",
     "donate_label": "Donar con PayPal",
-    "ipad": "iPadOS"
+    "ipad": "iPadOS",
+    "skip": "Saltar al contenido",
+    "main_label": "Principal",
+    "menu": "Menú"
   },
   "hero": {
     "eyebrow": "Versión {version} para macOS",
     "title": "Todo lo que rodea a tu código. <span class=\"grad\">Nada que estorbe.</span>",
-    "text": "J++ es un editor de código rápido y nativo para Mac. Escribe en 95 lenguajes, ejecuta y depura tu código, consulta tus datos con SQL, sube tus cambios a GitHub y pregunta a un asistente de IA, todo en una sola app pequeña.",
+    "text": "J++ es un editor de código rápido y nativo para Mac. Descarga la Lite gratis para escribir en 95 lenguajes, o consigue el J++ completo para además ejecutar y depurar tu código, consultar tus datos con SQL, subir a GitHub y preguntar a un asistente de IA.",
     "primary": "Descargar J++ Lite — gratis",
     "secondary": "Mira lo que hace",
     "app_store": "Versión completa en el Mac App Store",
@@ -100,7 +103,8 @@
           "Restauración de la sesión que conserva hasta el texto sin guardar"
         ],
         "image": "overview",
-        "alt": "El editor de J++ con el explorador lateral y un archivo de Python."
+        "alt": "El editor de J++ con el explorador lateral y un archivo de Python.",
+        "edition": "both"
       },
       {
         "id": "goto",
@@ -114,7 +118,8 @@
         ],
         "image": "palette-commands",
         "alt": "La paleta de comandos con los comandos Sort Lines después de escribir «sort lines».",
-        "dialog": true
+        "dialog": true,
+        "edition": "both"
       },
       {
         "id": "intellisense",
@@ -127,7 +132,8 @@
           "Go, Rust, TypeScript, Java, Ruby, Lua y más se usan cuando sus servidores están en tu Mac"
         ],
         "image": "intellisense-complete",
-        "alt": "Una lista de autocompletado con los miembros de un objeto de Python."
+        "alt": "Una lista de autocompletado con los miembros de un objeto de Python.",
+        "edition": "full"
       },
       {
         "id": "run",
@@ -140,7 +146,8 @@
           "Manage Compilers muestra lo que está instalado y descarga lo que falta con Homebrew, npm o pip"
         ],
         "image": "debug",
-        "alt": "El depurador de Python detenido en una línea, con las variables junto a la salida."
+        "alt": "El depurador de Python detenido en una línea, con las variables junto a la salida.",
+        "edition": "full"
       },
       {
         "id": "sql",
@@ -154,7 +161,8 @@
           "Libros de Excel y archivos CSV: cada hoja se convierte en una tabla"
         ],
         "image": "excel",
-        "alt": "Una consulta SQL sobre un libro de Excel, con los resultados en una tabla bajo el código."
+        "alt": "Una consulta SQL sobre un libro de Excel, con los resultados en una tabla bajo el código.",
+        "edition": "full"
       },
       {
         "id": "ai",
@@ -168,7 +176,8 @@
           "¿Aún no hay un modelo conectado? Si Claude CLI está instalado, el mismo botón lo abre en Terminal, en la carpeta de tu proyecto"
         ],
         "image": "assistant",
-        "alt": "El panel del asistente junto al editor, explicando un error en la función seleccionada."
+        "alt": "El panel del asistente junto al editor, explicando un error en la función seleccionada.",
+        "edition": "full"
       },
       {
         "id": "github",
@@ -183,7 +192,8 @@
         ],
         "image": "github-clone",
         "alt": "La ventana Clonar repositorio con la lista de repositorios de la cuenta.",
-        "dialog": true
+        "dialog": true,
+        "edition": "full"
       }
     ]
   },
@@ -227,7 +237,8 @@
     "contact": "Contacto",
     "donate": "Apoya a J++ con una donación",
     "rights": "Todos los derechos reservados.",
-    "credits": "Scintilla y Lexilla son © Neil Hodgson y se usan bajo su propia licencia. Mac, macOS y Xcode son marcas comerciales de Apple Inc."
+    "credits": "Scintilla y Lexilla son © Neil Hodgson y se usan bajo su propia licencia. Mac, macOS y Xcode son marcas comerciales de Apple Inc.",
+    "nav_label": "Enlaces del pie"
   },
   "privacy_page": {
     "title": "Política de privacidad",
@@ -427,7 +438,9 @@
     ],
     "yes": "Incluido",
     "no": "No está en Lite",
-    "note": "La versión del App Store funciona en el entorno aislado de Apple, así que Compilar y Ejecutar usan las herramientas que vienen con macOS y Xcode. Puedes tener las dos versiones instaladas a la vez."
+    "note": "La versión del App Store funciona en el entorno aislado de Apple, así que Compilar y Ejecutar usan las herramientas que vienen con macOS y Xcode. Puedes tener las dos versiones instaladas a la vez.",
+    "chip_both": "Lite y Completa",
+    "chip_full": "Solo versión completa"
   },
   "ipad": {
     "eyebrow": "Próximamente",
@@ -463,5 +476,9 @@
     "note": "Empieza como un editor enfocado. Las herramientas extra de la versión del Mac App Store todavía no están prometidas para iPadOS.",
     "image_alt": "J++ en iPadOS, próximamente: un archivo C++ abierto en una pestaña, con los botones Buscar, Nuevo y Más en la barra de herramientas.",
     "badge_note": "Planeado para el próximo lanzamiento. Los detalles pueden cambiar antes de publicarlo."
+  },
+  "notfound": {
+    "text": "Esa página no existe. Puede que se haya movido, o que la dirección sea incorrecta.",
+    "home": "Volver a J++"
   }
 }
