@@ -480,5 +480,55 @@
   "notfound": {
     "text": "Esa página no existe. Puede que se haya movido, o que la dirección sea incorrecta.",
     "home": "Volver a J++"
+  },
+  "thanks": {
+    "meta_title": "Gracias por descargar J++ Lite",
+    "meta_desc": "La descarga de J++ Lite está empezando. Instálala en tres pasos.",
+    "title": "Gracias por descargar J++ Lite.",
+    "status": "Tu descarga está empezando. Si no pasa nada en unos segundos, usa el botón de abajo.",
+    "button": "Descargar J++ Lite {version}",
+    "note": "{size} · macOS 12 o posterior · Apple Silicon e Intel",
+    "steps_title": "Instálala en tres pasos",
+    "steps": [
+      [
+        "Abre el archivo",
+        "Haz doble clic en <code>J++-Lite-{version}.dmg</code> en tu carpeta Descargas."
+      ],
+      [
+        "Arrástrala a Aplicaciones",
+        "En la ventana que se abre, arrastra <strong>J++ Lite</strong> a la carpeta Aplicaciones."
+      ],
+      [
+        "Abre J++ Lite",
+        "Ábrela desde Aplicaciones o Launchpad. La primera vez, macOS puede decir que no puede comprobar la app: abre <strong>Ajustes del Sistema ▸ Privacidad y seguridad</strong>, busca el mensaje sobre J++ Lite y pulsa <strong>Abrir igualmente</strong>."
+      ]
+    ],
+    "verify_title": "Comprueba tu descarga (opcional)",
+    "verify_text": "Para confirmar que el archivo es exactamente el publicado aquí, ejecuta este comando en Terminal y compara el resultado con el código de abajo.",
+    "verify_expect": "Debe mostrar:",
+    "next_title": "Y ahora qué",
+    "next": [
+      [
+        "El J++ completo llega al Mac App Store",
+        "SQL, GitHub, el asistente de IA, ejecutar y depurar código y más.",
+        "index.html#editions",
+        "Ver lo que añade la versión completa"
+      ],
+      [
+        "J++ para iPadOS llega pronto",
+        "El mismo motor de edición, hecho para el tacto, el teclado y la app Archivos.",
+        "index.html#ipad",
+        "Ver las características de iPadOS"
+      ],
+      [
+        "¿Dudas?",
+        "La página de soporte responde las más comunes.",
+        "support.html",
+        "Abrir Soporte"
+      ]
+    ],
+    "donate_text": "¿Te gusta J++? Puedes apoyar su desarrollo con una donación.",
+    "donate": "Donar con PayPal",
+    "back": "Volver a la página principal"
   }
 }

@@ -20,7 +20,7 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "public"
 LANGS = ["en", "es"]          # the first one is published at the top of the site
-PAGES = {"home": "index.html", "privacy": "privacy.html", "support": "support.html"}
+PAGES = {"home": "index.html", "privacy": "privacy.html", "support": "support.html", "thanks": "thanks.html"}
 
 ICONS = {
     "native": '<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
@@ -42,10 +42,15 @@ def fill(text, site):
             .replace("{email}", site["contact_email"]).replace("{year}", site["year"]))
 
 
-def download_link(site, root):
-    """The address of the installer, or "" while there is nothing to download."""
+def file_url(site, root):
+    """The address of the installer itself, or "" while there is nothing to download."""
     url = site.get("download_url", "")
     return url if url.startswith("http") or not url else root + url
+
+
+def download_link(site, root):
+    """Where the download buttons lead: the thank-you page, which starts the download. "" while there is nothing to download."""
+    return "thanks.html" if site.get("download_url") else ""
 
 
 def lang_dir(lang):
@@ -125,6 +130,8 @@ def layout(site, t, lang, page, title, description, body):
                 f'<meta property="og:image:height" content="630">\n<meta property="og:image:alt" content="{escape(site["app_name"])}">\n'
                 f'<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:title" content="{escape(title)}">\n'
                 f'<meta name="twitter:description" content="{escape(description)}">\n<meta name="twitter:image" content="{base}/img/og.png">\n')
+        if page == "thanks":
+            seo += '<meta name="robots" content="noindex">\n'
         if page == "home":
             ld = {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": site["app_name"] + " Lite",
                   "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS 12 or later",
@@ -141,7 +148,7 @@ def layout(site, t, lang, page, title, description, body):
     donate_btn = (f'<a class="btn btn-small btn-donate" href="{escape(site["donate_url"])}" target="_blank" rel="noopener" '
                   f'aria-label="{escape(n["donate_label"])}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.3 3 5 6.2 5c2 0 3.4 1.1 4.2 2.4h.2C11.4 6.1 12.800 5 14.8 5 18 5 19.900 8.300 18.500 11.700 16.500 16.400 12 21 12 21z" transform="translate(1 0)" fill="currentColor"/></svg><span>{n["donate"]}</span></a>'
                   if site.get("donate_url") else "")
-    nav_button = (f'<a class="btn btn-small" href="{download}" download>{n["download"]}</a>' if download
+    nav_button = (f'<a class="btn btn-small" href="{download}">{n["download"]}</a>' if download
                   else f'<span class="btn btn-small btn-soon">{t["soon"]["soon"]}</span>')
     donate = f'<a href="{escape(site["donate_url"])}" rel="noopener">{f["donate"]}</a>' if site.get("donate_url") else ""
     return f"""<!doctype html>
@@ -175,7 +182,7 @@ def layout(site, t, lang, page, title, description, body):
       <a href="{home}#ipad">{n["ipad"]}</a>
       <a href="privacy.html">{n["privacy"]}</a>
       <a href="support.html">{n["support"]}</a>
-      {f'<a class="menu-only" href="{download}" download>{n["download"]}</a>' if download else ""}
+      {f'<a class="menu-only" href="{download}">{n["download"]}</a>' if download else ""}
     </nav>
     <div class="nav-end">
       {toggle}
@@ -248,6 +255,37 @@ def not_found(site):
 """
 
 
+def thanks_page(site, t, lang):
+    root = "" if lang == LANGS[0] else "../"
+    k = t["thanks"]
+    sha = site.get("download_sha256", "")
+    f = lambda text: fill(text, site).replace("{sha256}", sha)
+    steps = "".join(f'<li><h3>{f(a)}</h3><p>{f(b)}</p></li>' for a, b in k["steps"])
+    nxt = "".join(f'<article class="tile"><h3>{a}</h3><p>{b}</p><p><a href="{href}">{label} ›</a></p></article>' for a, b, href, label in k["next"])
+    donate = (f'<p class="thanks-donate">{k["donate_text"]} <a href="{escape(site["donate_url"])}" target="_blank" rel="noopener">{k["donate"]}</a></p>'
+              if site.get("donate_url") else "")
+    verify = ""
+    if sha:
+        verify = (f'<section class="thanks-verify"><h2>{k["verify_title"]}</h2><p>{k["verify_text"]}</p>'
+                  f'<pre><code>shasum -a 256 ~/Downloads/J++-Lite-{site["version"]}.dmg</code></pre>'
+                  f'<p>{k["verify_expect"]}</p><pre><code class="hash">{sha}</code></pre></section>')
+    url = escape(file_url(site, root))
+    body = f"""<section class="thanks wrap">
+  {icon_img(root, 96, "cta-icon")}
+  <h1>{k["title"]}</h1>
+  <p class="lead" id="status">{k["status"]}</p>
+  <div class="actions"><a class="btn btn-large" id="dl" href="{url}">{f(k["button"])}</a></div>
+  <p class="note">{f(k["note"])}</p>
+  <section class="thanks-steps"><h2>{k["steps_title"]}</h2><ol>{steps}</ol></section>
+  {verify}
+  <section class="thanks-next"><h2>{k["next_title"]}</h2><div class="tiles">{nxt}</div>{donate}</section>
+  <p class="thanks-back"><a href="index.html">‹ {k["back"]}</a></p>
+</section>
+<script>(function(){{var a=document.getElementById("dl");if(!a)return;try{{if(sessionStorage.getItem("jpp-dl")==="1")return;sessionStorage.setItem("jpp-dl","1")}}catch(e){{}}setTimeout(function(){{location.href=a.href}},900)}})();</script>
+"""
+    return layout(site, t, lang, "thanks", k["meta_title"], k["meta_desc"], body)
+
+
 def store_button(site, label, label_soon, cls):
     """The Mac App Store button: a link once app_store_url is set, otherwise a quiet "coming soon" label."""
     url = site.get("app_store_url", "")
@@ -261,7 +299,7 @@ def editions_html(site, t, root):
     lite, full = e["lite"], e["full"]
     download = download_link(site, root)
     li = lambda items: "".join(f"<li>{x}</li>" for x in items)
-    lite_btn = (f'<a class="btn" href="{download}" download>{lite["button"]}</a>' if download
+    lite_btn = (f'<a class="btn" href="{download}">{lite["button"]}</a>' if download
                 else f'<span class="btn btn-soon">{t["soon"]["soon"]}</span>')
     full_btn = store_button(site, full["button"], full["button_soon"], "btn btn-ghost")
     rows = ""
@@ -341,7 +379,7 @@ def home(site, t, lang):
     <h1 class="reveal">{h["title"]}</h1>
     <p class="lead reveal">{h["text"]}</p>
     <div class="actions reveal">
-      {f'<a class="btn" href="{download}" download>{h["primary"]}</a>' if download else f'<span class="btn btn-soon">{soon["soon"]}</span>'}
+      {f'<a class="btn" href="{download}">{h["primary"]}</a>' if download else f'<span class="btn btn-soon">{soon["soon"]}</span>'}
       {store}
     </div>
     <p class="note reveal">{fill(h["note"], site) if download else soon["note_soon"]}</p>
@@ -413,7 +451,7 @@ def home(site, t, lang):
     {icon_img(root, 96, "cta-icon reveal")}
     <h2 class="reveal">{c["title"]}</h2>
     <p class="lead reveal">{c["text"] if download else fill(soon["cta_text"], site)}</p>
-    <div class="actions reveal">{f'<a class="btn btn-large" href="{download}" download>{fill(c["primary"], site)}</a>' if download else f'<a class="btn btn-large" href="{notify}">{soon["notify"]}</a>'}</div>
+    <div class="actions reveal">{f'<a class="btn btn-large" href="{download}">{fill(c["primary"], site)}</a>' if download else f'<a class="btn btn-large" href="{notify}">{soon["notify"]}</a>'}</div>
     <p class="note reveal">{fill(c["note"], site) if download else soon["note_soon"]}</p>
     <div class="actions reveal">{store_button(site, c["store"], c["store_soon"], "btn btn-ghost")}</div>
     <p class="note reveal">{c["requirements"]}</p>
@@ -456,6 +494,8 @@ def build():
         put(d / "index.html", home(site, t, lang).encode("utf-8"))
         for page in ("privacy", "support"):
             put(d / PAGES[page], article(site, t, lang, page).encode("utf-8"))
+        if site.get("download_url"):
+            put(d / PAGES["thanks"], thanks_page(site, t, lang).encode("utf-8"))
         urls += [f"{lang_dir(lang)}", f"{lang_dir(lang)}privacy.html", f"{lang_dir(lang)}support.html"]
     put(OUT / "404.html", not_found(site).encode("utf-8"))
     base = site.get("base_url", "").rstrip("/")
@@ -463,7 +503,7 @@ def build():
         today = datetime.date.today().isoformat()
         items = "".join(f"<url><loc>{base}/{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls)
         put(OUT / "sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{items}</urlset>\n'.encode("utf-8"))
-        put(OUT / "robots.txt", f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n".encode("utf-8"))
+        put(OUT / "robots.txt", f"User-agent: *\nAllow: /\nDisallow: /thanks.html\nDisallow: /es/thanks.html\nSitemap: {base}/sitemap.xml\n".encode("utf-8"))
     for old in sorted(OUT.rglob("*"), reverse=True):      # whatever is no longer part of the site
         if old.is_file() and old not in written:
             old.unlink()

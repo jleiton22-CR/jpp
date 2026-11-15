@@ -48,9 +48,13 @@ El instalador Lite **no está en el sitio**: se aloja como archivo de un Release
 gh release create lite-1.0.1 "/ruta/J++-Lite-1.0.1.dmg" --repo jleiton22-CR/jpp --title "J++ Lite 1.0.1" --notes "J++ Lite 1.0.1" --latest=false
 ```
 
-2. En `site.json` cambia `version`, `download_size` y `download_url` a la dirección del archivo del Release
-   (`https://github.com/jleiton22-CR/jpp/releases/download/lite-1.0.1/J%2B%2B-Lite-1.0.1.dmg`; el `+` se escribe `%2B`).
+2. En `site.json` cambia `version`, `download_size`, `download_sha256` y `download_url` a la dirección del archivo
+   del Release (`https://github.com/jleiton22-CR/jpp/releases/download/lite-1.0.1/J%2B%2B-Lite-1.0.1.dmg`; el `+` se
+   escribe `%2B`). La huella sale de `shasum -a 256 archivo.dmg`, o de `gh api repos/jleiton22-CR/jpp/releases/tags/lite-1.0.1 --jq '.assets[0].digest'`.
 3. Genera y publica.
+
+Todos los botones de descarga llevan a `thanks.html` (página de gracias), que inicia la descarga una vez por sesión,
+explica la instalación y muestra la huella SHA-256. Esa página no se indexa (`noindex` y `robots.txt`).
 
 Mientras `download_url` esté vacío, los botones de descarga dicen "Próximamente".
 
