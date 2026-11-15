@@ -294,3 +294,12 @@ code { font-family: var(--mono); font-size: 0.9em; background: var(--bg-alt); pa
 .thanks-back { text-align: center; margin-top: 56px; }
 @media (max-width: 900px) { .thanks-steps ol { grid-template-columns: 1fr; } }
 .thanks-steps li { background: var(--bg-alt); }
+
+/* Email page before the download */
+.getpage { max-width: 640px; }
+.emailform { margin-top: 32px; text-align: left; }
+.emailform label { display: block; font-weight: 600; margin-bottom: 8px; }
+.emailform input[type=email] { width: 100%; font: inherit; font-size: 19px; padding: 16px 18px; border-radius: 14px; border: 1px solid var(--line); background: var(--bg-alt); color: var(--text); }
+.emailform input[type=email]:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.emailform .btn { width: 100%; margin-top: 16px; cursor: pointer; border: 0; }
+.emailform .btn:disabled { opacity: 0.6; cursor: default; }

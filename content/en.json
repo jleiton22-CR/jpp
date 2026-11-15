@@ -276,7 +276,8 @@
       }
     ],
     "site_plain": "This website uses no cookies, no analytics and no third-party scripts.",
-    "site_counted": "This website uses no cookies. It counts visits with GoatCounter, a privacy-friendly service that does not use cookies, does not track you with unique identifiers and keeps only aggregate totals, such as which pages are visited, which site sent the visitor and the type of browser or device, not your IP address. It does not run if your browser sends Do Not Track."
+    "site_counted": "This website uses no cookies. It counts visits with GoatCounter, a privacy-friendly service that does not use cookies, does not track you with unique identifiers and keeps only aggregate totals, such as which pages are visited, which site sent the visitor and the type of browser or device, not your IP address. It does not run if your browser sends Do Not Track.",
+    "email_note": "If you enter your email to download jplus2 Lite, it is sent to Buttondown, the service we use to send jplus2 news, and kept there until you unsubscribe or ask for it to be deleted. We use it only for jplus2 news, such as the release of the full version, and every message has an unsubscribe link. To have your email deleted, write to <a href=\"mailto:{email}?subject=jplus2\">{email}</a>."
   },
   "support_page": {
     "title": "Support",
@@ -532,5 +533,17 @@
     "donate_text": "Like jplus2? You can support its development with a donation.",
     "donate": "Donate with PayPal",
     "back": "Back to the home page"
+  },
+  "getpage": {
+    "meta_title": "Download jplus2 Lite",
+    "meta_desc": "Enter your email to download jplus2 Lite, free for macOS.",
+    "title": "Download jplus2 Lite",
+    "lead": "Free for macOS 12 or later, {size}. Enter your email and your download starts right away.",
+    "label": "Your email",
+    "placeholder": "you@example.com",
+    "button": "Download jplus2 Lite {version}",
+    "after": "Your download is starting. If a new tab opened asking you to confirm your email, that is normal: you can close it whenever you like.",
+    "notice": "We use your email only to send occasional jplus2 news, such as when the full version is released. Every message has a one-click unsubscribe link. Details in the <a href=\"privacy.html\">privacy policy</a>.",
+    "noscript": "Continue to the download"
   }
 }

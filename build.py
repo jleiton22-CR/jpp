@@ -20,7 +20,7 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "public"
 LANGS = ["en", "es"]          # the first one is published at the top of the site
-PAGES = {"home": "index.html", "privacy": "privacy.html", "support": "support.html", "thanks": "thanks.html"}
+PAGES = {"home": "index.html", "privacy": "privacy.html", "support": "support.html", "thanks": "thanks.html", "get": "get.html"}
 
 ICONS = {
     "native": '<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
@@ -48,9 +48,20 @@ def file_url(site, root):
     return url if url.startswith("http") or not url else root + url
 
 
+def email_gate(site):
+    """The Buttondown username that collects the email before the download, or "" while the email page is off."""
+    user = site.get("buttondown_username", "").strip()
+    if user and not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]{0,40}", user):
+        raise SystemExit("site.json: buttondown_username may only have letters, numbers, hyphens and underscores")
+    return user
+
+
 def download_link(site, root):
-    """Where the download buttons lead: the thank-you page, which starts the download. "" while there is nothing to download."""
-    return "thanks.html" if site.get("download_url") else ""
+    """Where the download buttons lead: the email page when it is on, otherwise the thank-you page (which starts the
+    download). "" while there is nothing to download."""
+    if not site.get("download_url"):
+        return ""
+    return "get.html" if email_gate(site) else "thanks.html"
 
 
 def lang_dir(lang):
@@ -130,7 +141,7 @@ def layout(site, t, lang, page, title, description, body):
                 f'<meta property="og:image:height" content="630">\n<meta property="og:image:alt" content="{escape(site["app_name"])}">\n'
                 f'<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:title" content="{escape(title)}">\n'
                 f'<meta name="twitter:description" content="{escape(description)}">\n<meta name="twitter:image" content="{base}/img/og.png">\n')
-        if page == "thanks":
+        if page in ("thanks", "get"):
             seo += '<meta name="robots" content="noindex">\n'
         if page == "home":
             ld = {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": site["app_name"] + " Lite",
@@ -253,6 +264,36 @@ def not_found(site):
 </body>
 </html>
 """
+
+
+def get_page(site, t, lang):
+    """get.html: asks for the email, sends it to Buttondown in a new tab (its form must be a normal form post: it may show a
+    CAPTCHA), and takes this tab on to thanks.html, which starts the download."""
+    root = "" if lang == LANGS[0] else "../"
+    k = t["getpage"]
+    user = email_gate(site)
+    action = f"https://buttondown.com/api/emails/embed-subscribe/{user}"
+    body = f"""<section class="thanks wrap getpage">
+  {icon_img(root, 96, "cta-icon")}
+  <h1>{k["title"]}</h1>
+  <p class="lead">{fill(k["lead"], site)}</p>
+  <form class="emailform" id="emailform" method="post" action="{action}" target="_blank" rel="noopener">
+    <label for="email">{k["label"]}</label>
+    <input id="email" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="{escape(k["placeholder"])}">
+    <input type="hidden" name="embed" value="1">
+    <input type="hidden" name="tag" value="download-lite">
+    <button class="btn btn-large" type="submit">{fill(k["button"], site)}</button>
+  </form>
+  <p class="note" id="after" hidden>{k["after"]}</p>
+  <p class="note">{k["notice"]}</p>
+  <noscript><p class="note"><a href="thanks.html">{k["noscript"]}</a></p></noscript>
+</section>
+<script>(function(){{var f=document.getElementById("emailform");if(!f)return;f.addEventListener("submit",function(){{
+try{{sessionStorage.removeItem("jpp-dl")}}catch(e){{}}
+document.getElementById("after").hidden=false;f.querySelector("button").disabled=true;
+setTimeout(function(){{location.href="thanks.html"}},1200)}})}})();</script>
+"""
+    return layout(site, t, lang, "get", k["meta_title"], k["meta_desc"], body)
 
 
 def thanks_page(site, t, lang):
@@ -486,6 +527,8 @@ def article(site, t, lang, page):
         text = s["body"]
         if counting and p.get("site_plain") and p["site_plain"] in text:
             text = text.replace(p["site_plain"], p["site_counted"])
+        if email_gate(site) and p.get("site_plain") and p["site_plain"] in s["body"] and p.get("email_note"):
+            text = re.sub(r"</p>\s*$", " " + p["email_note"] + "</p>", text.rstrip())
         body += f'<h2>{s["title"]}</h2>\n{fill(text, site)}\n'
     body += "</article>\n"
     return layout(site, t, lang, page, f'{site["app_name"]} — {p["title"]}', p["description"], body)
@@ -514,6 +557,8 @@ def build():
             put(d / PAGES[page], article(site, t, lang, page).encode("utf-8"))
         if site.get("download_url"):
             put(d / PAGES["thanks"], thanks_page(site, t, lang).encode("utf-8"))
+            if email_gate(site):
+                put(d / PAGES["get"], get_page(site, t, lang).encode("utf-8"))
         urls += [f"{lang_dir(lang)}", f"{lang_dir(lang)}privacy.html", f"{lang_dir(lang)}support.html"]
     put(OUT / "404.html", not_found(site).encode("utf-8"))
     base = site.get("base_url", "").rstrip("/")
@@ -521,7 +566,7 @@ def build():
         today = datetime.date.today().isoformat()
         items = "".join(f"<url><loc>{base}/{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls)
         put(OUT / "sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{items}</urlset>\n'.encode("utf-8"))
-        put(OUT / "robots.txt", f"User-agent: *\nAllow: /\nDisallow: /thanks.html\nDisallow: /es/thanks.html\nSitemap: {base}/sitemap.xml\n".encode("utf-8"))
+        put(OUT / "robots.txt", f"User-agent: *\nAllow: /\nDisallow: /thanks.html\nDisallow: /es/thanks.html\nDisallow: /get.html\nDisallow: /es/get.html\nSitemap: {base}/sitemap.xml\n".encode("utf-8"))
     for old in sorted(OUT.rglob("*"), reverse=True):      # whatever is no longer part of the site
         if old.is_file() and old not in written:
             old.unlink()

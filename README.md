@@ -85,6 +85,23 @@ El sitio puede contar visitas con [GoatCounter](https://www.goatcounter.com): gr
 No cuenta a quien envía "No rastrear", ni cuando abres el sitio en tu Mac con `python3 build.py serve`.
 Para apagarlo, deja `goatcounter_code` vacío y publica de nuevo. Las descargas se siguen contando con `./contador.sh`.
 
+### Correo antes de descargar (Buttondown)
+
+Los botones de descarga pueden llevar a `get.html`, una página que pide el correo, lo envía a [Buttondown](https://buttondown.com) y
+sigue a `thanks.html`, que inicia la descarga. Está **apagado** hasta que se escriba el usuario de Buttondown.
+
+1. Crea la cuenta gratis en https://buttondown.com (gratis hasta 100 suscriptores) y elige un nombre de usuario.
+2. En los ajustes de Buttondown comprueba que está activada la **confirmación por correo (doble opt-in)**: así solo quedan suscritos
+   quienes confirmen su dirección.
+3. En `site.json` escribe ese usuario en `buttondown_username` (letras, números, guiones y guion bajo).
+4. Genera y publica. Los botones pasan a `get.html`, y la política de privacidad añade sola la frase sobre el correo (EN/ES).
+5. Quienes descargan quedan en tu lista de Buttondown con la etiqueta `download-lite`.
+
+Cómo funciona: el formulario se envía a una pestaña nueva (Buttondown puede pedir un CAPTCHA, por eso no usa `fetch`) y esta pestaña
+pasa a la descarga. El correo es obligatorio en el formulario, pero **no se puede imponer de verdad** en un sitio estático: el enlace
+directo del archivo del Release sigue siendo público y `thanks.html` descarga sin pedir nada. Para apagarlo, deja `buttondown_username`
+vacío y publica de nuevo.
+
 ### Cuando jplus2 esté en el Mac App Store
 
 Pon la dirección de la app en `app_store_url` de `site.json`. Mientras esté vacía, la sección "Lite y Completa"

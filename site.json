@@ -10,5 +10,6 @@
   "donate_url": "https://www.paypal.com/donate/?business=leiton%40live.com&no_recurring=0&item_name=jplus2&currency_code=USD",
   "base_url": "https://jplus2.com",
   "download_sha256": "1b891c8a82a343c746e5b29cd5dd1bf49cbeff9dc0903e476c0f623796d3406a",
-  "goatcounter_code": "jplus2"
+  "goatcounter_code": "jplus2",
+  "buttondown_username": ""
 }

@@ -276,7 +276,8 @@
       }
     ],
     "site_plain": "Este sitio web no usa cookies, analíticas ni scripts de terceros.",
-    "site_counted": "Este sitio web no usa cookies. Cuenta las visitas con GoatCounter, un servicio respetuoso con la privacidad que no usa cookies, no te sigue con identificadores únicos y guarda solo totales agregados, como qué páginas se visitan, qué sitio envió al visitante y el tipo de navegador o dispositivo, no tu dirección IP. No se ejecuta si tu navegador envía la señal No rastrear."
+    "site_counted": "Este sitio web no usa cookies. Cuenta las visitas con GoatCounter, un servicio respetuoso con la privacidad que no usa cookies, no te sigue con identificadores únicos y guarda solo totales agregados, como qué páginas se visitan, qué sitio envió al visitante y el tipo de navegador o dispositivo, no tu dirección IP. No se ejecuta si tu navegador envía la señal No rastrear.",
+    "email_note": "Si escribes tu correo para descargar jplus2 Lite, se envía a Buttondown, el servicio que usamos para mandar las novedades de jplus2, y se guarda allí hasta que te des de baja o pidas borrarlo. Lo usamos solo para novedades de jplus2, como la salida de la versión completa, y cada mensaje trae un enlace para darte de baja. Para que borremos tu correo, escribe a <a href=\"mailto:{email}?subject=jplus2\">{email}</a>."
   },
   "support_page": {
     "title": "Soporte",
@@ -532,5 +533,17 @@
     "donate_text": "¿Te gusta jplus2? Puedes apoyar su desarrollo con una donación.",
     "donate": "Donar con PayPal",
     "back": "Volver a la página principal"
+  },
+  "getpage": {
+    "meta_title": "Descargar jplus2 Lite",
+    "meta_desc": "Escribe tu correo para descargar jplus2 Lite, gratis para macOS.",
+    "title": "Descargar jplus2 Lite",
+    "lead": "Gratis para macOS 12 o posterior, {size}. Escribe tu correo y la descarga empieza enseguida.",
+    "label": "Tu correo",
+    "placeholder": "tu@ejemplo.com",
+    "button": "Descargar jplus2 Lite {version}",
+    "after": "Tu descarga está empezando. Si se abrió una pestaña nueva pidiéndote confirmar tu correo, es normal: puedes cerrarla cuando quieras.",
+    "notice": "Usamos tu correo solo para enviarte novedades ocasionales de jplus2, como cuando salga la versión completa. Cada mensaje trae un enlace para darte de baja con un clic. Detalles en la <a href=\"privacy.html\">política de privacidad</a>.",
+    "noscript": "Continuar a la descarga"
   }
 }
