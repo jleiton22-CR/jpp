@@ -212,7 +212,7 @@ def layout(site, t, lang, page, title, description, body):
   </div>
 </footer>
 <script src="{root}js/main.js" defer></script>
-</body>
+{visit_counter(site)}</body>
 </html>
 """
 
@@ -284,6 +284,20 @@ def thanks_page(site, t, lang):
 <script>(function(){{var a=document.getElementById("dl");if(!a)return;try{{if(sessionStorage.getItem("jpp-dl")==="1")return;sessionStorage.setItem("jpp-dl","1")}}catch(e){{}}setTimeout(function(){{location.href=a.href}},900)}})();</script>
 """
     return layout(site, t, lang, "thanks", k["meta_title"], k["meta_desc"], body)
+
+
+def visit_counter(site):
+    """GoatCounter: cookie-free visit counting. Nothing is added until `goatcounter_code` is set in site.json.
+    It is skipped for visitors who send Do Not Track, and when the site is previewed on this computer."""
+    code = site.get("goatcounter_code", "").strip()
+    if not code:
+        return ""
+    if not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,40}", code):
+        raise SystemExit("site.json: goatcounter_code must be only lowercase letters, numbers and hyphens")
+    return ('<script>(function(){try{if(navigator.doNotTrack==="1"||window.doNotTrack==="1"||'
+            '/^(localhost|127\\.|\\[::1\\])/.test(location.hostname))return}catch(e){}'
+            'var s=document.createElement("script");s.async=true;s.src="https://gc.zgo.at/count.js";'
+            's.setAttribute("data-goatcounter","https://' + code + '.goatcounter.com/count");document.body.appendChild(s)})()</script>\n')
 
 
 def store_button(site, label, label_soon, cls):
@@ -467,8 +481,12 @@ def article(site, t, lang, page):
     if p.get("updated"):
         body += f'<p class="fine">{p["updated"]}</p>\n'
     body += f'<p class="lead">{p["intro"]}</p>\n'
+    counting = bool(site.get("goatcounter_code", "").strip())
     for s in p["sections"]:
-        body += f'<h2>{s["title"]}</h2>\n{fill(s["body"], site)}\n'
+        text = s["body"]
+        if counting and p.get("site_plain") and p["site_plain"] in text:
+            text = text.replace(p["site_plain"], p["site_counted"])
+        body += f'<h2>{s["title"]}</h2>\n{fill(text, site)}\n'
     body += "</article>\n"
     return layout(site, t, lang, page, f'{site["app_name"]} — {p["title"]}', p["description"], body)
 

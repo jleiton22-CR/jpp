@@ -68,6 +68,20 @@ Muestra cuántas veces se ha descargado cada instalador de cada Release y el tot
 cada descarga completa del archivo, así que una misma persona que descargue dos veces cuenta dos, y a veces puede
 tardar unos minutos en actualizarse. El sitio no usa analíticas ni scripts de terceros.
 
+### Contador de visitas (GoatCounter)
+
+El sitio puede contar visitas con [GoatCounter](https://www.goatcounter.com): gratis, sin cookies, y guarda solo totales
+(páginas visitadas, de qué sitio vienen, tipo de navegador), no la IP. Está **apagado** hasta que se escriba el nombre de la cuenta.
+
+1. Crea la cuenta gratis en https://www.goatcounter.com/signup y elige un nombre (por ejemplo `jplus2`).
+2. En `site.json` escribe ese nombre en `goatcounter_code` (solo minúsculas, números y guiones).
+3. Genera y publica. El script se añade solo a las páginas, y la política de privacidad cambia sola de "sin analíticas" a la
+   frase que explica el conteo, en inglés y en español.
+4. Las visitas se ven en `https://NOMBRE.goatcounter.com` (inicias sesión con tu cuenta).
+
+No cuenta a quien envía "No rastrear", ni cuando abres el sitio en tu Mac con `python3 build.py serve`.
+Para apagarlo, deja `goatcounter_code` vacío y publica de nuevo. Las descargas se siguen contando con `./contador.sh`.
+
 ### Cuando J++ esté en el Mac App Store
 
 Pon la dirección de la app en `app_store_url` de `site.json`. Mientras esté vacía, la sección "Lite y Completa"

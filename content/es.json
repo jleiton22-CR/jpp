@@ -274,7 +274,9 @@
         "title": "Contacto",
         "body": "<p>Preguntas sobre esta política: <a href=\"mailto:{email}?subject=J%2B%2B\">{email}</a></p>"
       }
-    ]
+    ],
+    "site_plain": "Este sitio web no usa cookies, analíticas ni scripts de terceros.",
+    "site_counted": "Este sitio web no usa cookies. Cuenta las visitas con GoatCounter, un servicio respetuoso con la privacidad que no usa cookies, no te sigue con identificadores únicos y guarda solo totales agregados, como qué páginas se visitan, qué sitio envió al visitante y el tipo de navegador o dispositivo, no tu dirección IP. No se ejecuta si tu navegador envía la señal No rastrear."
   },
   "support_page": {
     "title": "Soporte",

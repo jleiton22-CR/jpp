@@ -274,7 +274,9 @@
         "title": "Contact",
         "body": "<p>Questions about this policy: <a href=\"mailto:{email}?subject=J%2B%2B\">{email}</a></p>"
       }
-    ]
+    ],
+    "site_plain": "This website uses no cookies, no analytics and no third-party scripts.",
+    "site_counted": "This website uses no cookies. It counts visits with GoatCounter, a privacy-friendly service that does not use cookies, does not track you with unique identifiers and keeps only aggregate totals, such as which pages are visited, which site sent the visitor and the type of browser or device, not your IP address. It does not run if your browser sends Do Not Track."
   },
   "support_page": {
     "title": "Support",
