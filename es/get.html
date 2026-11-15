@@ -61,21 +61,36 @@
   <picture><source srcset="../img/icon-dark.png" media="(prefers-color-scheme: dark)"><img class="cta-icon" src="../img/icon-light.png" alt="" width="96" height="96"></picture>
   <h1>Descargar jplus2 Lite</h1>
   <p class="lead">Gratis para macOS 12 o posterior, 5.6 MB. Escribe tu correo y la descarga empieza enseguida.</p>
-  <form class="emailform" id="emailform" method="post" action="https://buttondown.com/api/emails/embed-subscribe/jason_g" target="_blank" rel="noopener">
+  <form class="emailform" id="emailform" method="post" action="https://buttondown.com/api/emails/embed-subscribe/jason_g" target="_blank" rel="noopener" novalidate>
     <label for="email">Tu correo</label>
-    <input id="email" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="tu@ejemplo.com">
+    <input id="email" name="email" type="email" required autocomplete="email" inputmode="email" spellcheck="false" autocapitalize="off"
+      pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" aria-describedby="hint" placeholder="tu@ejemplo.com">
     <input type="hidden" name="embed" value="1">
     <input type="hidden" name="tag" value="download-lite">
-    <button class="btn btn-large" type="submit">Descargar jplus2 Lite 1.0.0</button>
+    <p class="hint" id="hint" role="status" aria-live="polite" data-empty="Escribe tu correo para activar el botón." data-invalid="Ese correo no parece válido. Debe verse como nombre@ejemplo.com."></p>
+    <button class="btn btn-large" id="send" type="submit" aria-describedby="hint">Descargar jplus2 Lite 1.0.0</button>
   </form>
   <p class="note" id="after" hidden>Tu descarga está empezando. Si se abrió una pestaña nueva pidiéndote confirmar tu correo, es normal: puedes cerrarla cuando quieras.</p>
   <p class="note">Usamos tu correo solo para enviarte novedades ocasionales de jplus2, como cuando salga la versión completa. Cada mensaje trae un enlace para darte de baja con un clic. Detalles en la <a href="privacy.html">política de privacidad</a>.</p>
   <noscript><p class="note"><a href="thanks.html">Continuar a la descarga</a></p></noscript>
 </section>
-<script>(function(){var f=document.getElementById("emailform");if(!f)return;f.addEventListener("submit",function(){
-try{sessionStorage.removeItem("jpp-dl")}catch(e){}
-document.getElementById("after").hidden=false;f.querySelector("button").disabled=true;
-setTimeout(function(){location.href="thanks.html"},1200)})})();</script>
+<script>(function(){
+var f=document.getElementById("emailform"),i=document.getElementById("email"),b=document.getElementById("send"),h=document.getElementById("hint");
+if(!f||!i||!b)return;
+var re=/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/;
+function ok(){return re.test(i.value.trim())}
+function sync(){var v=i.value.trim(),good=ok();b.disabled=!good;b.setAttribute("aria-disabled",good?"false":"true");
+h.textContent=good?"":(v?h.dataset.invalid:h.dataset.empty);i.setAttribute("aria-invalid",(!good&&v)?"true":"false")}
+["input","change","keyup","blur","paste"].forEach(function(n){i.addEventListener(n,sync)});
+var last=null;function watch(){if(i.value!==last){last=i.value;sync()}}
+watch();setInterval(watch,400);   // some browsers fill the field (autofill, password managers) without firing an event
+f.addEventListener("submit",function(e){
+if(!ok()){e.preventDefault();sync();i.focus();return}
+i.value=i.value.trim();
+try{sessionStorage.removeItem("jpp-dl")}catch(x){}
+document.getElementById("after").hidden=false;b.disabled=true;
+setTimeout(function(){location.href="thanks.html"},1200)});
+})();</script>
 
 </main>
 <footer class="footer">
