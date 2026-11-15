@@ -45,13 +45,16 @@ El instalador Lite **no está en el sitio**: se aloja como archivo de un Release
 1. Crea el Release con el instalador (desde `dmg/` del proyecto "J++ Lite"):
 
 ```bash
-gh release create lite-1.0.1 "/ruta/J++-Lite-1.0.1.dmg" --repo jleiton22-CR/jpp --title "jplus2 Lite 1.0.1" --notes "jplus2 Lite 1.0.1" --latest=false
+gh release create lite-1.0.1 "/ruta/jplus2-Lite-1.0.1.dmg" --repo jleiton22-CR/jpp --title "jplus2 Lite 1.0.1" --notes "jplus2 Lite 1.0.1" --latest=false
 ```
 
 2. En `site.json` cambia `version`, `download_size`, `download_sha256` y `download_url` a la dirección del archivo
-   del Release (`https://github.com/jleiton22-CR/jpp/releases/download/lite-1.0.1/J%2B%2B-Lite-1.0.1.dmg`; el `+` se
-   escribe `%2B`). La huella sale de `shasum -a 256 archivo.dmg`, o de `gh api repos/jleiton22-CR/jpp/releases/tags/lite-1.0.1 --jq '.assets[0].digest'`.
+   del Release (`https://github.com/jleiton22-CR/jpp/releases/download/lite-1.0.1/jplus2-Lite-1.0.1.dmg`).
+   La huella sale de `shasum -a 256 archivo.dmg`, o de `gh api repos/jleiton22-CR/jpp/releases/tags/lite-1.0.1 --jq '.assets[0].digest'`.
 3. Genera y publica.
+
+El instalador que se publica en la web debe ir firmado de forma local (ad hoc) o con un certificado **Developer ID**, no con el de
+**Apple Distribution**: ese solo sirve para el App Store y macOS lo rechaza al abrirlo desde una descarga.
 
 Todos los botones de descarga llevan a `thanks.html` (página de gracias), que inicia la descarga una vez por sesión,
 explica la instalación y muestra la huella SHA-256. Esa página no se indexa (`noindex` y `robots.txt`).
@@ -143,10 +146,8 @@ El producto se llama **jplus2** (en minúsculas, igual que la app de macOS) y su
 de `app_name` en `site.json` y de los textos de `content/*.json`. Los iconos del sitio (`assets/img/icon-*.png`, `favicon.png`,
 `apple-touch-icon.png`, `og.png` y `favicon.ico`) se generan de `appstore/icon/icon-light-1024.png` e `icon-dark-1024.png` del proyecto de la app.
 
-**Pendiente cuando se reconstruya Lite con la marca nueva:** hoy el instalador Lite todavía se llama "J++ Lite" por dentro (archivo
-`J++-Lite-1.0.0.dmg`, app "J++ Lite" y su icono viejo), así que los pasos de instalación de `thanks.html` y `support.html`
-citan esos nombres reales. Al publicar el nuevo instalador, cambia en `content/*.json` las frases que dicen "J++ Lite" y
-"J++-Lite" (están en `thanks.steps`, `thanks`, `support_page` y en `build.py`, en el comando `shasum`).
+Lite y la app de iPad ya usan el nombre jplus2. El instalador Lite es `jplus2-Lite-<versión>.dmg` y contiene la app "jplus2 Lite"; esos nombres
+aparecen en los pasos de instalación de `thanks.html` y `support.html`.
 
 ## Notas
 

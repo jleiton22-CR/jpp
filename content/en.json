@@ -286,7 +286,7 @@
     "sections": [
       {
         "title": "Installing jplus2",
-        "body": "<p>Open the downloaded disk image and drag <strong>J++ Lite</strong> to your Applications folder. jplus2 needs macOS 12 or later and runs on Apple silicon and Intel Macs.</p><p>If macOS says it cannot check the app the first time you open it, open <strong>System Settings ▸ Privacy &amp; Security</strong>, find the message about J++ Lite and press <strong>Open Anyway</strong>. The Mac App Store version does not show this message.</p>"
+        "body": "<p>Open the downloaded disk image and drag <strong>jplus2 Lite</strong> to your Applications folder. jplus2 needs macOS 12 or later and runs on Apple silicon and Intel Macs.</p><p>If macOS says it cannot check the app the first time you open it, open <strong>System Settings ▸ Privacy &amp; Security</strong>, find the message about jplus2 Lite and press <strong>Open Anyway</strong>. The Mac App Store version does not show this message.</p>"
       },
       {
         "title": "jplus2 Lite or the full version?",
@@ -494,15 +494,15 @@
     "steps": [
       [
         "Open the file",
-        "Double-click <code>J++-Lite-{version}.dmg</code> in your Downloads folder."
+        "Double-click <code>jplus2-Lite-{version}.dmg</code> in your Downloads folder."
       ],
       [
         "Drag it to Applications",
-        "In the window that opens, drag <strong>J++ Lite</strong> onto the Applications folder."
+        "In the window that opens, drag <strong>jplus2 Lite</strong> onto the Applications folder."
       ],
       [
-        "Open J++ Lite",
-        "Open it from Applications or Launchpad. The first time, macOS may say it cannot check the app: open <strong>System Settings ▸ Privacy &amp; Security</strong>, find the message about J++ Lite and press <strong>Open Anyway</strong>."
+        "Open jplus2 Lite",
+        "Open it from Applications or Launchpad. The first time, macOS may say it cannot check the app: open <strong>System Settings ▸ Privacy &amp; Security</strong>, find the message about jplus2 Lite and press <strong>Open Anyway</strong>."
       ]
     ],
     "verify_title": "Check your download (optional)",

@@ -3,12 +3,12 @@
   "author": "Jason Leiton",
   "year": "2026",
   "version": "1.0.0",
-  "download_url": "https://github.com/jleiton22-CR/jpp/releases/download/lite-1.0.0/J%2B%2B-Lite-1.0.0.dmg",
+  "download_url": "https://github.com/jleiton22-CR/jpp/releases/download/lite-1.0.0/jplus2-Lite-1.0.0.dmg",
   "download_size": "5.6 MB",
   "app_store_url": "",
   "contact_email": "leiton@live.com",
   "donate_url": "https://www.paypal.com/donate/?business=leiton%40live.com&no_recurring=0&item_name=jplus2&currency_code=USD",
   "base_url": "https://jplus2.com",
-  "download_sha256": "04fd5e805ed51733b38d48da0d47978eb4db3120358f117cce1faf7bbcc89ed4",
+  "download_sha256": "1b891c8a82a343c746e5b29cd5dd1bf49cbeff9dc0903e476c0f623796d3406a",
   "goatcounter_code": "jplus2"
 }

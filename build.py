@@ -267,7 +267,7 @@ def thanks_page(site, t, lang):
     verify = ""
     if sha:
         verify = (f'<section class="thanks-verify"><h2>{k["verify_title"]}</h2><p>{k["verify_text"]}</p>'
-                  f'<pre><code>shasum -a 256 ~/Downloads/J++-Lite-{site["version"]}.dmg</code></pre>'
+                  f'<pre><code>shasum -a 256 ~/Downloads/jplus2-Lite-{site["version"]}.dmg</code></pre>'
                   f'<p>{k["verify_expect"]}</p><pre><code class="hash">{sha}</code></pre></section>')
     url = escape(file_url(site, root))
     body = f"""<section class="thanks wrap">

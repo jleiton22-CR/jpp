@@ -286,7 +286,7 @@
     "sections": [
       {
         "title": "Instalar jplus2",
-        "body": "<p>Abre la imagen de disco descargada y arrastra <strong>J++ Lite</strong> a tu carpeta Aplicaciones. jplus2 necesita macOS 12 o posterior y funciona en Mac con Apple Silicon e Intel.</p><p>Si macOS dice que no puede comprobar la app la primera vez que la abres, abre <strong>Ajustes del Sistema ▸ Privacidad y seguridad</strong>, busca el mensaje sobre J++ Lite y pulsa <strong>Abrir igualmente</strong>. La versión del Mac App Store no muestra este mensaje.</p>"
+        "body": "<p>Abre la imagen de disco descargada y arrastra <strong>jplus2 Lite</strong> a tu carpeta Aplicaciones. jplus2 necesita macOS 12 o posterior y funciona en Mac con Apple Silicon e Intel.</p><p>Si macOS dice que no puede comprobar la app la primera vez que la abres, abre <strong>Ajustes del Sistema ▸ Privacidad y seguridad</strong>, busca el mensaje sobre jplus2 Lite y pulsa <strong>Abrir igualmente</strong>. La versión del Mac App Store no muestra este mensaje.</p>"
       },
       {
         "title": "¿jplus2 Lite o la versión completa?",
@@ -494,15 +494,15 @@
     "steps": [
       [
         "Abre el archivo",
-        "Haz doble clic en <code>J++-Lite-{version}.dmg</code> en tu carpeta Descargas."
+        "Haz doble clic en <code>jplus2-Lite-{version}.dmg</code> en tu carpeta Descargas."
       ],
       [
         "Arrástrala a Aplicaciones",
-        "En la ventana que se abre, arrastra <strong>J++ Lite</strong> a la carpeta Aplicaciones."
+        "En la ventana que se abre, arrastra <strong>jplus2 Lite</strong> a la carpeta Aplicaciones."
       ],
       [
-        "Abre J++ Lite",
-        "Ábrela desde Aplicaciones o Launchpad. La primera vez, macOS puede decir que no puede comprobar la app: abre <strong>Ajustes del Sistema ▸ Privacidad y seguridad</strong>, busca el mensaje sobre J++ Lite y pulsa <strong>Abrir igualmente</strong>."
+        "Abre jplus2 Lite",
+        "Ábrela desde Aplicaciones o Launchpad. La primera vez, macOS puede decir que no puede comprobar la app: abre <strong>Ajustes del Sistema ▸ Privacidad y seguridad</strong>, busca el mensaje sobre jplus2 Lite y pulsa <strong>Abrir igualmente</strong>."
       ]
     ],
     "verify_title": "Comprueba tu descarga (opcional)",
