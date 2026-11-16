@@ -789,6 +789,8 @@
       "Also reads .cursorrules files, so a project set up for Cursor works as it is"
     ],
     "source": "Based on the public documentation of Cursor and Windsurf, checked on 16 November 2026. Their features change often, so check their sites for the current list. Cursor and Windsurf are trademarks of their owners; jplus2 is not affiliated with them.",
-    "lite": "jplus2 Lite does not include the AI assistant or Agent mode."
+    "lite": "jplus2 Lite does not include the AI assistant or Agent mode.",
+    "more": "Compare it with each tool, one by one",
+    "more_slug": "ai-agent-code-editor-mac-compared"
   }
 }

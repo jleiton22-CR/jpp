@@ -701,6 +701,7 @@ def agent_html(t):
     <p class="lead reveal">{a["text"]}</p>
     <div class="tiles agent-tiles">
 {cards}    </div>
+    <p class="reveal"><a class="btn btn-ghost" href="{a["more_slug"]}.html">{a["more"]} ›</a></p>
     <p class="note reveal"><strong>{a["lite"]}</strong></p>
     <p class="note reveal">{a["source"]}</p>
   </div>

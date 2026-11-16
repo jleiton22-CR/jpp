@@ -128,6 +128,9 @@ Agente del asistente con Cursor y Windsurf. Solo afirma lo verificado en su docu
 archivos y ejecuta comandos, `AGENTS.md`, menciones con @ (Cursor) y la salida del terminal como contexto (Cursor). Siempre dice que es solo de la
 versión completa y que Lite no lo incluye. Revisa esas listas cuando cambien sus webs o la app; no añadas afirmaciones sobre ellos que no puedas citar.
 
+La guía `agent` (`content/guides/agent.{en,es}.json`) compara el modo Agente con Cursor, Windsurf, VS Code, Sublime Text y Nextpad++ por separado,
+solo con lo que dicen sus webs (leídas el 16-11-2026); "no figura en su web" nunca significa "no existe". Termina con la lista de espera `waitlist-agent`.
+
 ### Página de prensa (`press.html` y `es/prensa.html`)
 
 Reúne datos verificados, tres descripciones para copiar (una línea, corta y larga), los iconos de 1024 px, las capturas, normas de marca,

@@ -784,6 +784,8 @@
       "También lee archivos .cursorrules, así que un proyecto preparado para Cursor funciona tal cual"
     ],
     "source": "Basado en la documentación pública de Cursor y Windsurf, consultada el 16 de noviembre de 2026. Sus funciones cambian a menudo, así que consulta sus webs para la lista actual. Cursor y Windsurf son marcas de sus propietarios; jplus2 no está afiliado a ellos.",
-    "lite": "jplus2 Lite no incluye el asistente de IA ni el modo Agente."
+    "lite": "jplus2 Lite no incluye el asistente de IA ni el modo Agente.",
+    "more": "Compáralo con cada herramienta, una por una",
+    "more_slug": "editor-con-agente-de-ia-mac-comparativa"
   }
 }

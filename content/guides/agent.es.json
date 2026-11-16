@@ -1,0 +1,75 @@
+{
+  "lang": "es",
+  "group": "agent",
+  "order": 6,
+  "slug": "editor-con-agente-de-ia-mac-comparativa",
+  "short": "Agente de IA comparado",
+  "meta_title": "Editor con agente de IA para Mac vs Cursor, Windsurf, VS Code | jplus2",
+  "meta_description": "Qué comparte el nuevo modo Agente de jplus2 con Cursor, Windsurf y VS Code, y en qué se diferencian Sublime Text y Nextpad++. Contrastado con sus webs públicas.",
+  "h1": "El agente de IA de jplus2 comparado con Cursor, Windsurf, VS Code, Sublime Text y Nextpad++",
+  "lead": "El 16 de noviembre de 2026 la versión completa de jplus2 ganó un modo Agente y las herramientas de proyecto que lo rodean. Esto es lo que se añadió y cómo se compara con cada editor por separado, usando solo lo que dicen sus webs y su documentación públicas.",
+  "card_title": "El agente de IA de jplus2 comparado, herramienta por herramienta",
+  "card_text": "Modo Agente, instrucciones del proyecto, @archivos y aprobaciones, comparados por separado con Cursor, Windsurf, VS Code, Sublime Text y Nextpad++.",
+  "cta": "waitlist",
+  "tag": "waitlist-agent",
+  "related": [
+    "ai",
+    "vscode",
+    "sublime",
+    "notepad"
+  ],
+  "published": "2026-11-16",
+  "updated": "2026-11-16",
+  "sections": [
+    {
+      "h2": "Qué se añadió",
+      "html": "<ul><li><strong>Modo Agente.</strong> El asistente puede listar y leer archivos de la carpeta que abriste, proponer cambios en archivos y proponer comandos de terminal, paso a paso. Tú apruebas cada uno.</li><li><strong>Cambios como diff.</strong> Cada cambio se abre con Apply y Cancel antes de escribir nada.</li><li><strong>Comandos en el panel Terminal.</strong> Cada comando espera Run o Reject, y su salida y su código de salida vuelven al asistente.</li><li><strong>Instrucciones del proyecto.</strong> Lee <code>AGENTS.md</code>, <code>CLAUDE.md</code> o <code>.cursorrules</code> de tu carpeta.</li><li><strong>Memorias y @archivos.</strong> Memorias de una línea por proyecto y archivos adjuntos escribiendo <code>@nombre</code> (hasta 8 archivos de texto).</li><li><strong>Tus prompts y revisiones.</strong> Comandos propios desde <code>ai-commands.json</code> y revisión de cambios sin confirmar o de pull requests.</li><li><strong>Gateways.</strong> Un gateway de empresa con clave renovable y una importación desde el <code>settings.json</code> de Claude Code.</li></ul><p><strong>Solo en la versión completa.</strong> Nada de esto está en jplus2 Lite, la descarga gratuita.</p>"
+    },
+    {
+      "h2": "jplus2 y Cursor",
+      "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\">Función</th><th scope=\"col\">jplus2</th><th scope=\"col\">Cursor</th></tr></thead><tbody><tr><th scope=\"row\">Agente que lee archivos, edita archivos y ejecuta comandos de terminal</th><td>Sí</td><td>Sí (su lista de herramientas)</td></tr><tr><th scope=\"row\">Instrucciones del proyecto en AGENTS.md</th><td>Sí, además de CLAUDE.md y .cursorrules</td><td>Sí (AGENTS.md y sus propios archivos de reglas)</td></tr><tr><th scope=\"row\">@ para llevar archivos al chat</th><td>Sí, @nombre o el clip</td><td>Sí, archivos y carpetas</td></tr><tr><th scope=\"row\">Salida del terminal como contexto</th><td>La salida de cada comando aprobado vuelve al asistente</td><td>Sí, con @Terminals</td></tr><tr><th scope=\"row\">Ediciones</th><td>Cada cambio es un diff que aplicas o cancelas</td><td>Su documentación describe ediciones aplicadas automáticamente, con checkpoints para restaurar</td></tr></tbody></table></div><p>Coinciden en el ciclo del agente. Las diferencias son que jplus2 se detiene en cada edición y comando, y que es una app nativa de Mac donde traes tu modelo.</p>"
+    },
+    {
+      "h2": "jplus2 y Windsurf",
+      "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\">Función</th><th scope=\"col\">jplus2</th><th scope=\"col\">Windsurf</th></tr></thead><tbody><tr><th scope=\"row\">Agente que edita código y usa la terminal como herramienta</th><td>Sí</td><td>Sí (Cascade, modo Code)</td></tr><tr><th scope=\"row\">Instrucciones del proyecto en AGENTS.md</th><td>Sí, además de CLAUDE.md y .cursorrules</td><td>Sí, y sus propios archivos de reglas</td></tr><tr><th scope=\"row\">Deshacer</th><td>Un paso de deshacer por cambio, y no se escribe nada hasta pulsar Apply</td><td>Checkpoints y vuelta a pasos anteriores</td></tr><tr><th scope=\"row\">Límite de pasos</th><td>Se detiene solo tras 20 pasos</td><td>Hasta 40 llamadas a herramientas por petición por defecto</td></tr></tbody></table></div><p>Cascade es un ciclo de agente parecido. jplus2 pregunta antes de cada paso; consulta la documentación de Windsurf para ver cómo gestiona hoy la aprobación.</p>"
+    },
+    {
+      "h2": "jplus2 y VS Code",
+      "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\">Función</th><th scope=\"col\">jplus2</th><th scope=\"col\">VS Code</th></tr></thead><tbody><tr><th scope=\"row\">Agente que encuentra código, hace cambios y ejecuta comprobaciones</th><td>Sí</td><td>Sí, en la vista Chat y en la ventana Agents</td></tr><tr><th scope=\"row\">Aprobación de comandos de terminal y ediciones</th><td>Siempre: Run, Reject, Apply, Cancel</td><td>Los permisos y aprobaciones deciden qué acciones preguntan</td></tr><tr><th scope=\"row\">Instrucciones del proyecto</th><td>AGENTS.md, CLAUDE.md, .cursorrules</td><td>Instrucciones personalizadas y de proyecto</td></tr><tr><th scope=\"row\">Tu propia clave de API</th><td>Sí, Claude o cualquier servicio compatible con OpenAI</td><td>Sí (BYOK)</td></tr><tr><th scope=\"row\">Modelos locales</th><td>Sí, por ejemplo Ollama</td><td>Sí, modelos locales compatibles</td></tr></tbody></table></div><p>Los agentes de VS Code son amplios y extensibles. jplus2 es una sola app nativa con el asistente integrado y sin extensiones que elegir.</p>"
+    },
+    {
+      "h2": "jplus2 y Sublime Text",
+      "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\">Función</th><th scope=\"col\">jplus2 (completa)</th><th scope=\"col\">Sublime Text</th></tr></thead><tbody><tr><th scope=\"row\">Asistente o agente de IA integrado</th><td>Sí</td><td>No figura en su web</td></tr><tr><th scope=\"row\">Ampliar el editor</th><td>Sin sistema de plugins</td><td>API de Python y paquetes, con una API ampliada para herramientas como LSP</td></tr><tr><th scope=\"row\">Plataformas</th><td>macOS (Apple silicon e Intel)</td><td>Windows, Mac y Linux</td></tr></tbody></table></div><p>La web de Sublime describe un editor rápido, no un asistente de IA. Paquetes de terceros pueden añadir funciones de IA; no los hemos evaluado. Mira también nuestra <a href=\"alternativa-sublime-text-mac.html\">comparación con Sublime Text</a>.</p>"
+    },
+    {
+      "h2": "jplus2 y Nextpad++",
+      "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\">Función</th><th scope=\"col\">jplus2 (completa)</th><th scope=\"col\">Nextpad++</th></tr></thead><tbody><tr><th scope=\"row\">Asistente, agente de IA o terminal integrados</th><td>Sí</td><td>No se describen en su web</td></tr><tr><th scope=\"row\">Licencia</th><td>Propietaria; Lite es gratis</td><td>Gratis y de código abierto (GPL v3)</td></tr><tr><th scope=\"row\">Plugins</th><td>Ninguno</td><td>Plugin Admin, con plugins de Notepad++ para Windows en proceso de portarse</td></tr><tr><th scope=\"row\">Plataformas</th><td>macOS</td><td>macOS y Linux</td></tr></tbody></table></div><p>Nextpad++ es un port de Notepad++ para Mac, no un editor de IA. Si buscas un editor de código abierto y con plugins, encaja bien; si quieres un agente dentro del editor, eso es lo que añade la versión completa de jplus2.</p>"
+    },
+    {
+      "h2": "¿Está disponible ya?",
+      "html": "<p>El modo Agente es parte de la versión completa de jplus2, que llegará al Mac App Store. <strong>jplus2 Lite, la descarga gratuita, no incluye el asistente ni el modo Agente.</strong> Deja tu correo abajo y te avisamos el día que esté disponible.</p>"
+    },
+    {
+      "h2": "Cómo se comprobó",
+      "html": "<p>Los datos de otras herramientas salen de su documentación y sus webs públicas, leídas el 16 de noviembre de 2026: Cursor (cursor.com/docs), Windsurf (docs.windsurf.com), VS Code (code.visualstudio.com/docs), Sublime Text (sublimetext.com) y Nextpad++ (nextpad.org). Una función marcada como no listada significa que la web no la describe, no que no exista. Estos productos cambian a menudo, así que consulta sus webs para el estado actual. Todos los nombres son marcas de sus propietarios; jplus2 no está afiliado a ellos.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿El modo Agente está en jplus2 Lite?",
+      "a": "No. Es parte de la versión completa, que llegará al Mac App Store."
+    },
+    {
+      "q": "¿Puede el agente cambiar mis archivos sin preguntar?",
+      "a": "No. Cada cambio se abre como diff para aplicar o cancelar, y cada comando espera a que pulses Run."
+    },
+    {
+      "q": "¿Funciona con un proyecto preparado para Cursor?",
+      "a": "Lee archivos .cursorrules y AGENTS.md, así que se usan las instrucciones que ya tiene el proyecto."
+    },
+    {
+      "q": "¿Mi código se envía a algún sitio?",
+      "a": "Solo cuando usas el asistente, y al modelo que elegiste. En modo agente, lo que lee y lo que imprimen tus comandos se envía para que pueda continuar."
+    }
+  ]
+}
