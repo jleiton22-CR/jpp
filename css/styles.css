@@ -364,3 +364,6 @@ code { font-family: var(--mono); font-size: 0.9em; background: var(--bg-alt); pa
 .pshot img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); }
 .pshot figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.45; }
 @media (max-width: 700px) { .pshots { grid-template-columns: 1fr; } .press .facts-table th { width: 32%; } }
+
+.agent-tiles .tile ul { margin: 10px 0 0; padding-left: 1.1em; }
+.agent-tiles .tile li { margin: 6px 0; font-size: 0.9375rem; color: var(--muted); }
