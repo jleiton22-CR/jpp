@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add("nav-js")</script>
+
+<title>Query CSV and Excel Files with SQL on Mac | jplus2</title>
+<meta name="description" content="Run SQL on CSV and Excel files on your Mac: a free method with sqlite3, and how the full version of jplus2 does it in a native editor.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Query CSV and Excel Files with SQL on Mac | jplus2">
+<meta property="og:description" content="Run SQL on CSV and Excel files on your Mac: a free method with sqlite3, and how the full version of jplus2 does it in a native editor.">
+<meta property="og:url" content="https://jplus2.com/query-csv-excel-with-sql-mac.html">
+<meta property="og:site_name" content="jplus2">
+<meta property="og:locale" content="en_US">
+<link rel="canonical" href="https://jplus2.com/query-csv-excel-with-sql-mac.html">
+<link rel="alternate" hreflang="en" href="https://jplus2.com/query-csv-excel-with-sql-mac.html">
+<link rel="alternate" hreflang="x-default" href="https://jplus2.com/query-csv-excel-with-sql-mac.html">
+<meta property="og:image" content="https://jplus2.com/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="jplus2">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Query CSV and Excel Files with SQL on Mac | jplus2">
+<meta name="twitter:description" content="Run SQL on CSV and Excel files on your Mac: a free method with sqlite3, and how the full version of jplus2 does it in a native editor.">
+<meta name="twitter:image" content="https://jplus2.com/img/og.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://jplus2.com/#person", "name": "Jason Leiton", "url": "https://jplus2.com/"}, {"@type": "Article", "headline": "Query CSV and Excel files with SQL on a Mac", "description": "Run SQL on CSV and Excel files on your Mac: a free method with sqlite3, and how the full version of jplus2 does it in a native editor.", "inLanguage": "en", "datePublished": "2026-11-15", "dateModified": "2026-11-15", "url": "https://jplus2.com/query-csv-excel-with-sql-mac.html", "mainEntityOfPage": "https://jplus2.com/query-csv-excel-with-sql-mac.html", "image": "https://jplus2.com/img/og.png", "author": {"@id": "https://jplus2.com/#person"}, "publisher": {"@id": "https://jplus2.com/#person"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "jplus2", "item": "https://jplus2.com/"}, {"@type": "ListItem", "position": 2, "name": "SQL on CSV and Excel", "item": "https://jplus2.com/query-csv-excel-with-sql-mac.html"}]}]}</script>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-guide">
+<a class="skip" href="#top">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><picture><source srcset="img/icon-dark.png" media="(prefers-color-scheme: dark)"><img class="brand-icon" src="img/icon-light.png" alt="" width="28" height="28"></picture><span>jplus2</span></a>
+    <nav class="nav-links" id="menu" aria-label="Main">
+      <a href="index.html#why">Why jplus2</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#editions">Lite & Full</a>
+      <a href="index.html#ipad">iPadOS</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+      <a class="menu-only" href="get.html">Download Lite</a>
+    </nav>
+    <div class="nav-end">
+      <div class="lang-toggle" role="group" aria-label="English / Español"><span class="on" aria-current="true" title="English">EN</span><a href="es/?lang=es" lang="es" hreflang="es" title="Español" aria-label="Español">ES</a></div>
+      <a class="btn btn-small btn-donate" href="https://www.paypal.com/donate/?business=leiton%40live.com&amp;no_recurring=0&amp;item_name=jplus2&amp;currency_code=USD" target="_blank" rel="noopener" aria-label="Donate with PayPal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.3 3 5 6.2 5c2 0 3.4 1.1 4.2 2.4h.2C11.4 6.1 12.800 5 14.8 5 18 5 19.900 8.300 18.500 11.700 16.500 16.400 12 21 12 21z" transform="translate(1 0)" fill="currentColor"/></svg><span>Donate</span></a>
+      <a class="btn btn-small" href="get.html">Download Lite</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+<main id="top">
+<article class="doc wrap gpage">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">jplus2</a> <span aria-hidden="true">›</span> <span>SQL on CSV and Excel</span></nav>
+<h1>Query CSV and Excel files with SQL on a Mac</h1>
+<p class="fine">Last updated: <time datetime="2026-11-15">2026-11-15</time></p>
+<p class="lead">You do not need a database server to run SQL on a spreadsheet. This page shows a free method with the sqlite3 tool already on your Mac, and how the full version of jplus2 does the same inside a code editor.</p>
+<h2>Method 1: sqlite3 in Terminal (free, already on your Mac)</h2>
+<p>macOS includes the <code>sqlite3</code> command-line tool. For a CSV file called <code>people.csv</code> whose first row holds the column names:</p><pre><code>sqlite3 :memory: -cmd ".mode csv" -cmd ".import people.csv people" -cmd ".headers on" -cmd ".mode column" \
+  "select city, count(*) as n from people group by city order by n desc;"</code></pre><p>The first row becomes the column names, the file is loaded into an in-memory database, and the query prints a table. An Excel workbook (.xlsx) must be exported to CSV first.</p>
+<h2>Method 2: jplus2, in a code editor</h2>
+<p>In the full version of jplus2, an Excel workbook or a CSV file is a database connection. Every sheet becomes a table in an in-memory SQLite database, and you query it from a SQL tab.</p><ol><li>Choose <strong>Database ▸ Manage Connections…</strong> (<code>⇧⌘D</code>) and add a connection of type Excel workbook or CSV file.</li><li>Open a SQL tab and write your query.</li><li>Press <code>⌘↩</code> to run the selection, or the statement at the caret.</li><li>The results appear in a grid. Copy them, or export them as CSV.</li></ol><p>The same SQL tab also works with SQLite files, Databricks and Snowflake.</p>
+<h2>Other apps</h2>
+<p>Dedicated apps, some on the Mac App Store, and open source tools such as DuckDB also query files with SQL. Pick the one that fits how often you do this.</p>
+<h2>Is it available now?</h2>
+<p>The SQL features are part of the full version of jplus2, which is coming to the Mac App Store. jplus2 Lite, the free download, is an editor without SQL. Leave your email below and we will tell you the day the full version is available.</p>
+<aside class="waitlist" id="waitlist">
+  <h2>Get notified when the full version is out</h2>
+  <p>The full jplus2, with run and debug, SQL, GitHub and the AI assistant, is coming to the Mac App Store. Leave your email and we will tell you the day it is available.</p>
+  <form class="emailform" id="wl-waitlist-sql" method="post" action="https://buttondown.com/api/emails/embed-subscribe/jason_g" target="_blank" rel="noopener" novalidate>
+    <label for="wl-waitlist-sql-email">Your email</label>
+    <input id="wl-waitlist-sql-email" name="email" type="email" required autocomplete="email" inputmode="email" spellcheck="false" autocapitalize="off"
+      pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" aria-describedby="wl-waitlist-sql-hint" placeholder="you@example.com">
+    <input type="hidden" name="embed" value="1">
+    <input type="hidden" name="tag" value="waitlist-sql">
+    <p class="hint" id="wl-waitlist-sql-hint" role="status" aria-live="polite" data-empty="Enter your email to turn on the button." data-invalid="That email does not look right. It should look like name@example.com."></p>
+    <button class="btn" type="submit">Notify me</button>
+  </form>
+  <p class="note" id="wl-waitlist-sql-after" hidden>Check your email to confirm. If a new tab opened asking you to confirm, that is normal: you can close it.</p>
+  <p class="note">We use your email only to tell you when the full version is available, plus occasional jplus2 news. Every message has a one-click unsubscribe link. Details in the <a href="privacy.html">privacy policy</a>.</p>
+</aside>
+<script>(function(){
+var f=document.getElementById("wl-waitlist-sql"),i=document.getElementById("wl-waitlist-sql-email"),b=f&&f.querySelector("button"),h=document.getElementById("wl-waitlist-sql-hint");
+if(!f||!i||!b)return;
+var re=/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/;
+var sent=false;
+function ok(){return re.test(i.value.trim())}
+function sync(){var v=i.value.trim(),good=ok();b.disabled=sent||!good;b.setAttribute("aria-disabled",good?"false":"true");
+h.textContent=good?"":(v?h.dataset.invalid:h.dataset.empty);i.setAttribute("aria-invalid",(!good&&v)?"true":"false")}
+i.addEventListener("input",function(){sent=false});   // editing the address allows another send
+["input","change","keyup","blur","paste"].forEach(function(n){i.addEventListener(n,sync)});
+var last=null;function watch(){if(i.value!==last){last=i.value;sync()}}
+watch();setInterval(watch,400);
+f.addEventListener("submit",function(e){if(!ok()){e.preventDefault();sync();i.focus();return}
+i.value=i.value.trim();document.getElementById("wl-waitlist-sql-after").hidden=false;sent=true;b.disabled=true});
+})();</script>
+
+<h2>Frequently asked questions</h2>
+<dl class="faq"><dt>Do I need to install a database?</dt><dd>No. For Excel and CSV files, jplus2 uses an in-memory SQLite database.</dd><dt>Can I export the results?</dt><dd>Yes. Copy the grid, or export it as CSV.</dd><dt>Does my file leave my Mac?</dt><dd>No. Files stay on your Mac. Only connections you set up yourself, such as Databricks or Snowflake, use the network.</dd></dl>
+<h2>Related guides</h2>
+<ul class="related"><li><a href="ai-code-editor-mac-own-api-key.html">An AI code editor for Mac with your own API key</a></li><li><a href="vs-code-alternative-mac.html">A lightweight VS Code alternative for Mac</a></li></ul>
+</article>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="brand" href="index.html"><picture><source srcset="img/icon-dark.png" media="(prefers-color-scheme: dark)"><img class="brand-icon" src="img/icon-light.png" alt="" width="28" height="28"></picture><span>jplus2</span></a>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+        <a href="mailto:leiton@live.com?subject=jplus2">Contact</a>
+        <a href="https://www.paypal.com/donate/?business=leiton%40live.com&amp;no_recurring=0&amp;item_name=jplus2&amp;currency_code=USD" rel="noopener">Support jplus2 with a donation</a>
+        <a href="es/?lang=es" lang="es" hreflang="es">Español</a>
+      </nav>
+    </div>
+    <nav class="footer-guides" aria-label="Guides"><strong>Guides</strong><a href="notepad-plus-plus-alternative-mac.html">Notepad++ alternative</a><a href="vs-code-alternative-mac.html">VS Code alternative</a><a href="sublime-text-alternative-mac.html">Sublime Text alternative</a><a href="query-csv-excel-with-sql-mac.html">SQL on CSV and Excel</a><a href="ai-code-editor-mac-own-api-key.html">AI with your own key</a></nav>
+    <p class="fine">© 2026 Jason Leiton. All rights reserved.</p>
+    <p class="fine">Scintilla and Lexilla are © Neil Hodgson and are used under their own licence. Mac, macOS and Xcode are trademarks of Apple Inc.</p>
+  </div>
+</footer>
+<script src="js/main.js" defer></script>
+<script>(function(){try{if(navigator.doNotTrack==="1"||window.doNotTrack==="1"||/^(localhost|127\.|\[::1\])/.test(location.hostname))return}catch(e){}var s=document.createElement("script");s.async=true;s.src="https://gc.zgo.at/count.js";s.setAttribute("data-goatcounter","https://jplus2.goatcounter.com/count");document.body.appendChild(s)})()</script>
+</body>
+</html>
