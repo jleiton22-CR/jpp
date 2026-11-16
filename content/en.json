@@ -542,15 +542,16 @@
     "meta_title": "Download jplus2 Lite",
     "meta_desc": "Enter your email to download jplus2 Lite, free for macOS.",
     "title": "Download jplus2 Lite",
-    "lead": "Free for macOS 12 or later, {size}. Enter your email and your download starts right away.",
-    "label": "Your email",
+    "lead": "Free for macOS 12 or later, {size}. Add your email to hear when the full version is out, or download without it.",
+    "label": "Your email (optional)",
     "placeholder": "you@example.com",
     "button": "Download jplus2 Lite {version}",
     "after": "Your download is starting. If a new tab opened asking you to confirm your email, that is normal: you can close it whenever you like.",
     "notice": "We use your email only to send occasional jplus2 news, such as when the full version is released. Every message has a one-click unsubscribe link. Details in the <a href=\"privacy.html\">privacy policy</a>.",
     "noscript": "Continue to the download",
-    "hint": "Enter your email to turn on the button.",
-    "invalid": "That email does not look right. It should look like name@example.com."
+    "hint": "Enter your email to turn on this button, or download without it below.",
+    "invalid": "That email does not look right. It should look like name@example.com.",
+    "skip": "Download without email"
   },
   "guide_ui": {
     "crumbs": "Breadcrumb",
@@ -573,6 +574,8 @@
     "text": "The full jplus2, with run and debug, SQL, GitHub and the AI assistant, is coming to the Mac App Store. Leave your email and we will tell you the day it is available.",
     "button": "Notify me",
     "after": "Check your email to confirm. If a new tab opened asking you to confirm, that is normal: you can close it.",
-    "notice": "We use your email only to tell you when the full version is available, plus occasional jplus2 news. Every message has a one-click unsubscribe link. Details in the <a href=\"privacy.html\">privacy policy</a>."
+    "notice": "We use your email only to tell you when the full version is available, plus occasional jplus2 news. Every message has a one-click unsubscribe link. Details in the <a href=\"privacy.html\">privacy policy</a>.",
+    "label": "Your email",
+    "hint": "Enter your email to turn on the button."
   }
 }

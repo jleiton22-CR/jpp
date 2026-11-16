@@ -324,9 +324,9 @@ def get_page(site, t, lang):
     <p class="hint" id="hint" role="status" aria-live="polite" data-empty="{escape(k["hint"])}" data-invalid="{escape(k["invalid"])}"></p>
     <button class="btn btn-large" id="send" type="submit" aria-describedby="hint">{fill(k["button"], site)}</button>
   </form>
+  <p class="skiprow"><a class="btn btn-ghost btn-large" id="skipdl" href="thanks.html">{k["skip"]}</a></p>
   <p class="note" id="after" hidden>{k["after"]}</p>
   <p class="note">{k["notice"]}</p>
-  <noscript><p class="note"><a href="thanks.html">{k["noscript"]}</a></p></noscript>
 </section>
 <script>(function(){{
 var f=document.getElementById("emailform"),i=document.getElementById("email"),b=document.getElementById("send"),h=document.getElementById("hint");
@@ -339,6 +339,8 @@ h.textContent=good?"":(v?h.dataset.invalid:h.dataset.empty);i.setAttribute("aria
 ["input","change","keyup","blur","paste"].forEach(function(n){{i.addEventListener(n,sync)}});
 var last=null;function watch(){{if(i.value!==last){{last=i.value;sync()}}}}
 watch();setInterval(watch,400);   // some browsers fill the field (autofill, password managers) without firing an event
+var sk=document.getElementById("skipdl");
+if(sk)sk.addEventListener("click",function(){{try{{sessionStorage.removeItem("jpp-dl")}}catch(x){{}}}});
 f.addEventListener("submit",function(e){{
 if(!ok()){{e.preventDefault();sync();i.focus();return}}
 i.value=i.value.trim();
@@ -430,12 +432,12 @@ def waitlist_form(site, t, lang, tag):
   <h2>{k["title"]}</h2>
   <p>{k["text"]}</p>
   <form class="emailform" id="{uid}" method="post" action="https://buttondown.com/api/emails/embed-subscribe/{user}" target="_blank" rel="noopener" novalidate>
-    <label for="{uid}-email">{g["label"]}</label>
+    <label for="{uid}-email">{k["label"]}</label>
     <input id="{uid}-email" name="email" type="email" required autocomplete="email" inputmode="email" spellcheck="false" autocapitalize="off"
       pattern="{EMAIL_RE}" aria-describedby="{uid}-hint" placeholder="{escape(g["placeholder"])}">
     <input type="hidden" name="embed" value="1">
     <input type="hidden" name="tag" value="{tag}">
-    <p class="hint" id="{uid}-hint" role="status" aria-live="polite" data-empty="{escape(g["hint"])}" data-invalid="{escape(g["invalid"])}"></p>
+    <p class="hint" id="{uid}-hint" role="status" aria-live="polite" data-empty="{escape(k["hint"])}" data-invalid="{escape(g["invalid"])}"></p>
     <button class="btn" type="submit">{k["button"]}</button>
   </form>
   <p class="note" id="{uid}-after" hidden>{k["after"]}</p>

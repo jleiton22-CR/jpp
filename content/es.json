@@ -542,15 +542,16 @@
     "meta_title": "Descargar jplus2 Lite",
     "meta_desc": "Escribe tu correo para descargar jplus2 Lite, gratis para macOS.",
     "title": "Descargar jplus2 Lite",
-    "lead": "Gratis para macOS 12 o posterior, {size}. Escribe tu correo y la descarga empieza enseguida.",
-    "label": "Tu correo",
+    "lead": "Gratis para macOS 12 o posterior, {size}. Añade tu correo para enterarte cuando salga la versión completa, o descarga sin él.",
+    "label": "Tu correo (opcional)",
     "placeholder": "tu@ejemplo.com",
     "button": "Descargar jplus2 Lite {version}",
     "after": "Tu descarga está empezando. Si se abrió una pestaña nueva pidiéndote confirmar tu correo, es normal: puedes cerrarla cuando quieras.",
     "notice": "Usamos tu correo solo para enviarte novedades ocasionales de jplus2, como cuando salga la versión completa. Cada mensaje trae un enlace para darte de baja con un clic. Detalles en la <a href=\"privacy.html\">política de privacidad</a>.",
     "noscript": "Continuar a la descarga",
-    "hint": "Escribe tu correo para activar el botón.",
-    "invalid": "Ese correo no parece válido. Debe verse como nombre@ejemplo.com."
+    "hint": "Escribe tu correo para activar este botón, o descarga sin él más abajo.",
+    "invalid": "Ese correo no parece válido. Debe verse como nombre@ejemplo.com.",
+    "skip": "Descargar sin correo"
   },
   "guide_ui": {
     "crumbs": "Ruta de navegación",
@@ -573,6 +574,8 @@
     "text": "El jplus2 completo, con ejecutar y depurar, SQL, GitHub y el asistente de IA, llega al Mac App Store. Deja tu correo y te avisamos el día que esté disponible.",
     "button": "Avísame",
     "after": "Revisa tu correo para confirmar. Si se abrió una pestaña nueva pidiéndote confirmar, es normal: puedes cerrarla.",
-    "notice": "Usamos tu correo solo para avisarte cuando la versión completa esté disponible, y para novedades ocasionales de jplus2. Cada mensaje trae un enlace para darte de baja con un clic. Detalles en la <a href=\"privacy.html\">política de privacidad</a>."
+    "notice": "Usamos tu correo solo para avisarte cuando la versión completa esté disponible, y para novedades ocasionales de jplus2. Cada mensaje trae un enlace para darte de baja con un clic. Detalles en la <a href=\"privacy.html\">política de privacidad</a>.",
+    "label": "Tu correo",
+    "hint": "Escribe tu correo para activar el botón."
   }
 }

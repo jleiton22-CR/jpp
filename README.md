@@ -98,9 +98,12 @@ sigue a `thanks.html`, que inicia la descarga. Está **apagado** hasta que se es
 5. Quienes descargan quedan en tu lista de Buttondown con la etiqueta `download-lite`.
 
 Cómo funciona: el formulario se envía a una pestaña nueva (Buttondown puede pedir un CAPTCHA, por eso no usa `fetch`) y esta pestaña
-pasa a la descarga. El correo es obligatorio en el formulario, pero **no se puede imponer de verdad** en un sitio estático: el enlace
-directo del archivo del Release sigue siendo público y `thanks.html` descarga sin pedir nada. Para apagarlo, deja `buttondown_username`
-vacío y publica de nuevo.
+pasa a la descarga. **El correo es opcional**: bajo el botón principal (desactivado hasta que haya un correo válido) hay un botón
+"Descargar sin correo" que lleva directo a `thanks.html`. Se hizo opcional porque Show HN pide evitar barreras como correos o
+registros para probar el software, y para no perder descargas. De todos modos no se puede imponer de verdad en un sitio estático:
+el enlace directo del archivo del Release sigue siendo público. Para apagar la página del correo, deja `buttondown_username` vacío y
+publica de nuevo. Las listas de espera de las guías (SQL e IA) son distintas: ahí el correo sí es el objetivo, y sus textos están en
+`waitlist` de `content/*.json`, no en `getpage`.
 
 ### Guías (comparaciones y tutoriales para SEO)
 

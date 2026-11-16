@@ -346,3 +346,7 @@ code { font-family: var(--mono); font-size: 0.9em; background: var(--bg-alt); pa
     radial-gradient(farthest-side at 100% 50%, rgba(128, 128, 128, 0.45), transparent) 100% 0 / 14px 100% no-repeat scroll;
 }
 @media (max-width: 600px) { .guide-table th, .guide-table td { padding: 10px 10px; } .guide-table tbody th { width: 26%; } }
+
+/* Download without email */
+.getpage .skiprow { margin: 14px 0 0; text-align: left; }
+.getpage .skiprow .btn { width: 100%; }
