@@ -720,25 +720,24 @@ def compare_html(site, t):
     head = "".join(f'<th scope="col"{me if i == 0 else ""}>{escape(n)}</th>' for i, n in enumerate(c["names"]))
     body = "".join(f'<tr><th scope="row">{escape(r[0])}</th>' + "".join(cell(v) for v in r[1]) + "</tr>\n" for r in c["rows"])
     src = "".join(f"<li><strong>{escape(a)}:</strong> {escape(b)}</li>" for a, b in c["sources"])
-    return f"""<section class="section alt" id="compare">
-  <div class="wrap">
-    <p class="eyebrow reveal">{c["eyebrow"]}</p>
-    <h2 class="reveal">{c["title"]}</h2>
-    <p class="lead reveal">{c["text"]}</p>
-    <div class="cmp-wrap reveal" tabindex="0" role="region" aria-label="{escape(c["title"])}">
+    return f"""  <article class="feature compare-panel" id="compare" role="tabpanel" aria-labelledby="tab-compare">
+    <div class="cmp-head">
+    <p class="eyebrow">{c["eyebrow"]}</p>
+    <h3>{c["title"]}</h3>
+    <p class="cmp-lead">{c["text"]}</p>
+    </div>
+    <div class="cmp-wrap" tabindex="0" role="region" aria-label="{escape(c["title"])}">
       <table class="cmp">
         <thead><tr><th scope="col"></th>{head}</tr></thead>
         <tbody>
 {body}        </tbody>
       </table>
     </div>
-    <p class="reveal"><a class="btn btn-ghost" href="{t["agent"]["more_slug"]}.html">{c["more"]} ›</a></p>
-    <h3 class="table-title reveal">{c["sources_title"]}</h3>
-    <ul class="cmp-src reveal">{src}</ul>
-    <p class="note reveal">{fill(c["note"], site)}</p>
-  </div>
-</section>
-
+    <p><a class="btn btn-ghost" href="{t["agent"]["more_slug"]}.html">{c["more"]} ›</a></p>
+    <h4 class="cmp-src-title">{c["sources_title"]}</h4>
+    <ul class="cmp-src">{src}</ul>
+    <p class="note">{fill(c["note"], site)}</p>
+  </article>
 """
 
 
@@ -799,7 +798,9 @@ def home(site, t, lang):
 """
     tabs = "".join(f'<a class="ftab" role="tab" id="tab-{it["id"]}" href="#{it["id"]}" aria-controls="{it["id"]}"'
                    f' aria-selected="{"true" if i == 0 else "false"}">{it["eyebrow"]}'
-                   f'{"" if it.get("edition", "both") == "both" else ""}</a>' for i, it in enumerate(fe["items"]))
+                   f'</a>' for i, it in enumerate(fe["items"]))
+    tabs += (f'<a class="ftab" role="tab" id="tab-compare" href="#compare" aria-controls="compare" aria-selected="false">'
+             f'{t["compare"]["tab"]}</a>')
     out += f"""  <div class="wrap">
     <p class="lead reveal ftabs-pick">{fe["pick"]}</p>
     <nav class="ftabs reveal" role="tablist" aria-label="{escape(fe["title"])}">{tabs}</nav>
@@ -820,12 +821,13 @@ def home(site, t, lang):
     <div class="feature-shot">{picture(root, it["image"], it["alt"], iw, ih)}</div>
   </article>
 """
+    out += compare_html(site, t)
     out += "  </div>\n"
     out += editions_html(site, t, root)
     out += ipad_html(t, root)
     out += f"""</section>
 
-{agent_html(t)}{compare_html(site, t)}<section class="section" id="less">
+{agent_html(t)}<section class="section alt" id="less">
   <div class="wrap">
     <h2 class="reveal">{t["less"]["title"]}</h2>
     <div class="less-grid">
