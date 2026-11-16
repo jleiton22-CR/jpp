@@ -507,7 +507,7 @@
   "ipad": {
     "eyebrow": "Coming soon",
     "title": "jplus2 for iPadOS. Coming soon.",
-    "text": "The next release brings jplus2 to the iPad: the same editing engine as on the Mac, built natively for touch, keyboard and the Files app. These are the features it will have.",
+    "text": "The next release brings jplus2 to the iPad: the editing engine of jplus2 Lite, built natively for touch, keyboard and the Files app. These are the features it will have.",
     "badge": "Coming soon",
     "items": [
       {
@@ -515,20 +515,28 @@
         "text": "Open several files in tabs. When you come back, every tab is there, even text you had not saved."
       },
       {
-        "title": "Completion as you type",
-        "text": "A list of the language's keywords and the words already in your file, next to the cursor."
+        "title": "Find and replace",
+        "text": "Normal or regular-expression search, match case, whole word and Replace All, with every match marked."
+      },
+      {
+        "title": "Edit faster",
+        "text": "Duplicate, move, join and delete lines, change case, comment, indent, bookmarks, select the next occurrence and record a macro."
+      },
+      {
+        "title": "Command palette",
+        "text": "Type a few letters to run any command, jump to a line, or compare two tabs as a diff."
       },
       {
         "title": "Works with Files",
-        "text": "Open files from the Files app and edit them where they are, including UTF-16 and Windows or Unix line endings."
+        "text": "Open files from the Files app and edit them where they are, with UTF-8, UTF-16 and ANSI, and Windows, Unix or classic Mac line endings."
       },
       {
         "title": "Made for iPad",
-        "text": "Portrait and landscape, light and dark that follow the system, word wrap, line numbers and text size you can change, and keyboard shortcuts."
+        "text": "Portrait and landscape, light and dark that follow the system, word wrap, line numbers, text size you can change, a menu bar with keyboard shortcuts, and printing."
       }
     ],
-    "note": "It begins as a focused editor. The extra tools of the Mac App Store version are not promised for iPadOS yet.",
-    "image_alt": "jplus2 on iPadOS, coming soon: a C++ file open in a tab, with the Find, New and More buttons on the toolbar.",
+    "note": "It is the editing part of jplus2. The Explorer sidebar, the minimap and the tools of the full version (AI assistant, running code, SQL, GitHub) are not promised for iPadOS yet.",
+    "image_alt": "jplus2 on iPad in landscape: a Python file with syntax colouring open in a tab, with the Find, Save and More buttons on the toolbar.",
     "badge_note": "Planned for the next release. Details may change before it is published."
   },
   "notfound": {

@@ -502,7 +502,7 @@
   "ipad": {
     "eyebrow": "Próximamente",
     "title": "jplus2 para iPadOS. Próximamente.",
-    "text": "El próximo lanzamiento trae jplus2 al iPad: el mismo motor de edición que en el Mac, hecho a medida para el tacto, el teclado y la app Archivos. Estas son las características que tendrá.",
+    "text": "La próxima versión lleva jplus2 al iPad: el motor de edición de jplus2 Lite, hecho de forma nativa para el tacto, el teclado y la app Archivos. Estas son las funciones que tendrá.",
     "badge": "Próximamente",
     "items": [
       {
@@ -510,20 +510,28 @@
         "text": "Abre varios archivos en pestañas. Al volver, cada pestaña sigue ahí, incluso el texto que no habías guardado."
       },
       {
-        "title": "Autocompletado al escribir",
-        "text": "Una lista con las palabras clave del lenguaje y las palabras que ya están en tu archivo, junto al cursor."
+        "title": "Buscar y reemplazar",
+        "text": "Búsqueda normal o con expresiones regulares, distinguir mayúsculas, palabra completa y Reemplazar todo, con cada coincidencia marcada."
+      },
+      {
+        "title": "Edita más rápido",
+        "text": "Duplicar, mover, unir y borrar líneas, cambiar mayúsculas, comentar, sangrar, marcadores, seleccionar la siguiente coincidencia y grabar una macro."
+      },
+      {
+        "title": "Paleta de comandos",
+        "text": "Escribe unas letras para ejecutar cualquier comando, ir a una línea o comparar dos pestañas como diff."
       },
       {
         "title": "Funciona con Archivos",
-        "text": "Abre archivos desde la app Archivos y edítalos donde están, incluidos UTF-16 y los finales de línea de Windows o Unix."
+        "text": "Abre archivos de la app Archivos y edítalos donde están, con UTF-8, UTF-16 y ANSI, y saltos de línea de Windows, Unix o Mac clásico."
       },
       {
         "title": "Hecho para iPad",
-        "text": "Vertical y horizontal, claro y oscuro según el sistema, ajuste de línea, números de línea, tamaño de texto cambiable y atajos de teclado."
+        "text": "Vertical y horizontal, claro y oscuro según el sistema, ajuste de línea, números de línea, tamaño de texto cambiable, barra de menús con atajos de teclado e impresión."
       }
     ],
-    "note": "Empieza como un editor enfocado. Las herramientas extra de la versión del Mac App Store todavía no están prometidas para iPadOS.",
-    "image_alt": "jplus2 en iPadOS, próximamente: un archivo C++ abierto en una pestaña, con los botones Buscar, Nuevo y Más en la barra de herramientas.",
+    "note": "Es la parte de edición de jplus2. El explorador lateral, el minimapa y las herramientas de la versión completa (asistente de IA, ejecutar código, SQL, GitHub) aún no están prometidos para iPadOS.",
+    "image_alt": "jplus2 en iPad en horizontal: un archivo de Python con colores de sintaxis abierto en una pestaña, con los botones Buscar, Guardar y Más en la barra.",
     "badge_note": "Planeado para el próximo lanzamiento. Los detalles pueden cambiar antes de publicarlo."
   },
   "notfound": {
