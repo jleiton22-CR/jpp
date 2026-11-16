@@ -416,3 +416,5 @@ code { font-family: var(--mono); font-size: 0.9em; background: var(--bg-alt); pa
 .cmp .cy { margin: 0; }
 .cmp td { min-width: 96px; }
 .cmp tbody th { max-width: 260px; }
+.feature .cmp-src li { border-top: 0; padding: 4px 0; }
+.feature .cmp-src li::before { content: none; }
