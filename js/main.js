@@ -25,3 +25,39 @@
   }, { rootMargin: "0px 0px -8% 0px" });
   items.forEach(function (el) { seen.observe(el); });
 })();
+
+// Features: tabs that show one topic at a time. Without this script every topic stays visible.
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".ftab"));
+  if (!tabs.length) return;
+  var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute("aria-controls")); });
+  function show(i, focus) {
+    tabs.forEach(function (t, k) {
+      var on = k === i;
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+      panels[k].hidden = !on;
+    });
+    panels[i].querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
+    if (focus) tabs[i].focus();
+    var bar = tabs[i]; if (bar.scrollIntoView) bar.scrollIntoView({ block: "nearest", inline: "center" });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener("click", function (e) { e.preventDefault(); show(i, false); if (history.replaceState) history.replaceState(null, "", "#" + panels[i].id); });
+    t.addEventListener("keydown", function (e) {
+      var k = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if (k) { e.preventDefault(); show((i + k + tabs.length) % tabs.length, true); }
+      if (e.key === "Home") { e.preventDefault(); show(0, true); }
+      if (e.key === "End") { e.preventDefault(); show(tabs.length - 1, true); }
+    });
+  });
+  function fromHash() {
+    var id = location.hash.slice(1), i = panels.findIndex(function (p) { return p && p.id === id; });
+    show(i >= 0 ? i : 0, false);
+    if (i >= 0) document.getElementById("features").scrollIntoView();
+  }
+  window.addEventListener("hashchange", fromHash);
+  fromHash();
+  var first = location.hash.slice(1);
+  if (!panels.some(function (p) { return p && p.id === first; })) window.scrollTo(window.scrollX, window.scrollY);
+})();
