@@ -63,13 +63,15 @@
     <p class="eyebrow reveal">Version 1.0.1 for macOS</p>
     <h1 class="reveal">A native code editor for Mac. <span class="grad">Fast, complete, private.</span></h1>
     <p class="tagline reveal">Everything around your code. Nothing in the way.</p>
-    <p class="lead reveal">jplus2 is a fast, native code editor for the Mac. Download the free Lite to write in 95 languages, or get the full jplus2 to also run and debug your code, query your data with SQL, push to GitHub and ask an AI assistant.</p>
+    <p class="lead reveal">jplus2 is a native code editor for Mac, built to be complete from the first launch. The free Lite covers everyday editing in 95 languages. The full version adds IntelliSense, run and debug, SQL, GitHub and an AI agent that reads your project, proposes changes and commands, and waits for your approval, with the model you choose.</p>
     <div class="actions reveal">
       <a class="btn" href="get.html">Download jplus2 Lite — free</a>
       <a class="btn btn-ghost" href="#features">See what it does</a>
     </div>
     <p class="note reveal">Free · 5.6 MB · macOS 12 or later · Apple silicon and Intel</p>
     <p class="note reveal"><a href="#editions">Want everything on this page? The full jplus2 is on its way to the Mac App Store.</a></p>
+    <div class="pillars"><div class="pillar reveal"><h2>Native and complete</h2><p>Run, debug, IntelliSense, SQL, GitHub and AI are built in. There is no marketplace to search and no extensions to keep updated.</p></div><div class="pillar reveal"><h2>AI that works on your project</h2><p>It is part of the editor so it can see your file, your selection, your project's instructions and the output of its commands. No copying back and forth between a chat window and your code.</p></div><div class="pillar reveal"><h2>You stay in control</h2><p>Every change is a diff you apply or cancel, and every command waits for Run. Bring your own key or a local model: no subscription, and nothing leaves the Mac until you ask.</p></div></div>
+    <p class="note reveal">The AI assistant is part of the full version. jplus2 Lite does not include it.</p>
   </div>
   <div class="hero-shot reveal"><picture><source srcset="img/overview-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="img/overview-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="img/overview-light.webp" type="image/webp"><img class="shot " src="img/overview-light.jpg" alt="The jplus2 window: a file explorer on the left, tabs, and a Python file with syntax colouring." width="1500" height="1001" fetchpriority="high"></picture></div>
 </section>
@@ -104,69 +106,75 @@
     <p class="eyebrow reveal">Features</p>
     <h2 class="reveal">Run, debug, SQL, GitHub and AI in one window</h2>
   </div>
-  <article class="feature" id="edit">
-    <div class="feature-text reveal">
-      <p class="eyebrow">Edit <span class="chip">Lite & Full</span></p>
-      <h3>An editor that keeps up with you.</h3>
-      <p>The editing engine is Scintilla, known for its speed with large files. Around it, jplus2 adds the tools you use all day.</p>
-      <ul><li>Syntax colouring and code folding for 95 languages</li><li>Multiple cursors, column editing, macros and bookmarks</li><li>Find, replace and mark with regular expressions, across all open files</li><li>A file explorer that follows the folder as it changes</li><li>Icon toolbars you show or hide one by one (Editing, Code, View, Panels), and a status bar you can hide</li><li>16 text encodings, with Reopen with Encoding, and Compare Two Files as a diff</li><li>Session restore that keeps even your unsaved text</li></ul>
-    </div>
-    <div class="feature-shot reveal"><picture><source srcset="img/overview-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="img/overview-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="img/overview-light.webp" type="image/webp"><img class="shot " src="img/overview-light.jpg" alt="The jplus2 editor with the explorer sidebar and a Python file." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
-  </article>
-  <article class="feature flip dialog" id="goto">
-    <div class="feature-text reveal">
-      <p class="eyebrow">Go to Anything <span class="chip">Lite & Full</span></p>
-      <h3>Type a few letters. You are there.</h3>
-      <p>Press ⌘P and type. jplus2 finds a file from a few of its letters in order, so <code>mpy</code> finds <code>src/main.py</code>, and <code>name:42</code> opens it at line 42.</p>
-      <ul><li>In the same panel, <code>@</code> lists the symbols of the file, <code>:</code> goes to a line and <code>#</code> finds text</li><li>The Command Palette (⇧⌘P) runs any menu command by name, and shows where it lives and its shortcut</li><li>A minimap of the whole file beside the editor: click or drag on it to scroll</li></ul>
-    </div>
-    <div class="feature-shot reveal"><picture><source srcset="img/palette-commands-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="img/palette-commands-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="img/palette-commands-light.webp" type="image/webp"><img class="shot " src="img/palette-commands-light.jpg" alt="The Command Palette listing the Sort Lines commands after typing “sort lines”." width="1280" height="580" loading="lazy" decoding="async"></picture></div>
-  </article>
-  <article class="feature" id="intellisense">
-    <div class="feature-text reveal">
-      <p class="eyebrow">IntelliSense <span class="chip chip-full">Full version only</span></p>
-      <h3>It knows your code.</h3>
-      <p>Completion as you type, parameter hints, descriptions when the pointer rests on a name, and marks under errors and warnings.</p>
-      <ul><li>C, C++, Objective-C and Swift work at once, with the language servers that come with Xcode</li><li>Python works with no server at all: jplus2 reads your file and your installed modules</li><li>Go, Rust, TypeScript, Java, Ruby, Lua and more are used when their servers are on your Mac</li></ul>
-    </div>
-    <div class="feature-shot reveal"><picture><source srcset="img/intellisense-complete-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="img/intellisense-complete-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="img/intellisense-complete-light.webp" type="image/webp"><img class="shot " src="img/intellisense-complete-light.jpg" alt="A completion list showing the members of a Python object." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
-  </article>
-  <article class="feature flip" id="run">
-    <div class="feature-text reveal">
-      <p class="eyebrow">Run and debug <span class="chip chip-full">Full version only</span></p>
-      <h3>Press F5. In any language.</h3>
-      <p>Compile and Run work for every language in the menu. The output appears under your code, and after an error the caret jumps to the line the compiler names.</p>
-      <ul><li>A Python debugger with breakpoints, stepping, the variables of the frame and an expression field</li><li>Built-in checks for JSON, XML, YAML, TOML, HTML, CSS and more</li><li>Manage Compilers shows what is installed and downloads what is missing with Homebrew, npm or pip</li></ul>
-    </div>
-    <div class="feature-shot reveal"><picture><source srcset="img/debug-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="img/debug-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="img/debug-light.webp" type="image/webp"><img class="shot " src="img/debug-light.jpg" alt="The Python debugger paused on a line, with the variables listed beside the output." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
-  </article>
-  <article class="feature" id="sql">
-    <div class="feature-text reveal">
-      <p class="eyebrow">Databases <span class="chip chip-full">Full version only</span></p>
-      <h3>SQL, right next to your code.</h3>
-      <p>Save your connections once, then press ⌘↩ in a SQL tab. The results arrive in a grid you can copy or export as CSV.</p>
-      <ul><li>Databricks and Snowflake through their own SQL APIs</li><li>PostgreSQL, MySQL, MariaDB, SQL Server and Azure SQL</li><li>SQLite files, with nothing to install</li><li>Excel workbooks and CSV files: every sheet becomes a table</li></ul>
-    </div>
-    <div class="feature-shot reveal"><picture><source srcset="img/excel-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="img/excel-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="img/excel-light.webp" type="image/webp"><img class="shot " src="img/excel-light.jpg" alt="A SQL query over an Excel workbook, with the results in a grid under the code." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
-  </article>
-  <article class="feature flip" id="ai">
-    <div class="feature-text reveal">
+  <div class="wrap">
+    <p class="lead reveal ftabs-pick">Pick a topic to see what it does</p>
+    <nav class="ftabs reveal" role="tablist" aria-label="Run, debug, SQL, GitHub and AI in one window"><a class="ftab" role="tab" id="tab-ai" href="#ai" aria-controls="ai" aria-selected="true">AI assistant</a><a class="ftab" role="tab" id="tab-edit" href="#edit" aria-controls="edit" aria-selected="false">Edit</a><a class="ftab" role="tab" id="tab-goto" href="#goto" aria-controls="goto" aria-selected="false">Go to Anything</a><a class="ftab" role="tab" id="tab-intellisense" href="#intellisense" aria-controls="intellisense" aria-selected="false">IntelliSense</a><a class="ftab" role="tab" id="tab-run" href="#run" aria-controls="run" aria-selected="false">Run and debug</a><a class="ftab" role="tab" id="tab-sql" href="#sql" aria-controls="sql" aria-selected="false">Databases</a><a class="ftab" role="tab" id="tab-github" href="#github" aria-controls="github" aria-selected="false">GitHub</a></nav>
+  </div>
+  <div class="fpanels">
+  <article class="feature" id="ai" role="tabpanel" aria-labelledby="tab-ai">
+    <div class="feature-text">
       <p class="eyebrow">AI assistant <span class="chip chip-full">Full version only</span></p>
       <h3>An assistant that sees what you see, and can work for you.</h3>
       <p>Ask a question and the assistant reads the file in front of you and your selection. Turn on Agent mode and it can also look around your project, propose file changes and propose terminal commands, one step at a time, and you approve each one.</p>
       <ul><li>Agent mode: reads files, shows every change as a diff to Apply or Cancel, and shows every command in the Terminal panel with Run and Reject; the output goes back to the assistant</li><li>Reads AGENTS.md, CLAUDE.md or .cursorrules from your project, keeps per-project memories, and attaches files you name with @</li><li>Reviews uncommitted changes or pull requests, and runs your own prompts from ai-commands.json</li><li>Claude with your own API key, any OpenAI-compatible endpoint (including a local model such as Ollama), or a company gateway</li><li>Full version only: none of this is in jplus2 Lite</li></ul>
     </div>
-    <div class="feature-shot reveal"><picture><source srcset="img/assistant-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="img/assistant-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="img/assistant-light.webp" type="image/webp"><img class="shot " src="img/assistant-light.jpg" alt="The assistant panel beside the editor, explaining a bug in the selected function." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
+    <div class="feature-shot"><picture><source srcset="img/assistant-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="img/assistant-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="img/assistant-light.webp" type="image/webp"><img class="shot " src="img/assistant-light.jpg" alt="The assistant panel beside the editor, explaining a bug in the selected function." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
   </article>
-  <article class="feature dialog" id="github">
-    <div class="feature-text reveal">
+  <article class="feature" id="edit" role="tabpanel" aria-labelledby="tab-edit">
+    <div class="feature-text">
+      <p class="eyebrow">Edit <span class="chip">Lite & Full</span></p>
+      <h3>An editor that keeps up with you.</h3>
+      <p>The editing engine is Scintilla, known for its speed with large files. Around it, jplus2 adds the tools you use all day.</p>
+      <ul><li>Syntax colouring and code folding for 95 languages</li><li>Multiple cursors, column editing, macros and bookmarks</li><li>Find, replace and mark with regular expressions, across all open files</li><li>A file explorer that follows the folder as it changes</li><li>Icon toolbars you show or hide one by one (Editing, Code, View, Panels), and a status bar you can hide</li><li>16 text encodings, with Reopen with Encoding, and Compare Two Files as a diff</li><li>Session restore that keeps even your unsaved text</li></ul>
+    </div>
+    <div class="feature-shot"><picture><source srcset="img/overview-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="img/overview-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="img/overview-light.webp" type="image/webp"><img class="shot " src="img/overview-light.jpg" alt="The jplus2 editor with the explorer sidebar and a Python file." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
+  </article>
+  <article class="feature dialog" id="goto" role="tabpanel" aria-labelledby="tab-goto">
+    <div class="feature-text">
+      <p class="eyebrow">Go to Anything <span class="chip">Lite & Full</span></p>
+      <h3>Type a few letters. You are there.</h3>
+      <p>Press ⌘P and type. jplus2 finds a file from a few of its letters in order, so <code>mpy</code> finds <code>src/main.py</code>, and <code>name:42</code> opens it at line 42.</p>
+      <ul><li>In the same panel, <code>@</code> lists the symbols of the file, <code>:</code> goes to a line and <code>#</code> finds text</li><li>The Command Palette (⇧⌘P) runs any menu command by name, and shows where it lives and its shortcut</li><li>A minimap of the whole file beside the editor: click or drag on it to scroll</li></ul>
+    </div>
+    <div class="feature-shot"><picture><source srcset="img/palette-commands-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="img/palette-commands-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="img/palette-commands-light.webp" type="image/webp"><img class="shot " src="img/palette-commands-light.jpg" alt="The Command Palette listing the Sort Lines commands after typing “sort lines”." width="1280" height="580" loading="lazy" decoding="async"></picture></div>
+  </article>
+  <article class="feature" id="intellisense" role="tabpanel" aria-labelledby="tab-intellisense">
+    <div class="feature-text">
+      <p class="eyebrow">IntelliSense <span class="chip chip-full">Full version only</span></p>
+      <h3>It knows your code.</h3>
+      <p>Completion as you type, parameter hints, descriptions when the pointer rests on a name, and marks under errors and warnings.</p>
+      <ul><li>C, C++, Objective-C and Swift work at once, with the language servers that come with Xcode</li><li>Python works with no server at all: jplus2 reads your file and your installed modules</li><li>Go, Rust, TypeScript, Java, Ruby, Lua and more are used when their servers are on your Mac</li></ul>
+    </div>
+    <div class="feature-shot"><picture><source srcset="img/intellisense-complete-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="img/intellisense-complete-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="img/intellisense-complete-light.webp" type="image/webp"><img class="shot " src="img/intellisense-complete-light.jpg" alt="A completion list showing the members of a Python object." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
+  </article>
+  <article class="feature" id="run" role="tabpanel" aria-labelledby="tab-run">
+    <div class="feature-text">
+      <p class="eyebrow">Run and debug <span class="chip chip-full">Full version only</span></p>
+      <h3>Press F5. In any language.</h3>
+      <p>Compile and Run work for every language in the menu. The output appears under your code, and after an error the caret jumps to the line the compiler names.</p>
+      <ul><li>A Python debugger with breakpoints, stepping, the variables of the frame and an expression field</li><li>Built-in checks for JSON, XML, YAML, TOML, HTML, CSS and more</li><li>Manage Compilers shows what is installed and downloads what is missing with Homebrew, npm or pip</li></ul>
+    </div>
+    <div class="feature-shot"><picture><source srcset="img/debug-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="img/debug-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="img/debug-light.webp" type="image/webp"><img class="shot " src="img/debug-light.jpg" alt="The Python debugger paused on a line, with the variables listed beside the output." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
+  </article>
+  <article class="feature" id="sql" role="tabpanel" aria-labelledby="tab-sql">
+    <div class="feature-text">
+      <p class="eyebrow">Databases <span class="chip chip-full">Full version only</span></p>
+      <h3>SQL, right next to your code.</h3>
+      <p>Save your connections once, then press ⌘↩ in a SQL tab. The results arrive in a grid you can copy or export as CSV.</p>
+      <ul><li>Databricks and Snowflake through their own SQL APIs</li><li>PostgreSQL, MySQL, MariaDB, SQL Server and Azure SQL</li><li>SQLite files, with nothing to install</li><li>Excel workbooks and CSV files: every sheet becomes a table</li></ul>
+    </div>
+    <div class="feature-shot"><picture><source srcset="img/excel-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="img/excel-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="img/excel-light.webp" type="image/webp"><img class="shot " src="img/excel-light.jpg" alt="A SQL query over an Excel workbook, with the results in a grid under the code." width="1500" height="1001" loading="lazy" decoding="async"></picture></div>
+  </article>
+  <article class="feature dialog" id="github" role="tabpanel" aria-labelledby="tab-github">
+    <div class="feature-text">
       <p class="eyebrow">GitHub <span class="chip chip-full">Full version only</span></p>
       <h3>From browse to merge, without leaving.</h3>
       <p>Connect your account and jplus2 lists your repositories. The status bar shows the branch, what there is to push or pull, and how many files changed.</p>
       <ul><li>Browse the folders and files of your repositories without cloning them</li><li>Create a pull request, and merge it with merge, squash or rebase</li><li>Clone, commit, push, pull and fetch</li><li>Publish a folder to a new repository, create a gist, or copy a link to the current line</li></ul>
     </div>
-    <div class="feature-shot reveal"><picture><source srcset="img/github-clone-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="img/github-clone-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="img/github-clone-light.webp" type="image/webp"><img class="shot " src="img/github-clone-light.jpg" alt="The Clone Repository window with the list of the account&#x27;s repositories." width="1280" height="920" loading="lazy" decoding="async"></picture></div>
+    <div class="feature-shot"><picture><source srcset="img/github-clone-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="img/github-clone-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="img/github-clone-light.webp" type="image/webp"><img class="shot " src="img/github-clone-light.jpg" alt="The Clone Repository window with the list of the account&#x27;s repositories." width="1280" height="920" loading="lazy" decoding="async"></picture></div>
   </article>
+  </div>
 </section>
 
 <section class="section" id="editions">

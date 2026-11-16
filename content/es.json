@@ -22,14 +22,29 @@
   "hero": {
     "eyebrow": "Versión {version} para macOS",
     "title": "Un editor de código nativo para Mac. <span class=\"grad\">Rápido, completo y privado.</span>",
-    "text": "jplus2 es un editor de código rápido y nativo para Mac. Descarga la Lite gratis para escribir en 95 lenguajes, o consigue el jplus2 completo para además ejecutar y depurar tu código, consultar tus datos con SQL, subir a GitHub y preguntar a un asistente de IA.",
+    "text": "jplus2 es un editor de código nativo para Mac, pensado para venir completo desde el primer arranque. La Lite gratuita cubre la edición diaria en 95 lenguajes. La versión completa añade IntelliSense, ejecutar y depurar, SQL, GitHub y un agente de IA que lee tu proyecto, propone cambios y comandos, y espera tu aprobación, con el modelo que tú elijas.",
     "primary": "Descargar jplus2 Lite — gratis",
     "secondary": "Mira lo que hace",
     "app_store": "Versión completa en el Mac App Store",
     "note": "Gratis · {size} · macOS 12 o posterior · Apple Silicon e Intel",
     "image_alt": "La ventana de jplus2: un explorador de archivos a la izquierda, pestañas y un archivo de Python con resaltado de sintaxis.",
     "store_note": "¿Quieres todo lo de esta página? El jplus2 completo viene en camino al Mac App Store.",
-    "tagline": "Todo lo que rodea a tu código. Nada que estorbe."
+    "tagline": "Todo lo que rodea a tu código. Nada que estorbe.",
+    "pillars": [
+      [
+        "Nativo y completo",
+        "Ejecutar, depurar, IntelliSense, SQL, GitHub e IA vienen incluidos. No hay tienda donde buscar ni extensiones que mantener al día."
+      ],
+      [
+        "IA que trabaja sobre tu proyecto",
+        "Es parte del editor para poder ver tu archivo, tu selección, las instrucciones de tu proyecto y la salida de sus comandos. Sin copiar de un lado a otro entre una ventana de chat y tu código."
+      ],
+      [
+        "Tú mandas",
+        "Cada cambio es un diff que aplicas o cancelas, y cada comando espera a que pulses Run. Trae tu propia clave o un modelo local: sin suscripción, y nada sale del Mac hasta que lo pidas."
+      ]
+    ],
+    "pill_note": "El asistente de IA es parte de la versión completa. jplus2 Lite no lo incluye."
   },
   "stats": [
     {
@@ -90,6 +105,22 @@
     "eyebrow": "Funciones",
     "title": "Ejecuta, depura, SQL, GitHub e IA en una sola ventana",
     "items": [
+      {
+        "id": "ai",
+        "eyebrow": "Asistente de IA",
+        "title": "Un asistente que ve lo que tú ves, y que puede trabajar por ti.",
+        "text": "Haz una pregunta y el asistente lee el archivo que tienes delante y tu selección. Activa el modo Agente y además puede recorrer tu proyecto, proponer cambios en archivos y proponer comandos de terminal, paso a paso, y tú apruebas cada uno.",
+        "bullets": [
+          "Modo Agente: lee archivos, muestra cada cambio como diff para Aplicar o Cancelar y muestra cada comando en el panel Terminal con Run y Reject; la salida vuelve al asistente",
+          "Lee AGENTS.md, CLAUDE.md o .cursorrules de tu proyecto, guarda memorias por proyecto y adjunta los archivos que nombras con @",
+          "Revisa cambios sin confirmar o pull requests, y ejecuta tus propios prompts desde ai-commands.json",
+          "Claude con tu propia clave de API, cualquier servicio compatible con OpenAI (incluido un modelo local como Ollama) o un gateway de empresa",
+          "Solo en la versión completa: nada de esto está en jplus2 Lite"
+        ],
+        "image": "assistant",
+        "alt": "El panel del asistente junto al editor, explicando un error en la función seleccionada.",
+        "edition": "full"
+      },
       {
         "id": "edit",
         "eyebrow": "Editar",
@@ -167,22 +198,6 @@
         "edition": "full"
       },
       {
-        "id": "ai",
-        "eyebrow": "Asistente de IA",
-        "title": "Un asistente que ve lo que tú ves, y que puede trabajar por ti.",
-        "text": "Haz una pregunta y el asistente lee el archivo que tienes delante y tu selección. Activa el modo Agente y además puede recorrer tu proyecto, proponer cambios en archivos y proponer comandos de terminal, paso a paso, y tú apruebas cada uno.",
-        "bullets": [
-          "Modo Agente: lee archivos, muestra cada cambio como diff para Aplicar o Cancelar y muestra cada comando en el panel Terminal con Run y Reject; la salida vuelve al asistente",
-          "Lee AGENTS.md, CLAUDE.md o .cursorrules de tu proyecto, guarda memorias por proyecto y adjunta los archivos que nombras con @",
-          "Revisa cambios sin confirmar o pull requests, y ejecuta tus propios prompts desde ai-commands.json",
-          "Claude con tu propia clave de API, cualquier servicio compatible con OpenAI (incluido un modelo local como Ollama) o un gateway de empresa",
-          "Solo en la versión completa: nada de esto está en jplus2 Lite"
-        ],
-        "image": "assistant",
-        "alt": "El panel del asistente junto al editor, explicando un error en la función seleccionada.",
-        "edition": "full"
-      },
-      {
         "id": "github",
         "eyebrow": "GitHub",
         "title": "De explorar a fusionar, sin salir.",
@@ -198,7 +213,8 @@
         "dialog": true,
         "edition": "full"
       }
-    ]
+    ],
+    "pick": "Elige un tema para ver qué hace"
   },
   "less": {
     "title": "Sin extensiones, sin cuenta, sin telemetría.",

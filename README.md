@@ -131,6 +131,13 @@ versión completa y que Lite no lo incluye. Revisa esas listas cuando cambien su
 La guía `agent` (`content/guides/agent.{en,es}.json`) compara el modo Agente con Cursor, Windsurf, VS Code, Sublime Text y Nextpad++ por separado,
 solo con lo que dicen sus webs (leídas el 16-11-2026); "no figura en su web" nunca significa "no existe". Termina con la lista de espera `waitlist-agent`.
 
+### Features en pestañas e intro
+
+La sección Features se muestra como pestañas (una función a la vez; `.ftab` en `build.py`, lógica en `assets/js/main.js`). Sin JavaScript se ven todas
+seguidas, y los enlaces `/#sql`, `/#ai`... abren la pestaña correspondiente. Para añadir o reordenar una función, edita `features.items` en
+`content/{en,es}.json`: el orden de la lista es el de las pestañas y `eyebrow` es su rótulo corto. La intro (`hero.text` y `hero.pillars`) explica
+por qué la IA va dentro del editor; recuerda que es solo de la versión completa.
+
 ### Página de prensa (`press.html` y `es/prensa.html`)
 
 Reúne datos verificados, tres descripciones para copiar (una línea, corta y larga), los iconos de 1024 px, las capturas, normas de marca,

@@ -731,6 +731,8 @@ def home(site, t, lang):
     </div>
     <p class="note reveal">{fill(h["note"], site) if download else soon["note_soon"]}</p>
     <p class="note reveal"><a href="#editions">{h["store_note"]}</a></p>
+    <div class="pillars">{"".join(f'<div class="pillar reveal"><h2>{x[0]}</h2><p>{x[1]}</p></div>' for x in h["pillars"])}</div>
+    <p class="note reveal">{h["pill_note"]}</p>
   </div>
   <div class="hero-shot reveal">{picture(root, "overview", h["image_alt"], ow, oh, lazy=False)}</div>
 </section>
@@ -763,20 +765,30 @@ def home(site, t, lang):
     <h2 class="reveal">{fe["title"]}</h2>
   </div>
 """
+    tabs = "".join(f'<a class="ftab" role="tab" id="tab-{it["id"]}" href="#{it["id"]}" aria-controls="{it["id"]}"'
+                   f' aria-selected="{"true" if i == 0 else "false"}">{it["eyebrow"]}'
+                   f'{"" if it.get("edition", "both") == "both" else ""}</a>' for i, it in enumerate(fe["items"]))
+    out += f"""  <div class="wrap">
+    <p class="lead reveal ftabs-pick">{fe["pick"]}</p>
+    <nav class="ftabs reveal" role="tablist" aria-label="{escape(fe["title"])}">{tabs}</nav>
+  </div>
+  <div class="fpanels">
+"""
     for i, it in enumerate(fe["items"]):
         iw, ih = image_size(it["image"])
         bullets = "".join(f"<li>{b}</li>" for b in it["bullets"])
-        cls = "feature" + (" flip" if i % 2 else "") + (" dialog" if it.get("dialog") else "")
-        out += f"""  <article class="{cls}" id="{it["id"]}">
-    <div class="feature-text reveal">
+        cls = "feature" + (" dialog" if it.get("dialog") else "")
+        out += f"""  <article class="{cls}" id="{it["id"]}" role="tabpanel" aria-labelledby="tab-{it["id"]}">
+    <div class="feature-text">
       <p class="eyebrow">{it["eyebrow"]} {chip(t, it.get("edition", "both"))}</p>
       <h3>{it["title"]}</h3>
       <p>{it["text"]}</p>
       <ul>{bullets}</ul>
     </div>
-    <div class="feature-shot reveal">{picture(root, it["image"], it["alt"], iw, ih)}</div>
+    <div class="feature-shot">{picture(root, it["image"], it["alt"], iw, ih)}</div>
   </article>
 """
+    out += "  </div>\n"
     out += editions_html(site, t, root)
     out += ipad_html(t, root)
     out += f"""</section>
