@@ -100,7 +100,8 @@
           "Multiple cursors, column editing, macros and bookmarks",
           "Find, replace and mark with regular expressions, across all open files",
           "A file explorer that follows the folder as it changes",
-          "A compact toolbar: the debugging buttons appear only when you can use them",
+          "Icon toolbars you show or hide one by one (Editing, Code, View, Panels), and a status bar you can hide",
+          "16 text encodings, with Reopen with Encoding, and Compare Two Files as a diff",
           "Session restore that keeps even your unsaved text"
         ],
         "image": "overview",
@@ -358,6 +359,8 @@
       "items": [
         "Syntax colouring and folding for 95 languages",
         "Tabs, session restore, find and replace, multiple files at once",
+        "Compare Two Files as a diff, and 16 text encodings with Reopen with Encoding",
+        "Icon toolbars you can show or hide, and a status bar you can hide",
         "File explorer, Go to Anything, Command Palette and minimap",
         "Light and dark appearance that follows macOS",
         "Never connects to a network: nothing is sent anywhere"
@@ -399,8 +402,28 @@
         "yes"
       ],
       [
+        "Compare Two Files, shown as a unified diff",
+        "yes",
+        "yes"
+      ],
+      [
+        "16 text encodings, including Japanese, Chinese, Korean, Cyrillic and Greek, with Reopen with Encoding",
+        "yes",
+        "yes"
+      ],
+      [
+        "Icon toolbars you can show or hide: Editing, Code, View and Panels",
+        "yes",
+        "yes"
+      ],
+      [
         "Light and dark appearance",
         "yes",
+        "yes"
+      ],
+      [
+        "Integrated terminal under the editor, and a Git toolbar",
+        "no",
         "yes"
       ],
       [

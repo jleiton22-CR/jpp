@@ -100,7 +100,8 @@
           "Cursores múltiples, edición en columna, macros y marcadores",
           "Buscar, reemplazar y marcar con expresiones regulares en todos los archivos abiertos",
           "Un explorador de archivos que se actualiza cuando la carpeta cambia",
-          "Una barra de herramientas compacta: los botones de depuración aparecen solo cuando puedes usarlos",
+          "Barras de iconos que muestras u ocultas una a una (Edición, Código, Vista, Paneles) y una barra de estado que puedes ocultar",
+          "16 codificaciones de texto, con Reopen with Encoding, y Comparar dos archivos como diff",
           "Restauración de la sesión que conserva hasta el texto sin guardar"
         ],
         "image": "overview",
@@ -358,6 +359,8 @@
       "items": [
         "Resaltado de sintaxis y plegado para 95 lenguajes",
         "Pestañas, restauración de la sesión, buscar y reemplazar, varios archivos a la vez",
+        "Comparar dos archivos como diff y 16 codificaciones de texto con Reopen with Encoding",
+        "Barras de iconos que puedes mostrar u ocultar, y una barra de estado que puedes ocultar",
         "Explorador de archivos, Ir a cualquier cosa, paleta de comandos y minimapa",
         "Apariencia clara y oscura que sigue a macOS",
         "Nunca se conecta a una red: no envía nada a ningún sitio"
@@ -395,6 +398,21 @@
       ],
       [
         "Explorador de archivos, Ir a cualquier cosa, paleta de comandos, minimapa",
+        "yes",
+        "yes"
+      ],
+      [
+        "Comparar dos archivos, con las diferencias en formato diff",
+        "yes",
+        "yes"
+      ],
+      [
+        "16 codificaciones de texto, incluidas japonés, chino, coreano, cirílico y griego, con Reopen with Encoding",
+        "yes",
+        "yes"
+      ],
+      [
+        "Barras de iconos que puedes mostrar u ocultar: Edición, Código, Vista y Paneles",
         "yes",
         "yes"
       ],
