@@ -812,10 +812,10 @@
   "compare": {
     "eyebrow": "Compared",
     "title": "jplus2 next to six other editors",
-    "text": "One table, seven tools. Everything about the other tools comes from their own websites, read on 16 November 2026. “Not stated” or “not listed” means the site does not say it, not that the feature is missing. jplus2 Lite is the free download; the AI agent and the terminal belong to the full version.",
+    "text": "One table, seven tools. ✓ means the tool's own website lists it. ✗ means its website does not list it, which is not proof that it is missing: an extension or plugin may add it. The other tools' facts come from their websites, read on 16 November 2026. The jplus2 column is the full version; jplus2 Lite is the editor only, without the AI agent or SQL.",
     "corner": "",
     "names": [
-      "jplus2",
+      "jplus2 (full)",
       "VS Code",
       "Sublime Text",
       "Nextpad++",
@@ -825,111 +825,123 @@
     ],
     "rows": [
       [
-        "On the Mac",
+        "Runs on the Mac",
         [
-          "✓ Native; macOS 12 or later, Apple silicon and Intel",
-          "✓ macOS download listed",
-          "✓ Mac download, native on Apple silicon",
-          "✓ Universal binary, Apple silicon and Intel",
-          "Its site describes the Windows environment",
-          "✓ macOS download listed",
-          "✓ macOS download listed"
+          "y",
+          "y",
+          "y",
+          "y",
+          "n",
+          "y",
+          "y"
         ]
       ],
       [
-        "Other platforms listed",
+        "Open source",
         [
-          "An iPadOS version is planned",
-          "Windows, Linux and the browser (vscode.dev)",
-          "Windows and Linux",
-          "Linux (ARM64 and x86)",
-          "Windows",
-          "CLI, web app, Slack and GitHub",
-          "JetBrains IDE plugins remain available"
-        ]
-      ],
-      [
-        "How it is offered",
-        [
-          "Lite is free; the full version is coming to the Mac App Store",
-          "Open source; price not stated on its home page",
-          "Free evaluation; once-off personal license with 3 years of updates; business licenses by annual subscription",
-          "Free",
-          "Free",
-          "Pricing is on its Pricing page",
-          "Free, Pro, Max, Teams and Enterprise plans"
-        ]
-      ],
-      [
-        "Source code",
-        [
-          "Closed",
-          "✓ Open source",
-          "Not stated on its site",
-          "✓ Open source (GPL v3)",
-          "✓ Open source (GPL)",
-          "Not stated on its home page",
-          "Not stated on its page"
+          "n",
+          "y",
+          "n",
+          "y",
+          "y",
+          "n",
+          "n"
         ]
       ],
       [
         "Built-in AI agent",
         [
-          "✓ Agent mode (full version, not in Lite)",
-          "✓ Agents that plan, make changes and let you review edits",
-          "Not listed on its website",
-          "Not described on its website",
-          "Not mentioned on its website",
-          "✓ Its main focus: agents, with a plan mode",
-          "✓ Agents, with an Agent Command Center"
+          "y",
+          "y",
+          "n",
+          "n",
+          "n",
+          "y",
+          "y"
         ]
       ],
       [
-        "Choose your model or bring your own key",
+        "Agent can run terminal commands",
         [
-          "✓ Claude with your key, OpenAI-compatible services, local models, company gateways",
-          "✓ Several providers, and bring your own key",
-          "—",
-          "—",
-          "—",
-          "✓ Several models to select; own key not stated on its home page",
-          "Not stated on its page"
+          "y",
+          "y",
+          "n",
+          "n",
+          "n",
+          "y",
+          "y"
         ]
       ],
       [
-        "Integrated terminal",
+        "Bring your own AI key",
         [
-          "✓ Full version (not in Lite)",
-          "✓ Integrated terminal (its docs)",
-          "Not listed on its website",
-          "Not described on its website",
-          "Not mentioned on its website",
-          "Its agent runs terminal commands (docs); an editor terminal is not described on its home page",
-          "Not mentioned on its page; Cascade uses the terminal as a tool (docs)"
+          "y",
+          "y",
+          "n",
+          "n",
+          "n",
+          "y",
+          "n"
         ]
       ],
       [
-        "Extensions",
+        "Local AI models",
         [
-          "None: the features are built in",
-          "✓ Marketplace with thousands of extensions",
-          "Python API and packages",
-          "✓ Plugin Admin; Windows Notepad++ plugins being ported",
-          "Not mentioned on its home page",
-          "Links to a marketplace",
-          "Extensions carry over from Windsurf"
+          "y",
+          "y",
+          "n",
+          "n",
+          "n",
+          "n",
+          "n"
         ]
       ],
       [
-        "Built with",
+        "Run SQL on Databricks, Snowflake, PostgreSQL, MySQL, SQL Server and SQLite",
         [
-          "Cocoa and Scintilla 5",
-          "Electron",
-          "Not stated",
-          "Native port, based on Scintilla",
-          "C++, Win32 API and Scintilla",
-          "Not stated",
-          "Not stated"
+          "y",
+          "n",
+          "n",
+          "n",
+          "n",
+          "n",
+          "n"
+        ]
+      ],
+      [
+        "Query Excel and CSV files with SQL",
+        [
+          "y",
+          "n",
+          "n",
+          "n",
+          "n",
+          "n",
+          "n"
+        ]
+      ],
+      [
+        "AI through a company gateway with a renewable key",
+        [
+          "y",
+          "n",
+          "n",
+          "n",
+          "n",
+          "n",
+          "n"
+        ]
+      ],
+      [
+        "Import AI settings from Claude Code",
+        [
+          "y",
+          "n",
+          "n",
+          "n",
+          "n",
+          "n",
+          "n"
         ]
       ]
     ],
@@ -957,7 +969,7 @@
       ],
       [
         "Cursor",
-        "cursor.com"
+        "cursor.com and cursor.com/docs"
       ],
       [
         "Windsurf",
@@ -966,6 +978,8 @@
     ],
     "note": "These products change often. If something here is out of date, write to us at {email} and we will fix it. All names are trademarks of their owners; jplus2 is not affiliated with them.",
     "more": "Read the detailed comparison of the AI agent",
-    "tab": "Compare"
+    "tab": "Compare",
+    "yes": "Listed",
+    "no": "Not listed"
   }
 }

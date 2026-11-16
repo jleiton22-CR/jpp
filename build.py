@@ -713,9 +713,9 @@ def agent_html(t):
 def compare_html(site, t):
     c = t["compare"]
     def cell(v):
-        if v.startswith("✓"):
-            return f'<td><span class="cy" aria-hidden="true">✓</span><span class="sr">Yes. </span>{escape(v[1:].strip())}</td>'
-        return f"<td>{escape(v)}</td>"
+        if v == "y":
+            return f'<td class="ty"><span class="cy" aria-hidden="true">✓</span><span class="sr">{escape(c["yes"])}</span></td>'
+        return f'<td class="tn"><span class="cn" aria-hidden="true">✗</span><span class="sr">{escape(c["no"])}</span></td>'
     me = ' class="me"'
     head = "".join(f'<th scope="col"{me if i == 0 else ""}>{escape(n)}</th>' for i, n in enumerate(c["names"]))
     body = "".join(f'<tr><th scope="row">{escape(r[0])}</th>' + "".join(cell(v) for v in r[1]) + "</tr>\n" for r in c["rows"])
