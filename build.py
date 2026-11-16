@@ -224,11 +224,10 @@ def layout(site, t, lang, page, title, description, body, crumb=None, guide=None
   <div class="nav-in">
     <a class="brand" href="{home or '#top'}">{icon_img(root, 28, "brand-icon")}<span>{site["app_name"]}</span></a>
     <nav class="nav-links" id="menu" aria-label="{escape(n['main_label'])}">
-      <a href="{home}#why">{n["why"]}</a>
       <a href="{home}#features">{n["features"]}</a>
+      <a href="{home}#compare">{n["compare"]}</a>
       <a href="{home}#editions">{n["editions"]}</a>
-      <a href="{home}#ipad">{n["ipad"]}</a>
-      <a href="privacy.html">{n["privacy"]}</a>
+      <a href="{home}#guides">{n["guides"]}</a>
       <a href="support.html">{n["support"]}</a>
       {f'<a class="menu-only" href="{download}">{n["download"]}</a>' if download else ""}
     </nav>
@@ -762,7 +761,7 @@ def home(site, t, lang):
     </div>
     <p class="note reveal">{fill(h["note"], site) if download else soon["note_soon"]}</p>
     <p class="note reveal"><a href="#editions">{h["store_note"]}</a></p>
-    <div class="pillars">{"".join(f'<div class="pillar reveal"><h2>{x[0]}</h2><p>{x[1]}</p></div>' for x in h["pillars"])}</div>
+    <div class="pillars">{"".join(f'<div class="pillar reveal"><p class="pillar-title">{x[0]}</p><p>{x[1]}</p></div>' for x in h["pillars"])}</div>
     <p class="note reveal">{h["pill_note"]}</p>
   </div>
   <div class="hero-shot reveal">{picture(root, "overview", h["image_alt"], ow, oh, lazy=False)}</div>
@@ -772,7 +771,7 @@ def home(site, t, lang):
   <div class="wrap stats-grid">
 """
     for s in t["stats"]:
-        out += f'    <div class="stat reveal"><strong>{escape(s["value"])}</strong><span>{s["label"]}</span></div>\n'
+        out += f'    <div class="stat reveal"><strong>{escape(fill(s["value"], site))}</strong><span>{s["label"]}</span></div>\n'
     out += f"""  </div>
 </section>
 
@@ -827,19 +826,7 @@ def home(site, t, lang):
     out += ipad_html(t, root)
     out += f"""</section>
 
-{agent_html(t)}<section class="section alt" id="less">
-  <div class="wrap">
-    <h2 class="reveal">{t["less"]["title"]}</h2>
-    <div class="less-grid">
-"""
-    for it in t["less"]["items"]:
-        out += f'      <div class="less reveal"><h3>{it["title"]}</h3><p>{it["text"]}</p></div>\n'
-    out += f"""    </div>
-    <div class="guide reveal"><h3>{t["guide"]["title"]}</h3><p>{t["guide"]["text"]}</p></div>
-  </div>
-</section>
-
-{guides_home(site, t, lang)}<section class="section cta" id="download">
+{agent_html(t)}{guides_home(site, t, lang)}<section class="section cta" id="download">
   <div class="wrap">
     {icon_img(root, 96, "cta-icon reveal")}
     <h2 class="reveal">{c["title"]}</h2>

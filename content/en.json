@@ -17,7 +17,9 @@
     "ipad": "iPadOS",
     "skip": "Skip to content",
     "main_label": "Main",
-    "menu": "Menu"
+    "menu": "Menu",
+    "compare": "Compare",
+    "guides": "Guides"
   },
   "hero": {
     "eyebrow": "Version {version} for macOS",
@@ -52,8 +54,8 @@
       "label": "languages with syntax colouring"
     },
     {
-      "value": "10 MB",
-      "label": "the whole download"
+      "value": "{size}",
+      "label": "download of jplus2 Lite"
     },
     {
       "value": "0",

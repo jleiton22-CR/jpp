@@ -138,6 +138,12 @@ seguidas, y los enlaces `/#sql`, `/#ai`... abren la pestaña correspondiente. Pa
 `content/{en,es}.json`: el orden de la lista es el de las pestañas y `eyebrow` es su rótulo corto. La intro (`hero.text` y `hero.pillars`) explica
 por qué la IA va dentro del editor; recuerda que es solo de la versión completa.
 
+### Navegación y estructura de la home (revisión UX)
+
+Menú superior: Features, Compare, Lite & Full, Guides, Support (Privacidad e iPadOS quedan en el pie y en la página). El enlace de la sección visible se subraya
+(`aria-current`, `assets/js/main.js`). Se quitó la sección duplicada "No extensions, no account…" (lo cubren las cifras y "Why jplus2") y la cifra de descarga sale de `site.json`
+(`download_size`). Los bloques con animación `reveal` se muestran también cuando se llega con un enlace `#sección` o se salta hacia abajo.
+
 ### Página de prensa (`press.html` y `es/prensa.html`)
 
 Reúne datos verificados, tres descripciones para copiar (una línea, corta y larga), los iconos de 1024 px, las capturas, normas de marca,
