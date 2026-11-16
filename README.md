@@ -144,6 +144,14 @@ Menú superior: Features, Compare, Lite & Full, Guides, Support (Privacidad e iP
 (`aria-current`, `assets/js/main.js`). Se quitaron las secciones duplicadas "No extensions, no account…", "Why jplus2" (lo cubren las tres tarjetas de la intro y las cifras) y "Modo Agente" (lo cubren la pestaña de IA, la pestaña Compare y la guía comparativa); en Lite & Full la tabla muestra solo lo que añade la versión completa y las tarjetas no repiten sus filas y la cifra de descarga sale de `site.json`
 (`download_size`). Los bloques con animación `reveal` se muestran también cuando se llega con un enlace `#sección` o se salta hacia abajo.
 
+### Rendimiento y SEO técnico
+
+`build.py` minimiza el CSS y el JS al copiarlos a `public/` (los originales de `assets/` no se tocan; edita siempre esos). Todas las imágenes llevan
+`width`/`height`; solo la captura principal y los iconos de cabecera se cargan al instante, el resto usa `loading="lazy"`. Títulos y descripciones
+(máx. 155 caracteres), un solo `<h1>` por página, datos estructurados, `robots.txt` y `sitemap.xml` se generan solos. No se publica un precio en los datos
+estructurados hasta que exista la versión de pago en el App Store: cuando la haya, pon `app_store_url` en `site.json` (el botón del App Store aparece
+arriba) y añade la oferta con el precio real.
+
 ### Página de prensa (`press.html` y `es/prensa.html`)
 
 Reúne datos verificados, tres descripciones para copiar (una línea, corta y larga), los iconos de 1024 px, las capturas, normas de marca,

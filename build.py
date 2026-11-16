@@ -78,9 +78,10 @@ def picture(root, name, alt, w, h, lazy=True, cls=""):
             f'<img class="shot {cls}" src="{root}img/{name}-light.jpg" alt="{escape(alt)}" width="{w}" height="{h}"{loading}></picture>')
 
 
-def icon_img(root, size, cls="", alt=""):
+def icon_img(root, size, cls="", alt="", lazy=False):
+    loading = ' loading="lazy" decoding="async"' if lazy else ""
     return (f'<picture><source srcset="{root}img/icon-dark.png" media="(prefers-color-scheme: dark)">'
-            f'<img class="{cls}" src="{root}img/icon-light.png" alt="{escape(alt)}" width="{size}" height="{size}"></picture>')
+            f'<img class="{cls}" src="{root}img/icon-light.png" alt="{escape(alt)}" width="{size}" height="{size}"{loading}></picture>')
 
 
 def image_size(name):
@@ -813,7 +814,7 @@ def home(site, t, lang):
 
 {guides_home(site, t, lang)}<section class="section cta" id="download">
   <div class="wrap">
-    {icon_img(root, 96, "cta-icon reveal")}
+    {icon_img(root, 96, "cta-icon reveal", lazy=True)}
     <h2 class="reveal">{c["title"]}</h2>
     <p class="lead reveal">{c["text"] if download else fill(soon["cta_text"], site)}</p>
     <div class="actions reveal">{f'<a class="btn btn-large" href="{download}">{fill(c["primary"], site)}</a>' if download else f'<a class="btn btn-large" href="{notify}">{soon["notify"]}</a>'}</div>
@@ -843,6 +844,27 @@ def article(site, t, lang, page):
     return layout(site, t, lang, page, p.get("meta_title") or f'{site["app_name"]} — {p["title"]}', p["description"], body, crumb=p["title"])
 
 
+def minify_css(css):
+    """Conservative CSS minifier: drops comments and spaces around braces, semicolons, commas and colons; strings stay untouched."""
+    parts = re.split(r"""((["'])(?:\\.|(?!\2).)*\2)""", css)
+    out = []
+    for i in range(0, len(parts), 3):
+        chunk = re.sub(r"/\*.*?\*/", "", parts[i], flags=re.S)
+        chunk = re.sub(r"\s+", " ", chunk)
+        chunk = re.sub(r" ?([{};,>]) ?", r"\1", chunk)
+        chunk = re.sub(r": ", ":", chunk)
+        chunk = chunk.replace(";}", "}")
+        out.append(chunk)
+        if i + 1 < len(parts):
+            out.append(parts[i + 1])
+    return "".join(out).strip()
+
+
+def minify_js(js):
+    """Drops whole-line comments and indentation; everything else is left as written."""
+    return "\n".join(l.strip() for l in js.split("\n") if l.strip() and not l.strip().startswith("//"))
+
+
 def build():
     site = load("site.json")
     # public/ is updated in place (only what changed is written), which is kinder to iCloud and to Git
@@ -856,7 +878,12 @@ def build():
 
     for src in (ROOT / "assets").rglob("*"):
         if src.is_file() and src.name != ".DS_Store":
-            put(OUT / src.relative_to(ROOT / "assets"), src.read_bytes())
+            data = src.read_bytes()
+            if src.suffix == ".css":
+                data = minify_css(data.decode("utf-8")).encode("utf-8")
+            elif src.suffix == ".js":
+                data = minify_js(data.decode("utf-8")).encode("utf-8")
+            put(OUT / src.relative_to(ROOT / "assets"), data)
     urls = []
     tt = {l: load(f"content/{l}.json") for l in LANGS}
     zbytes = press_zip(site, tt)
