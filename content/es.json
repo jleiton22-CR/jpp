@@ -240,7 +240,8 @@
     "rights": "Todos los derechos reservados.",
     "credits": "Scintilla y Lexilla son © Neil Hodgson y se usan bajo su propia licencia. Mac, macOS y Xcode son marcas comerciales de Apple Inc.",
     "nav_label": "Enlaces del pie",
-    "guides": "Guías"
+    "guides": "Guías",
+    "press": "Prensa"
   },
   "privacy_page": {
     "title": "Política de privacidad",
@@ -577,5 +578,151 @@
     "notice": "Usamos tu correo solo para avisarte cuando la versión completa esté disponible, y para novedades ocasionales de jplus2. Cada mensaje trae un enlace para darte de baja con un clic. Detalles en la <a href=\"privacy.html\">política de privacidad</a>.",
     "label": "Tu correo",
     "hint": "Escribe tu correo para activar el botón."
+  },
+  "press": {
+    "short": "Prensa",
+    "meta_title": "Kit de prensa de jplus2: logo, capturas y datos",
+    "meta_description": "Kit de prensa de jplus2, un editor de código nativo para Mac: descripción, datos verificados, descarga de icono y capturas, normas de marca y contacto.",
+    "h1": "Kit de prensa de jplus2",
+    "updated": "2026-11-16",
+    "lead": "Todo lo que necesitas para escribir sobre jplus2, un editor de código nativo para Mac: datos verificados, descripciones que puedes copiar, el icono y las capturas en una descarga, y cómo contactar con el desarrollador.",
+    "facts_title": "Datos rápidos",
+    "facts": [
+      [
+        "Nombre",
+        "jplus2 (siempre en minúsculas)"
+      ],
+      [
+        "Desarrollador",
+        "Jason Leiton, un solo desarrollador"
+      ],
+      [
+        "Qué es",
+        "Un editor de código nativo para macOS (Cocoa), basado en el componente de edición Scintilla 5"
+      ],
+      [
+        "Plataformas",
+        "macOS 12 o posterior, Apple Silicon e Intel. Una versión para iPadOS está planeada para el próximo lanzamiento; los detalles pueden cambiar."
+      ],
+      [
+        "Ediciones",
+        "<strong>jplus2 Lite:</strong> descarga gratis, unos {size}, versión {version}.<br><strong>jplus2 (completa):</strong> llega al Mac App Store."
+      ],
+      [
+        "Lenguajes",
+        "Resaltado de sintaxis y plegado de código para 95 lenguajes"
+      ],
+      [
+        "Lite incluye",
+        "Pestañas y restauración de la sesión, buscar y reemplazar con expresiones regulares, macros, marcadores, un explorador de archivos, Ir a cualquier cosa, una paleta de comandos, un minimapa y apariencia clara y oscura"
+      ],
+      [
+        "La versión completa añade",
+        "IntelliSense, compilar y ejecutar, un depurador de Python, SQL (Databricks, Snowflake, SQLite y archivos de Excel y CSV), GitHub, un asistente de IA (Claude con tu propia clave de API, servicios compatibles con OpenAI o modelos locales como Ollama) y una guía integrada en inglés y español"
+      ],
+      [
+        "Privacidad",
+        "Sin cuenta y sin analíticas. Lite no hace conexiones de red por su cuenta. Las claves de API se guardan en el Llavero de macOS."
+      ],
+      [
+        "Licencia",
+        "Propietaria; Lite es gratis. Scintilla y Lexilla son © Neil Hodgson y se usan bajo su propia licencia."
+      ],
+      [
+        "Sitio web",
+        "<a href=\"https://jplus2.com/es/\">https://jplus2.com</a>"
+      ],
+      [
+        "Contacto",
+        "<a href=\"mailto:{email}?subject=jplus2%20prensa\">{email}</a>"
+      ]
+    ],
+    "boiler_title": "Descripciones que puedes copiar",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "boilers": [
+      {
+        "label": "Una línea",
+        "text": "jplus2 es un editor de código rápido y nativo para Mac, con una versión Lite gratis."
+      },
+      {
+        "label": "Corta (unas 60 palabras)",
+        "text": "jplus2 es un editor de código nativo para macOS, basado en Scintilla 5 para Mac con Apple Silicon e Intel. La versión Lite, gratis, cubre la edición diaria en 95 lenguajes, sin cuenta y sin telemetría. La versión completa, que llega al Mac App Store, añade ejecutar y depurar, SQL sobre archivos CSV y Excel, GitHub y un asistente de IA que usa tu propia clave de API o un modelo local."
+      },
+      {
+        "label": "Larga (unas 110 palabras)",
+        "text": "jplus2 es un editor de código nativo para macOS, escrito en Cocoa sobre el componente de edición Scintilla 5 y hecho por un solo desarrollador, Jason Leiton. La versión Lite, gratis y de unos {size}, ofrece resaltado de sintaxis y plegado para 95 lenguajes, pestañas con restauración de la sesión, buscar y reemplazar con expresiones regulares, macros, marcadores, un explorador de archivos, Ir a cualquier cosa, una paleta de comandos y un minimapa, sin cuenta y sin telemetría. La versión completa, que llega al Mac App Store, añade IntelliSense, compilar y ejecutar, un depurador de Python, SQL sobre bases de datos y sobre archivos de Excel o CSV, integración con GitHub y un asistente de IA que funciona con tu propia clave de Claude, un servicio compatible con OpenAI o un modelo local. Hay una versión para iPadOS planeada."
+      }
+    ],
+    "assets_title": "Descarga los materiales",
+    "zip_label": "Descargar el kit de prensa completo (ZIP, unos {zipsize})",
+    "zip_text": "Contiene el icono en claro y oscuro, las capturas en claro y oscuro, y un archivo de texto con los datos y las descripciones de arriba.",
+    "icon_light": "Icono, claro (PNG, 1024 px)",
+    "icon_dark": "Icono, oscuro (PNG, 1024 px)",
+    "shots_title": "Capturas de pantalla",
+    "shots_note": "Pulsa una captura para ver la versión clara a tamaño completo (1500 px de ancho). Varias muestran funciones de la versión completa, y todas usan un proyecto de demostración.",
+    "shots": [
+      {
+        "id": "overview",
+        "caption": "El editor con el explorador de archivos, las pestañas y un minimapa"
+      },
+      {
+        "id": "intellisense-complete",
+        "caption": "Autocompletado al escribir (versión completa)"
+      },
+      {
+        "id": "debug",
+        "caption": "El depurador de Python detenido en una línea (versión completa)"
+      },
+      {
+        "id": "excel",
+        "caption": "SQL sobre un libro de Excel (versión completa)"
+      },
+      {
+        "id": "assistant",
+        "caption": "El asistente de IA junto al editor (versión completa)"
+      },
+      {
+        "id": "github-clone",
+        "caption": "Clonar un repositorio (versión completa)"
+      }
+    ],
+    "light": "JPG claro",
+    "dark": "JPG oscuro",
+    "brand_title": "Normas de marca",
+    "brand": [
+      "Escribe el nombre como <strong>jplus2</strong>, todo en minúsculas, incluso al principio de una frase. A la edición gratuita llámala <strong>jplus2 Lite</strong>.",
+      "Usa el icono tal como se entrega, sin cambiar sus colores, proporciones ni la J y el 2.",
+      "Enlaza, por favor, a <a href=\"https://jplus2.com/es/\">jplus2.com</a>.",
+      "Colores del sitio: índigo <code>#4257f5</code>, violeta <code>#6a3de8</code>, coral <code>#ef6f6c</code>, texto <code>#1d1d1f</code>."
+    ],
+    "know_title": "Conviene saber antes de escribir",
+    "know": [
+      "jplus2 es la versión 1.0 de un solo desarrollador y es de código cerrado. No tiene sistema de complementos.",
+      "La versión completa aún no está en el Mac App Store. Hoy solo se puede descargar jplus2 Lite.",
+      "El instalador de Lite aún no está notarizado por Apple, así que macOS pide confirmar que lo abras: Ajustes del Sistema ▸ Privacidad y seguridad ▸ Abrir igualmente.",
+      "Las comparaciones de este sitio citan las páginas de cada fabricante y dicen cuándo se consultaron."
+    ],
+    "contact_title": "Contacto",
+    "contact_text": "Preguntas, entrevistas y correcciones son bienvenidas. Escribe a <a href=\"mailto:{email}?subject=jplus2%20prensa\">{email}</a>, en español o en inglés.",
+    "links_title": "Enlaces útiles",
+    "links": [
+      [
+        "Descargar jplus2 Lite",
+        "get"
+      ],
+      [
+        "Lite frente a la versión completa",
+        "editions"
+      ],
+      [
+        "Soporte y preguntas frecuentes",
+        "support"
+      ],
+      [
+        "Política de privacidad",
+        "privacy"
+      ]
+    ]
   }
 }

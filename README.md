@@ -121,6 +121,20 @@ Campos de un archivo: `lang`, `group` (las traducciones comparten el mismo grupo
 - Las guías de funciones que solo trae la versión completa (SQL, IA) terminan en lista de espera, no en descarga.
 - La lista de espera usa Buttondown (`buttondown_username`) con la etiqueta de la guía; sin ese usuario, ofrece un enlace de correo.
 
+### Página de prensa (`press.html` y `es/prensa.html`)
+
+Reúne datos verificados, tres descripciones para copiar (una línea, corta y larga), los iconos de 1024 px, las capturas, normas de marca,
+"conviene saber" y el contacto. Su texto está en la clave `press` de `content/en.json` y `content/es.json`; el pie de todas las páginas la enlaza.
+`build.py` genera `press/jplus2-press-kit.zip` (iconos, 6 capturas en claro y oscuro y un `README.txt` con los datos en inglés y español); el ZIP
+usa fechas fijas, así que sus bytes solo cambian cuando cambia su contenido. Los iconos vienen de `appstore/icon/` del proyecto de la app y están
+en `assets/press/`.
+
+**Cuando cambie algo, actualiza `press` (los dos idiomas):**
+- Al notarizar el instalador Lite: quita la línea "El instalador de Lite aún no está notarizado" de `know`.
+- Al salir la versión completa en el Mac App Store: cambia "llega al Mac App Store" por el enlace real, en `facts`, `boilers` y `know`.
+- Al cambiar la versión, el tamaño o las funciones: `{version}` y `{size}` salen de `site.json`; el resto es texto.
+- Cambia `updated` para que el sitemap y la página muestren la fecha nueva.
+
 ### Cuando jplus2 esté en el Mac App Store
 
 Pon la dirección de la app en `app_store_url` de `site.json`. Mientras esté vacía, la sección "Lite y Completa"

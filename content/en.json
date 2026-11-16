@@ -240,7 +240,8 @@
     "rights": "All rights reserved.",
     "credits": "Scintilla and Lexilla are © Neil Hodgson and are used under their own licence. Mac, macOS and Xcode are trademarks of Apple Inc.",
     "nav_label": "Footer links",
-    "guides": "Guides"
+    "guides": "Guides",
+    "press": "Press"
   },
   "privacy_page": {
     "title": "Privacy Policy",
@@ -577,5 +578,151 @@
     "notice": "We use your email only to tell you when the full version is available, plus occasional jplus2 news. Every message has a one-click unsubscribe link. Details in the <a href=\"privacy.html\">privacy policy</a>.",
     "label": "Your email",
     "hint": "Enter your email to turn on the button."
+  },
+  "press": {
+    "short": "Press kit",
+    "meta_title": "jplus2 Press Kit: Logo, Screenshots and Facts",
+    "meta_description": "Press kit for jplus2, a native code editor for Mac: description, verified facts, icon and screenshot downloads, brand notes and contact.",
+    "h1": "jplus2 press kit",
+    "updated": "2026-11-16",
+    "lead": "Everything you need to write about jplus2, a native code editor for the Mac: verified facts, descriptions you can copy, the icon and screenshots in one download, and how to reach the developer.",
+    "facts_title": "Quick facts",
+    "facts": [
+      [
+        "Name",
+        "jplus2 (always lowercase)"
+      ],
+      [
+        "Developer",
+        "Jason Leiton, one developer"
+      ],
+      [
+        "What it is",
+        "A native code editor for macOS (Cocoa), built on the Scintilla 5 editing component"
+      ],
+      [
+        "Platforms",
+        "macOS 12 or later, Apple silicon and Intel. An iPadOS version is planned for the next release; details may change."
+      ],
+      [
+        "Editions",
+        "<strong>jplus2 Lite:</strong> free download, about {size}, version {version}.<br><strong>jplus2 (full):</strong> coming to the Mac App Store."
+      ],
+      [
+        "Languages",
+        "Syntax colouring and code folding for 95 languages"
+      ],
+      [
+        "Lite includes",
+        "Tabs and session restore, find and replace with regular expressions, macros, bookmarks, a file explorer, Go to Anything, a command palette, a minimap, and light and dark appearance"
+      ],
+      [
+        "The full version adds",
+        "IntelliSense, compile and run, a Python debugger, SQL (Databricks, Snowflake, SQLite, Excel and CSV files), GitHub, an AI assistant (Claude with your own API key, OpenAI-compatible services or local models such as Ollama) and a built-in guide in English and Spanish"
+      ],
+      [
+        "Privacy",
+        "No account and no analytics. Lite makes no network connections of its own. API keys are kept in the macOS Keychain."
+      ],
+      [
+        "Licence",
+        "Proprietary; Lite is free. Scintilla and Lexilla are © Neil Hodgson and used under their own licence."
+      ],
+      [
+        "Website",
+        "<a href=\"https://jplus2.com/\">https://jplus2.com</a>"
+      ],
+      [
+        "Contact",
+        "<a href=\"mailto:{email}?subject=jplus2%20press\">{email}</a>"
+      ]
+    ],
+    "boiler_title": "Descriptions you can copy",
+    "copy": "Copy",
+    "copied": "Copied",
+    "boilers": [
+      {
+        "label": "One line",
+        "text": "jplus2 is a fast, native code editor for Mac, with a free Lite version."
+      },
+      {
+        "label": "Short (about 60 words)",
+        "text": "jplus2 is a native code editor for macOS, built on Scintilla 5 for Apple silicon and Intel Macs. The free Lite version covers everyday editing in 95 languages, with no account and no telemetry. The full version, coming to the Mac App Store, adds run and debug, SQL on CSV and Excel files, GitHub and an AI assistant that uses your own API key or a local model."
+      },
+      {
+        "label": "Long (about 110 words)",
+        "text": "jplus2 is a native code editor for macOS, written in Cocoa on top of the Scintilla 5 editing component and made by one developer, Jason Leiton. The free Lite version, a download of about {size}, gives syntax colouring and folding for 95 languages, tabs with session restore, find and replace with regular expressions, macros, bookmarks, a file explorer, Go to Anything, a command palette and a minimap, with no account and no telemetry. The full version, coming to the Mac App Store, adds IntelliSense, compile and run, a Python debugger, SQL on databases and on Excel or CSV files, GitHub integration and an AI assistant that works with your own Claude API key, an OpenAI-compatible service or a local model. An iPadOS version is planned."
+      }
+    ],
+    "assets_title": "Download the assets",
+    "zip_label": "Download the full press kit (ZIP, about {zipsize})",
+    "zip_text": "Contains the icon in light and dark, the screenshots in light and dark, and a text file with the facts and descriptions above.",
+    "icon_light": "Icon, light (PNG, 1024 px)",
+    "icon_dark": "Icon, dark (PNG, 1024 px)",
+    "shots_title": "Screenshots",
+    "shots_note": "Click a screenshot for the full-size light version (1500 px wide). Several show features of the full version, and all use a demo project.",
+    "shots": [
+      {
+        "id": "overview",
+        "caption": "The editor with the file explorer, tabs and a minimap"
+      },
+      {
+        "id": "intellisense-complete",
+        "caption": "Completion as you type (full version)"
+      },
+      {
+        "id": "debug",
+        "caption": "The Python debugger paused on a line (full version)"
+      },
+      {
+        "id": "excel",
+        "caption": "SQL on an Excel workbook (full version)"
+      },
+      {
+        "id": "assistant",
+        "caption": "The AI assistant beside the editor (full version)"
+      },
+      {
+        "id": "github-clone",
+        "caption": "Cloning a repository (full version)"
+      }
+    ],
+    "light": "Light JPG",
+    "dark": "Dark JPG",
+    "brand_title": "Brand notes",
+    "brand": [
+      "Write the name as <strong>jplus2</strong>, all lowercase, even at the start of a sentence. Call the free edition <strong>jplus2 Lite</strong>.",
+      "Use the icon as supplied, without changing its colours, proportions or the J and 2.",
+      "Please link to <a href=\"https://jplus2.com/\">jplus2.com</a>.",
+      "Site colours: indigo <code>#4257f5</code>, violet <code>#6a3de8</code>, coral <code>#ef6f6c</code>, text <code>#1d1d1f</code>."
+    ],
+    "know_title": "Good to know before you write",
+    "know": [
+      "jplus2 is version 1.0 from a single developer, and it is closed source. There is no plugin system.",
+      "The full version is not on the Mac App Store yet. Today only jplus2 Lite can be downloaded.",
+      "The Lite installer is not yet notarized by Apple, so macOS asks you to confirm opening it: System Settings ▸ Privacy &amp; Security ▸ Open Anyway.",
+      "Comparisons on this site cite each vendor's own pages and say when they were checked."
+    ],
+    "contact_title": "Contact",
+    "contact_text": "Questions, interviews and corrections are welcome. Write to <a href=\"mailto:{email}?subject=jplus2%20press\">{email}</a>, in English or Spanish.",
+    "links_title": "Useful links",
+    "links": [
+      [
+        "Download jplus2 Lite",
+        "get"
+      ],
+      [
+        "Lite vs the full version",
+        "editions"
+      ],
+      [
+        "Support and FAQ",
+        "support"
+      ],
+      [
+        "Privacy policy",
+        "privacy"
+      ]
+    ]
   }
 }

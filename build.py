@@ -250,6 +250,7 @@ def layout(site, t, lang, page, title, description, body, crumb=None, guide=None
       <nav class="footer-links" aria-label="{escape(f["nav_label"])}">
         <a href="privacy.html">{f["privacy"]}</a>
         <a href="support.html">{f["support"]}</a>
+        <a href="{PRESS[lang]}.html">{f["press"]}</a>
         <a href="mailto:{site["contact_email"]}?subject=jplus2">{f["contact"]}</a>
         {donate}
         <a href="{other_href}" lang="{other}" hreflang="{other}">{other_t["lang_name"]}</a>
@@ -510,6 +511,105 @@ def guides_home(site, t, lang):
 """
 
 
+PRESS = {"en": "press", "es": "prensa"}
+PRESS_SHOTS = ["overview", "intellisense-complete", "debug", "excel", "assistant", "github-clone"]
+PRESS_ICONS = ["jplus2-icon-light-1024.png", "jplus2-icon-dark-1024.png"]
+
+
+def _plain(html, site, extra=None):
+    """A snippet of the content as plain text, for the README inside the press kit."""
+    text = fill(html, site).replace("<br>", "\n")
+    for k, v in (extra or {}).items():
+        text = text.replace(k, v)
+    return re.sub(r"\s+\n", "\n", re.sub(r"<[^>]+>", "", text)).replace("&amp;", "&")
+
+
+def press_readme(site, tt):
+    out = ["jplus2 press kit", "=" * 16, "", "Contents: icon/ (PNG, 1024 px, light and dark), screenshots/ (JPG, 1500 px wide, light and dark), this file.",
+           "Updated: " + tt["en"]["press"]["updated"], ""]
+    for lang, name in (("en", "ENGLISH"), ("es", "ESPAÑOL")):
+        k = tt[lang]["press"]
+        out += ["", name, "-" * len(name), "", k["facts_title"].upper()]
+        out += [f"- {a}: " + _plain(b, site).replace("\n", " / ") for a, b in k["facts"]]
+        out += ["", k["boiler_title"].upper()]
+        for b in k["boilers"]:
+            out += ["", b["label"] + ":", _plain(b["text"], site)]
+        out += ["", k["brand_title"].upper()] + ["- " + _plain(x, site) for x in k["brand"]]
+        out += ["", k["know_title"].upper()] + ["- " + _plain(x, site) for x in k["know"]]
+    return "\n".join(out) + "\n"
+
+
+def press_zip(site, tt):
+    """press/jplus2-press-kit.zip. Fixed timestamps make the bytes depend only on the contents."""
+    import io, zipfile
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
+        def add(name, data):
+            zi = zipfile.ZipInfo("jplus2-press-kit/" + name, (2026, 11, 16, 0, 0, 0))
+            zi.compress_type = zipfile.ZIP_DEFLATED
+            zi.external_attr = 0o644 << 16
+            z.writestr(zi, data)
+        for n in PRESS_ICONS:
+            add(f"icon/{n}", (ROOT / "assets" / "press" / n).read_bytes())
+        for n in PRESS_SHOTS:
+            for ap in ("light", "dark"):
+                add(f"screenshots/{n}-{ap}.jpg", (ROOT / "assets" / "img" / f"{n}-{ap}.jpg").read_bytes())
+        add("README.txt", press_readme(site, tt).encode("utf-8"))
+    return buf.getvalue()
+
+
+def press_page(site, t, lang, zipsize):
+    """The press kit: facts, text to copy, downloads, screenshots and contact."""
+    k = t["press"]
+    root = "" if lang == LANGS[0] else "../"
+    ex = {"{zipsize}": zipsize}
+    facts = "".join(f'<tr><th scope="row">{a}</th><td>{fill(b, site)}</td></tr>' for a, b in k["facts"])
+    boil = ""
+    for n, b in enumerate(k["boilers"]):
+        boil += (f'<div class="copyblock"><h3>{b["label"]}</h3><p id="bp{n}">{fill(b["text"], site)}</p>'
+                 f'<button type="button" class="btn btn-ghost btn-small" data-copy="bp{n}" data-label="{escape(k["copy"])}" data-done="{escape(k["copied"])}">{k["copy"]}</button></div>')
+    shots = ""
+    for sh in k["shots"]:
+        w, h = image_size(sh["id"])
+        shots += (f'<figure class="pshot"><a href="{root}img/{sh["id"]}-light.jpg">{picture(root, sh["id"], sh["caption"], w, h)}</a>'
+                  f'<figcaption>{sh["caption"]}<br><a href="{root}img/{sh["id"]}-light.jpg">{k["light"]}</a> · <a href="{root}img/{sh["id"]}-dark.jpg">{k["dark"]}</a></figcaption></figure>')
+    dl = download_link(site, root)
+    targets = {"get": dl, "editions": "index.html#editions", "support": "support.html", "privacy": "privacy.html"}
+    links = "".join(f'<li><a href="{targets[key]}">{label}</a></li>' for label, key in k["links"] if targets.get(key))
+    body = f"""<article class="doc wrap gpage press">
+<nav class="crumbs" aria-label="{escape(t["guide_ui"]["crumbs"])}"><a href="index.html">{site["app_name"]}</a> <span aria-hidden="true">›</span> <span>{k["short"]}</span></nav>
+<h1>{k["h1"]}</h1>
+<p class="fine">{t["guide_ui"]["updated"]}: <time datetime="{k["updated"]}">{k["updated"]}</time></p>
+<p class="lead">{k["lead"]}</p>
+<h2>{k["facts_title"]}</h2>
+<div class="guide-table-wrap"><table class="facts-table"><tbody>{facts}</tbody></table></div>
+<h2>{k["boiler_title"]}</h2>
+{boil}
+<h2>{k["assets_title"]}</h2>
+<aside class="gcta"><p><a class="btn btn-large" href="{root}press/jplus2-press-kit.zip" download>{k["zip_label"].replace("{zipsize}", zipsize)}</a></p><p class="note">{k["zip_text"]}</p>
+<ul class="icons"><li><a href="{root}press/{PRESS_ICONS[0]}" download>{k["icon_light"]}</a></li><li><a href="{root}press/{PRESS_ICONS[1]}" download>{k["icon_dark"]}</a></li></ul></aside>
+<h2>{k["shots_title"]}</h2>
+<p>{k["shots_note"]}</p>
+<div class="pshots">{shots}</div>
+<h2>{k["brand_title"]}</h2>
+<ul>{"".join(f"<li>{x}</li>" for x in k["brand"])}</ul>
+<h2>{k["know_title"]}</h2>
+<ul>{"".join(f"<li>{x}</li>" for x in k["know"])}</ul>
+<h2>{k["contact_title"]}</h2>
+<p>{fill(k["contact_text"], site)}</p>
+<h2>{k["links_title"]}</h2>
+<ul class="related">{links}</ul>
+</article>
+<script>(function(){{document.querySelectorAll("[data-copy]").forEach(function(b){{b.addEventListener("click",function(){{
+var el=document.getElementById(b.dataset.copy),text=el.textContent.trim();
+function done(){{b.textContent=b.dataset.done;setTimeout(function(){{b.textContent=b.dataset.label}},1800)}}
+function fallback(){{var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);try{{document.execCommand("copy");done()}}catch(e){{}}}}
+if(navigator.clipboard&&navigator.clipboard.writeText){{navigator.clipboard.writeText(text).then(done,fallback)}}else{{fallback()}}}})}})}})();</script>
+"""
+    return layout(site, t, lang, "press", k["meta_title"], k["meta_description"], body, crumb=k["short"],
+                  guide={"file": f"{PRESS[lang]}.html", "pairs": dict(PRESS)})
+
+
 def store_button(site, label, label_soon, cls):
     """The Mac App Store button: a link once app_store_url is set, otherwise a quiet "coming soon" label."""
     url = site.get("app_store_url", "")
@@ -719,6 +819,10 @@ def build():
         if src.is_file() and src.name != ".DS_Store":
             put(OUT / src.relative_to(ROOT / "assets"), src.read_bytes())
     urls = []
+    tt = {l: load(f"content/{l}.json") for l in LANGS}
+    zbytes = press_zip(site, tt)
+    zipsize = f"{len(zbytes) / 1048576:.1f} MB"
+    put(OUT / "press" / "jplus2-press-kit.zip", zbytes)
     for lang in LANGS:
         t = load(f"content/{lang}.json")
         d = OUT / lang_dir(lang)
@@ -730,6 +834,8 @@ def build():
             if email_gate(site):
                 put(d / PAGES["get"], get_page(site, t, lang).encode("utf-8"))
         urls += [f"{lang_dir(lang)}", f"{lang_dir(lang)}privacy.html", f"{lang_dir(lang)}support.html"]
+        put(d / f"{PRESS[lang]}.html", press_page(site, t, lang, zipsize).encode("utf-8"))
+        urls.append((f"{lang_dir(lang)}{PRESS[lang]}.html", t["press"]["updated"]))
         for g in GUIDES.get(lang, []):
             put(d / f'{g["slug"]}.html', guide_page(site, t, lang, g).encode("utf-8"))
             urls.append((f'{lang_dir(lang)}{g["slug"]}.html', g["updated"]))

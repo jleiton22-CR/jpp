@@ -350,3 +350,17 @@ code { font-family: var(--mono); font-size: 0.9em; background: var(--bg-alt); pa
 /* Download without email */
 .getpage .skiprow { margin: 14px 0 0; text-align: left; }
 .getpage .skiprow .btn { width: 100%; }
+
+/* Press kit */
+.press .facts-table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
+.press .facts-table th, .press .facts-table td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.press .facts-table th { width: 24%; font-weight: 600; color: var(--muted); }
+.copyblock { margin: 18px 0; padding: 18px 20px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; }
+.copyblock h3 { font-size: 15px; color: var(--muted); font-weight: 600; margin-bottom: 8px; }
+.copyblock p { margin: 0 0 14px; }
+.press .icons { list-style: none; padding: 0; margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.pshots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 18px; }
+.pshot { margin: 0; }
+.pshot img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); }
+.pshot figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.45; }
+@media (max-width: 700px) { .pshots { grid-template-columns: 1fr; } .press .facts-table th { width: 32%; } }
