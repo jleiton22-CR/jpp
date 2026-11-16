@@ -60,19 +60,19 @@
 <section class="thanks wrap getpage">
   <picture><source srcset="img/icon-dark.png" media="(prefers-color-scheme: dark)"><img class="cta-icon" src="img/icon-light.png" alt="" width="96" height="96"></picture>
   <h1>Download jplus2 Lite</h1>
-  <p class="lead">Free for macOS 12 or later, 5.6 MB. Enter your email and your download starts right away.</p>
+  <p class="lead">Free for macOS 12 or later, 5.6 MB. Add your email to hear when the full version is out, or download without it.</p>
   <form class="emailform" id="emailform" method="post" action="https://buttondown.com/api/emails/embed-subscribe/jason_g" target="_blank" rel="noopener" novalidate>
-    <label for="email">Your email</label>
+    <label for="email">Your email (optional)</label>
     <input id="email" name="email" type="email" required autocomplete="email" inputmode="email" spellcheck="false" autocapitalize="off"
       pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" aria-describedby="hint" placeholder="you@example.com">
     <input type="hidden" name="embed" value="1">
     <input type="hidden" name="tag" value="download-lite">
-    <p class="hint" id="hint" role="status" aria-live="polite" data-empty="Enter your email to turn on the button." data-invalid="That email does not look right. It should look like name@example.com."></p>
+    <p class="hint" id="hint" role="status" aria-live="polite" data-empty="Enter your email to turn on this button, or download without it below." data-invalid="That email does not look right. It should look like name@example.com."></p>
     <button class="btn btn-large" id="send" type="submit" aria-describedby="hint">Download jplus2 Lite 1.0.0</button>
   </form>
+  <p class="skiprow"><a class="btn btn-ghost btn-large" id="skipdl" href="thanks.html">Download without email</a></p>
   <p class="note" id="after" hidden>Your download is starting. If a new tab opened asking you to confirm your email, that is normal: you can close it whenever you like.</p>
   <p class="note">We use your email only to send occasional jplus2 news, such as when the full version is released. Every message has a one-click unsubscribe link. Details in the <a href="privacy.html">privacy policy</a>.</p>
-  <noscript><p class="note"><a href="thanks.html">Continue to the download</a></p></noscript>
 </section>
 <script>(function(){
 var f=document.getElementById("emailform"),i=document.getElementById("email"),b=document.getElementById("send"),h=document.getElementById("hint");
@@ -85,6 +85,8 @@ h.textContent=good?"":(v?h.dataset.invalid:h.dataset.empty);i.setAttribute("aria
 ["input","change","keyup","blur","paste"].forEach(function(n){i.addEventListener(n,sync)});
 var last=null;function watch(){if(i.value!==last){last=i.value;sync()}}
 watch();setInterval(watch,400);   // some browsers fill the field (autofill, password managers) without firing an event
+var sk=document.getElementById("skipdl");
+if(sk)sk.addEventListener("click",function(){try{sessionStorage.removeItem("jpp-dl")}catch(x){}});
 f.addEventListener("submit",function(e){
 if(!ok()){e.preventDefault();sync();i.focus();return}
 i.value=i.value.trim();
