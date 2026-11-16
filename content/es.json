@@ -35,7 +35,7 @@
     "pillars": [
       [
         "Nativo y completo",
-        "Ejecutar, depurar, IntelliSense, SQL, GitHub e IA vienen incluidos. No hay tienda donde buscar ni extensiones que mantener al día."
+        "Hecho con Cocoa para macOS, no una página web dentro de un envoltorio. Ejecutar, depurar, IntelliSense, SQL, GitHub e IA vienen incluidos: sin tienda donde buscar ni extensiones que mantener al día."
       ],
       [
         "IA que trabaja sobre tu proyecto",
@@ -247,8 +247,8 @@
     "title": "Empieza gratis. Pasa a la completa cuando quieras.",
     "text": "Descarga jplus2 Lite hoy, o consigue el jplus2 completo en el Mac App Store.",
     "primary": "Descargar jplus2 Lite {version}",
-    "note": "Gratis · macOS 12 o posterior · Apple Silicon e Intel · {size}",
-    "requirements": "En la versión completa, Compilar, Ejecutar y Git usan las herramientas de desarrollo de Apple. Instala Xcode, o sus herramientas de línea de comandos, para usarlas.",
+    "note": "",
+    "requirements": "",
     "store": "El jplus2 completo llega al Mac App Store",
     "store_soon": "Versión completa: Mac App Store, próximamente"
   },
@@ -373,16 +373,12 @@
     "text": "jplus2 Lite es una descarga gratuita desde esta página: un editor ligero y rápido para el texto y el código de todos los días. El jplus2 completo se obtiene en el Mac App Store, adonde llega pronto, y añade las herramientas que convierten un editor en un taller.",
     "lite": {
       "name": "jplus2 Lite",
-      "tag": "Gratis · descarga desde esta página",
+      "tag": "Gratis",
       "text": "Todo lo necesario para leer y escribir código, en una descarga de unos 5.6 MB.",
       "items": [
-        "Resaltado de sintaxis y plegado para 95 lenguajes",
-        "Pestañas, restauración de la sesión, buscar y reemplazar, varios archivos a la vez",
-        "Comparar dos archivos como diff y 16 codificaciones de texto con Reopen with Encoding",
-        "Barras de iconos que puedes mostrar u ocultar, y una barra de estado que puedes ocultar",
-        "Explorador de archivos, Ir a cualquier cosa, paleta de comandos y minimapa",
+        "Todo lo de las pestañas Editar e Ir a cualquier cosa de arriba",
         "Apariencia clara y oscura que sigue a macOS",
-        "Nunca se conecta a una red: no envía nada a ningún sitio"
+        "Nunca se conecta a una red: no se envía nada a ningún sitio"
       ],
       "button": "Descargar jplus2 Lite"
     },
@@ -390,11 +386,7 @@
       "name": "jplus2",
       "tag": "Versión completa · Mac App Store",
       "text": "El jplus2 completo, con todo lo de Lite y las funciones que siguen.",
-      "items": [
-        "IntelliSense, ejecutar y depurar, SQL, GitHub y un asistente de IA con modo Agente",
-        "La guía de jplus2 integrada, en inglés y español",
-        "Se instala y se actualiza desde el App Store, sin aviso de «desarrollador no identificado»"
-      ],
+      "items": [],
       "button": "Consíguelo en el Mac App Store",
       "button_soon": "Mac App Store · próximamente"
     },
@@ -494,6 +486,11 @@
         "Guía de jplus2 con capturas y todos los atajos",
         "no",
         "yes"
+      ],
+      [
+        "Se instala y actualiza desde el App Store, sin aviso de “desarrollador no identificado”",
+        "no",
+        "yes"
       ]
     ],
     "yes": "Incluido",
@@ -509,16 +506,8 @@
     "badge": "Próximamente",
     "items": [
       {
-        "title": "El mismo motor",
-        "text": "Resaltado de sintaxis y plegado de código para 95 lenguajes, con el editor Scintilla que impulsa jplus2 en el Mac."
-      },
-      {
         "title": "Pestañas que recuerdan",
         "text": "Abre varios archivos en pestañas. Al volver, cada pestaña sigue ahí, incluso el texto que no habías guardado."
-      },
-      {
-        "title": "Buscar y reemplazar",
-        "text": "Una barra de búsqueda con el número de coincidencias, siguiente y anterior, y Reemplazar o Reemplazar todo."
       },
       {
         "title": "Autocompletado al escribir",

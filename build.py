@@ -626,7 +626,7 @@ def editions_html(site, t, root):
                 else f'<span class="btn btn-soon">{t["soon"]["soon"]}</span>')
     full_btn = store_button(site, full["button"], full["button_soon"], "btn btn-ghost")
     rows = ""
-    for name, a, b in e["rows"]:
+    for name, a, b in (r for r in e["rows"] if not (r[1] == "yes" and r[2] == "yes")):
         mark = lambda v: (f'<span class="yes" role="img" aria-label="{escape(e["yes"])}">&#10003;</span>' if v == "yes"
                           else f'<span class="no" role="img" aria-label="{escape(e["no"])}">&mdash;</span>')
         rows += f'<tr><th scope="row">{name}</th><td>{mark(a)}</td><td>{mark(b)}</td></tr>\n'
@@ -649,7 +649,7 @@ def editions_html(site, t, root):
         <p class="tag">{full["tag"]}</p>
         <h3>{full["name"]}</h3>
         <p>{full["text"]}</p>
-        <ul>{li(full["items"])}</ul>
+        {"<ul>" + li(full["items"]) + "</ul>" if full["items"] else ""}
         <div class="actions">{full_btn}</div>
       </article>
     </div>
@@ -760,7 +760,6 @@ def home(site, t, lang):
       {store}
     </div>
     <p class="note reveal">{fill(h["note"], site) if download else soon["note_soon"]}</p>
-    <p class="note reveal"><a href="#editions">{h["store_note"]}</a></p>
     <div class="pillars">{"".join(f'<div class="pillar reveal"><p class="pillar-title">{x[0]}</p><p>{x[1]}</p></div>' for x in h["pillars"])}</div>
     <p class="note reveal">{h["pill_note"]}</p>
   </div>
@@ -773,20 +772,6 @@ def home(site, t, lang):
     for s in t["stats"]:
         out += f'    <div class="stat reveal"><strong>{escape(fill(s["value"], site))}</strong><span>{s["label"]}</span></div>\n'
     out += f"""  </div>
-</section>
-
-<section class="section alt" id="why">
-  <div class="wrap">
-    <p class="eyebrow reveal">{w["eyebrow"]}</p>
-    <h2 class="reveal">{w["title"]}</h2>
-    <p class="lead reveal">{w["text"]}</p>
-    <div class="tiles">
-"""
-    for it in w["items"]:
-        out += (f'      <article class="tile reveal"><svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true">{ICONS[it["icon"]]}</svg>'
-                f'<h3>{it["title"]}</h3><p>{it["text"]}</p></article>\n')
-    out += f"""    </div>
-  </div>
 </section>
 
 <section class="section" id="features">
@@ -826,15 +811,14 @@ def home(site, t, lang):
     out += ipad_html(t, root)
     out += f"""</section>
 
-{agent_html(t)}{guides_home(site, t, lang)}<section class="section cta" id="download">
+{guides_home(site, t, lang)}<section class="section cta" id="download">
   <div class="wrap">
     {icon_img(root, 96, "cta-icon reveal")}
     <h2 class="reveal">{c["title"]}</h2>
     <p class="lead reveal">{c["text"] if download else fill(soon["cta_text"], site)}</p>
     <div class="actions reveal">{f'<a class="btn btn-large" href="{download}">{fill(c["primary"], site)}</a>' if download else f'<a class="btn btn-large" href="{notify}">{soon["notify"]}</a>'}</div>
-    <p class="note reveal">{fill(c["note"], site) if download else soon["note_soon"]}</p>
+    {f'<p class="note reveal">{soon["note_soon"]}</p>' if not download else ""}
     <div class="actions reveal">{store_button(site, c["store"], c["store_soon"], "btn btn-ghost")}</div>
-    <p class="note reveal">{c["requirements"]}</p>
   </div>
 </section>
 """

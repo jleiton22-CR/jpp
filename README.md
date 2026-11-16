@@ -141,7 +141,7 @@ por qué la IA va dentro del editor; recuerda que es solo de la versión complet
 ### Navegación y estructura de la home (revisión UX)
 
 Menú superior: Features, Compare, Lite & Full, Guides, Support (Privacidad e iPadOS quedan en el pie y en la página). El enlace de la sección visible se subraya
-(`aria-current`, `assets/js/main.js`). Se quitó la sección duplicada "No extensions, no account…" (lo cubren las cifras y "Why jplus2") y la cifra de descarga sale de `site.json`
+(`aria-current`, `assets/js/main.js`). Se quitaron las secciones duplicadas "No extensions, no account…", "Why jplus2" (lo cubren las tres tarjetas de la intro y las cifras) y "Modo Agente" (lo cubren la pestaña de IA, la pestaña Compare y la guía comparativa); en Lite & Full la tabla muestra solo lo que añade la versión completa y las tarjetas no repiten sus filas y la cifra de descarga sale de `site.json`
 (`download_size`). Los bloques con animación `reveal` se muestran también cuando se llega con un enlace `#sección` o se salta hacia abajo.
 
 ### Página de prensa (`press.html` y `es/prensa.html`)

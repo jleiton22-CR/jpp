@@ -35,7 +35,7 @@
     "pillars": [
       [
         "Native and complete",
-        "Run, debug, IntelliSense, SQL, GitHub and AI are built in. There is no marketplace to search and no extensions to keep updated."
+        "Built with Cocoa for macOS, not a web page in a wrapper. Run, debug, IntelliSense, SQL, GitHub and AI are built in: no marketplace to search and no extensions to keep updated."
       ],
       [
         "AI that works on your project",
@@ -247,8 +247,8 @@
     "title": "Start free. Go full when you are ready.",
     "text": "Download jplus2 Lite today, or get the complete jplus2 on the Mac App Store.",
     "primary": "Download jplus2 Lite {version}",
-    "note": "Free · macOS 12 or later · Apple silicon and Intel · {size}",
-    "requirements": "In the full version, Compile, Run and Git use Apple's developer tools. Install Xcode, or its command line tools, to use them.",
+    "note": "",
+    "requirements": "",
     "store": "The full jplus2 is coming to the Mac App Store",
     "store_soon": "Full version: Mac App Store, coming soon"
   },
@@ -373,14 +373,10 @@
     "text": "jplus2 Lite is a free download from this page: a light, fast editor for everyday text and code. The full jplus2 is obtained from the Mac App Store, where it is coming soon, and adds the tools that turn an editor into a workshop.",
     "lite": {
       "name": "jplus2 Lite",
-      "tag": "Free · download from this page",
+      "tag": "Free",
       "text": "Everything you need to read and write code, in a download of about 5.6 MB.",
       "items": [
-        "Syntax colouring and folding for 95 languages",
-        "Tabs, session restore, find and replace, multiple files at once",
-        "Compare Two Files as a diff, and 16 text encodings with Reopen with Encoding",
-        "Icon toolbars you can show or hide, and a status bar you can hide",
-        "File explorer, Go to Anything, Command Palette and minimap",
+        "Everything in the Edit and Go to Anything tabs above",
         "Light and dark appearance that follows macOS",
         "Never connects to a network: nothing is sent anywhere"
       ],
@@ -390,11 +386,7 @@
       "name": "jplus2",
       "tag": "Full version · Mac App Store",
       "text": "The complete jplus2, with everything in Lite plus the features below.",
-      "items": [
-        "IntelliSense, run and debug, SQL, GitHub and an AI assistant with Agent mode",
-        "The built-in jplus2 Guide, in English and Spanish",
-        "Installs and updates through the App Store, with no “unidentified developer” warning"
-      ],
+      "items": [],
       "button": "Get it on the Mac App Store",
       "button_soon": "Mac App Store · coming soon"
     },
@@ -499,6 +491,11 @@
         "jplus2 Guide with screenshots and every shortcut",
         "no",
         "yes"
+      ],
+      [
+        "Installs and updates through the App Store, with no “unidentified developer” warning",
+        "no",
+        "yes"
       ]
     ],
     "yes": "Included",
@@ -514,16 +511,8 @@
     "badge": "Coming soon",
     "items": [
       {
-        "title": "The same engine",
-        "text": "Syntax colouring and code folding for 95 languages, with the Scintilla editor that powers jplus2 on the Mac."
-      },
-      {
         "title": "Tabs that remember",
         "text": "Open several files in tabs. When you come back, every tab is there, even text you had not saved."
-      },
-      {
-        "title": "Find and replace",
-        "text": "A find bar with match count, next and previous, and Replace or Replace All."
       },
       {
         "title": "Completion as you type",
