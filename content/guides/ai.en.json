@@ -18,6 +18,10 @@
       "html": "<ul><li><strong>AI ▸ Assistant</strong> (<code>⌃⌘A</code>) opens a chat panel beside the editor.</li><li>With <strong>Include the current file</strong> on, your question goes with the file in front of you and your selection.</li><li><strong>Insert</strong> and <strong>Replace Selection</strong> apply the code from the last answer as one undo step.</li><li>The AI menu has ready-made questions: Explain Code, Find Problems, Improve Code, Add Comments and Write Tests.</li></ul>"
     },
     {
+      "h2": "Agent mode",
+      "html": "<p>Tick <strong>Agent</strong> under the conversation, or choose <strong>AI ▸ Agent Mode</strong>. The assistant can then read files and list folders in the folder you opened, propose changes and propose terminal commands, and keep going until the task is done.</p><ul><li>Each change opens as a <strong>diff</strong> with Apply and Cancel.</li><li>Each command appears in the Terminal panel with <strong>Run</strong> and <strong>Reject</strong>. When it ends, the output goes back to the assistant.</li><li>Paths outside the opened folder are refused, and the agent stops by itself after 20 steps.</li><li>jplus2 reads <code>AGENTS.md</code>, <code>CLAUDE.md</code> or <code>.cursorrules</code> from the folder, keeps per-project memories and attaches files you name with <code>@name</code>.</li></ul><p>What the assistant reads and what your commands print is sent to the model's provider (or your gateway) so it can continue. Do not approve a command that prints secrets.</p><p>Like Cursor and Windsurf, it works as an agent on your project. Unlike a subscription, you choose the model and pay your provider directly.</p>"
+    },
+    {
       "h2": "Choose your model",
       "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\">Option</th><th scope=\"col\">What you need</th></tr></thead><tbody><tr><th scope=\"row\">Claude (Anthropic)</th><td>An API key from console.anthropic.com. Usage is billed to your account. Answers appear as they are written.</td></tr><tr><th scope=\"row\">Any OpenAI-compatible service</th><td>The service's address and key.</td></tr><tr><th scope=\"row\">A model on your Mac</th><td>A local server that speaks the OpenAI chat API, for example Ollama at <code>http://localhost:11434/v1</code>.</td></tr></tbody></table></div>"
     },
@@ -53,5 +57,5 @@
     "vscode"
   ],
   "published": "2026-11-15",
-  "updated": "2026-11-15"
+  "updated": "2026-11-16"
 }

@@ -18,6 +18,10 @@
       "html": "<ul><li><strong>AI ▸ Assistant</strong> (<code>⌃⌘A</code>) abre un panel de chat junto al editor.</li><li>Con <strong>Include the current file</strong> activado, tu pregunta va con el archivo que tienes delante y tu selección.</li><li><strong>Insert</strong> y <strong>Replace Selection</strong> aplican el código de la última respuesta como un solo paso de deshacer.</li><li>El menú AI trae preguntas listas: Explain Code, Find Problems, Improve Code, Add Comments y Write Tests.</li></ul>"
     },
     {
+      "h2": "Modo Agente",
+      "html": "<p>Marca <strong>Agent</strong> bajo la conversación, o elige <strong>AI ▸ Agent Mode</strong>. El asistente puede entonces leer archivos y listar carpetas dentro de la carpeta que abriste, proponer cambios y proponer comandos de terminal, y seguir hasta terminar la tarea.</p><ul><li>Cada cambio se abre como <strong>diff</strong> con Apply y Cancel.</li><li>Cada comando aparece en el panel Terminal con <strong>Run</strong> y <strong>Reject</strong>. Al terminar, la salida vuelve al asistente.</li><li>Las rutas fuera de la carpeta abierta se rechazan y el agente se detiene solo tras 20 pasos.</li><li>jplus2 lee <code>AGENTS.md</code>, <code>CLAUDE.md</code> o <code>.cursorrules</code> de la carpeta, guarda memorias por proyecto y adjunta los archivos que nombras con <code>@nombre</code>.</li></ul><p>Lo que el asistente lee y lo que imprimen tus comandos se envía al proveedor del modelo (o a tu gateway) para que pueda continuar. No apruebes un comando que imprima secretos.</p><p>Como Cursor y Windsurf, trabaja como agente sobre tu proyecto. A diferencia de una suscripción, tú eliges el modelo y pagas directamente a tu proveedor.</p>"
+    },
+    {
       "h2": "Elige tu modelo",
       "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\">Opción</th><th scope=\"col\">Qué necesitas</th></tr></thead><tbody><tr><th scope=\"row\">Claude (Anthropic)</th><td>Una clave de API de console.anthropic.com. El uso se factura a tu cuenta. Las respuestas aparecen mientras se escriben.</td></tr><tr><th scope=\"row\">Cualquier servicio compatible con OpenAI</th><td>La dirección del servicio y su clave.</td></tr><tr><th scope=\"row\">Un modelo en tu Mac</th><td>Un servidor local que hable la API de chat de OpenAI, por ejemplo Ollama en <code>http://localhost:11434/v1</code>.</td></tr></tbody></table></div>"
     },
@@ -53,5 +57,5 @@
     "vscode"
   ],
   "published": "2026-11-15",
-  "updated": "2026-11-15"
+  "updated": "2026-11-16"
 }

@@ -688,6 +688,27 @@ def ipad_html(t, root):
 """
 
 
+def agent_html(t):
+    a = t["agent"]
+    ul = lambda items: "<ul>" + "".join(f"<li>{x}</li>" for x in items) + "</ul>"
+    cards = "".join(f'      <article class="tile reveal"><h3>{h}</h3>{ul(items)}</article>\n'
+                    for h, items in ((a["cursor_title"], a["cursor"]), (a["windsurf_title"], a["windsurf"]),
+                                     (a["diff_title"], a["diff"])))
+    return f"""<section class="section" id="agent">
+  <div class="wrap">
+    <p class="eyebrow reveal">{a["eyebrow"]} <span class="chip chip-full">{a["chip"]}</span></p>
+    <h2 class="reveal">{a["title"]}</h2>
+    <p class="lead reveal">{a["text"]}</p>
+    <div class="tiles agent-tiles">
+{cards}    </div>
+    <p class="note reveal"><strong>{a["lite"]}</strong></p>
+    <p class="note reveal">{a["source"]}</p>
+  </div>
+</section>
+
+"""
+
+
 def home(site, t, lang):
     root = "" if lang == LANGS[0] else "../"
     download = download_link(site, root)
@@ -759,7 +780,7 @@ def home(site, t, lang):
     out += ipad_html(t, root)
     out += f"""</section>
 
-<section class="section alt" id="less">
+{agent_html(t)}<section class="section alt" id="less">
   <div class="wrap">
     <h2 class="reveal">{t["less"]["title"]}</h2>
     <div class="less-grid">

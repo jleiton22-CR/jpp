@@ -169,13 +169,14 @@
       {
         "id": "ai",
         "eyebrow": "AI assistant",
-        "title": "An assistant that sees what you see.",
-        "text": "Ask a question and the assistant reads the file in front of you and your selection. Insert and Replace Selection put the answer's code into the editor as one undo step.",
+        "title": "An assistant that sees what you see, and can work for you.",
+        "text": "Ask a question and the assistant reads the file in front of you and your selection. Turn on Agent mode and it can also look around your project, propose file changes and propose terminal commands, one step at a time, and you approve each one.",
         "bullets": [
-          "Ready-made questions: Explain Code, Find Problems, Improve Code, Add Comments, Write Tests",
-          "Claude models with your own API key, with answers that appear as they are written",
-          "Any OpenAI-compatible endpoint, including a local model such as Ollama",
-          "No model connected yet? If Claude CLI is installed, the same button opens it in Terminal, in your project's folder"
+          "Agent mode: reads files, shows every change as a diff to Apply or Cancel, and shows every command in the Terminal panel with Run and Reject; the output goes back to the assistant",
+          "Reads AGENTS.md, CLAUDE.md or .cursorrules from your project, keeps per-project memories, and attaches files you name with @",
+          "Reviews uncommitted changes or pull requests, and runs your own prompts from ai-commands.json",
+          "Claude with your own API key, any OpenAI-compatible endpoint (including a local model such as Ollama), or a company gateway",
+          "Full version only: none of this is in jplus2 Lite"
         ],
         "image": "assistant",
         "alt": "The assistant panel beside the editor, explaining a bug in the selected function.",
@@ -372,7 +373,7 @@
       "tag": "Full version · Mac App Store",
       "text": "The complete jplus2, with everything in Lite plus the features below.",
       "items": [
-        "IntelliSense, run and debug, SQL, GitHub and the AI assistant",
+        "IntelliSense, run and debug, SQL, GitHub and an AI assistant with Agent mode",
         "The built-in jplus2 Guide, in English and Spanish",
         "Installs and updates through the App Store, with no “unidentified developer” warning"
       ],
@@ -458,6 +459,21 @@
       ],
       [
         "AI assistant that sees your file",
+        "no",
+        "yes"
+      ],
+      [
+        "Agent mode: reads your files, proposes edits and terminal commands, and waits for your approval at every step",
+        "no",
+        "yes"
+      ],
+      [
+        "Project instructions (AGENTS.md, CLAUDE.md, .cursorrules), per-project memories and @file attachments",
+        "no",
+        "yes"
+      ],
+      [
+        "AI through a company gateway, with a renewable key",
         "no",
         "yes"
       ],
@@ -641,7 +657,7 @@
       ],
       [
         "The full version adds",
-        "IntelliSense, compile and run, a Python debugger, SQL (Databricks, Snowflake, SQLite, Excel and CSV files), GitHub, an AI assistant (Claude with your own API key, OpenAI-compatible services or local models such as Ollama) and a built-in guide in English and Spanish"
+        "IntelliSense, compile and run, a Python debugger, SQL (Databricks, Snowflake, SQLite, Excel and CSV files), GitHub, an AI assistant with an Agent mode that proposes file changes and terminal commands for your approval (Claude with your own API key, OpenAI-compatible services or local models such as Ollama) and a built-in guide in English and Spanish"
       ],
       [
         "Privacy",
@@ -747,5 +763,32 @@
         "privacy"
       ]
     ]
+  },
+  "agent": {
+    "eyebrow": "Agent mode",
+    "title": "If you use Cursor or Windsurf, you will find it familiar.",
+    "text": "The AI assistant in the full version of jplus2 works the way editors with AI agents do, but inside a native Mac editor and with a model you choose.",
+    "chip": "Full version only. Not available in jplus2 Lite.",
+    "cursor_title": "In common with Cursor",
+    "cursor": [
+      "An agent that reads files, edits files and runs terminal commands",
+      "Project instructions in an AGENTS.md file",
+      "@ mentions to bring files into the chat",
+      "Terminal output as context: in jplus2, the output of each command goes back to the assistant"
+    ],
+    "windsurf_title": "In common with Windsurf",
+    "windsurf": [
+      "An agent that edits your code and uses the terminal as a tool, step by step",
+      "Project instructions in an AGENTS.md file"
+    ],
+    "diff_title": "How jplus2 does it",
+    "diff": [
+      "Every file change opens as a diff and every command waits for Run; nothing happens until you approve it",
+      "It only works inside the folder you opened, and stops by itself after 20 steps",
+      "You bring your own model: Claude with your API key, an OpenAI-compatible service or a local model. jplus2 has no subscription",
+      "Also reads .cursorrules files, so a project set up for Cursor works as it is"
+    ],
+    "source": "Based on the public documentation of Cursor and Windsurf, checked on 16 November 2026. Their features change often, so check their sites for the current list. Cursor and Windsurf are trademarks of their owners; jplus2 is not affiliated with them.",
+    "lite": "jplus2 Lite does not include the AI assistant or Agent mode."
   }
 }

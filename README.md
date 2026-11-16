@@ -121,6 +121,13 @@ Campos de un archivo: `lang`, `group` (las traducciones comparten el mismo grupo
 - Las guías de funciones que solo trae la versión completa (SQL, IA) terminan en lista de espera, no en descarga.
 - La lista de espera usa Buttondown (`buttondown_username`) con la etiqueta de la guía; sin ese usuario, ofrece un enlace de correo.
 
+### Sección "Modo Agente" (Cursor y Windsurf)
+
+La home tiene una sección `#agent` (clave `agent` en `content/en.json` y `es.json`, la dibuja `agent_html()` en `build.py`) que compara el modo
+Agente del asistente con Cursor y Windsurf. Solo afirma lo verificado en su documentación pública (consultada el 16-11-2026): agente que lee/edita
+archivos y ejecuta comandos, `AGENTS.md`, menciones con @ (Cursor) y la salida del terminal como contexto (Cursor). Siempre dice que es solo de la
+versión completa y que Lite no lo incluye. Revisa esas listas cuando cambien sus webs o la app; no añadas afirmaciones sobre ellos que no puedas citar.
+
 ### Página de prensa (`press.html` y `es/prensa.html`)
 
 Reúne datos verificados, tres descripciones para copiar (una línea, corta y larga), los iconos de 1024 px, las capturas, normas de marca,

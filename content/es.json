@@ -169,13 +169,14 @@
       {
         "id": "ai",
         "eyebrow": "Asistente de IA",
-        "title": "Un asistente que ve lo que tú ves.",
-        "text": "Haz una pregunta y el asistente lee el archivo que tienes delante y tu selección. Insert y Replace Selection llevan el código de la respuesta al editor en un solo paso de deshacer.",
+        "title": "Un asistente que ve lo que tú ves, y que puede trabajar por ti.",
+        "text": "Haz una pregunta y el asistente lee el archivo que tienes delante y tu selección. Activa el modo Agente y además puede recorrer tu proyecto, proponer cambios en archivos y proponer comandos de terminal, paso a paso, y tú apruebas cada uno.",
         "bullets": [
-          "Preguntas listas para explicar el código, buscar problemas, mejorarlo, añadir comentarios o escribir pruebas",
-          "Modelos Claude con tu propia clave de API, con respuestas que aparecen mientras se escriben",
-          "Cualquier servicio compatible con OpenAI, incluido un modelo local como Ollama",
-          "¿Aún no hay un modelo conectado? Si Claude CLI está instalado, el mismo botón lo abre en Terminal, en la carpeta de tu proyecto"
+          "Modo Agente: lee archivos, muestra cada cambio como diff para Aplicar o Cancelar y muestra cada comando en el panel Terminal con Run y Reject; la salida vuelve al asistente",
+          "Lee AGENTS.md, CLAUDE.md o .cursorrules de tu proyecto, guarda memorias por proyecto y adjunta los archivos que nombras con @",
+          "Revisa cambios sin confirmar o pull requests, y ejecuta tus propios prompts desde ai-commands.json",
+          "Claude con tu propia clave de API, cualquier servicio compatible con OpenAI (incluido un modelo local como Ollama) o un gateway de empresa",
+          "Solo en la versión completa: nada de esto está en jplus2 Lite"
         ],
         "image": "assistant",
         "alt": "El panel del asistente junto al editor, explicando un error en la función seleccionada.",
@@ -372,7 +373,7 @@
       "tag": "Versión completa · Mac App Store",
       "text": "El jplus2 completo, con todo lo de Lite y las funciones que siguen.",
       "items": [
-        "IntelliSense, ejecutar y depurar, SQL, GitHub y el asistente de IA",
+        "IntelliSense, ejecutar y depurar, SQL, GitHub y un asistente de IA con modo Agente",
         "La guía de jplus2 integrada, en inglés y español",
         "Se instala y se actualiza desde el App Store, sin aviso de «desarrollador no identificado»"
       ],
@@ -453,6 +454,21 @@
       ],
       [
         "Asistente de IA que ve tu archivo",
+        "no",
+        "yes"
+      ],
+      [
+        "Modo Agente: lee tus archivos, propone cambios y comandos de terminal, y espera tu aprobación en cada paso",
+        "no",
+        "yes"
+      ],
+      [
+        "Instrucciones del proyecto (AGENTS.md, CLAUDE.md, .cursorrules), memorias por proyecto y archivos adjuntos con @",
+        "no",
+        "yes"
+      ],
+      [
+        "IA a través de un gateway de empresa, con clave renovable",
         "no",
         "yes"
       ],
@@ -636,7 +652,7 @@
       ],
       [
         "La versión completa añade",
-        "IntelliSense, compilar y ejecutar, un depurador de Python, SQL (Databricks, Snowflake, SQLite y archivos de Excel y CSV), GitHub, un asistente de IA (Claude con tu propia clave de API, servicios compatibles con OpenAI o modelos locales como Ollama) y una guía integrada en inglés y español"
+        "IntelliSense, compilar y ejecutar, un depurador de Python, SQL (Databricks, Snowflake, SQLite y archivos de Excel y CSV), GitHub, un asistente de IA con modo Agente que propone cambios en archivos y comandos de terminal para tu aprobación (Claude con tu propia clave de API, servicios compatibles con OpenAI o modelos locales como Ollama) y una guía integrada en inglés y español"
       ],
       [
         "Privacidad",
@@ -742,5 +758,32 @@
         "privacy"
       ]
     ]
+  },
+  "agent": {
+    "eyebrow": "Modo Agente",
+    "title": "Si usas Cursor o Windsurf, te resultará familiar.",
+    "text": "El asistente de IA de la versión completa de jplus2 funciona como los editores con agentes de IA, pero dentro de un editor nativo de Mac y con el modelo que tú elijas.",
+    "chip": "Solo en la versión completa. No está en jplus2 Lite.",
+    "cursor_title": "En común con Cursor",
+    "cursor": [
+      "Un agente que lee archivos, edita archivos y ejecuta comandos de terminal",
+      "Instrucciones del proyecto en un archivo AGENTS.md",
+      "Menciones con @ para llevar archivos al chat",
+      "La salida del terminal como contexto: en jplus2, la salida de cada comando vuelve al asistente"
+    ],
+    "windsurf_title": "En común con Windsurf",
+    "windsurf": [
+      "Un agente que edita tu código y usa la terminal como herramienta, paso a paso",
+      "Instrucciones del proyecto en un archivo AGENTS.md"
+    ],
+    "diff_title": "Cómo lo hace jplus2",
+    "diff": [
+      "Cada cambio en un archivo se abre como diff y cada comando espera a que pulses Run; no pasa nada hasta que lo apruebas",
+      "Solo trabaja dentro de la carpeta que abriste y se detiene solo tras 20 pasos",
+      "Traes tu propio modelo: Claude con tu clave de API, un servicio compatible con OpenAI o un modelo local. jplus2 no tiene suscripción",
+      "También lee archivos .cursorrules, así que un proyecto preparado para Cursor funciona tal cual"
+    ],
+    "source": "Basado en la documentación pública de Cursor y Windsurf, consultada el 16 de noviembre de 2026. Sus funciones cambian a menudo, así que consulta sus webs para la lista actual. Cursor y Windsurf son marcas de sus propietarios; jplus2 no está afiliado a ellos.",
+    "lite": "jplus2 Lite no incluye el asistente de IA ni el modo Agente."
   }
 }
