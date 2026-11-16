@@ -1,0 +1,53 @@
+{
+  "lang": "es",
+  "group": "sql",
+  "order": 4,
+  "slug": "consultar-csv-excel-con-sql-mac",
+  "short": "SQL sobre CSV y Excel",
+  "cta": "waitlist",
+  "tag": "waitlist-sql",
+  "meta_title": "Consultar CSV y Excel con SQL en Mac | jplus2",
+  "meta_description": "Ejecuta SQL sobre archivos CSV y Excel en tu Mac: un método gratis con sqlite3 y cómo lo hace la versión completa de jplus2 en un editor nativo.",
+  "h1": "Consultar archivos CSV y Excel con SQL en un Mac",
+  "lead": "No necesitas un servidor de bases de datos para ejecutar SQL sobre una hoja de cálculo. Esta página muestra un método gratis con la herramienta sqlite3 que ya trae tu Mac, y cómo hace lo mismo la versión completa de jplus2 dentro de un editor de código.",
+  "card_title": "Consultar CSV y Excel con SQL en Mac",
+  "card_text": "Un método gratis con sqlite3, y cómo la versión completa de jplus2 convierte cada hoja en una tabla que puedes consultar.",
+  "sections": [
+    {
+      "h2": "Método 1: sqlite3 en Terminal (gratis, ya está en tu Mac)",
+      "html": "<p>macOS incluye la herramienta de línea de comandos <code>sqlite3</code>. Para un archivo CSV llamado <code>people.csv</code> cuya primera fila tiene los nombres de las columnas:</p><pre><code>sqlite3 :memory: -cmd \".mode csv\" -cmd \".import people.csv people\" -cmd \".headers on\" -cmd \".mode column\" \\\n  \"select city, count(*) as n from people group by city order by n desc;\"</code></pre><p>La primera fila pasa a ser los nombres de las columnas, el archivo se carga en una base de datos en memoria y la consulta imprime una tabla. Un libro de Excel (.xlsx) hay que exportarlo antes a CSV.</p>"
+    },
+    {
+      "h2": "Método 2: jplus2, en un editor de código",
+      "html": "<p>En la versión completa de jplus2, un libro de Excel o un archivo CSV es una conexión de base de datos. Cada hoja se convierte en una tabla de una base de datos SQLite en memoria, y la consultas desde una pestaña SQL.</p><ol><li>Elige <strong>Database ▸ Manage Connections…</strong> (<code>⇧⌘D</code>) y añade una conexión de tipo libro de Excel o archivo CSV.</li><li>Abre una pestaña SQL y escribe tu consulta.</li><li>Pulsa <code>⌘↩</code> para ejecutar la selección o la instrucción donde está el cursor.</li><li>Los resultados aparecen en una cuadrícula. Cópialos o expórtalos como CSV.</li></ol><p>La misma pestaña SQL también funciona con archivos SQLite, Databricks y Snowflake.</p>"
+    },
+    {
+      "h2": "Otras apps",
+      "html": "<p>Hay aplicaciones dedicadas, algunas en el Mac App Store, y herramientas de código abierto como DuckDB que también consultan archivos con SQL. Elige la que encaje con la frecuencia con la que lo haces.</p>"
+    },
+    {
+      "h2": "¿Está disponible ya?",
+      "html": "<p>Las funciones de SQL forman parte de la versión completa de jplus2, que llega al Mac App Store. jplus2 Lite, la descarga gratis, es un editor sin SQL. Deja tu correo abajo y te avisamos el día que la versión completa esté disponible.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿Necesito instalar una base de datos?",
+      "a": "No. Para archivos de Excel y CSV, jplus2 usa una base de datos SQLite en memoria."
+    },
+    {
+      "q": "¿Puedo exportar los resultados?",
+      "a": "Sí. Copia la cuadrícula o expórtala como CSV."
+    },
+    {
+      "q": "¿Mi archivo sale de mi Mac?",
+      "a": "No. Los archivos se quedan en tu Mac. Solo las conexiones que configuras tú, como Databricks o Snowflake, usan la red."
+    }
+  ],
+  "related": [
+    "ai",
+    "vscode"
+  ],
+  "published": "2026-11-15",
+  "updated": "2026-11-15"
+}

@@ -1,0 +1,57 @@
+{
+  "lang": "es",
+  "group": "ai",
+  "order": 5,
+  "slug": "editor-de-codigo-con-ia-mac-clave-api-propia",
+  "short": "IA con tu propia clave",
+  "cta": "waitlist",
+  "tag": "waitlist-ai",
+  "meta_title": "Editor con IA para Mac con tu propia clave de API | jplus2",
+  "meta_description": "Usa Claude, un servicio compatible con OpenAI o un modelo local con Ollama en un editor nativo para Mac. Tu código sale del Mac solo cuando lo pides.",
+  "h1": "Un editor de código con IA para Mac que usa tu propia clave de API",
+  "lead": "Algunos editores atan su asistente de IA a una suscripción. La versión completa de jplus2 funciona al revés: traes tu propio modelo. Conecta Claude con tu clave de API, cualquier servicio compatible con OpenAI o un modelo que se ejecute en tu Mac.",
+  "card_title": "Un editor de código con IA para Mac con tu propia clave de API",
+  "card_text": "Claude, servicios compatibles con OpenAI o un modelo local con Ollama, sin suscripción a jplus2 y sin cuenta.",
+  "sections": [
+    {
+      "h2": "Cómo funciona",
+      "html": "<ul><li><strong>AI ▸ Assistant</strong> (<code>⌃⌘A</code>) abre un panel de chat junto al editor.</li><li>Con <strong>Include the current file</strong> activado, tu pregunta va con el archivo que tienes delante y tu selección.</li><li><strong>Insert</strong> y <strong>Replace Selection</strong> aplican el código de la última respuesta como un solo paso de deshacer.</li><li>El menú AI trae preguntas listas: Explain Code, Find Problems, Improve Code, Add Comments y Write Tests.</li></ul>"
+    },
+    {
+      "h2": "Elige tu modelo",
+      "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\">Opción</th><th scope=\"col\">Qué necesitas</th></tr></thead><tbody><tr><th scope=\"row\">Claude (Anthropic)</th><td>Una clave de API de console.anthropic.com. El uso se factura a tu cuenta. Las respuestas aparecen mientras se escriben.</td></tr><tr><th scope=\"row\">Cualquier servicio compatible con OpenAI</th><td>La dirección del servicio y su clave.</td></tr><tr><th scope=\"row\">Un modelo en tu Mac</th><td>Un servidor local que hable la API de chat de OpenAI, por ejemplo Ollama en <code>http://localhost:11434/v1</code>.</td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "Qué pasa con tu código",
+      "html": "<p>Las claves de API se guardan en el Llavero de macOS. Tu código sale del Mac solo cuando le preguntas algo al asistente. Con un modelo local mediante Ollama no sale de tu Mac en absoluto. jplus2 en sí no tiene cuenta ni analíticas.</p>"
+    },
+    {
+      "h2": "Configurar un modelo local",
+      "html": "<ol><li>Instala Ollama y descarga un modelo con él.</li><li>En jplus2, elige <strong>AI ▸ Model Connections…</strong> y escoge la opción compatible con OpenAI.</li><li>Escribe <code>http://localhost:11434/v1</code> y el nombre del modelo que descargaste.</li></ol>"
+    },
+    {
+      "h2": "¿Está disponible ya?",
+      "html": "<p>El asistente forma parte de la versión completa de jplus2, que llega al Mac App Store. jplus2 Lite, la descarga gratis, no lo incluye. Deja tu correo abajo y te avisamos el día que la versión completa esté disponible.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿Necesito una suscripción?",
+      "a": "No hay suscripción a jplus2. Usas tu propia clave de API o un modelo local."
+    },
+    {
+      "q": "¿Dónde se guarda mi clave de API?",
+      "a": "En el Llavero de macOS."
+    },
+    {
+      "q": "¿Funciona sin conexión a internet?",
+      "a": "Con un modelo local mediante Ollama, sí."
+    }
+  ],
+  "related": [
+    "sql",
+    "vscode"
+  ],
+  "published": "2026-11-15",
+  "updated": "2026-11-15"
+}
