@@ -710,6 +710,38 @@ def agent_html(t):
 """
 
 
+def compare_html(site, t):
+    c = t["compare"]
+    def cell(v):
+        if v.startswith("✓"):
+            return f'<td><span class="cy" aria-hidden="true">✓</span><span class="sr">Yes. </span>{escape(v[1:].strip())}</td>'
+        return f"<td>{escape(v)}</td>"
+    me = ' class="me"'
+    head = "".join(f'<th scope="col"{me if i == 0 else ""}>{escape(n)}</th>' for i, n in enumerate(c["names"]))
+    body = "".join(f'<tr><th scope="row">{escape(r[0])}</th>' + "".join(cell(v) for v in r[1]) + "</tr>\n" for r in c["rows"])
+    src = "".join(f"<li><strong>{escape(a)}:</strong> {escape(b)}</li>" for a, b in c["sources"])
+    return f"""<section class="section alt" id="compare">
+  <div class="wrap">
+    <p class="eyebrow reveal">{c["eyebrow"]}</p>
+    <h2 class="reveal">{c["title"]}</h2>
+    <p class="lead reveal">{c["text"]}</p>
+    <div class="cmp-wrap reveal" tabindex="0" role="region" aria-label="{escape(c["title"])}">
+      <table class="cmp">
+        <thead><tr><th scope="col"></th>{head}</tr></thead>
+        <tbody>
+{body}        </tbody>
+      </table>
+    </div>
+    <p class="reveal"><a class="btn btn-ghost" href="{t["agent"]["more_slug"]}.html">{c["more"]} ›</a></p>
+    <h3 class="table-title reveal">{c["sources_title"]}</h3>
+    <ul class="cmp-src reveal">{src}</ul>
+    <p class="note reveal">{fill(c["note"], site)}</p>
+  </div>
+</section>
+
+"""
+
+
 def home(site, t, lang):
     root = "" if lang == LANGS[0] else "../"
     download = download_link(site, root)
@@ -793,7 +825,7 @@ def home(site, t, lang):
     out += ipad_html(t, root)
     out += f"""</section>
 
-{agent_html(t)}<section class="section alt" id="less">
+{agent_html(t)}{compare_html(site, t)}<section class="section" id="less">
   <div class="wrap">
     <h2 class="reveal">{t["less"]["title"]}</h2>
     <div class="less-grid">

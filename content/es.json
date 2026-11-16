@@ -799,9 +799,167 @@
       "Traes tu propio modelo: Claude con tu clave de API, un servicio compatible con OpenAI o un modelo local. jplus2 no tiene suscripción",
       "También lee archivos .cursorrules, así que un proyecto preparado para Cursor funciona tal cual"
     ],
-    "source": "Basado en la documentación pública de Cursor y Windsurf, consultada el 16 de noviembre de 2026. Sus funciones cambian a menudo, así que consulta sus webs para la lista actual. Cursor y Windsurf son marcas de sus propietarios; jplus2 no está afiliado a ellos.",
+    "source": "Basado en la documentación pública de Cursor y Windsurf, consultada el 16 de noviembre de 2026. Sus funciones cambian a menudo, así que consulta sus webs para la lista actual. Cursor y Windsurf son marcas de sus propietarios; jplus2 no está afiliado a ellos. Windsurf ahora se llama Devin Desktop.",
     "lite": "jplus2 Lite no incluye el asistente de IA ni el modo Agente.",
     "more": "Compáralo con cada herramienta, una por una",
     "more_slug": "editor-con-agente-de-ia-mac-comparativa"
+  },
+  "compare": {
+    "eyebrow": "Comparativa",
+    "title": "jplus2 junto a otros seis editores",
+    "text": "Una tabla, siete herramientas. Todo lo de las otras herramientas sale de sus propias webs, leídas el 16 de noviembre de 2026. “No consta” o “no figura” significa que la web no lo dice, no que la función no exista. jplus2 Lite es la descarga gratuita; el agente de IA y la terminal son de la versión completa.",
+    "corner": "",
+    "names": [
+      "jplus2",
+      "VS Code",
+      "Sublime Text",
+      "Nextpad++",
+      "Notepad++",
+      "Cursor",
+      "Windsurf (ahora Devin Desktop)"
+    ],
+    "rows": [
+      [
+        "En el Mac",
+        [
+          "✓ Nativo; macOS 12 o posterior, Apple silicon e Intel",
+          "✓ Figura una descarga para macOS",
+          "✓ Descarga para Mac, nativa en Apple silicon",
+          "✓ Binario universal, Apple silicon e Intel",
+          "Su web describe el entorno Windows",
+          "✓ Figura una descarga para macOS",
+          "✓ Figura una descarga para macOS"
+        ]
+      ],
+      [
+        "Otras plataformas que figuran",
+        [
+          "Está prevista una versión para iPadOS",
+          "Windows, Linux y el navegador (vscode.dev)",
+          "Windows y Linux",
+          "Linux (ARM64 y x86)",
+          "Windows",
+          "CLI, app web, Slack y GitHub",
+          "Siguen disponibles los plugins para IDE de JetBrains"
+        ]
+      ],
+      [
+        "Cómo se ofrece",
+        [
+          "Lite es gratis; la versión completa llegará al Mac App Store",
+          "Código abierto; el precio no consta en su página de inicio",
+          "Evaluación gratuita; licencia personal de pago único con 3 años de actualizaciones; licencias de empresa por suscripción anual",
+          "Gratis",
+          "Gratis",
+          "Los precios están en su página de Pricing",
+          "Planes Free, Pro, Max, Teams y Enterprise"
+        ]
+      ],
+      [
+        "Código fuente",
+        [
+          "Cerrado",
+          "✓ Código abierto",
+          "No consta en su web",
+          "✓ Código abierto (GPL v3)",
+          "✓ Código abierto (GPL)",
+          "No consta en su página de inicio",
+          "No consta en su página"
+        ]
+      ],
+      [
+        "Agente de IA integrado",
+        [
+          "✓ Modo Agente (versión completa, no en Lite)",
+          "✓ Agentes que planifican, hacen cambios y te dejan revisar las ediciones",
+          "No figura en su web",
+          "No se describe en su web",
+          "No se menciona en su web",
+          "✓ Su foco principal: agentes, con modo de planificación",
+          "✓ Agentes, con un Agent Command Center"
+        ]
+      ],
+      [
+        "Elegir tu modelo o traer tu propia clave",
+        [
+          "✓ Claude con tu clave, servicios compatibles con OpenAI, modelos locales y gateways de empresa",
+          "✓ Varios proveedores y clave propia",
+          "—",
+          "—",
+          "—",
+          "✓ Varios modelos a elegir; la clave propia no consta en su página de inicio",
+          "No consta en su página"
+        ]
+      ],
+      [
+        "Terminal integrada",
+        [
+          "✓ Versión completa (no en Lite)",
+          "✓ Terminal integrada (su documentación)",
+          "No figura en su web",
+          "No se describe en su web",
+          "No se menciona en su web",
+          "Su agente ejecuta comandos de terminal (documentación); una terminal del editor no se describe en su página de inicio",
+          "No se menciona en su página; Cascade usa la terminal como herramienta (documentación)"
+        ]
+      ],
+      [
+        "Extensiones",
+        [
+          "Ninguna: las funciones vienen integradas",
+          "✓ Marketplace con miles de extensiones",
+          "API de Python y paquetes",
+          "✓ Plugin Admin; plugins de Notepad++ para Windows en proceso de portarse",
+          "No se mencionan en su página de inicio",
+          "Enlaza a un marketplace",
+          "Las extensiones se conservan desde Windsurf"
+        ]
+      ],
+      [
+        "Construido con",
+        [
+          "Cocoa y Scintilla 5",
+          "Electron",
+          "No consta",
+          "Port nativo, basado en Scintilla",
+          "C++, API Win32 y Scintilla",
+          "No consta",
+          "No consta"
+        ]
+      ]
+    ],
+    "sources_title": "Fuentes",
+    "sources": [
+      [
+        "jplus2",
+        "jplus2.com"
+      ],
+      [
+        "VS Code",
+        "code.visualstudio.com"
+      ],
+      [
+        "Sublime Text",
+        "sublimetext.com y sublimehq.com/store/text"
+      ],
+      [
+        "Nextpad++",
+        "nextpad.org"
+      ],
+      [
+        "Notepad++",
+        "notepad-plus-plus.org"
+      ],
+      [
+        "Cursor",
+        "cursor.com"
+      ],
+      [
+        "Windsurf",
+        "windsurf.com, que ahora redirige a devin.ai/desktop: Windsurf ahora se llama Devin Desktop"
+      ]
+    ],
+    "note": "Estos productos cambian a menudo. Si algo está desactualizado, escríbenos a {email} y lo corregimos. Todos los nombres son marcas de sus propietarios; jplus2 no está afiliado a ellos.",
+    "more": "Lee la comparativa detallada del agente de IA"
   }
 }
