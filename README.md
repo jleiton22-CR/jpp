@@ -148,9 +148,7 @@ Menú superior: Features, Compare, Lite & Full, Guides, Support (Privacidad e iP
 
 `build.py` minimiza el CSS y el JS al copiarlos a `public/` (los originales de `assets/` no se tocan; edita siempre esos). Todas las imágenes llevan
 `width`/`height`; solo la captura principal y los iconos de cabecera se cargan al instante, el resto usa `loading="lazy"`. Títulos y descripciones
-(máx. 155 caracteres), un solo `<h1>` por página, datos estructurados, `robots.txt` y `sitemap.xml` se generan solos. No se publica un precio en los datos
-estructurados hasta que exista la versión de pago en el App Store: cuando la haya, pon `app_store_url` en `site.json` (el botón del App Store aparece
-arriba) y añade la oferta con el precio real.
+(máx. 155 caracteres), un solo `<h1>` por página, datos estructurados, `robots.txt` y `sitemap.xml` se generan solos. El precio previsto de la versión completa (19,99 $, confirmado por el autor el 16-11-2026) está en `site.json` (`full_price`) y sale como `{price}` en las tarjetas de Lite & Full, la meta descripción de la home, la página de prensa y los datos estructurados (segunda oferta, sin disponibilidad porque aún no se vende). Cuando salga en el App Store, pon `app_store_url` en `site.json` (el botón del App Store aparece arriba) y añade `availability` a esa oferta.
 
 ### Página de prensa (`press.html` y `es/prensa.html`)
 

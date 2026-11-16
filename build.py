@@ -39,7 +39,8 @@ def load(name):
 def fill(text, site):
     """Replaces the {placeholders} a text may use."""
     return (text.replace("{version}", site["version"]).replace("{size}", site["download_size"])
-            .replace("{email}", site["contact_email"]).replace("{year}", site["year"]))
+            .replace("{email}", site["contact_email"]).replace("{year}", site["year"])
+            .replace("{price}", "$" + site.get("full_price", "")))
 
 
 def file_url(site, root):
@@ -170,8 +171,11 @@ def layout(site, t, lang, page, title, description, body, crumb=None, guide=None
                  "fileSize": site["download_size"], "image": f"{base}/img/og.png",
                  "screenshot": [f"{base}/img/{n}-light.jpg" for n in ("overview", "debug", "assistant", "excel")],
                  "author": {"@id": ids["person"]}, "publisher": {"@id": ids["person"]},
-                 "offers": {"@type": "Offer", "name": site["app_name"] + " Lite", "price": "0", "priceCurrency": "USD",
-                            "availability": "https://schema.org/InStock", "url": f"{base}/{lang_dir(lang)}#download"},
+                 "offers": [{"@type": "Offer", "name": site["app_name"] + " Lite", "price": "0", "priceCurrency": "USD",
+                             "availability": "https://schema.org/InStock", "url": f"{base}/{lang_dir(lang)}#download"}]
+                           + ([{"@type": "Offer", "name": site["app_name"] + " (full version, coming to the Mac App Store)",
+                                "price": site["full_price"], "priceCurrency": "USD",
+                                "url": f"{base}/{lang_dir(lang)}#editions"}] if site.get("full_price") else []),
                  "featureList": [re.sub("<[^>]+>", "", r[0]) for r in t["editions"]["rows"]]}]
             if site.get("download_url"):
                 graph[2]["installUrl"] = f"{base}/{lang_dir(lang)}{'get' if gate else 'thanks'}.html"
@@ -647,7 +651,7 @@ def editions_html(site, t, root):
         <div class="actions">{lite_btn}</div>
       </article>
       <article class="edition full reveal">
-        <p class="tag">{full["tag"]}</p>
+        <p class="tag">{fill(full["tag"], site)}</p>
         <h3>{full["name"]}</h3>
         <p>{full["text"]}</p>
         {"<ul>" + li(full["items"]) + "</ul>" if full["items"] else ""}
@@ -823,7 +827,7 @@ def home(site, t, lang):
   </div>
 </section>
 """
-    return layout(site, t, lang, "home", t["meta"]["title"], t["meta"]["description"], out)
+    return layout(site, t, lang, "home", t["meta"]["title"], fill(t["meta"]["description"], site), out)
 
 
 def article(site, t, lang, page):

@@ -3,7 +3,7 @@
   "lang_name": "Español",
   "meta": {
     "title": "jplus2 — Editor de código nativo para Mac | Lite gratis",
-    "description": "Un editor de código rápido y nativo para Mac. jplus2 Lite es gratis para 95 lenguajes; la versión completa añade ejecutar, depurar, SQL, GitHub e IA."
+    "description": "Editor de código rápido y nativo para Mac. jplus2 Lite es gratis para 95 lenguajes; la completa ({price}, pronto) añade ejecutar, depurar, SQL, GitHub e IA."
   },
   "nav": {
     "why": "Por qué jplus2",
@@ -384,7 +384,7 @@
     },
     "full": {
       "name": "jplus2",
-      "tag": "Versión completa · Mac App Store",
+      "tag": "Versión completa · Mac App Store · precio previsto {price}",
       "text": "El jplus2 completo, con todo lo de Lite y las funciones que siguen.",
       "items": [],
       "button": "Consíguelo en el Mac App Store",
@@ -647,7 +647,7 @@
       ],
       [
         "Ediciones",
-        "<strong>jplus2 Lite:</strong> descarga gratis, unos {size}, versión {version}.<br><strong>jplus2 (completa):</strong> llega al Mac App Store."
+        "<strong>jplus2 Lite:</strong> descarga gratis, unos {size}, versión {version}.<br><strong>jplus2 (completa):</strong> llega al Mac App Store, precio previsto {price}."
       ],
       [
         "Lenguajes",

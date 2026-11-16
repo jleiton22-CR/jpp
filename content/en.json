@@ -3,7 +3,7 @@
   "lang_name": "English",
   "meta": {
     "title": "jplus2 — Native Mac Code Editor | Free Lite Download",
-    "description": "A fast, native code editor for Mac. Free jplus2 Lite for 95 languages; the full app adds run, debug, SQL, GitHub and AI. No account, no tracking."
+    "description": "A fast, native code editor for Mac. Free jplus2 Lite for 95 languages; the full app ({price}, coming soon) adds run, debug, SQL, GitHub and AI."
   },
   "nav": {
     "why": "Why jplus2",
@@ -384,7 +384,7 @@
     },
     "full": {
       "name": "jplus2",
-      "tag": "Full version · Mac App Store",
+      "tag": "Full version · Mac App Store · planned price {price}",
       "text": "The complete jplus2, with everything in Lite plus the features below.",
       "items": [],
       "button": "Get it on the Mac App Store",
@@ -652,7 +652,7 @@
       ],
       [
         "Editions",
-        "<strong>jplus2 Lite:</strong> free download, about {size}, version {version}.<br><strong>jplus2 (full):</strong> coming to the Mac App Store."
+        "<strong>jplus2 Lite:</strong> free download, about {size}, version {version}.<br><strong>jplus2 (full):</strong> coming to the Mac App Store, planned price {price}."
       ],
       [
         "Languages",
