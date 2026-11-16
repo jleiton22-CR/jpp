@@ -78,8 +78,9 @@
 var f=document.getElementById("emailform"),i=document.getElementById("email"),b=document.getElementById("send"),h=document.getElementById("hint");
 if(!f||!i||!b)return;
 var re=/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/;
+var sent=false;
 function ok(){return re.test(i.value.trim())}
-function sync(){var v=i.value.trim(),good=ok();b.disabled=!good;b.setAttribute("aria-disabled",good?"false":"true");
+function sync(){var v=i.value.trim(),good=ok();b.disabled=sent||!good;b.setAttribute("aria-disabled",good?"false":"true");
 h.textContent=good?"":(v?h.dataset.invalid:h.dataset.empty);i.setAttribute("aria-invalid",(!good&&v)?"true":"false")}
 ["input","change","keyup","blur","paste"].forEach(function(n){i.addEventListener(n,sync)});
 var last=null;function watch(){if(i.value!==last){last=i.value;sync()}}
@@ -88,7 +89,7 @@ f.addEventListener("submit",function(e){
 if(!ok()){e.preventDefault();sync();i.focus();return}
 i.value=i.value.trim();
 try{sessionStorage.removeItem("jpp-dl")}catch(x){}
-document.getElementById("after").hidden=false;b.disabled=true;
+document.getElementById("after").hidden=false;sent=true;b.disabled=true;
 setTimeout(function(){location.href="thanks.html"},1200)});
 })();</script>
 
@@ -105,6 +106,7 @@ setTimeout(function(){location.href="thanks.html"},1200)});
         <a href="../get.html?lang=en" lang="en" hreflang="en">English</a>
       </nav>
     </div>
+    <nav class="footer-guides" aria-label="Guías"><strong>Guías</strong><a href="alternativa-notepad-plus-plus-mac.html">Alternativa a Notepad++</a><a href="alternativa-vs-code-mac.html">Alternativa a VS Code</a></nav>
     <p class="fine">© 2026 Jason Leiton. Todos los derechos reservados.</p>
     <p class="fine">Scintilla y Lexilla son © Neil Hodgson y se usan bajo su propia licencia. Mac, macOS y Xcode son marcas comerciales de Apple Inc.</p>
   </div>

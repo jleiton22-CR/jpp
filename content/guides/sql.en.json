@@ -1,0 +1,53 @@
+{
+  "lang": "en",
+  "group": "sql",
+  "order": 4,
+  "slug": "query-csv-excel-with-sql-mac",
+  "short": "SQL on CSV and Excel",
+  "cta": "waitlist",
+  "tag": "waitlist-sql",
+  "meta_title": "Query CSV and Excel Files with SQL on Mac | jplus2",
+  "meta_description": "Run SQL on CSV and Excel files on your Mac: a free method with sqlite3, and how the full version of jplus2 does it in a native editor.",
+  "h1": "Query CSV and Excel files with SQL on a Mac",
+  "lead": "You do not need a database server to run SQL on a spreadsheet. This page shows a free method with the sqlite3 tool already on your Mac, and how the full version of jplus2 does the same inside a code editor.",
+  "card_title": "Query CSV and Excel files with SQL on Mac",
+  "card_text": "A free sqlite3 method, and how jplus2's full version turns each sheet into a table you can query.",
+  "sections": [
+    {
+      "h2": "Method 1: sqlite3 in Terminal (free, already on your Mac)",
+      "html": "<p>macOS includes the <code>sqlite3</code> command-line tool. For a CSV file called <code>people.csv</code> whose first row holds the column names:</p><pre><code>sqlite3 :memory: -cmd \".mode csv\" -cmd \".import people.csv people\" -cmd \".headers on\" -cmd \".mode column\" \\\n  \"select city, count(*) as n from people group by city order by n desc;\"</code></pre><p>The first row becomes the column names, the file is loaded into an in-memory database, and the query prints a table. An Excel workbook (.xlsx) must be exported to CSV first.</p>"
+    },
+    {
+      "h2": "Method 2: jplus2, in a code editor",
+      "html": "<p>In the full version of jplus2, an Excel workbook or a CSV file is a database connection. Every sheet becomes a table in an in-memory SQLite database, and you query it from a SQL tab.</p><ol><li>Choose <strong>Database ▸ Manage Connections…</strong> (<code>⇧⌘D</code>) and add a connection of type Excel workbook or CSV file.</li><li>Open a SQL tab and write your query.</li><li>Press <code>⌘↩</code> to run the selection, or the statement at the caret.</li><li>The results appear in a grid. Copy them, or export them as CSV.</li></ol><p>The same SQL tab also works with SQLite files, Databricks and Snowflake.</p>"
+    },
+    {
+      "h2": "Other apps",
+      "html": "<p>Dedicated apps, some on the Mac App Store, and open source tools such as DuckDB also query files with SQL. Pick the one that fits how often you do this.</p>"
+    },
+    {
+      "h2": "Is it available now?",
+      "html": "<p>The SQL features are part of the full version of jplus2, which is coming to the Mac App Store. jplus2 Lite, the free download, is an editor without SQL. Leave your email below and we will tell you the day the full version is available.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do I need to install a database?",
+      "a": "No. For Excel and CSV files, jplus2 uses an in-memory SQLite database."
+    },
+    {
+      "q": "Can I export the results?",
+      "a": "Yes. Copy the grid, or export it as CSV."
+    },
+    {
+      "q": "Does my file leave my Mac?",
+      "a": "No. Files stay on your Mac. Only connections you set up yourself, such as Databricks or Snowflake, use the network."
+    }
+  ],
+  "related": [
+    "ai",
+    "vscode"
+  ],
+  "published": "2026-11-15",
+  "updated": "2026-11-15"
+}

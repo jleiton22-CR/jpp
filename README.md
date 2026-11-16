@@ -102,6 +102,22 @@ pasa a la descarga. El correo es obligatorio en el formulario, pero **no se pued
 directo del archivo del Release sigue siendo público y `thanks.html` descarga sin pedir nada. Para apagarlo, deja `buttondown_username`
 vacío y publica de nuevo.
 
+### Guías (comparaciones y tutoriales para SEO)
+
+Cada guía es un archivo en `content/guides/` con el nombre `grupo.idioma.json` (por ejemplo `vscode.en.json` y `vscode.es.json`).
+El generador las convierte en páginas con su propio título, descripción, datos estructurados (`Article` y `BreadcrumbList`), preguntas
+frecuentes y guías relacionadas, las enlaza desde la portada y el pie, y las añade al sitemap con su fecha (`updated`).
+
+Campos de un archivo: `lang`, `group` (las traducciones comparten el mismo grupo), `slug` (la dirección, sin `.html`), `order`, `short`
+(texto corto para el pie y las migas), `meta_title`, `meta_description`, `h1`, `lead`, `card_title` y `card_text` (la tarjeta de la portada),
+`published`, `updated`, `cta` (`download` o `waitlist`, con `tag` para la lista de espera), `sections` (`h2` y `html`), `faq` y `related`.
+
+- Una guía que existe solo en un idioma no lleva `hreflang` de traducción ni redirección automática de idioma, y su interruptor de
+  idioma lleva a la portada del otro idioma.
+- Solo afirma lo que puedas demostrar. Los datos de otros programas deben salir de su sitio oficial y llevar el aviso "consultados en <mes>".
+- Las guías de funciones que solo trae la versión completa (SQL, IA) terminan en lista de espera, no en descarga.
+- La lista de espera usa Buttondown (`buttondown_username`) con la etiqueta de la guía; sin ese usuario, ofrece un enlace de correo.
+
 ### Cuando jplus2 esté en el Mac App Store
 
 Pon la dirección de la app en `app_store_url` de `site.json`. Mientras esté vacía, la sección "Lite y Completa"

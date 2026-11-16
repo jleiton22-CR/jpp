@@ -1,0 +1,64 @@
+{
+  "lang": "en",
+  "group": "notepad",
+  "order": 1,
+  "slug": "notepad-plus-plus-alternative-mac",
+  "short": "Notepad++ alternative",
+  "cta": "download",
+  "meta_title": "Notepad++ for Mac: a Native Alternative | jplus2",
+  "meta_description": "Notepad++ is a Windows app. jplus2 Lite is a free, native Mac editor with 95 languages, tabs, regex find and replace, macros and bookmarks.",
+  "h1": "Notepad++ for Mac: a native alternative",
+  "lead": "Notepad++ is a Windows program, so it does not run natively on a Mac. If you are coming from Windows and want something similar, this page lists what you can use and where jplus2 Lite fits, including what it does not do.",
+  "card_title": "Notepad++ for Mac: a native alternative",
+  "card_text": "Notepad++ is a Windows app. See what you can use on a Mac, and what jplus2 Lite does and does not cover.",
+  "sections": [
+    {
+      "h2": "Can you use Notepad++ on a Mac?",
+      "html": "<p>Notepad++'s <a href=\"https://notepad-plus-plus.org/\" rel=\"noopener\">own website</a> describes it as a program for the Windows environment, built on the Scintilla editing component and released under the GNU General Public License. A community project, <a href=\"https://nextpad.org/\" rel=\"noopener\">Nextpad++</a>, ports it to macOS; according to its website it is free, open source (GPL v3) and supports plugins ported from the Windows version.</p>"
+    },
+    {
+      "h2": "What jplus2 Lite gives you",
+      "html": "<p>jplus2 Lite is a free, native Mac editor. It is built on Scintilla 5 too, so the editing core will feel familiar. It includes:</p><ul><li>Syntax colouring and code folding for 95 languages</li><li>Tabs with session restore</li><li>Find, replace and mark in normal, extended and regular-expression modes, with a results window</li><li>Macros: record, play back and run several times</li><li>Bookmarks: toggle, jump, and cut, copy or remove the bookmarked lines</li><li>A file explorer sidebar</li><li>Go to Anything (⌘P), the Command Palette (⇧⌘P) and a minimap</li><li>Encodings (UTF-8, UTF-8 with BOM, UTF-16, ANSI) and line-ending conversion</li><li>Line tools such as sort, duplicate, join and trim</li><li>Light and dark appearance that follows macOS</li></ul>"
+    },
+    {
+      "h2": "Side by side",
+      "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\"></th><th scope=\"col\">Notepad++</th><th scope=\"col\">jplus2 Lite</th><th scope=\"col\">jplus2 (full version)</th></tr></thead><tbody><tr><th scope=\"row\">Runs on</th><td>Windows</td><td>macOS 12 or later, Apple silicon and Intel</td><td>macOS 12 or later, Apple silicon and Intel</td></tr><tr><th scope=\"row\">Editing core</th><td>Scintilla</td><td>Scintilla 5</td><td>Scintilla 5</td></tr><tr><th scope=\"row\">Cost</th><td>GNU GPL, open source</td><td>Free download, closed source</td><td>Mac App Store, coming soon</td></tr><tr><th scope=\"row\">Plugins</th><td>Yes, in the Windows version</td><td>No: everything is built in</td><td>No: everything is built in</td></tr><tr><th scope=\"row\">Run code, debugger, SQL, GitHub, AI</th><td>Not covered by this comparison</td><td>Not included</td><td>Included</td></tr></tbody></table></div><p class=\"fine\">Notepad++ details come from its website and from Nextpad++'s, checked in November 2026. Check them there before relying on them.</p>"
+    },
+    {
+      "h2": "Where jplus2 is not a replacement",
+      "html": "<ul><li>If you depend on specific Notepad++ plugins, jplus2 has no plugin system and will not replace them.</li><li>jplus2 is for Apple devices only: a Mac app today, with an iPadOS version planned.</li><li>It is version 1.0 from a single author, so it has less mileage on huge files and unusual workflows than long-established editors.</li></ul>"
+    },
+    {
+      "h2": "Other native editors on Mac",
+      "html": "<p>Nextpad++ (the community port above), CotEditor, BBEdit, <a href=\"https://www.codeedit.app/\" rel=\"noopener\">CodeEdit</a> and Nova are all native Mac editors. Try two or three and keep the one that fits how you work.</p>"
+    },
+    {
+      "h2": "When the full version helps",
+      "html": "<p>The full jplus2, coming to the Mac App Store, adds IntelliSense, compile and run, a Python debugger, SQL on databases and on Excel or CSV files, GitHub and an AI assistant in the same window. See <a href=\"index.html#editions\">jplus2 Lite and the full version</a>.</p>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is there an official Notepad++ for Mac?",
+      "a": "Its official website describes a Windows program. A community port, Nextpad++, exists for macOS."
+    },
+    {
+      "q": "Is jplus2 Lite free?",
+      "a": "Yes. It is a free download of about {size}, with no account."
+    },
+    {
+      "q": "Does jplus2 Lite have plugins?",
+      "a": "No. Everything it does is built in."
+    },
+    {
+      "q": "Does jplus2 Lite send my data anywhere?",
+      "a": "No. jplus2 Lite makes no network connections of its own. The Help menu only opens this website, an email message or the donation page in your browser when you choose them."
+    }
+  ],
+  "related": [
+    "vscode",
+    "sublime"
+  ],
+  "published": "2026-11-15",
+  "updated": "2026-11-15"
+}

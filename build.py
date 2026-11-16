@@ -98,14 +98,16 @@ def image_size(name):
     return 1500, 1000
 
 
-def layout(site, t, lang, page, title, description, body, crumb=None):
+def layout(site, t, lang, page, title, description, body, crumb=None, guide=None, article=None):
     root = "" if lang == LANGS[0] else "../"
-    here = PAGES[page]
+    here = guide["file"] if guide else PAGES[page]
     home = "index.html" if page != "home" else ""
     other = [l for l in LANGS if l != lang][0]
     other_t = load(f"content/{other}.json")
     # the address of this same page in the other language; ?lang= records that the visitor chose it
     plain = f"{root}{lang_dir(other)}{here if page != 'home' else ''}" or "./"
+    if guide:      # a guide has its own address in each language, and may exist in only one
+        plain = (f"{root}{lang_dir(other)}{guide['pairs'][other]}.html" if other in guide["pairs"] else f"{root}{lang_dir(other)}")
     other_href = f"{plain}?lang={other}"
     names = {l: (t if l == lang else other_t)["lang_name"] for l in LANGS}
     toggle = f'<div class="lang-toggle" role="group" aria-label="{names[LANGS[0]]} / {names[LANGS[1]]}">'
@@ -125,6 +127,8 @@ def layout(site, t, lang, page, title, description, body, crumb=None):
               "var want=store||(sys==='%s'?sys:'%s');"
               "if(want!==here)location.replace('%s'+location.hash)}catch(e){}})();</script>"
               % (lang, "|".join(LANGS), LANGS[1], LANGS[0], plain))
+    if guide and other not in guide["pairs"]:
+        detect = ""      # no translation of this guide: do not bounce the visitor to a page that does not exist
     base = site.get("base_url", "").rstrip("/")
     seo = ""
     if base:
@@ -132,11 +136,17 @@ def layout(site, t, lang, page, title, description, body, crumb=None):
         url = f'{base}/{lang_dir(lang)}{here if page != "home" else ""}'
         seo += f'<meta property="og:url" content="{url}">\n<meta property="og:site_name" content="{escape(site["app_name"])}">\n'
         seo += f'<meta property="og:locale" content="{locale.get(lang, lang)}">\n'
-        seo += "".join(f'<meta property="og:locale:alternate" content="{locale.get(l, l)}">\n' for l in LANGS if l != lang)
+        seo += "".join(f'<meta property="og:locale:alternate" content="{locale.get(l, l)}">\n' for l in LANGS if l != lang and (not guide or l in guide["pairs"]))
         seo += f'<link rel="canonical" href="{base}/{lang_dir(lang)}{here if page != "home" else ""}">\n'
-        for l in LANGS:
-            seo += f'<link rel="alternate" hreflang="{l}" href="{base}/{lang_dir(l)}{here if page != "home" else ""}">\n'
-        seo += f'<link rel="alternate" hreflang="x-default" href="{base}/{here if page != "home" else ""}">\n'
+        if guide:
+            for l, sl in guide["pairs"].items():
+                seo += f'<link rel="alternate" hreflang="{l}" href="{base}/{lang_dir(l)}{sl}.html">\n'
+            xl = LANGS[0] if LANGS[0] in guide["pairs"] else lang
+            seo += f'<link rel="alternate" hreflang="x-default" href="{base}/{lang_dir(xl)}{guide["pairs"][xl]}.html">\n'
+        else:
+            for l in LANGS:
+                seo += f'<link rel="alternate" hreflang="{l}" href="{base}/{lang_dir(l)}{here if page != "home" else ""}">\n'
+            seo += f'<link rel="alternate" hreflang="x-default" href="{base}/{here if page != "home" else ""}">\n'
         seo += (f'<meta property="og:image" content="{base}/img/og.png">\n<meta property="og:image:width" content="1200">\n'
                 f'<meta property="og:image:height" content="630">\n<meta property="og:image:alt" content="{escape(site["app_name"])}">\n'
                 f'<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:title" content="{escape(title)}">\n'
@@ -164,6 +174,15 @@ def layout(site, t, lang, page, title, description, body, crumb=None):
                  "featureList": [re.sub("<[^>]+>", "", r[0]) for r in t["editions"]["rows"]]}]
             if site.get("download_url"):
                 graph[2]["installUrl"] = f"{base}/{lang_dir(lang)}{'get' if gate else 'thanks'}.html"
+        elif page == "guide" and article:
+            graph = [{"@type": "Person", "@id": ids["person"], "name": site["author"], "url": f"{base}/"},
+                     {"@type": "Article", "headline": article["headline"], "description": description, "inLanguage": lang,
+                      "datePublished": article["published"], "dateModified": article["updated"], "url": url,
+                      "mainEntityOfPage": url, "image": f"{base}/img/og.png", "author": {"@id": ids["person"]},
+                      "publisher": {"@id": ids["person"]}},
+                     {"@type": "BreadcrumbList", "itemListElement": [
+                         {"@type": "ListItem", "position": 1, "name": site["app_name"], "item": f"{base}/{lang_dir(lang)}"},
+                         {"@type": "ListItem", "position": 2, "name": crumb, "item": url}]}]
         elif crumb:
             graph = [{"@type": "BreadcrumbList", "itemListElement": [
                 {"@type": "ListItem", "position": 1, "name": site["app_name"], "item": f"{base}/{lang_dir(lang)}"},
@@ -178,6 +197,8 @@ def layout(site, t, lang, page, title, description, body, crumb=None):
     nav_button = (f'<a class="btn btn-small" href="{download}">{n["download"]}</a>' if download
                   else f'<span class="btn btn-small btn-soon">{t["soon"]["soon"]}</span>')
     donate = f'<a href="{escape(site["donate_url"])}" rel="noopener">{f["donate"]}</a>' if site.get("donate_url") else ""
+    glinks = "".join(f'<a href="{g["slug"]}.html">{g["short"]}</a>' for g in GUIDES.get(lang, []))
+    guides_nav = f'<nav class="footer-guides" aria-label="{escape(f["guides"])}"><strong>{f["guides"]}</strong>{glinks}</nav>' if glinks else ""
     return f"""<!doctype html>
 <html lang="{lang}">
 <head>
@@ -234,6 +255,7 @@ def layout(site, t, lang, page, title, description, body, crumb=None):
         <a href="{other_href}" lang="{other}" hreflang="{other}">{other_t["lang_name"]}</a>
       </nav>
     </div>
+    {guides_nav}
     <p class="fine">© {site["year"]} {site["author"]}. {f["rights"]}</p>
     <p class="fine">{f["credits"]}</p>
   </div>
@@ -310,8 +332,9 @@ def get_page(site, t, lang):
 var f=document.getElementById("emailform"),i=document.getElementById("email"),b=document.getElementById("send"),h=document.getElementById("hint");
 if(!f||!i||!b)return;
 var re=/^[^@\\s]+@[^@\\s]+\\.[^@\\s]{{2,}}$/;
+var sent=false;
 function ok(){{return re.test(i.value.trim())}}
-function sync(){{var v=i.value.trim(),good=ok();b.disabled=!good;b.setAttribute("aria-disabled",good?"false":"true");
+function sync(){{var v=i.value.trim(),good=ok();b.disabled=sent||!good;b.setAttribute("aria-disabled",good?"false":"true");
 h.textContent=good?"":(v?h.dataset.invalid:h.dataset.empty);i.setAttribute("aria-invalid",(!good&&v)?"true":"false")}}
 ["input","change","keyup","blur","paste"].forEach(function(n){{i.addEventListener(n,sync)}});
 var last=null;function watch(){{if(i.value!==last){{last=i.value;sync()}}}}
@@ -320,7 +343,7 @@ f.addEventListener("submit",function(e){{
 if(!ok()){{e.preventDefault();sync();i.focus();return}}
 i.value=i.value.trim();
 try{{sessionStorage.removeItem("jpp-dl")}}catch(x){{}}
-document.getElementById("after").hidden=false;b.disabled=true;
+document.getElementById("after").hidden=false;sent=true;b.disabled=true;
 setTimeout(function(){{location.href="thanks.html"}},1200)}});
 }})();</script>
 """
@@ -370,6 +393,119 @@ def visit_counter(site):
             '/^(localhost|127\\.|\\[::1\\])/.test(location.hostname))return}catch(e){}'
             'var s=document.createElement("script");s.async=true;s.src="https://gc.zgo.at/count.js";'
             's.setAttribute("data-goatcounter","https://' + code + '.goatcounter.com/count");document.body.appendChild(s)})()</script>\n')
+
+
+def load_guides():
+    """content/guides/*.json: one file per page and language. Pages of the same `group` are translations of each other."""
+    out = {l: [] for l in LANGS}
+    for f in sorted((ROOT / "content" / "guides").glob("*.json")):
+        g = json.loads(f.read_text(encoding="utf-8"))
+        out.setdefault(g["lang"], []).append(g)
+    for l in out:
+        out[l].sort(key=lambda g: g.get("order", 99))
+    return out
+
+
+GUIDES = load_guides()
+
+
+def guide_pairs(g):
+    """{language: slug} for every language this guide exists in."""
+    return {l: x["slug"] for l, lst in GUIDES.items() for x in lst if x["group"] == g["group"]}
+
+
+EMAIL_RE = r"[^@\s]+@[^@\s]+\.[^@\s]{2,}"
+
+
+def waitlist_form(site, t, lang, tag):
+    """Waiting list for the full version: a Buttondown form with the same validated button as get.html, or a mailto link."""
+    k, g = t["waitlist"], t["getpage"]
+    user = email_gate(site)
+    if not user:
+        notify = f'mailto:{site["contact_email"]}?subject={quote(t["soon"]["notify_subject"])}'
+        return (f'<aside class="waitlist"><h2>{k["title"]}</h2><p>{k["text"]}</p>'
+                f'<p><a class="btn" href="{notify}">{t["soon"]["notify"]}</a></p></aside>')
+    uid = f"wl-{tag}"
+    return f"""<aside class="waitlist" id="waitlist">
+  <h2>{k["title"]}</h2>
+  <p>{k["text"]}</p>
+  <form class="emailform" id="{uid}" method="post" action="https://buttondown.com/api/emails/embed-subscribe/{user}" target="_blank" rel="noopener" novalidate>
+    <label for="{uid}-email">{g["label"]}</label>
+    <input id="{uid}-email" name="email" type="email" required autocomplete="email" inputmode="email" spellcheck="false" autocapitalize="off"
+      pattern="{EMAIL_RE}" aria-describedby="{uid}-hint" placeholder="{escape(g["placeholder"])}">
+    <input type="hidden" name="embed" value="1">
+    <input type="hidden" name="tag" value="{tag}">
+    <p class="hint" id="{uid}-hint" role="status" aria-live="polite" data-empty="{escape(g["hint"])}" data-invalid="{escape(g["invalid"])}"></p>
+    <button class="btn" type="submit">{k["button"]}</button>
+  </form>
+  <p class="note" id="{uid}-after" hidden>{k["after"]}</p>
+  <p class="note">{k["notice"]}</p>
+</aside>
+<script>(function(){{
+var f=document.getElementById("{uid}"),i=document.getElementById("{uid}-email"),b=f&&f.querySelector("button"),h=document.getElementById("{uid}-hint");
+if(!f||!i||!b)return;
+var re=/^{EMAIL_RE}$/;
+var sent=false;
+function ok(){{return re.test(i.value.trim())}}
+function sync(){{var v=i.value.trim(),good=ok();b.disabled=sent||!good;b.setAttribute("aria-disabled",good?"false":"true");
+h.textContent=good?"":(v?h.dataset.invalid:h.dataset.empty);i.setAttribute("aria-invalid",(!good&&v)?"true":"false")}}
+i.addEventListener("input",function(){{sent=false}});   // editing the address allows another send
+["input","change","keyup","blur","paste"].forEach(function(n){{i.addEventListener(n,sync)}});
+var last=null;function watch(){{if(i.value!==last){{last=i.value;sync()}}}}
+watch();setInterval(watch,400);
+f.addEventListener("submit",function(e){{if(!ok()){{e.preventDefault();sync();i.focus();return}}
+i.value=i.value.trim();document.getElementById("{uid}-after").hidden=false;sent=true;b.disabled=true}});
+}})();</script>
+"""
+
+
+def guide_page(site, t, lang, g):
+    """A comparison or how-to page in content/guides/."""
+    root = "" if lang == LANGS[0] else "../"
+    ui = t["guide_ui"]
+    download = download_link(site, root)
+    parts = [f'<article class="doc wrap gpage">',
+             f'<nav class="crumbs" aria-label="{escape(ui["crumbs"])}"><a href="index.html">{site["app_name"]}</a> <span aria-hidden="true">›</span> <span>{g["short"]}</span></nav>',
+             f'<h1>{g["h1"]}</h1>',
+             f'<p class="fine">{ui["updated"]}: <time datetime="{g["updated"]}">{g["updated"]}</time></p>',
+             f'<p class="lead">{g["lead"]}</p>']
+    for sec in g["sections"]:
+        parts.append(f'<h2>{sec["h2"]}</h2>\n{fill(sec["html"], site)}')
+    if g["cta"] == "waitlist":
+        parts.append(waitlist_form(site, t, lang, g.get("tag", "waitlist-full")))
+    elif download:
+        parts.append(f'<aside class="gcta"><h2>{ui["cta_title"]}</h2><p>{fill(ui["cta_text"], site)}</p>'
+                     f'<p><a class="btn btn-large" href="{download}">{fill(ui["cta_button"], site)}</a></p>'
+                     f'<p class="note">{fill(ui["cta_note"], site)}</p></aside>')
+    if g.get("faq"):
+        parts.append(f'<h2>{ui["faq"]}</h2>\n<dl class="faq">' + "".join(f'<dt>{q["q"]}</dt><dd>{fill(q["a"], site)}</dd>' for q in g["faq"]) + "</dl>")
+    rel = [x for grp in g.get("related", []) for x in GUIDES.get(lang, []) if x["group"] == grp]
+    if rel:
+        parts.append(f'<h2>{ui["related"]}</h2>\n<ul class="related">' + "".join(f'<li><a href="{x["slug"]}.html">{x["card_title"]}</a></li>' for x in rel) + "</ul>")
+    parts.append("</article>")
+    return layout(site, t, lang, "guide", g["meta_title"], g["meta_description"], "\n".join(parts), crumb=g["short"],
+                  guide={"file": f'{g["slug"]}.html', "pairs": guide_pairs(g)},
+                  article={"headline": g["h1"], "published": g["published"], "updated": g["updated"]})
+
+
+def guides_home(site, t, lang):
+    gs = GUIDES.get(lang, [])
+    if not gs:
+        return ""
+    k = t["guides_home"]
+    tiles = "".join(f'      <article class="tile reveal"><h3>{g["card_title"]}</h3><p>{g["card_text"]}</p>'
+                    f'<p><a href="{g["slug"]}.html">{k["read"]} ›</a></p></article>\n' for g in gs)
+    return f"""<section class="section" id="guides">
+  <div class="wrap">
+    <p class="eyebrow reveal">{k["eyebrow"]}</p>
+    <h2 class="reveal">{k["title"]}</h2>
+    <p class="lead reveal">{k["text"]}</p>
+    <div class="tiles">
+{tiles}    </div>
+  </div>
+</section>
+
+"""
 
 
 def store_button(site, label, label_soon, cls):
@@ -533,7 +669,7 @@ def home(site, t, lang):
   </div>
 </section>
 
-<section class="section cta" id="download">
+{guides_home(site, t, lang)}<section class="section cta" id="download">
   <div class="wrap">
     {icon_img(root, 96, "cta-icon reveal")}
     <h2 class="reveal">{c["title"]}</h2>
@@ -592,11 +728,14 @@ def build():
             if email_gate(site):
                 put(d / PAGES["get"], get_page(site, t, lang).encode("utf-8"))
         urls += [f"{lang_dir(lang)}", f"{lang_dir(lang)}privacy.html", f"{lang_dir(lang)}support.html"]
+        for g in GUIDES.get(lang, []):
+            put(d / f'{g["slug"]}.html', guide_page(site, t, lang, g).encode("utf-8"))
+            urls.append((f'{lang_dir(lang)}{g["slug"]}.html', g["updated"]))
     put(OUT / "404.html", not_found(site).encode("utf-8"))
     base = site.get("base_url", "").rstrip("/")
     if base:
         today = datetime.date.today().isoformat()
-        items = "".join(f"<url><loc>{base}/{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls)
+        items = "".join(f"<url><loc>{base}/{(u if isinstance(u, str) else u[0])}</loc><lastmod>{today if isinstance(u, str) else u[1]}</lastmod></url>\n" for u in urls)
         put(OUT / "sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{items}</urlset>\n'.encode("utf-8"))
         put(OUT / "robots.txt", f"User-agent: *\nAllow: /\nDisallow: /thanks.html\nDisallow: /es/thanks.html\nDisallow: /get.html\nDisallow: /es/get.html\nSitemap: {base}/sitemap.xml\n".encode("utf-8"))
     for old in sorted(OUT.rglob("*"), reverse=True):      # whatever is no longer part of the site

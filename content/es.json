@@ -239,7 +239,8 @@
     "donate": "Apoya a jplus2 con una donación",
     "rights": "Todos los derechos reservados.",
     "credits": "Scintilla y Lexilla son © Neil Hodgson y se usan bajo su propia licencia. Mac, macOS y Xcode son marcas comerciales de Apple Inc.",
-    "nav_label": "Enlaces del pie"
+    "nav_label": "Enlaces del pie",
+    "guides": "Guías"
   },
   "privacy_page": {
     "title": "Política de privacidad",
@@ -278,7 +279,7 @@
     ],
     "site_plain": "Este sitio web no usa cookies, analíticas ni scripts de terceros.",
     "site_counted": "Este sitio web no usa cookies. Cuenta las visitas con GoatCounter, un servicio respetuoso con la privacidad que no usa cookies, no te sigue con identificadores únicos y guarda solo totales agregados, como qué páginas se visitan, qué sitio envió al visitante y el tipo de navegador o dispositivo, no tu dirección IP. No se ejecuta si tu navegador envía la señal No rastrear.",
-    "email_note": "Si escribes tu correo para descargar jplus2 Lite, se envía a Buttondown, el servicio que usamos para mandar las novedades de jplus2, y se guarda allí hasta que te des de baja o pidas borrarlo. Lo usamos solo para novedades de jplus2, como la salida de la versión completa, y cada mensaje trae un enlace para darte de baja. Para que borremos tu correo, escribe a <a href=\"mailto:{email}?subject=jplus2\">{email}</a>.",
+    "email_note": "Si escribes tu correo para descargar jplus2 Lite o para apuntarte a la lista de espera de la versión completa, se envía a Buttondown, el servicio que usamos para mandar las novedades de jplus2, y se guarda allí hasta que te des de baja o pidas borrarlo. Lo usamos solo para novedades de jplus2, como la salida de la versión completa, y cada mensaje trae un enlace para darte de baja. Para que borremos tu correo, escribe a <a href=\"mailto:{email}?subject=jplus2\">{email}</a>.",
     "meta_title": "Política de privacidad de jplus2 — Sin recopilar datos"
   },
   "support_page": {
@@ -550,5 +551,28 @@
     "noscript": "Continuar a la descarga",
     "hint": "Escribe tu correo para activar el botón.",
     "invalid": "Ese correo no parece válido. Debe verse como nombre@ejemplo.com."
+  },
+  "guide_ui": {
+    "crumbs": "Ruta de navegación",
+    "updated": "Última actualización",
+    "cta_title": "Prueba jplus2 Lite, gratis",
+    "cta_text": "Un editor nativo para Mac en una descarga de {size}. Sin cuenta y sin extensiones que instalar.",
+    "cta_button": "Descargar jplus2 Lite {version}",
+    "cta_note": "Gratis · macOS 12 o posterior · Apple Silicon e Intel · {size}",
+    "faq": "Preguntas frecuentes",
+    "related": "Guías relacionadas"
+  },
+  "guides_home": {
+    "eyebrow": "Guías",
+    "title": "Compara jplus2 y mira cómo funciona.",
+    "text": "Comparaciones honestas y guías prácticas para quien programa en Mac: qué hace bien cada herramienta y dónde encaja jplus2.",
+    "read": "Leer la guía"
+  },
+  "waitlist": {
+    "title": "Avísame cuando salga la versión completa",
+    "text": "El jplus2 completo, con ejecutar y depurar, SQL, GitHub y el asistente de IA, llega al Mac App Store. Deja tu correo y te avisamos el día que esté disponible.",
+    "button": "Avísame",
+    "after": "Revisa tu correo para confirmar. Si se abrió una pestaña nueva pidiéndote confirmar, es normal: puedes cerrarla.",
+    "notice": "Usamos tu correo solo para avisarte cuando la versión completa esté disponible, y para novedades ocasionales de jplus2. Cada mensaje trae un enlace para darte de baja con un clic. Detalles en la <a href=\"privacy.html\">política de privacidad</a>."
   }
 }

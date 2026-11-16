@@ -1,0 +1,65 @@
+{
+  "lang": "en",
+  "group": "vscode",
+  "order": 2,
+  "slug": "vs-code-alternative-mac",
+  "short": "VS Code alternative",
+  "cta": "download",
+  "meta_title": "Lightweight VS Code Alternative for Mac (Native) | jplus2",
+  "meta_description": "jplus2 is a native Mac editor, not Electron: no extensions to manage and no telemetry. Compare it with VS Code and see when VS Code is the better pick.",
+  "h1": "A lightweight VS Code alternative for Mac",
+  "lead": "Visual Studio Code is a great editor, but it is built on Electron and leans on extensions. jplus2 is a native Mac editor that comes complete instead. This is an honest comparison, including when VS Code is still the better choice.",
+  "card_title": "A lightweight VS Code alternative for Mac",
+  "card_text": "A native Mac editor that comes complete, with no extensions to manage, compared honestly with VS Code.",
+  "sections": [
+    {
+      "h2": "What VS Code is built on",
+      "html": "<p>VS Code's own <a href=\"https://code.visualstudio.com/docs/supporting/faq\" rel=\"noopener\">FAQ</a> refers to the Electron shell it uses. It collects usage data by default and sends it to Microsoft. You can turn that off with the Telemetry: Telemetry Level setting, although extensions have their own telemetry.</p>"
+    },
+    {
+      "h2": "What jplus2 does differently",
+      "html": "<ul><li>It is a native Cocoa app, not an Electron app.</li><li>Features are built in, not extensions: in the full version, IntelliSense, run and debug, SQL, GitHub and an AI assistant.</li><li>No account and no analytics. API keys and tokens are kept in the macOS Keychain.</li><li>A small download: the free Lite is about {size}.</li><li>Light and dark appearance that follow macOS.</li></ul>"
+    },
+    {
+      "h2": "Side by side",
+      "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\"></th><th scope=\"col\">VS Code</th><th scope=\"col\">jplus2</th></tr></thead><tbody><tr><th scope=\"row\">Built with</th><td>Electron</td><td>Native Cocoa (Objective-C++) and Scintilla 5</td></tr><tr><th scope=\"row\">Platforms</th><td>Windows, macOS and Linux</td><td>macOS only, with an iPadOS version planned</td></tr><tr><th scope=\"row\">Extensions</th><td>Extension marketplace</td><td>None: features are built in</td></tr><tr><th scope=\"row\">Telemetry</th><td>On by default, can be turned off</td><td>None, and no account</td></tr><tr><th scope=\"row\">Cost</th><td>Not covered here</td><td>Lite is free; the full version is coming to the Mac App Store</td></tr></tbody></table></div><p class=\"fine\">VS Code details come from its FAQ, checked in November 2026.</p>"
+    },
+    {
+      "h2": "When VS Code is the better choice",
+      "html": "<ul><li>You rely on specific extensions or on workflows built around them.</li><li>You need language support beyond what jplus2 offers: jplus2 gives IntelliSense for C, C++, Objective-C, Swift and Python out of the box, and uses a language server for other languages only if one is installed on your Mac.</li><li>You also work on Windows or Linux and want the same editor everywhere.</li></ul>"
+    },
+    {
+      "h2": "When jplus2 fits",
+      "html": "<ul><li>Quick edits, scripts and small projects where you want an editor that works at first launch.</li><li>Data work: SQL on CSV and Excel files, Databricks and Snowflake (full version).</li><li>Privacy-minded work: no account, no analytics, and an AI assistant that can use a local model.</li><li>A Mac you would rather keep free of a heavy toolchain.</li></ul>"
+    },
+    {
+      "h2": "Limits to know",
+      "html": "<ul><li>jplus2 is version 1.0 from a single author, with less mileage than long-established editors.</li><li>There is no plugin system.</li><li>The Mac App Store version runs in Apple's sandbox, so Compile and Run use the tools that come with macOS and Xcode.</li></ul>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is jplus2 lighter than VS Code?",
+      "a": "jplus2 is a native app, and the Lite download is about {size}. We have not published a benchmark against VS Code, so we make no speed claims."
+    },
+    {
+      "q": "Does jplus2 support VS Code extensions?",
+      "a": "No. jplus2 has no extension system; its features are built in."
+    },
+    {
+      "q": "Can I use my own AI model?",
+      "a": "Yes, in the full version: Claude with your own API key, any OpenAI-compatible service, or a local model such as Ollama."
+    },
+    {
+      "q": "Is the full version available?",
+      "a": "The full version is coming to the Mac App Store. The free Lite is available now."
+    }
+  ],
+  "related": [
+    "notepad",
+    "sublime",
+    "ai"
+  ],
+  "published": "2026-11-15",
+  "updated": "2026-11-15"
+}

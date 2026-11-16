@@ -1,0 +1,56 @@
+{
+  "lang": "en",
+  "group": "sublime",
+  "order": 3,
+  "slug": "sublime-text-alternative-mac",
+  "short": "Sublime Text alternative",
+  "cta": "download",
+  "meta_title": "Sublime Text Alternative for Mac: jplus2 Compared",
+  "meta_description": "Sublime Text alternative for Mac? Compare jplus2, a native Mac editor with a free Lite version, with Sublime Text's strengths and trade-offs.",
+  "h1": "Sublime Text alternative for Mac: jplus2 compared",
+  "lead": "Sublime Text is fast, mature and extensible, and it runs on Windows, Mac and Linux. jplus2 is Mac-only and takes a different route: a native editor with run, debug, SQL, GitHub and AI built in. This comparison uses Sublime's own pages and says where each one is stronger.",
+  "card_title": "Sublime Text alternative for Mac",
+  "card_text": "Sublime Text's strengths and trade-offs next to jplus2, a Mac-only editor with a free Lite version.",
+  "sections": [
+    {
+      "h2": "What Sublime Text says about itself",
+      "html": "<p>From <a href=\"https://www.sublimetext.com/\" rel=\"noopener\">sublimetext.com</a> and its <a href=\"https://www.sublimehq.com/store/text\" rel=\"noopener\">store page</a>, checked in November 2026:</p><ul><li>It runs on Windows, Mac and Linux, with Apple silicon support.</li><li>It highlights GPU rendering and lower memory use.</li><li>It offers Goto Anything, multiple selections and split editing.</li><li>It has a Python 3.8 plugin API and a package ecosystem.</li><li>Personal licenses are a once-off purchase with 3 years of updates, and it can be evaluated for free.</li></ul>"
+    },
+    {
+      "h2": "Side by side",
+      "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\"></th><th scope=\"col\">Sublime Text</th><th scope=\"col\">jplus2</th></tr></thead><tbody><tr><th scope=\"row\">Platforms</th><td>Windows, Mac and Linux</td><td>macOS only, with an iPadOS version planned</td></tr><tr><th scope=\"row\">Cost</th><td>Paid license (once-off, 3 years of updates), free evaluation</td><td>Lite is free; the full version is coming to the Mac App Store</td></tr><tr><th scope=\"row\">Extending it</th><td>Python API and packages</td><td>No plugin system: features are built in</td></tr><tr><th scope=\"row\">Built in</th><td>Editor features; extend with packages</td><td>Full version: run, debug, SQL, GitHub and an AI assistant</td></tr><tr><th scope=\"row\">Maturity</th><td>Long established</td><td>Version 1.0, one author</td></tr><tr><th scope=\"row\">Speed</th><td>GPU rendering, according to the vendor</td><td>Not benchmarked: we publish no speed claims</td></tr></tbody></table></div>"
+    },
+    {
+      "h2": "Choose Sublime Text if",
+      "html": "<ul><li>You work on more than one operating system.</li><li>You want plugins, packages or a Python API.</li><li>You value years of polish and a large ecosystem.</li></ul>"
+    },
+    {
+      "h2": "Choose jplus2 if",
+      "html": "<ul><li>You work on a Mac and want a native Cocoa editor.</li><li>You want run, debug, SQL, GitHub and AI without installing packages (full version).</li><li>You want no account and no telemetry, and a free Lite to start with.</li></ul>"
+    },
+    {
+      "h2": "Where jplus2 is weaker",
+      "html": "<ul><li>Built-in IntelliSense covers C, C++, Objective-C, Swift and Python; other languages use a language server only if one is installed on your Mac, otherwise keywords and words from the file.</li><li>There is no plugin ecosystem.</li><li>It is version 1.0, so it is less proven on huge files and unusual workflows.</li></ul>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is Sublime Text free?",
+      "a": "It can be downloaded and evaluated for free, but continued use needs a license, according to sublimehq.com."
+    },
+    {
+      "q": "Is jplus2 Lite free?",
+      "a": "Yes. It is a free download of about {size}, with no account."
+    },
+    {
+      "q": "Can jplus2 replace Sublime Text?",
+      "a": "For editing on a Mac, often yes. If you rely on Sublime's packages or on cross-platform work, no."
+    }
+  ],
+  "related": [
+    "vscode",
+    "notepad"
+  ],
+  "published": "2026-11-15",
+  "updated": "2026-11-15"
+}

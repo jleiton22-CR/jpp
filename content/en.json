@@ -239,7 +239,8 @@
     "donate": "Support jplus2 with a donation",
     "rights": "All rights reserved.",
     "credits": "Scintilla and Lexilla are © Neil Hodgson and are used under their own licence. Mac, macOS and Xcode are trademarks of Apple Inc.",
-    "nav_label": "Footer links"
+    "nav_label": "Footer links",
+    "guides": "Guides"
   },
   "privacy_page": {
     "title": "Privacy Policy",
@@ -278,7 +279,7 @@
     ],
     "site_plain": "This website uses no cookies, no analytics and no third-party scripts.",
     "site_counted": "This website uses no cookies. It counts visits with GoatCounter, a privacy-friendly service that does not use cookies, does not track you with unique identifiers and keeps only aggregate totals, such as which pages are visited, which site sent the visitor and the type of browser or device, not your IP address. It does not run if your browser sends Do Not Track.",
-    "email_note": "If you enter your email to download jplus2 Lite, it is sent to Buttondown, the service we use to send jplus2 news, and kept there until you unsubscribe or ask for it to be deleted. We use it only for jplus2 news, such as the release of the full version, and every message has an unsubscribe link. To have your email deleted, write to <a href=\"mailto:{email}?subject=jplus2\">{email}</a>.",
+    "email_note": "If you enter your email to download jplus2 Lite or to join the waiting list for the full version, it is sent to Buttondown, the service we use to send jplus2 news, and kept there until you unsubscribe or ask for it to be deleted. We use it only for jplus2 news, such as the release of the full version, and every message has an unsubscribe link. To have your email deleted, write to <a href=\"mailto:{email}?subject=jplus2\">{email}</a>.",
     "meta_title": "jplus2 Privacy Policy — No Data Collected"
   },
   "support_page": {
@@ -550,5 +551,28 @@
     "noscript": "Continue to the download",
     "hint": "Enter your email to turn on the button.",
     "invalid": "That email does not look right. It should look like name@example.com."
+  },
+  "guide_ui": {
+    "crumbs": "Breadcrumb",
+    "updated": "Last updated",
+    "cta_title": "Try jplus2 Lite, free",
+    "cta_text": "A native Mac editor in a {size} download. No account and no extensions to install.",
+    "cta_button": "Download jplus2 Lite {version}",
+    "cta_note": "Free · macOS 12 or later · Apple silicon and Intel · {size}",
+    "faq": "Frequently asked questions",
+    "related": "Related guides"
+  },
+  "guides_home": {
+    "eyebrow": "Guides",
+    "title": "Compare jplus2 and see how it works.",
+    "text": "Honest comparisons and how-to guides for Mac developers: what each tool does well, and where jplus2 fits.",
+    "read": "Read the guide"
+  },
+  "waitlist": {
+    "title": "Get notified when the full version is out",
+    "text": "The full jplus2, with run and debug, SQL, GitHub and the AI assistant, is coming to the Mac App Store. Leave your email and we will tell you the day it is available.",
+    "button": "Notify me",
+    "after": "Check your email to confirm. If a new tab opened asking you to confirm, that is normal: you can close it.",
+    "notice": "We use your email only to tell you when the full version is available, plus occasional jplus2 news. Every message has a one-click unsubscribe link. Details in the <a href=\"privacy.html\">privacy policy</a>."
   }
 }
