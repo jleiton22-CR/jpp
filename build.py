@@ -98,7 +98,7 @@ def image_size(name):
     return 1500, 1000
 
 
-def layout(site, t, lang, page, title, description, body):
+def layout(site, t, lang, page, title, description, body, crumb=None):
     root = "" if lang == LANGS[0] else "../"
     here = PAGES[page]
     home = "index.html" if page != "home" else ""
@@ -143,17 +143,33 @@ def layout(site, t, lang, page, title, description, body):
                 f'<meta name="twitter:description" content="{escape(description)}">\n<meta name="twitter:image" content="{base}/img/og.png">\n')
         if page in ("thanks", "get"):
             seo += '<meta name="robots" content="noindex">\n'
+        ids = {"site": f"{base}/#website", "person": f"{base}/#person", "app": f"{base}/#app"}
+        graph = []
         if page == "home":
-            ld = {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": site["app_name"] + " Lite",
-                  "applicationCategory": "DeveloperApplication", "operatingSystem": "macOS 12 or later",
-                  "softwareVersion": site["version"], "description": description, "inLanguage": lang,
-                  "url": url, "image": f"{base}/img/og.png",
-                  "author": {"@type": "Person", "name": site["author"]},
-                  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-                  "featureList": [re.sub("<[^>]+>", "", x) for x in t["editions"]["lite"]["items"]]}
+            gate = bool(email_gate(site))
+            graph = [
+                {"@type": "WebSite", "@id": ids["site"], "url": f"{base}/", "name": site["app_name"],
+                 "inLanguage": LANGS, "publisher": {"@id": ids["person"]}},
+                {"@type": "Person", "@id": ids["person"], "name": site["author"], "url": f"{base}/",
+                 "sameAs": [site["github_profile"]] if site.get("github_profile") else []},
+                {"@type": "SoftwareApplication", "@id": ids["app"], "name": site["app_name"],
+                 "alternateName": site["app_name"] + " Lite", "url": url, "inLanguage": lang,
+                 "description": description, "applicationCategory": "DeveloperApplication",
+                 "operatingSystem": "macOS 12.0 or later", "softwareVersion": site["version"],
+                 "fileSize": site["download_size"], "image": f"{base}/img/og.png",
+                 "screenshot": [f"{base}/img/{n}-light.jpg" for n in ("overview", "debug", "assistant", "excel")],
+                 "author": {"@id": ids["person"]}, "publisher": {"@id": ids["person"]},
+                 "offers": {"@type": "Offer", "name": site["app_name"] + " Lite", "price": "0", "priceCurrency": "USD",
+                            "availability": "https://schema.org/InStock", "url": f"{base}/{lang_dir(lang)}#download"},
+                 "featureList": [re.sub("<[^>]+>", "", r[0]) for r in t["editions"]["rows"]]}]
             if site.get("download_url"):
-                ld["downloadUrl"] = site["download_url"] if site["download_url"].startswith("http") else f"{base}/{site['download_url']}"
-            seo += '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + "</script>\n"
+                graph[2]["installUrl"] = f"{base}/{lang_dir(lang)}{'get' if gate else 'thanks'}.html"
+        elif crumb:
+            graph = [{"@type": "BreadcrumbList", "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": site["app_name"], "item": f"{base}/{lang_dir(lang)}"},
+                {"@type": "ListItem", "position": 2, "name": crumb, "item": url}]}]
+        if graph:
+            seo += '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False) + "</script>\n"
     download = download_link(site, root)
     n, f = t["nav"], t["footer"]
     donate_btn = (f'<a class="btn btn-small btn-donate" href="{escape(site["donate_url"])}" target="_blank" rel="noopener" '
@@ -447,6 +463,7 @@ def home(site, t, lang):
     {icon_img(root, 128, "hero-icon reveal", site["app_name"])}
     <p class="eyebrow reveal">{fill(h["eyebrow"], site)}</p>
     <h1 class="reveal">{h["title"]}</h1>
+    <p class="tagline reveal">{h["tagline"]}</p>
     <p class="lead reveal">{h["text"]}</p>
     <div class="actions reveal">
       {f'<a class="btn" href="{download}">{h["primary"]}</a>' if download else f'<span class="btn btn-soon">{soon["soon"]}</span>'}
@@ -546,7 +563,7 @@ def article(site, t, lang, page):
             text = re.sub(r"</p>\s*$", " " + p["email_note"] + "</p>", text.rstrip())
         body += f'<h2>{s["title"]}</h2>\n{fill(text, site)}\n'
     body += "</article>\n"
-    return layout(site, t, lang, page, f'{site["app_name"]} — {p["title"]}', p["description"], body)
+    return layout(site, t, lang, page, p.get("meta_title") or f'{site["app_name"]} — {p["title"]}', p["description"], body, crumb=p["title"])
 
 
 def build():

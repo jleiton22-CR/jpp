@@ -2,8 +2,8 @@
   "lang": "es",
   "lang_name": "Español",
   "meta": {
-    "title": "jplus2 — Un editor de código nativo para Mac",
-    "description": "jplus2 es un editor de código nativo para macOS. Descarga jplus2 Lite gratis, o consigue el jplus2 completo en el Mac App Store con SQL, GitHub y asistente de IA."
+    "title": "jplus2 — Editor de código nativo para Mac | Lite gratis",
+    "description": "Un editor de código rápido y nativo para Mac. jplus2 Lite es gratis para 95 lenguajes; la versión completa añade ejecutar, depurar, SQL, GitHub e IA."
   },
   "nav": {
     "why": "Por qué jplus2",
@@ -21,14 +21,15 @@
   },
   "hero": {
     "eyebrow": "Versión {version} para macOS",
-    "title": "Todo lo que rodea a tu código. <span class=\"grad\">Nada que estorbe.</span>",
+    "title": "Un editor de código nativo para Mac. <span class=\"grad\">Rápido, completo y privado.</span>",
     "text": "jplus2 es un editor de código rápido y nativo para Mac. Descarga la Lite gratis para escribir en 95 lenguajes, o consigue el jplus2 completo para además ejecutar y depurar tu código, consultar tus datos con SQL, subir a GitHub y preguntar a un asistente de IA.",
     "primary": "Descargar jplus2 Lite — gratis",
     "secondary": "Mira lo que hace",
     "app_store": "Versión completa en el Mac App Store",
     "note": "Gratis · {size} · macOS 12 o posterior · Apple Silicon e Intel",
     "image_alt": "La ventana de jplus2: un explorador de archivos a la izquierda, pestañas y un archivo de Python con resaltado de sintaxis.",
-    "store_note": "¿Quieres todo lo de esta página? El jplus2 completo viene en camino al Mac App Store."
+    "store_note": "¿Quieres todo lo de esta página? El jplus2 completo viene en camino al Mac App Store.",
+    "tagline": "Todo lo que rodea a tu código. Nada que estorbe."
   },
   "stats": [
     {
@@ -50,7 +51,7 @@
   ],
   "why": {
     "eyebrow": "Por qué jplus2",
-    "title": "Lo que lo hace diferente.",
+    "title": "Por qué jplus2: un editor nativo para Mac sin extensiones",
     "text": "La mayoría de los editores empiezan vacíos y te piden armar el resto. jplus2 empieza completo, y está hecho para Mac y para nada más.",
     "items": [
       {
@@ -87,7 +88,7 @@
   },
   "features": {
     "eyebrow": "Funciones",
-    "title": "Una ventana. Todo el trabajo.",
+    "title": "Ejecuta, depura, SQL, GitHub e IA en una sola ventana",
     "items": [
       {
         "id": "edit",
@@ -198,7 +199,7 @@
     ]
   },
   "less": {
-    "title": "Lo que no vas a encontrar en jplus2.",
+    "title": "Sin extensiones, sin cuenta, sin telemetría.",
     "items": [
       {
         "title": "Sin extensiones",
@@ -242,7 +243,7 @@
   },
   "privacy_page": {
     "title": "Política de privacidad",
-    "description": "jplus2 no recopila ningún dato sobre ti.",
+    "description": "jplus2 no recopila datos: sin cuentas, sin analíticas, sin rastreo. Qué hacen la app, este sitio web y la descarga Lite con tu información.",
     "updated": "Última actualización: 13 de noviembre de 2026",
     "intro": "jplus2 es un editor de código para Mac creado por Jason Leiton. No recopila ningún dato sobre ti.",
     "sections": [
@@ -277,11 +278,12 @@
     ],
     "site_plain": "Este sitio web no usa cookies, analíticas ni scripts de terceros.",
     "site_counted": "Este sitio web no usa cookies. Cuenta las visitas con GoatCounter, un servicio respetuoso con la privacidad que no usa cookies, no te sigue con identificadores únicos y guarda solo totales agregados, como qué páginas se visitan, qué sitio envió al visitante y el tipo de navegador o dispositivo, no tu dirección IP. No se ejecuta si tu navegador envía la señal No rastrear.",
-    "email_note": "Si escribes tu correo para descargar jplus2 Lite, se envía a Buttondown, el servicio que usamos para mandar las novedades de jplus2, y se guarda allí hasta que te des de baja o pidas borrarlo. Lo usamos solo para novedades de jplus2, como la salida de la versión completa, y cada mensaje trae un enlace para darte de baja. Para que borremos tu correo, escribe a <a href=\"mailto:{email}?subject=jplus2\">{email}</a>."
+    "email_note": "Si escribes tu correo para descargar jplus2 Lite, se envía a Buttondown, el servicio que usamos para mandar las novedades de jplus2, y se guarda allí hasta que te des de baja o pidas borrarlo. Lo usamos solo para novedades de jplus2, como la salida de la versión completa, y cada mensaje trae un enlace para darte de baja. Para que borremos tu correo, escribe a <a href=\"mailto:{email}?subject=jplus2\">{email}</a>.",
+    "meta_title": "Política de privacidad de jplus2 — Sin recopilar datos"
   },
   "support_page": {
     "title": "Soporte",
-    "description": "Respuestas a las preguntas más comunes sobre jplus2.",
+    "description": "Respuestas sobre cómo instalar jplus2, ejecutar y depurar código, SQL sobre CSV y Excel, GitHub y la diferencia entre la versión Lite y la completa.",
     "updated": "",
     "intro": "Esta página responde las preguntas más comunes. La guía completa está dentro de la app: elige Help ▸ jplus2 Guide.",
     "sections": [
@@ -333,7 +335,8 @@
         "title": "Contacto",
         "body": "<p>Escribe a <a href=\"mailto:{email}?subject=J%2B%2B\">{email}</a>. Incluye tu versión de macOS y lo que estabas haciendo.</p>"
       }
-    ]
+    ],
+    "meta_title": "Ayuda de jplus2 — Instalar, ejecutar código, SQL y GitHub"
   },
   "soon": {
     "soon": "Próximamente",
@@ -344,7 +347,7 @@
   },
   "editions": {
     "eyebrow": "Lite y Completa",
-    "title": "Dos formas de tener jplus2.",
+    "title": "jplus2 Lite (gratis) frente a la versión completa",
     "text": "jplus2 Lite es una descarga gratuita desde esta página: un editor ligero y rápido para el texto y el código de todos los días. El jplus2 completo se obtiene en el Mac App Store, adonde llega pronto, y añade las herramientas que convierten un editor en un taller.",
     "lite": {
       "name": "jplus2 Lite",
