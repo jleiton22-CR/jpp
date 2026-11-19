@@ -64,10 +64,10 @@
     <p class="tagline reveal">Todo lo que rodea a tu código. Nada que estorbe.</p>
     <p class="lead reveal">jplus2 es un editor de código nativo en Cocoa, creado exclusivamente para macOS para cubrir el vacío operativo que dejan los editores de texto tradicionales y los IDE pesados. Mientras los editores convencionales dependen de plugins desconectados entre sí y los editores básicos carecen de inteligencia moderna, jplus2 ofrece una utilidad completa desde el primer arranque. La versión Lite gratuita cubre la edición diaria en 95 lenguajes, y la versión completa desbloquea capacidades avanzadas de ingeniería —consultas SQL nativas, integración con GitHub y un agente de IA que entiende el contexto—. Este agente integrado indexa toda la estructura de tu proyecto, propone modificaciones de código y comandos de shell concretos, y actúa únicamente con tu aprobación explícita, usando el modelo local o en la nube que prefieras.</p>
     <div class="actions reveal">
-      <a class="btn" href="get.html">Descargar jplus2 Lite — gratis</a>
-      <a class="btn btn-ghost" href="#features">Mira lo que hace</a>
+      <a class="btn" href="#editions">jplus2 Lite: gratis, 5.6 MB</a>
+      <a class="btn btn-ghost" href="#waitlist">Versión completa: funciones y lista de espera</a>
     </div>
-    <p class="note reveal">Gratis · 5.6 MB · macOS 12 o posterior · Apple Silicon e Intel</p>
+    <p class="note reveal">Gratis · macOS 12 o posterior · Apple Silicon e Intel. Consigue la Lite con el botón «Descargar Lite» de la barra superior.</p>
     <div class="pillars"><div class="pillar reveal"><p class="pillar-title">Nativo y completo</p><p>Hecho con Cocoa para macOS, no una página web dentro de un envoltorio. Ejecutar, depurar, IntelliSense, SQL, GitHub e IA vienen incluidos: sin tienda donde buscar ni extensiones que mantener al día.</p></div><div class="pillar reveal"><p class="pillar-title">IA que trabaja sobre tu proyecto</p><p>Es parte del editor para poder ver tu archivo, tu selección, las instrucciones de tu proyecto y la salida de sus comandos. Sin copiar de un lado a otro entre una ventana de chat y tu código.</p></div><div class="pillar reveal"><p class="pillar-title">Tú mandas</p><p>Cada cambio es un diff que aplicas o cancelas, y cada comando espera a que pulses Run. Trae tu propia clave o un modelo local: sin suscripción, y nada sale del Mac hasta que lo pidas.</p></div></div>
     <p class="note reveal">El asistente de IA es parte de la versión completa. jplus2 Lite no lo incluye.</p>
   </div>
@@ -90,7 +90,7 @@
   </div>
   <div class="wrap">
     <p class="lead reveal ftabs-pick">Elige un tema para ver qué hace</p>
-    <nav class="ftabs reveal" role="tablist" aria-label="Ejecuta, depura, SQL, GitHub e IA en una sola ventana"><a class="ftab" role="tab" id="tab-ai" href="#ai" aria-controls="ai" aria-selected="true">Asistente de IA</a><a class="ftab" role="tab" id="tab-edit" href="#edit" aria-controls="edit" aria-selected="false">Editar</a><a class="ftab" role="tab" id="tab-goto" href="#goto" aria-controls="goto" aria-selected="false">Ir a cualquier cosa</a><a class="ftab" role="tab" id="tab-intellisense" href="#intellisense" aria-controls="intellisense" aria-selected="false">IntelliSense</a><a class="ftab" role="tab" id="tab-run" href="#run" aria-controls="run" aria-selected="false">Ejecutar y depurar</a><a class="ftab" role="tab" id="tab-sql" href="#sql" aria-controls="sql" aria-selected="false">Bases de datos</a><a class="ftab" role="tab" id="tab-github" href="#github" aria-controls="github" aria-selected="false">GitHub</a><a class="ftab" role="tab" id="tab-compare" href="#compare" aria-controls="compare" aria-selected="false">Comparar</a></nav>
+    <nav class="ftabs reveal" role="tablist" aria-label="Ejecuta, depura, SQL, GitHub e IA en una sola ventana"><a class="ftab" role="tab" id="tab-ai" href="#ai" aria-controls="ai" aria-selected="true">Asistente de IA</a><a class="ftab" role="tab" id="tab-edit" href="#edit" aria-controls="edit" aria-selected="false">Editar</a><a class="ftab" role="tab" id="tab-goto" href="#goto" aria-controls="goto" aria-selected="false">Ir a cualquier cosa</a><a class="ftab" role="tab" id="tab-intellisense" href="#intellisense" aria-controls="intellisense" aria-selected="false">IntelliSense</a><a class="ftab" role="tab" id="tab-run" href="#run" aria-controls="run" aria-selected="false">Ejecutar y depurar</a><a class="ftab" role="tab" id="tab-sql" href="#sql" aria-controls="sql" aria-selected="false">Bases de datos</a><a class="ftab" role="tab" id="tab-github" href="#github" aria-controls="github" aria-selected="false">GitHub</a></nav>
   </div>
   <div class="fpanels">
   <article class="feature" id="ai" role="tabpanel" aria-labelledby="tab-ai">
@@ -156,11 +156,15 @@
     </div>
     <div class="feature-shot"><picture><source srcset="../img/github-clone-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="../img/github-clone-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="../img/github-clone-light.webp" type="image/webp"><img class="shot " src="../img/github-clone-light.jpg" alt="La ventana Clonar repositorio con la lista de repositorios de la cuenta." width="1280" height="920" loading="lazy" decoding="async"></picture></div>
   </article>
-  <article class="feature compare-panel" id="compare" role="tabpanel" aria-labelledby="tab-compare">
+  </div>
+</section>
+
+<section class="section" id="compare">
+  <div class="wrap">
     <div class="cmp-head">
-    <p class="eyebrow">Comparativa</p>
-    <h3>jplus2 junto a otros seis editores</h3>
-    <p class="cmp-lead">Una tabla, siete herramientas. ✓ significa que la propia web de la herramienta lo lista. ✗ significa que su web no lo lista, lo que no prueba que falte: una extensión o un plugin puede añadirlo. Los datos de las otras herramientas salen de sus webs, leídas el 16 de noviembre de 2026. La columna de jplus2 es la versión completa; jplus2 Lite es solo el editor, sin el agente de IA ni SQL.</p>
+    <p class="eyebrow reveal">Comparativa</p>
+    <h2 class="reveal">jplus2 junto a otros seis editores</h2>
+    <p class="cmp-lead reveal">Una tabla, siete herramientas. ✓ significa que la propia web de la herramienta lo lista. ✗ significa que su web no lo lista, lo que no prueba que falte: una extensión o un plugin puede añadirlo. Los datos de las otras herramientas salen de sus webs, leídas el 16 de noviembre de 2026. La columna de jplus2 es la versión completa; jplus2 Lite es solo el editor, sin el agente de IA ni SQL.</p>
     </div>
     <div class="cmp-wrap" tabindex="0" role="region" aria-label="jplus2 junto a otros seis editores">
       <table class="cmp">
@@ -179,11 +183,22 @@
         </tbody>
       </table>
     </div>
+    <div class="cmp-cards">
+<details class="cmp-card"><summary><span class="cmp-q">Funciona en Mac</span><span class="cmp-n">5 de 6 otras herramientas</span></summary><ul><li class="me ty"><span>jplus2 (completa)</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="ty"><span>VS Code</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="ty"><span>Sublime Text</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="ty"><span>Nextpad++</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="tn"><span>Notepad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="ty"><span>Cursor</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="ty"><span>Windsurf (ahora Devin Desktop)</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li></ul></details>
+<details class="cmp-card"><summary><span class="cmp-q">Código abierto</span><span class="cmp-n">3 de 6 otras herramientas</span></summary><ul><li class="me tn"><span>jplus2 (completa)</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="ty"><span>VS Code</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="tn"><span>Sublime Text</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="ty"><span>Nextpad++</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="ty"><span>Notepad++</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="tn"><span>Cursor</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Windsurf (ahora Devin Desktop)</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li></ul></details>
+<details class="cmp-card"><summary><span class="cmp-q">Agente de IA integrado</span><span class="cmp-n">3 de 6 otras herramientas</span></summary><ul><li class="me ty"><span>jplus2 (completa)</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="ty"><span>VS Code</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="tn"><span>Sublime Text</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Nextpad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Notepad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="ty"><span>Cursor</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="ty"><span>Windsurf (ahora Devin Desktop)</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li></ul></details>
+<details class="cmp-card"><summary><span class="cmp-q">El agente puede ejecutar comandos de terminal</span><span class="cmp-n">3 de 6 otras herramientas</span></summary><ul><li class="me ty"><span>jplus2 (completa)</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="ty"><span>VS Code</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="tn"><span>Sublime Text</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Nextpad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Notepad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="ty"><span>Cursor</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="ty"><span>Windsurf (ahora Devin Desktop)</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li></ul></details>
+<details class="cmp-card"><summary><span class="cmp-q">Traer tu propia clave de IA</span><span class="cmp-n">2 de 6 otras herramientas</span></summary><ul><li class="me ty"><span>jplus2 (completa)</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="ty"><span>VS Code</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="tn"><span>Sublime Text</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Nextpad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Notepad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="ty"><span>Cursor</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="tn"><span>Windsurf (ahora Devin Desktop)</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li></ul></details>
+<details class="cmp-card"><summary><span class="cmp-q">Modelos de IA locales</span><span class="cmp-n">1 de 6 otras herramientas</span></summary><ul><li class="me ty"><span>jplus2 (completa)</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="ty"><span>VS Code</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="tn"><span>Sublime Text</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Nextpad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Notepad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Cursor</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Windsurf (ahora Devin Desktop)</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li></ul></details>
+<details class="cmp-card"><summary><span class="cmp-q">Ejecutar SQL en Databricks, Snowflake, PostgreSQL, MySQL, SQL Server y SQLite</span><span class="cmp-n">0 de 6 otras herramientas</span></summary><ul><li class="me ty"><span>jplus2 (completa)</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="tn"><span>VS Code</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Sublime Text</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Nextpad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Notepad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Cursor</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Windsurf (ahora Devin Desktop)</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li></ul></details>
+<details class="cmp-card"><summary><span class="cmp-q">Consultar archivos de Excel y CSV con SQL</span><span class="cmp-n">0 de 6 otras herramientas</span></summary><ul><li class="me ty"><span>jplus2 (completa)</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="tn"><span>VS Code</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Sublime Text</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Nextpad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Notepad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Cursor</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Windsurf (ahora Devin Desktop)</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li></ul></details>
+<details class="cmp-card"><summary><span class="cmp-q">IA a través de un gateway de empresa con clave renovable</span><span class="cmp-n">0 de 6 otras herramientas</span></summary><ul><li class="me ty"><span>jplus2 (completa)</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="tn"><span>VS Code</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Sublime Text</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Nextpad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Notepad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Cursor</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Windsurf (ahora Devin Desktop)</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li></ul></details>
+<details class="cmp-card"><summary><span class="cmp-q">Importar la configuración de IA de Claude Code</span><span class="cmp-n">0 de 6 otras herramientas</span></summary><ul><li class="me ty"><span>jplus2 (completa)</span><b class="cy" aria-hidden="true">✓</b><span class="sr">Figura</span></li><li class="tn"><span>VS Code</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Sublime Text</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Nextpad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Notepad++</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Cursor</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li><li class="tn"><span>Windsurf (ahora Devin Desktop)</span><b class="cn" aria-hidden="true">✗</b><span class="sr">No figura</span></li></ul></details>
+    </div>
     <p><a class="btn btn-ghost" href="editor-con-agente-de-ia-mac-comparativa.html">Lee la comparativa detallada del agente de IA ›</a></p>
-    <h4 class="cmp-src-title">Fuentes</h4>
+    <h3 class="cmp-src-title">Fuentes</h3>
     <ul class="cmp-src"><li><strong>jplus2:</strong> jplus2.com</li><li><strong>VS Code:</strong> code.visualstudio.com</li><li><strong>Sublime Text:</strong> sublimetext.com y sublimehq.com/store/text</li><li><strong>Nextpad++:</strong> nextpad.org</li><li><strong>Notepad++:</strong> notepad-plus-plus.org</li><li><strong>Cursor:</strong> cursor.com y cursor.com/docs</li><li><strong>Windsurf:</strong> windsurf.com, que ahora redirige a devin.ai/desktop: Windsurf ahora se llama Devin Desktop</li></ul>
     <p class="note">Estos productos cambian a menudo. Si algo está desactualizado, escríbenos a leiton@live.com y lo corregimos. Todos los nombres son marcas de sus propietarios; jplus2 no está afiliado a ellos.</p>
-  </article>
   </div>
 </section>
 
@@ -198,7 +213,7 @@
         <h3>jplus2 Lite</h3>
         <p>Todo lo necesario para leer y escribir código, en una descarga de unos 5.6 MB.</p>
         <ul><li>Todo lo de las pestañas Editar e Ir a cualquier cosa de arriba</li><li>Apariencia clara y oscura que sigue a macOS</li><li>Nunca se conecta a una red: no se envía nada a ningún sitio</li></ul>
-        <div class="actions"><a class="btn" href="get.html">Descargar jplus2 Lite</a></div>
+        <div class="actions"><p class="note">Descárgala con el botón «Descargar Lite» de la barra superior.</p></div>
       </article>
       <article class="edition full reveal">
         <p class="tag">Versión completa · Mac App Store · precio previsto $19.99</p>
@@ -229,6 +244,37 @@
       </table>
     </div>
     <p class="note reveal">La versión del App Store funciona en el entorno aislado de Apple, así que Compilar y Ejecutar usan las herramientas que vienen con macOS y Xcode. Puedes tener las dos versiones instaladas a la vez.</p>
+    <aside class="waitlist" id="waitlist">
+  <h2>Avísame cuando salga la versión completa</h2>
+  <p>El jplus2 completo, con ejecutar y depurar, SQL, GitHub y el asistente de IA, llega al Mac App Store. Deja tu correo y te avisamos el día que esté disponible.</p>
+  <form class="emailform" id="wl-waitlist-full" method="post" action="https://buttondown.com/api/emails/embed-subscribe/jason_g" target="_blank" rel="noopener" novalidate>
+    <label for="wl-waitlist-full-email">Tu correo</label>
+    <input id="wl-waitlist-full-email" name="email" type="email" required autocomplete="email" inputmode="email" spellcheck="false" autocapitalize="off"
+      pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" aria-describedby="wl-waitlist-full-hint" placeholder="tu@ejemplo.com">
+    <input type="hidden" name="embed" value="1">
+    <input type="hidden" name="tag" value="waitlist-full">
+    <p class="hint" id="wl-waitlist-full-hint" role="status" aria-live="polite" data-empty="Escribe tu correo para activar el botón." data-invalid="Ese correo no parece válido. Debe verse como nombre@ejemplo.com."></p>
+    <button class="btn" type="submit">Avísame</button>
+  </form>
+  <p class="note" id="wl-waitlist-full-after" hidden>Revisa tu correo para confirmar. Si se abrió una pestaña nueva pidiéndote confirmar, es normal: puedes cerrarla.</p>
+  <p class="note">Usamos tu correo solo para avisarte cuando la versión completa esté disponible, y para novedades ocasionales de jplus2. Cada mensaje trae un enlace para darte de baja con un clic. Detalles en la <a href="privacy.html">política de privacidad</a>.</p>
+</aside>
+<script>(function(){
+var f=document.getElementById("wl-waitlist-full"),i=document.getElementById("wl-waitlist-full-email"),b=f&&f.querySelector("button"),h=document.getElementById("wl-waitlist-full-hint");
+if(!f||!i||!b)return;
+var re=/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/;
+var sent=false;
+function ok(){return re.test(i.value.trim())}
+function sync(){var v=i.value.trim(),good=ok();b.disabled=sent||!good;b.setAttribute("aria-disabled",good?"false":"true");
+h.textContent=good?"":(v?h.dataset.invalid:h.dataset.empty);i.setAttribute("aria-invalid",(!good&&v)?"true":"false")}
+i.addEventListener("input",function(){sent=false});   // editing the address allows another send
+["input","change","keyup","blur","paste"].forEach(function(n){i.addEventListener(n,sync)});
+var last=null;function watch(){if(i.value!==last){last=i.value;sync()}}
+watch();setInterval(watch,400);
+f.addEventListener("submit",function(e){if(!ok()){e.preventDefault();sync();i.focus();return}
+i.value=i.value.trim();document.getElementById("wl-waitlist-full-after").hidden=false;sent=true;b.disabled=true});
+})();</script>
+
   </div>
 </section>
 
@@ -272,8 +318,8 @@
   <div class="wrap">
     <picture><source srcset="../img/icon-dark.png" media="(prefers-color-scheme: dark)"><img class="cta-icon reveal" src="../img/icon-light.png" alt="" width="96" height="96" loading="lazy" decoding="async"></picture>
     <h2 class="reveal">Empieza gratis. Pasa a la completa cuando quieras.</h2>
-    <p class="lead reveal">Descarga jplus2 Lite hoy, o consigue el jplus2 completo en el Mac App Store.</p>
-    <div class="actions reveal"><a class="btn btn-large" href="get.html">Descargar jplus2 Lite 1.0.1</a></div>
+    <p class="lead reveal">Consigue jplus2 Lite con el botón «Descargar Lite» de la barra superior, o apúntate a la lista de espera de la versión completa en el Mac App Store.</p>
+    
     
     <div class="actions reveal"><span class="btn btn-soon">Versión completa: Mac App Store, próximamente</span></div>
   </div>
