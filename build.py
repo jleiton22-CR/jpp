@@ -766,11 +766,19 @@ def demo_html(t, root):
     d = t["demo"]
     frames = dots = ""
     for i, (fid, title, text) in enumerate(d["frames"]):
-        w, h = image_size(fid)
         hid = "" if i == 0 else ' aria-hidden="true"'
-        frames += (f'<figure class="demo-frame{" on" if i == 0 else ""}" data-title="{escape(title)}" data-text="{escape(text)}"'
-                   f'{hid}>'
-                   f'{picture(root, fid, d["alt"].format(t=title), w, h, lazy=i > 0)}</figure>')
+        alt = d["alt"].format(t=title)
+        if fid == "agent":   # a real recording of the app: animated WebP (still image for people who prefer less motion)
+            pic = (f'<picture><source srcset="{root}img/agent-dark-still.jpg" media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)">'
+                   f'<source srcset="{root}img/agent-light-still.jpg" media="(prefers-reduced-motion: reduce)">'
+                   f'<source srcset="{root}img/agent-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)">'
+                   f'<img class="shot" src="{root}img/agent-light.webp" alt="{escape(alt)}" width="1100" height="734" fetchpriority="high"></picture>')
+            extra = ' data-dur="19000" data-anim="1"'
+        else:
+            w, h = image_size(fid)
+            pic, extra = picture(root, fid, alt, w, h, lazy=True), ""
+        frames += (f'<figure class="demo-frame{" on" if i == 0 else ""}" data-title="{escape(title)}" data-text="{escape(text)}"{extra}'
+                   f'{hid}>{pic}</figure>')
         dots += (f'<button type="button" class="demo-dot{" on" if i == 0 else ""}" aria-label="{escape(d["go"].format(t=title))}"'
                  f' aria-pressed="{"true" if i == 0 else "false"}"></button>')
     t0, x0 = d["frames"][0][1], d["frames"][0][2]

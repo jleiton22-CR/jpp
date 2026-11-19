@@ -987,9 +987,9 @@
     "go": "Mostrar: {t}",
     "frames": [
       [
-        "overview",
-        "Una sola ventana para todo",
-        "Explorador, pestañas, editor, minimapa y asistente, en una ventana nativa de Mac."
+        "agent",
+        "El agente de IA trabajando",
+        "Pídelo con tus palabras. El agente lee tus archivos, edita el código y escribe el SQL, y pregunta antes de cambiar nada."
       ],
       [
         "assistant",

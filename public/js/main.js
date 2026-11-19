@@ -113,9 +113,10 @@ function show(i) {
 cur = (i + frames.length) % frames.length;
 frames.forEach(function (f, k) { f.classList.toggle("on", k === cur); if (k === cur) f.removeAttribute("aria-hidden"); else f.setAttribute("aria-hidden", "true"); });
 dots.forEach(function (d, k) { d.classList.toggle("on", k === cur); d.setAttribute("aria-pressed", k === cur ? "true" : "false"); });
+if (frames[cur].hasAttribute("data-anim")) { var pic = frames[cur].querySelector("picture"); if (pic) pic.parentNode.replaceChild(pic.cloneNode(true), pic); }   // a fresh image plays its animation from the start
 title.textContent = frames[cur].getAttribute("data-title"); text.textContent = frames[cur].getAttribute("data-text");
 }
-function tick() { clearTimeout(timer); if (!paused && visible && !hold) timer = setTimeout(function () { show(cur + 1); tick(); }, 5000); }
+function tick() { clearTimeout(timer); if (!paused && visible && !hold) timer = setTimeout(function () { show(cur + 1); tick(); }, +frames[cur].getAttribute("data-dur") || 5000); }
 function label() { pp.setAttribute("aria-label", box.getAttribute(paused ? "data-play" : "data-pause")); pp.firstChild.textContent = paused ? "▶" : "❚❚"; }
 dots.forEach(function (d, k) { d.addEventListener("click", function () { show(k); tick(); }); });
 pp.addEventListener("click", function () { paused = !paused; label(); tick(); });

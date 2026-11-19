@@ -992,9 +992,9 @@
     "go": "Show: {t}",
     "frames": [
       [
-        "overview",
-        "One window for everything",
-        "Explorer, tabs, editor, minimap and the assistant, in a native Mac window."
+        "agent",
+        "The AI agent at work",
+        "Ask in plain words. The agent reads your files, edits the code and writes the SQL, and it asks before it changes anything."
       ],
       [
         "assistant",

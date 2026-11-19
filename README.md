@@ -249,3 +249,6 @@ aparecen en los pasos de instalación de `thanks.html` y `support.html`.
 
 ## Demo animada del hero
 Bajo el texto del encabezado hay un loop de capturas reales (ventana, asistente, SQL, Excel) que cambian cada 5 s mientras se ven; se pausa con el cursor, el foco o el botón ❚❚, y con «reducir movimiento» queda quieto. Los textos están en el bloque `demo` de `content/{en,es}.json`; el marcado lo genera `demo_html()` en `build.py` y la rotación está en `assets/js/main.js`. Sin JavaScript se ve la primera captura.
+
+### La grabación del agente
+El primer cuadro de la demo (`assets/img/agent-{light,dark}.webp`, ~230 KB, 19 s, en bucle) es una grabación real de la app: el agente lee `geometry.py`, corrige `area()`, y escribe y ejecuta una consulta SQL sobre el libro de Excel. Con «reducir movimiento» se ve una imagen fija (`agent-*-still.jpg`). Se genera con `J++/scripts/make-agent-demo.sh <carpeta>` (la app real contra un modelo simulado local, `mock-dbapi.py --agent`; no sale nada del Mac), y luego se unen los fotogramas en un WebP animado con Pillow. El cuadro de diálogo del diff no sale en la grabación porque el sistema no lo dibuja fuera de pantalla; se ven los pasos del agente en el chat («read», «edit … applied»).
