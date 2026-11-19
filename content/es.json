@@ -519,7 +519,7 @@
       },
       {
         "title": "Explorador, Ir a archivo y minimapa",
-        "text": "Abre una carpeta y míralo como árbol, salta a cualquier archivo con unas letras (nombre:42 lo abre en la línea 42) y desplázate con un minimapa de todo el archivo."
+        "text": "Abre una carpeta y míralo como árbol, salta a cualquier archivo con unas letras, a un símbolo con @ o a una línea con :, y desplázate con un minimapa de todo el archivo."
       },
       {
         "title": "Paleta de comandos",
@@ -527,11 +527,11 @@
       },
       {
         "title": "Hecho para iPad",
-        "text": "App Archivos, 16 codificaciones, saltos de línea de Windows, Unix o Mac clásico, vertical y horizontal, claro y oscuro, ajuste de línea, tamaño de texto, barra de menús con atajos de teclado e impresión."
+        "text": "App Archivos, 16 codificaciones, apariencia clara, oscura o automática, barras de iconos que puedes mostrar u ocultar, barra de menús con atajos de teclado, ajuste de línea, tamaño de texto e impresión."
       }
     ],
     "note": "Es la parte de edición de jplus2. Las herramientas de la versión completa (asistente de IA, ejecutar código, SQL, GitHub) aún no están prometidas para iPadOS.",
-    "image_alt": "jplus2 en iPad en horizontal: el explorador lateral con las carpetas de un proyecto, un archivo de Python con colores de sintaxis en una pestaña y el minimapa a la derecha.",
+    "image_alt": "jplus2 en iPad en horizontal: las barras de iconos bajo la barra de herramientas, el explorador lateral con las carpetas de un proyecto, un archivo de Python con colores de sintaxis y el minimapa a la derecha.",
     "badge_note": "Planeado para el próximo lanzamiento. Los detalles pueden cambiar antes de publicarlo."
   },
   "notfound": {

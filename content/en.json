@@ -524,7 +524,7 @@
       },
       {
         "title": "Explorer, Go to File and minimap",
-        "text": "Open a folder and see it as a tree, jump to any file from a few letters (name:42 opens it at line 42), and scroll with a minimap of the whole file."
+        "text": "Open a folder and see it as a tree, jump to any file from a few letters, to a symbol with @ or a line with :, and scroll with a minimap of the whole file."
       },
       {
         "title": "Command palette",
@@ -532,11 +532,11 @@
       },
       {
         "title": "Made for iPad",
-        "text": "Files app, 16 encodings, Windows, Unix or classic Mac line endings, portrait and landscape, light and dark, word wrap, text size, a menu bar with keyboard shortcuts, and printing."
+        "text": "Files app, 16 encodings, light, dark or automatic appearance, icon bars you can show or hide, a menu bar with keyboard shortcuts, word wrap, text size, and printing."
       }
     ],
     "note": "It is the editing part of jplus2. The tools of the full version (AI assistant, running code, SQL, GitHub) are not promised for iPadOS yet.",
-    "image_alt": "jplus2 on iPad in landscape: the Explorer sidebar with a project's folders, a Python file with syntax colouring in a tab, and the minimap on the right.",
+    "image_alt": "jplus2 on iPad in landscape: the icon bars under the toolbar, the Explorer sidebar with a project's folders, a Python file with syntax colouring and the minimap on the right.",
     "badge_note": "Planned for the next release. Details may change before it is published."
   },
   "notfound": {
