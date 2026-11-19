@@ -24,7 +24,7 @@
   "hero": {
     "eyebrow": "Version {version} for macOS",
     "title": "A native code editor for Mac. <span class=\"grad\">Fast, complete, private.</span>",
-    "text": "jplus2 is a native Cocoa code editor built exclusively for macOS to fill the operational gap left by traditional text editors and heavy IDEs. While standard editors rely on disjointed plugins and basic editors lack modern intelligence, jplus2 delivers complete utility from the first launch. The free Lite version handles everyday editing across 95 languages, while the full version unlocks advanced engineering capabilities—including native SQL querying, GitHub integration, and a context-aware AI agent. This integrated agent indexes your entire project structure, proposes targeted code modifications and shell commands, and operates strictly on your explicit approval using your preferred local or cloud model.",
+    "text": "A native Cocoa editor built for macOS. Free Lite covers everyday editing in 95 languages; the full version adds SQL, GitHub and an AI agent that proposes changes and acts only on your approval, with the local or cloud model you choose.",
     "primary": "jplus2 Lite: free, {size}",
     "secondary": "Full version: features and waitlist",
     "app_store": "Full version on the Mac App Store",
