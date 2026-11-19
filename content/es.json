@@ -1008,5 +1008,31 @@
       ]
     ],
     "alt": "Una ventana de jplus2 que muestra: {t}."
+  },
+  "home_faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Preguntas antes de descargar",
+    "items": [
+      {
+        "q": "¿Qué diferencia hay entre Lite y la versión completa?",
+        "a": "Lite es un editor gratuito de 5,6 MB para texto y código cotidianos en 95 lenguajes. La versión completa, una compra única de {price} en la Mac App Store, añade el terminal integrado, IntelliSense, compilar y ejecutar, el depurador de Python, SQL sobre CSV, Excel y bases de datos, GitHub y el agente de IA. No hay suscripción."
+      },
+      {
+        "q": "¿jplus2 envía mi código a algún sitio?",
+        "a": "No. jplus2 no recopila datos y no tiene cuentas ni anuncios. Tu código va a GitHub, a una base de datos o a un modelo de IA solo cuando tú lo pides, directamente desde tu Mac y con la cuenta que conectaste."
+      },
+      {
+        "q": "¿Qué modelos de IA puedo usar?",
+        "a": "Tu propia clave de la API de Claude, cualquier servicio compatible con OpenAI o un modelo que se ejecute en tu Mac con Ollama. El agente propone cada edición como diff y cada comando en el panel Terminal, y no ocurre nada hasta que lo apruebas."
+      },
+      {
+        "q": "¿Por qué macOS avisa de un desarrollador no identificado al abrir Lite?",
+        "a": "La descarga gratuita de Lite no se distribuye por la Mac App Store. Haz Control-clic en la app, elige Abrir una vez y macOS recordará tu decisión. La versión completa de la Mac App Store no muestra ese aviso."
+      },
+      {
+        "q": "¿En qué se diferencia jplus2 de VS Code o Sublime Text?",
+        "a": "jplus2 está hecho con Cocoa para macOS, no con Electron, así que arranca rápido y ocupa poco. El SQL sobre CSV y Excel, GitHub y un agente de IA con aprobación vienen integrados en lugar de depender de extensiones."
+      }
+    ]
   }
 }

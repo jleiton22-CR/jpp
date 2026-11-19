@@ -173,10 +173,15 @@ def layout(site, t, lang, page, title, description, body, crumb=None, guide=None
                  "author": {"@id": ids["person"]}, "publisher": {"@id": ids["person"]},
                  "offers": [{"@type": "Offer", "name": site["app_name"] + " Lite", "price": "0", "priceCurrency": "USD",
                              "availability": "https://schema.org/InStock", "url": f"{base}/{lang_dir(lang)}#download"}]
-                           + ([{"@type": "Offer", "name": site["app_name"] + " (full version, coming to the Mac App Store)",
+                           + ([{"@type": "Offer", "name": site["app_name"] + (" (full version, Mac App Store)" if site.get("app_store_url") else " (full version, coming to the Mac App Store)"),
                                 "price": site["full_price"], "priceCurrency": "USD",
-                                "url": f"{base}/{lang_dir(lang)}#editions"}] if site.get("full_price") else []),
+                                "availability": "https://schema.org/InStock" if site.get("app_store_url") else "https://schema.org/PreOrder",
+                                "url": site.get("app_store_url") or f"{base}/{lang_dir(lang)}#editions"}] if site.get("full_price") else []),
                  "featureList": [re.sub("<[^>]+>", "", r[0]) for r in t["editions"]["rows"]]}]
+            if t.get("home_faq"):
+                graph.append({"@type": "FAQPage", "mainEntity": [
+                    {"@type": "Question", "name": re.sub("<[^>]+>", "", q["q"]),
+                     "acceptedAnswer": {"@type": "Answer", "text": re.sub("<[^>]+>", "", fill(q["a"], site))}} for q in t["home_faq"]["items"]]})
             if site.get("download_url"):
                 graph[2]["installUrl"] = f"{base}/{lang_dir(lang)}{'get' if gate else 'thanks'}.html"
         elif page == "guide" and article:
@@ -238,7 +243,6 @@ def layout(site, t, lang, page, title, description, body, crumb=None, guide=None
     </nav>
     <div class="nav-end">
       {toggle}
-      {donate_btn}
       {nav_button}
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="{escape(n["menu"])}"><span></span></button>
     </div>
@@ -514,6 +518,22 @@ def guides_home(site, t, lang):
 """
 
 
+def faq_home(site, t):
+    k = t.get("home_faq")
+    if not k:
+        return ""
+    items = "".join(f'<dt>{q["q"]}</dt><dd>{fill(q["a"], site)}</dd>' for q in k["items"])
+    return f"""<section class="section alt" id="faq">
+  <div class="wrap">
+    <p class="eyebrow reveal">{k["eyebrow"]}</p>
+    <h2 class="reveal">{k["title"]}</h2>
+    <dl class="faq reveal">{items}</dl>
+  </div>
+</section>
+
+"""
+
+
 PRESS = {"en": "press", "es": "prensa"}
 PRESS_SHOTS = ["overview", "intellisense-complete", "debug", "excel", "assistant", "github-clone"]
 PRESS_ICONS = ["jplus2-icon-light-1024.png", "jplus2-icon-dark-1024.png"]
@@ -617,7 +637,7 @@ def store_button(site, label, label_soon, cls):
     """The Mac App Store button: a link once app_store_url is set, otherwise a quiet "coming soon" label."""
     url = site.get("app_store_url", "")
     if url:
-        return f'<a class="{cls}" href="{escape(url)}" rel="noopener">{label}</a>'
+        return f'<a class="{cls}" href="{escape(url)}" rel="noopener" data-goatcounter-click="appstore-button" data-goatcounter-title="Mac App Store button">{label}</a>'
     return f'<span class="btn btn-soon">{label_soon}</span>'
 
 
@@ -796,8 +816,10 @@ def home(site, t, lang):
     download = download_link(site, root)
     h, w, fe, c, soon = t["hero"], t["why"], t["features"], t["cta"], t["soon"]
     notify = f'mailto:{site["contact_email"]}?subject={quote(soon["notify_subject"])}'
-    store = (f'<a class="btn btn-ghost" href="{escape(site["app_store_url"])}" rel="noopener">{h["app_store"]}</a>'
-             if site.get("app_store_url") else f'<a class="btn btn-ghost" href="#waitlist">{h["secondary"]}</a>')
+    live = bool(site.get("app_store_url"))
+    store = (f'<a class="btn" href="{escape(site["app_store_url"])}" rel="noopener" data-goatcounter-click="hero-appstore" data-goatcounter-title="Hero: Mac App Store">{h["app_store"]}</a>'
+             if live else f'<a class="btn btn-ghost" href="#waitlist" data-goatcounter-click="hero-waitlist" data-goatcounter-title="Hero: waitlist">{h["secondary"]}</a>')
+    lite_cls = "btn btn-ghost" if live else "btn"
     ow, oh = image_size("overview")
     out = f"""<section class="hero">
   <div class="wrap">
@@ -807,8 +829,8 @@ def home(site, t, lang):
     <p class="tagline reveal">{h["tagline"]}</p>
     <p class="lead reveal">{h["text"]}</p>
     <div class="actions reveal">
-      {f'<a class="btn" href="#editions">{fill(h["primary"], site)}</a>' if download else f'<span class="btn btn-soon">{soon["soon"]}</span>'}
-      {store}
+      {(f'<a class="{lite_cls}" href="#editions" data-goatcounter-click="hero-lite" data-goatcounter-title="Hero: Lite">{fill(h["primary"], site)}</a>' if download else f'<span class="btn btn-soon">{soon["soon"]}</span>') if not live else store}
+      {store if not live else (f'<a class="{lite_cls}" href="#editions" data-goatcounter-click="hero-lite" data-goatcounter-title="Hero: Lite">{fill(h["primary"], site)}</a>' if download else "")}
     </div>
     <p class="note reveal">{fill(h["note"], site) if download else soon["note_soon"]}</p>
   </div>
@@ -862,7 +884,7 @@ def home(site, t, lang):
     out += ipad_html(t, root)
     out += f"""</section>
 
-{guides_home(site, t, lang)}<section class="section cta" id="download">
+{guides_home(site, t, lang)}{faq_home(site, t)}<section class="section cta" id="download">
   <div class="wrap">
     {icon_img(root, 96, "cta-icon reveal", lazy=True)}
     <h2 class="reveal">{c["title"]}</h2>
