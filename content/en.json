@@ -84,7 +84,7 @@
       {
         "icon": "data",
         "title": "Your data is one query away",
-        "text": "Run SQL on Databricks, Snowflake, PostgreSQL, MySQL, SQL Server and SQLite. Even an Excel workbook or a CSV file becomes a table you can query."
+        "text": "Run SQL on Databricks, Snowflake, PostgreSQL, MySQL, SQL Server and SQLite. Add GitHub and an AI agent in the same window, with no extensions to install."
       },
       {
         "icon": "ai",

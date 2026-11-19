@@ -84,7 +84,7 @@
       {
         "icon": "data",
         "title": "Tus datos, a una consulta",
-        "text": "Ejecuta SQL en Databricks, Snowflake, PostgreSQL, MySQL, SQL Server y SQLite. Hasta un libro de Excel o un archivo CSV se convierte en una tabla que puedes consultar."
+        "text": "Ejecuta SQL en Databricks, Snowflake, PostgreSQL, MySQL, SQL Server y SQLite. Suma GitHub y un agente de IA en la misma ventana, sin extensiones que instalar."
       },
       {
         "icon": "ai",
