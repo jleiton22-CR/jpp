@@ -25,10 +25,10 @@
     "eyebrow": "Versión {version} para macOS",
     "title": "Un editor de código nativo para Mac. <span class=\"grad\">Rápido, completo y privado.</span>",
     "text": "jplus2 es un editor de código nativo en Cocoa, creado exclusivamente para macOS para cubrir el vacío operativo que dejan los editores de texto tradicionales y los IDE pesados. Mientras los editores convencionales dependen de plugins desconectados entre sí y los editores básicos carecen de inteligencia moderna, jplus2 ofrece una utilidad completa desde el primer arranque. La versión Lite gratuita cubre la edición diaria en 95 lenguajes, y la versión completa desbloquea capacidades avanzadas de ingeniería —consultas SQL nativas, integración con GitHub y un agente de IA que entiende el contexto—. Este agente integrado indexa toda la estructura de tu proyecto, propone modificaciones de código y comandos de shell concretos, y actúa únicamente con tu aprobación explícita, usando el modelo local o en la nube que prefieras.",
-    "primary": "Descargar jplus2 Lite — gratis",
-    "secondary": "Mira lo que hace",
+    "primary": "jplus2 Lite: gratis, {size}",
+    "secondary": "Versión completa: funciones y lista de espera",
     "app_store": "Versión completa en el Mac App Store",
-    "note": "Gratis · {size} · macOS 12 o posterior · Apple Silicon e Intel",
+    "note": "Gratis · macOS 12 o posterior · Apple Silicon e Intel. Consigue la Lite con el botón «Descargar Lite» de la barra superior.",
     "image_alt": "La ventana de jplus2: un explorador de archivos a la izquierda, pestañas y un archivo de Python con resaltado de sintaxis.",
     "store_note": "¿Quieres todo lo de esta página? El jplus2 completo viene en camino al Mac App Store.",
     "tagline": "Todo lo que rodea a tu código. Nada que estorbe.",
@@ -245,7 +245,7 @@
   },
   "cta": {
     "title": "Empieza gratis. Pasa a la completa cuando quieras.",
-    "text": "Descarga jplus2 Lite hoy, o consigue el jplus2 completo en el Mac App Store.",
+    "text": "Consigue jplus2 Lite con el botón «Descargar Lite» de la barra superior, o apúntate a la lista de espera de la versión completa en el Mac App Store.",
     "primary": "Descargar jplus2 Lite {version}",
     "note": "",
     "requirements": "",
@@ -380,7 +380,7 @@
         "Apariencia clara y oscura que sigue a macOS",
         "Nunca se conecta a una red: no se envía nada a ningún sitio"
       ],
-      "button": "Descargar jplus2 Lite"
+      "hint": "Descárgala con el botón «Descargar Lite» de la barra superior."
     },
     "full": {
       "name": "jplus2",
@@ -607,7 +607,7 @@
     "crumbs": "Ruta de navegación",
     "updated": "Última actualización",
     "cta_title": "Prueba jplus2 Lite, gratis",
-    "cta_text": "Un editor nativo para Mac en una descarga de {size}. Sin cuenta y sin extensiones que instalar.",
+    "cta_text": "Un editor nativo para Mac en una descarga de {size}. Sin cuenta y sin extensiones que instalar. Usa el botón «Descargar Lite» de la barra superior.",
     "cta_button": "Descargar jplus2 Lite {version}",
     "cta_note": "Gratis · macOS 12 o posterior · Apple Silicon e Intel · {size}",
     "faq": "Preguntas frecuentes",
@@ -974,6 +974,7 @@
     "more": "Lee la comparativa detallada del agente de IA",
     "tab": "Comparar",
     "yes": "Figura",
-    "no": "No figura"
+    "no": "No figura",
+    "card_count": "{n} de {total} otras herramientas"
   }
 }

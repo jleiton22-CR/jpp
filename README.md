@@ -241,3 +241,8 @@ aparecen en los pasos de instalación de `thanks.html` y `support.html`.
   alguno, actualiza `privacy_page` en los dos archivos de `content/`.
 - Las capturas vienen de `help/images/` del proyecto jplus2. A las que traían marcadores numerados de la guía se les
   quitaron los marcadores.
+
+## Descarga, arranque y Compare (nov 2026)
+- La descarga de Lite solo existe en el botón «Download Lite» de la barra superior (y su copia en el menú móvil). El hero, la tarjeta Lite, las guías y el cierre solo explican dónde está; el botón del hero lleva a `#editions` y el secundario a la lista de espera de la versión completa (`#waitlist`).
+- La página siempre abre arriba: `main.js` desactiva la restauración del scroll y, al recargar o volver atrás, quita el `#hash`. Un enlace nuevo a una sección (`/#editions`) sí va a ella.
+- Compare es una sección propia (`#compare`, entre Features y Lite & Full). En pantallas ≤760 px la tabla se sustituye por tarjetas plegables (`<details>`), una por función.

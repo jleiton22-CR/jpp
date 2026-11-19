@@ -1,4 +1,22 @@
 // jplus2 website: a line under the navigation after scrolling, and sections that appear as they come into view.
+// The page always opens at the top: no restored scroll position, and a reload or back button does not keep a #section either.
+(function () {
+  try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
+  function nav() { var n = performance.getEntriesByType && performance.getEntriesByType("navigation")[0]; return n ? n.type : "navigate"; }
+  function top() {
+    if (location.hash && nav() === "navigate") return;   // a link to a section (jplus2.com/#editions) still goes there
+    if (location.hash && history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+    window.scrollTo(0, 0);
+  }
+  top();
+  window.addEventListener("pageshow", function (e) { if (e.persisted) { window.scrollTo(0, 0); } });
+  window.addEventListener("load", function () {
+    if (!location.hash) { window.scrollTo(0, 0); return; }
+    var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (el && !el.classList.contains("feature")) el.scrollIntoView();   // the layout has settled: land exactly on the section
+  });
+})();
+
 (function () {
   var root = document.documentElement;
   var nav = document.getElementById("nav");
@@ -53,8 +71,11 @@
   });
   function fromHash() {
     var id = location.hash.slice(1), i = panels.findIndex(function (p) { return p && p.id === id; });
-    show(i >= 0 ? i : 0, false);
-    if (i >= 0) document.getElementById("features").scrollIntoView();
+    if (i < 0 && !fromHash.first) { show(0, false); fromHash.first = 1; return; }
+    if (i < 0) return;
+    fromHash.first = 1;
+    show(i, false);
+    document.getElementById("features").scrollIntoView();
   }
   window.addEventListener("hashchange", fromHash);
   fromHash();
@@ -71,16 +92,11 @@
   function update() {
     ticking = false;
     var line = window.innerHeight * 0.35, current = null;
-    var compareOn = document.querySelector(".ftab#tab-compare[aria-selected='true']");
     items.forEach(function (it) {
-      var sec = it.id === "compare" ? document.getElementById("features") : it.el;
+      var sec = it.el;
       if (!sec) return;
       var r = sec.getBoundingClientRect();
-      if (r.top <= line && r.bottom > line) {
-        if (it.id === "compare" && !compareOn) return;
-        if (it.id === "features" && compareOn) return;
-        current = it;
-      }
+      if (r.top <= line && r.bottom > line) current = it;
     });
     items.forEach(function (it) { if (it === current) it.a.setAttribute("aria-current", "true"); else it.a.removeAttribute("aria-current"); });
   }

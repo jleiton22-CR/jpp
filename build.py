@@ -482,7 +482,6 @@ def guide_page(site, t, lang, g):
         parts.append(waitlist_form(site, t, lang, g.get("tag", "waitlist-full")))
     elif download:
         parts.append(f'<aside class="gcta"><h2>{ui["cta_title"]}</h2><p>{fill(ui["cta_text"], site)}</p>'
-                     f'<p><a class="btn btn-large" href="{download}">{fill(ui["cta_button"], site)}</a></p>'
                      f'<p class="note">{fill(ui["cta_note"], site)}</p></aside>')
     if g.get("faq"):
         parts.append(f'<h2>{ui["faq"]}</h2>\n<dl class="faq">' + "".join(f'<dt>{q["q"]}</dt><dd>{fill(q["a"], site)}</dd>' for q in g["faq"]) + "</dl>")
@@ -578,7 +577,7 @@ def press_page(site, t, lang, zipsize):
         shots += (f'<figure class="pshot"><a href="{root}img/{sh["id"]}-light.jpg">{picture(root, sh["id"], sh["caption"], w, h)}</a>'
                   f'<figcaption>{sh["caption"]}<br><a href="{root}img/{sh["id"]}-light.jpg">{k["light"]}</a> · <a href="{root}img/{sh["id"]}-dark.jpg">{k["dark"]}</a></figcaption></figure>')
     dl = download_link(site, root)
-    targets = {"get": dl, "editions": "index.html#editions", "support": "support.html", "privacy": "privacy.html"}
+    targets = {"editions": "index.html#editions", "support": "support.html", "privacy": "privacy.html"}
     links = "".join(f'<li><a href="{targets[key]}">{label}</a></li>' for label, key in k["links"] if targets.get(key))
     body = f"""<article class="doc wrap gpage press">
 <nav class="crumbs" aria-label="{escape(t["guide_ui"]["crumbs"])}"><a href="index.html">{site["app_name"]}</a> <span aria-hidden="true">›</span> <span>{k["short"]}</span></nav>
@@ -622,13 +621,12 @@ def store_button(site, label, label_soon, cls):
     return f'<span class="btn btn-soon">{label_soon}</span>'
 
 
-def editions_html(site, t, root):
+def editions_html(site, t, root, lang):
     e = t["editions"]
     lite, full = e["lite"], e["full"]
     download = download_link(site, root)
     li = lambda items: "".join(f"<li>{x}</li>" for x in items)
-    lite_btn = (f'<a class="btn" href="{download}">{lite["button"]}</a>' if download
-                else f'<span class="btn btn-soon">{t["soon"]["soon"]}</span>')
+    lite_btn = f'<p class="note">{lite["hint"]}</p>' if download else f'<span class="btn btn-soon">{t["soon"]["soon"]}</span>'
     full_btn = store_button(site, full["button"], full["button_soon"], "btn btn-ghost")
     rows = ""
     for name, a, b in (r for r in e["rows"] if not (r[1] == "yes" and r[2] == "yes")):
@@ -667,6 +665,7 @@ def editions_html(site, t, root):
       </table>
     </div>
     <p class="note reveal">{e["note"]}</p>
+    {waitlist_form(site, t, lang, "waitlist-full") if not site.get("app_store_url") else ""}
   </div>
 """
 
@@ -724,11 +723,25 @@ def compare_html(site, t):
     head = "".join(f'<th scope="col"{me if i == 0 else ""}>{escape(n)}</th>' for i, n in enumerate(c["names"]))
     body = "".join(f'<tr><th scope="row">{escape(r[0])}</th>' + "".join(cell(v) for v in r[1]) + "</tr>\n" for r in c["rows"])
     src = "".join(f"<li><strong>{escape(a)}:</strong> {escape(b)}</li>" for a, b in c["sources"])
-    return f"""  <article class="feature compare-panel" id="compare" role="tabpanel" aria-labelledby="tab-compare">
+    cards = ""
+    for r in c["rows"]:
+        n_other = sum(1 for v in r[1][1:] if v == "y")
+        items = "".join(
+            f'<li class="{"me " if i == 0 else ""}{"ty" if v == "y" else "tn"}"><span>{escape(c["names"][i])}</span>'
+            + (f'<b class="cy" aria-hidden="true">✓</b><span class="sr">{escape(c["yes"])}</span>' if v == "y"
+               else f'<b class="cn" aria-hidden="true">✗</b><span class="sr">{escape(c["no"])}</span>') + "</li>"
+            for i, v in enumerate(r[1]))
+        cards += (f'<details class="cmp-card"><summary><span class="cmp-q">{escape(r[0])}</span>'
+                  f'<span class="cmp-n">{escape(c["card_count"].format(n=n_other, total=len(r[1]) - 1))}</span></summary>'
+                  f'<ul>{items}</ul></details>\n')
+    return f"""</section>
+
+<section class="section" id="compare">
+  <div class="wrap">
     <div class="cmp-head">
-    <p class="eyebrow">{c["eyebrow"]}</p>
-    <h3>{c["title"]}</h3>
-    <p class="cmp-lead">{c["text"]}</p>
+    <p class="eyebrow reveal">{c["eyebrow"]}</p>
+    <h2 class="reveal">{c["title"]}</h2>
+    <p class="cmp-lead reveal">{c["text"]}</p>
     </div>
     <div class="cmp-wrap" tabindex="0" role="region" aria-label="{escape(c["title"])}">
       <table class="cmp">
@@ -737,11 +750,13 @@ def compare_html(site, t):
 {body}        </tbody>
       </table>
     </div>
+    <div class="cmp-cards">
+{cards}    </div>
     <p><a class="btn btn-ghost" href="{t["agent"]["more_slug"]}.html">{c["more"]} ›</a></p>
-    <h4 class="cmp-src-title">{c["sources_title"]}</h4>
+    <h3 class="cmp-src-title">{c["sources_title"]}</h3>
     <ul class="cmp-src">{src}</ul>
     <p class="note">{fill(c["note"], site)}</p>
-  </article>
+  </div>
 """
 
 
@@ -751,7 +766,7 @@ def home(site, t, lang):
     h, w, fe, c, soon = t["hero"], t["why"], t["features"], t["cta"], t["soon"]
     notify = f'mailto:{site["contact_email"]}?subject={quote(soon["notify_subject"])}'
     store = (f'<a class="btn btn-ghost" href="{escape(site["app_store_url"])}" rel="noopener">{h["app_store"]}</a>'
-             if site.get("app_store_url") else f'<a class="btn btn-ghost" href="#features">{h["secondary"]}</a>')
+             if site.get("app_store_url") else f'<a class="btn btn-ghost" href="#waitlist">{h["secondary"]}</a>')
     ow, oh = image_size("overview")
     out = f"""<section class="hero">
   <div class="wrap">
@@ -761,7 +776,7 @@ def home(site, t, lang):
     <p class="tagline reveal">{h["tagline"]}</p>
     <p class="lead reveal">{h["text"]}</p>
     <div class="actions reveal">
-      {f'<a class="btn" href="{download}">{h["primary"]}</a>' if download else f'<span class="btn btn-soon">{soon["soon"]}</span>'}
+      {f'<a class="btn" href="#editions">{fill(h["primary"], site)}</a>' if download else f'<span class="btn btn-soon">{soon["soon"]}</span>'}
       {store}
     </div>
     <p class="note reveal">{fill(h["note"], site) if download else soon["note_soon"]}</p>
@@ -788,8 +803,6 @@ def home(site, t, lang):
     tabs = "".join(f'<a class="ftab" role="tab" id="tab-{it["id"]}" href="#{it["id"]}" aria-controls="{it["id"]}"'
                    f' aria-selected="{"true" if i == 0 else "false"}">{it["eyebrow"]}'
                    f'</a>' for i, it in enumerate(fe["items"]))
-    tabs += (f'<a class="ftab" role="tab" id="tab-compare" href="#compare" aria-controls="compare" aria-selected="false">'
-             f'{t["compare"]["tab"]}</a>')
     out += f"""  <div class="wrap">
     <p class="lead reveal ftabs-pick">{fe["pick"]}</p>
     <nav class="ftabs reveal" role="tablist" aria-label="{escape(fe["title"])}">{tabs}</nav>
@@ -810,9 +823,9 @@ def home(site, t, lang):
     <div class="feature-shot">{picture(root, it["image"], it["alt"], iw, ih)}</div>
   </article>
 """
-    out += compare_html(site, t)
     out += "  </div>\n"
-    out += editions_html(site, t, root)
+    out += compare_html(site, t)
+    out += editions_html(site, t, root, lang)
     out += ipad_html(t, root)
     out += f"""</section>
 
@@ -821,7 +834,7 @@ def home(site, t, lang):
     {icon_img(root, 96, "cta-icon reveal", lazy=True)}
     <h2 class="reveal">{c["title"]}</h2>
     <p class="lead reveal">{c["text"] if download else fill(soon["cta_text"], site)}</p>
-    <div class="actions reveal">{f'<a class="btn btn-large" href="{download}">{fill(c["primary"], site)}</a>' if download else f'<a class="btn btn-large" href="{notify}">{soon["notify"]}</a>'}</div>
+    {"" if download else f'<div class="actions reveal"><a class="btn btn-large" href="{notify}">{soon["notify"]}</a></div>'}
     {f'<p class="note reveal">{soon["note_soon"]}</p>' if not download else ""}
     <div class="actions reveal">{store_button(site, c["store"], c["store_soon"], "btn btn-ghost")}</div>
   </div>
