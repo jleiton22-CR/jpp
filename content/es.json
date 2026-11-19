@@ -114,9 +114,10 @@
         "text": "Haz una pregunta y el asistente lee el archivo que tienes delante y tu selección. Activa el modo Agente y además puede recorrer tu proyecto, proponer cambios en archivos y proponer comandos de terminal, paso a paso, y tú apruebas cada uno.",
         "bullets": [
           "Modo Agente: lee archivos, muestra cada cambio como diff para Aplicar o Cancelar y muestra cada comando en el panel Terminal con Run y Reject; la salida vuelve al asistente",
-          "Lee AGENTS.md, CLAUDE.md o .cursorrules de tu proyecto, guarda memorias por proyecto y adjunta los archivos que nombras con @",
+          "Lee AGENTS.md, CLAUDE.md o .cursorrules de tu proyecto y guarda memorias por proyecto. Escribe @ para traer archivos, pestañas abiertas (incluso sin guardar), rangos de líneas, terminales, el diff, la rama o una conversación anterior",
           "Revisa cambios sin confirmar o pull requests, y ejecuta tus propios prompts desde ai-commands.json",
           "Claude con tu propia clave de API, cualquier servicio compatible con OpenAI (incluido un modelo local como Ollama) o un gateway de empresa",
+          "Guarda tus conversaciones: reábrelas, búscalas y expórtalas como Markdown. Cambia entre modelos de Claude desde un menú bajo el chat",
           "Solo en la versión completa: nada de esto está en jplus2 Lite"
         ],
         "image": "assistant",
@@ -135,7 +136,8 @@
           "Un explorador de archivos que se actualiza cuando la carpeta cambia",
           "Barras de iconos que muestras u ocultas una a una (Edición, Código, Vista, Paneles) y una barra de estado que puedes ocultar",
           "16 codificaciones de texto, con Reopen with Encoding, y Comparar dos archivos como diff",
-          "Restauración de la sesión que conserva hasta el texto sin guardar"
+          "Restauración de la sesión que conserva hasta el texto sin guardar",
+          "Pestañas que marcan los cambios sin guardar y se pueden arrastrar para reordenar. Apariencia Match macOS, Light o Dark"
         ],
         "image": "overview",
         "alt": "El editor de jplus2 con el explorador lateral y un archivo de Python.",
@@ -178,7 +180,8 @@
         "bullets": [
           "Un depurador de Python con puntos de interrupción, ejecución paso a paso, las variables del marco y un campo de expresiones",
           "Comprobaciones integradas para JSON, XML, YAML, TOML, HTML, CSS y más",
-          "Manage Compilers muestra lo que está instalado y descarga lo que falta con Homebrew, npm o pip"
+          "Manage Compilers muestra lo que está instalado y descarga lo que falta con Homebrew, npm o pip",
+          "Un terminal integrado de verdad (⌃`): tu propio shell, con vim, el REPL de Python y Control-C funcionando, y varios terminales en pestañas. Configure Commands sustituye los comandos de compilar y ejecutar de un lenguaje por los tuyos"
         ],
         "image": "debug",
         "alt": "El depurador de Python detenido en una línea, con las variables junto a la salida.",

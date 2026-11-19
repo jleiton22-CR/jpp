@@ -114,9 +114,10 @@
         "text": "Ask a question and the assistant reads the file in front of you and your selection. Turn on Agent mode and it can also look around your project, propose file changes and propose terminal commands, one step at a time, and you approve each one.",
         "bullets": [
           "Agent mode: reads files, shows every change as a diff to Apply or Cancel, and shows every command in the Terminal panel with Run and Reject; the output goes back to the assistant",
-          "Reads AGENTS.md, CLAUDE.md or .cursorrules from your project, keeps per-project memories, and attaches files you name with @",
+          "Reads AGENTS.md, CLAUDE.md or .cursorrules from your project and keeps per-project memories. Type @ to bring in files, open tabs (even unsaved), line ranges, terminals, the diff, the branch or an earlier conversation",
           "Reviews uncommitted changes or pull requests, and runs your own prompts from ai-commands.json",
           "Claude with your own API key, any OpenAI-compatible endpoint (including a local model such as Ollama), or a company gateway",
+          "Saves your conversations: reopen, search and export them as Markdown. Switch between Claude models from a menu under the chat",
           "Full version only: none of this is in jplus2 Lite"
         ],
         "image": "assistant",
@@ -135,7 +136,8 @@
           "A file explorer that follows the folder as it changes",
           "Icon toolbars you show or hide one by one (Editing, Code, View, Panels), and a status bar you can hide",
           "16 text encodings, with Reopen with Encoding, and Compare Two Files as a diff",
-          "Session restore that keeps even your unsaved text"
+          "Session restore that keeps even your unsaved text",
+          "Tabs that mark unsaved changes and can be dragged to reorder. Match macOS, Light or Dark appearance"
         ],
         "image": "overview",
         "alt": "The jplus2 editor with the explorer sidebar and a Python file.",
@@ -178,7 +180,8 @@
         "bullets": [
           "A Python debugger with breakpoints, stepping, the variables of the frame and an expression field",
           "Built-in checks for JSON, XML, YAML, TOML, HTML, CSS and more",
-          "Manage Compilers shows what is installed and downloads what is missing with Homebrew, npm or pip"
+          "Manage Compilers shows what is installed and downloads what is missing with Homebrew, npm or pip",
+          "A real integrated terminal (⌃`): your own shell, with vim, Python's REPL and Control-C working, and several terminals in tabs. Configure Commands replaces a language's build and run commands with yours"
         ],
         "image": "debug",
         "alt": "The Python debugger paused on a line, with the variables listed beside the output.",
