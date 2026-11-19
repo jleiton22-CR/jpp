@@ -979,5 +979,34 @@
     "yes": "Figura",
     "no": "No figura",
     "card_count": "{n} de {total} otras herramientas"
+  },
+  "demo": {
+    "label": "Míralo en acción",
+    "pause": "Pausar la demostración",
+    "play": "Reanudar la demostración",
+    "go": "Mostrar: {t}",
+    "frames": [
+      [
+        "overview",
+        "Una sola ventana para todo",
+        "Explorador, pestañas, editor, minimapa y asistente, en una ventana nativa de Mac."
+      ],
+      [
+        "assistant",
+        "Pregunta sobre el código que seleccionaste",
+        "El asistente lee tu archivo y tu selección. Aplica su respuesta con Replace Selection."
+      ],
+      [
+        "sql",
+        "Ejecuta SQL junto a tu código",
+        "Pulsa ⌘↩ en una pestaña SQL y los resultados llegan en una tabla que puedes copiar o exportar."
+      ],
+      [
+        "excel",
+        "Consulta un archivo de Excel",
+        "Cada hoja de un libro se convierte en una tabla que puedes consultar con SQL."
+      ]
+    ],
+    "alt": "Una ventana de jplus2 que muestra: {t}."
   }
 }

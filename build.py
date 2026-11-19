@@ -760,6 +760,29 @@ def compare_html(site, t):
 """
 
 
+def demo_html(t, root):
+    """A loop of real screenshots under the hero: one window, the assistant, SQL, Excel. The script rotates it; without
+    the script the first screenshot is simply shown."""
+    d = t["demo"]
+    frames = dots = ""
+    for i, (fid, title, text) in enumerate(d["frames"]):
+        w, h = image_size(fid)
+        hid = "" if i == 0 else ' aria-hidden="true"'
+        frames += (f'<figure class="demo-frame{" on" if i == 0 else ""}" data-title="{escape(title)}" data-text="{escape(text)}"'
+                   f'{hid}>'
+                   f'{picture(root, fid, d["alt"].format(t=title), w, h, lazy=i > 0)}</figure>')
+        dots += (f'<button type="button" class="demo-dot{" on" if i == 0 else ""}" aria-label="{escape(d["go"].format(t=title))}"'
+                 f' aria-pressed="{"true" if i == 0 else "false"}"></button>')
+    t0, x0 = d["frames"][0][1], d["frames"][0][2]
+    return f"""<div class="hero-shot demo" role="group" aria-roledescription="carousel" aria-label="{escape(d["label"])}" data-pause="{escape(d["pause"])}" data-play="{escape(d["play"])}">
+    <div class="demo-stage">{frames}</div>
+    <div class="demo-bar">
+      <div class="demo-cap"><strong class="demo-title">{t0}</strong><span class="demo-text">{x0}</span></div>
+      <div class="demo-ctl"><button type="button" class="demo-pp" aria-label="{escape(d["pause"])}"><span aria-hidden="true">❚❚</span></button>{dots}</div>
+    </div>
+  </div>"""
+
+
 def home(site, t, lang):
     root = "" if lang == LANGS[0] else "../"
     download = download_link(site, root)
@@ -780,10 +803,12 @@ def home(site, t, lang):
       {store}
     </div>
     <p class="note reveal">{fill(h["note"], site) if download else soon["note_soon"]}</p>
+  </div>
+  {demo_html(t, root)}
+  <div class="wrap">
     <div class="pillars">{"".join(f'<div class="pillar reveal"><p class="pillar-title">{x[0]}</p><p>{x[1]}</p></div>' for x in h["pillars"])}</div>
     <p class="note reveal">{h["pill_note"]}</p>
   </div>
-  <div class="hero-shot reveal">{picture(root, "overview", h["image_alt"], ow, oh, lazy=False)}</div>
 </section>
 
 <section class="stats" aria-label="{site["app_name"]}">

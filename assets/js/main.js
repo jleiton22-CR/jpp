@@ -113,3 +113,30 @@
   window.addEventListener("hashchange", req);
   update();
 })();
+
+// Hero demo: the screenshots take turns while the demo is on screen; hover, focus or the pause button stop it.
+(function () {
+  var box = document.querySelector(".demo"); if (!box) return;
+  var frames = Array.prototype.slice.call(box.querySelectorAll(".demo-frame")), dots = Array.prototype.slice.call(box.querySelectorAll(".demo-dot"));
+  var title = box.querySelector(".demo-title"), text = box.querySelector(".demo-text"), pp = box.querySelector(".demo-pp");
+  var cur = 0, timer = null, paused = false, visible = false, hold = false;
+  var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (still) paused = true;
+  function show(i) {
+    cur = (i + frames.length) % frames.length;
+    frames.forEach(function (f, k) { f.classList.toggle("on", k === cur); if (k === cur) f.removeAttribute("aria-hidden"); else f.setAttribute("aria-hidden", "true"); });
+    dots.forEach(function (d, k) { d.classList.toggle("on", k === cur); d.setAttribute("aria-pressed", k === cur ? "true" : "false"); });
+    title.textContent = frames[cur].getAttribute("data-title"); text.textContent = frames[cur].getAttribute("data-text");
+  }
+  function tick() { clearTimeout(timer); if (!paused && visible && !hold) timer = setTimeout(function () { show(cur + 1); tick(); }, 5000); }
+  function label() { pp.setAttribute("aria-label", box.getAttribute(paused ? "data-play" : "data-pause")); pp.firstChild.textContent = paused ? "▶" : "❚❚"; }
+  dots.forEach(function (d, k) { d.addEventListener("click", function () { show(k); tick(); }); });
+  pp.addEventListener("click", function () { paused = !paused; label(); tick(); });
+  box.addEventListener("mouseenter", function () { hold = true; clearTimeout(timer); });
+  box.addEventListener("mouseleave", function () { hold = false; tick(); });
+  box.addEventListener("focusin", function () { hold = true; clearTimeout(timer); });
+  box.addEventListener("focusout", function () { hold = false; tick(); });
+  label();
+  if ("IntersectionObserver" in window) new IntersectionObserver(function (e) { visible = e[0].isIntersecting; tick(); }).observe(box);
+  else { visible = true; tick(); }
+})();

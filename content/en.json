@@ -984,5 +984,34 @@
     "yes": "Listed",
     "no": "Not listed",
     "card_count": "{n} of {total} other tools"
+  },
+  "demo": {
+    "label": "See it work",
+    "pause": "Pause the demo",
+    "play": "Play the demo",
+    "go": "Show: {t}",
+    "frames": [
+      [
+        "overview",
+        "One window for everything",
+        "Explorer, tabs, editor, minimap and the assistant, in a native Mac window."
+      ],
+      [
+        "assistant",
+        "Ask about the code you selected",
+        "The assistant reads your file and your selection. Apply its answer with Replace Selection."
+      ],
+      [
+        "sql",
+        "Run SQL next to your code",
+        "Press ⌘↩ in a SQL tab and the results arrive in a grid you can copy or export."
+      ],
+      [
+        "excel",
+        "Query an Excel file",
+        "Every sheet of a workbook becomes a table you can query with SQL."
+      ]
+    ],
+    "alt": "A jplus2 window showing: {t}."
   }
 }

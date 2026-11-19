@@ -246,3 +246,6 @@ aparecen en los pasos de instalación de `thanks.html` y `support.html`.
 - La descarga de Lite solo existe en el botón «Download Lite» de la barra superior (y su copia en el menú móvil). El hero, la tarjeta Lite, las guías y el cierre solo explican dónde está; el botón del hero lleva a `#editions` y el secundario a la lista de espera de la versión completa (`#waitlist`).
 - La página siempre abre arriba: `main.js` desactiva la restauración del scroll y, al recargar o volver atrás, quita el `#hash`. Un enlace nuevo a una sección (`/#editions`) sí va a ella.
 - Compare es una sección propia (`#compare`, entre Features y Lite & Full). En pantallas ≤760 px la tabla se sustituye por tarjetas plegables (`<details>`), una por función.
+
+## Demo animada del hero
+Bajo el texto del encabezado hay un loop de capturas reales (ventana, asistente, SQL, Excel) que cambian cada 5 s mientras se ven; se pausa con el cursor, el foco o el botón ❚❚, y con «reducir movimiento» queda quieto. Los textos están en el bloque `demo` de `content/{en,es}.json`; el marcado lo genera `demo_html()` en `build.py` y la rotación está en `assets/js/main.js`. Sin JavaScript se ve la primera captura.
