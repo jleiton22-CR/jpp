@@ -1002,9 +1002,9 @@
         "Pulsa ⌘↩ en una pestaña SQL y los resultados llegan en una tabla que puedes copiar o exportar."
       ],
       [
-        "excel",
-        "Consulta un archivo de Excel",
-        "Cada hoja de un libro se convierte en una tabla que puedes consultar con SQL."
+        "github-clone",
+        "GitHub e IA en una sola ventana",
+        "Clona, confirma y sube cambios desde el editor, y pregunta al agente de IA sobre ellos."
       ]
     ],
     "alt": "Una ventana de jplus2 que muestra: {t}."

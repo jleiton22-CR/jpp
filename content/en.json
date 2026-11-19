@@ -1007,9 +1007,9 @@
         "Press ⌘↩ in a SQL tab and the results arrive in a grid you can copy or export."
       ],
       [
-        "excel",
-        "Query an Excel file",
-        "Every sheet of a workbook becomes a table you can query with SQL."
+        "github-clone",
+        "GitHub and AI in one window",
+        "Clone, commit and push from the editor, and ask the AI agent about your changes."
       ]
     ],
     "alt": "A jplus2 window showing: {t}."
