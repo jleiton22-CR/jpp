@@ -821,6 +821,7 @@ def home(site, t, lang):
              if live else f'<a class="btn btn-ghost" href="#waitlist" data-goatcounter-click="hero-waitlist" data-goatcounter-title="Hero: waitlist">{h["secondary"]}</a>')
     lite_cls = "btn btn-ghost" if live else "btn"
     ow, oh = image_size("overview")
+    hero_actions = f'<div class="actions reveal">{store}</div>' if live else ""   # download lives in the top bar; the hero only shows the App Store button once it exists
     out = f"""<section class="hero">
   <div class="wrap">
     {icon_img(root, 128, "hero-icon reveal", site["app_name"])}
@@ -828,11 +829,7 @@ def home(site, t, lang):
     <h1 class="reveal">{h["title"]}</h1>
     <p class="tagline reveal">{h["tagline"]}</p>
     <p class="lead reveal">{h["text"]}</p>
-    <div class="actions reveal">
-      {(f'<a class="{lite_cls}" href="#editions" data-goatcounter-click="hero-lite" data-goatcounter-title="Hero: Lite">{fill(h["primary"], site)}</a>' if download else f'<span class="btn btn-soon">{soon["soon"]}</span>') if not live else store}
-      {store if not live else (f'<a class="{lite_cls}" href="#editions" data-goatcounter-click="hero-lite" data-goatcounter-title="Hero: Lite">{fill(h["primary"], site)}</a>' if download else "")}
-    </div>
-    <p class="note reveal">{fill(h["note"], site) if download else soon["note_soon"]}</p>
+    {hero_actions}
   </div>
   {demo_html(t, root)}
   <div class="wrap">
