@@ -511,27 +511,27 @@
       },
       {
         "title": "Buscar y reemplazar",
-        "text": "Búsqueda normal o con expresiones regulares, distinguir mayúsculas, palabra completa y Reemplazar todo, con cada coincidencia marcada."
+        "text": "Búsqueda normal o con expresiones regulares, distinguir mayúsculas, palabra completa y Reemplazar todo, en la pestaña actual o en todas las abiertas."
       },
       {
         "title": "Edita más rápido",
-        "text": "Duplicar, mover, unir y borrar líneas, cambiar mayúsculas, comentar, sangrar, marcadores, seleccionar la siguiente coincidencia y grabar una macro."
+        "text": "Duplicar, mover, unir y borrar líneas, cambiar mayúsculas, comentar, sangrar, marcadores, edición por columnas y macros que puedes guardar con nombre."
+      },
+      {
+        "title": "Explorador, Ir a archivo y minimapa",
+        "text": "Abre una carpeta y míralo como árbol, salta a cualquier archivo con unas letras (nombre:42 lo abre en la línea 42) y desplázate con un minimapa de todo el archivo."
       },
       {
         "title": "Paleta de comandos",
         "text": "Escribe unas letras para ejecutar cualquier comando, ir a una línea o comparar dos pestañas como diff."
       },
       {
-        "title": "Funciona con Archivos",
-        "text": "Abre archivos de la app Archivos y edítalos donde están, con UTF-8, UTF-16 y ANSI, y saltos de línea de Windows, Unix o Mac clásico."
-      },
-      {
         "title": "Hecho para iPad",
-        "text": "Vertical y horizontal, claro y oscuro según el sistema, ajuste de línea, números de línea, tamaño de texto cambiable, barra de menús con atajos de teclado e impresión."
+        "text": "App Archivos, 16 codificaciones, saltos de línea de Windows, Unix o Mac clásico, vertical y horizontal, claro y oscuro, ajuste de línea, tamaño de texto, barra de menús con atajos de teclado e impresión."
       }
     ],
-    "note": "Es la parte de edición de jplus2. El explorador lateral, el minimapa y las herramientas de la versión completa (asistente de IA, ejecutar código, SQL, GitHub) aún no están prometidos para iPadOS.",
-    "image_alt": "jplus2 en iPad en horizontal: un archivo de Python con colores de sintaxis abierto en una pestaña, con los botones Buscar, Guardar y Más en la barra.",
+    "note": "Es la parte de edición de jplus2. Las herramientas de la versión completa (asistente de IA, ejecutar código, SQL, GitHub) aún no están prometidas para iPadOS.",
+    "image_alt": "jplus2 en iPad en horizontal: el explorador lateral con las carpetas de un proyecto, un archivo de Python con colores de sintaxis en una pestaña y el minimapa a la derecha.",
     "badge_note": "Planeado para el próximo lanzamiento. Los detalles pueden cambiar antes de publicarlo."
   },
   "notfound": {
