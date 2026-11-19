@@ -23,7 +23,7 @@
   },
   "hero": {
     "eyebrow": "Versión {version} para macOS",
-    "title": "Un editor de código nativo para Mac. <span class=\"grad\">Rápido, completo y privado.</span>",
+    "title": "Un editor de código nativo con IA para Mac. <span class=\"grad\">Rápido, completo y privado.</span>",
     "text": "Un editor Cocoa nativo creado para macOS. Lite, gratis, cubre la edición diaria en 95 lenguajes; la versión completa añade SQL, GitHub y un agente de IA que propone cambios y solo actúa con tu aprobación, con el modelo local o en la nube que elijas.",
     "primary": "jplus2 Lite: gratis, {size}",
     "secondary": "Versión completa: funciones y lista de espera",
