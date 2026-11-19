@@ -1,18 +1,24 @@
 (function () {
 try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
-function nav() { var n = performance.getEntriesByType && performance.getEntriesByType("navigation")[0]; return n ? n.type : "navigate"; }
-function top() {
-if (location.hash && nav() === "navigate") return;   // a link to a section (jplus2.com/#editions) still goes there
+var internal = false;
+try { internal = !!document.referrer && new URL(document.referrer).origin === location.origin; } catch (e) {}
+var nt = "navigate";
+try { var n = performance.getEntriesByType("navigation")[0]; if (n) nt = n.type; } catch (e) {}
+var keep = !!location.hash && internal && nt === "navigate";
+function up() { window.scrollTo({ top: 0, left: 0, behavior: "instant" }); }
+if (!keep) {
 if (location.hash && history.replaceState) history.replaceState(null, "", location.pathname + location.search);
-window.scrollTo(0, 0);
-}
-top();
-window.addEventListener("pageshow", function (e) { if (e.persisted) { window.scrollTo(0, 0); } });
+up();
+window.addEventListener("load", up);
+window.addEventListener("pageshow", function () { up(); });
+setTimeout(up, 60); setTimeout(up, 300);
+} else {
 window.addEventListener("load", function () {
-if (!location.hash) { window.scrollTo(0, 0); return; }
 var el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-if (el && !el.classList.contains("feature")) el.scrollIntoView();   // the layout has settled: land exactly on the section
+if (el && !el.classList.contains("feature")) el.scrollIntoView();
 });
+}
+window.__jpTop = !keep;
 })();
 (function () {
 var root = document.documentElement;
