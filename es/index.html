@@ -226,6 +226,17 @@
         <div class="actions"><span class="btn btn-soon">Mac App Store · próximamente</span></div>
       </article>
     </div>
+    <div class="decider reveal" id="decider" data-need="Responde las tres preguntas para ver el resultado.">
+<h3>¿Lite o Full? Tres preguntas</h3><p>Responde con sinceridad. Si Lite te basta, es gratis y esa es la respuesta correcta.</p>
+<fieldset class="dc-q"><legend>¿Qué abres sobre todo en tu editor?</legend><label class="dc-opt"><input type="radio" name="dc0" value="0" data-full="0"><span>Notas, archivos de configuración y texto</span></label><label class="dc-opt"><input type="radio" name="dc0" value="1" data-full="0"><span>Código fuente</span></label><label class="dc-opt"><input type="radio" name="dc0" value="2" data-full="1" data-why="SQL sobre CSV, Excel y SQLite, con los resultados en una tabla"><span>Archivos CSV, Excel o de base de datos que quiero consultar</span></label></fieldset>
+<fieldset class="dc-q"><legend>¿Qué quieres de la IA en tu editor?</legend><label class="dc-opt"><input type="radio" name="dc1" value="0" data-full="0"><span>Nada, prefiero escribirlo yo</span></label><label class="dc-opt"><input type="radio" name="dc1" value="1" data-full="1" data-why="Un asistente de IA que ve tu archivo, con tu propia clave o un modelo local"><span>Un asistente al que preguntar sobre mi archivo</span></label><label class="dc-opt"><input type="radio" name="dc1" value="2" data-full="1" data-why="Modo agente: propone cambios y comandos, y tú apruebas cada uno"><span>Un agente que propone cambios que yo apruebo</span></label></fieldset>
+<fieldset class="dc-q"><legend>¿Quieres ejecutar, depurar o usar Git sin salir del editor?</legend><label class="dc-opt"><input type="radio" name="dc2" value="0" data-full="0"><span>No, uso otras herramientas para eso</span></label><label class="dc-opt"><input type="radio" name="dc2" value="1" data-full="1" data-why="Terminal integrada, barra de Git, Compilar y Ejecutar y el depurador de Python"><span>Sí, terminal, Git o depuración dentro del editor</span></label></fieldset>
+<p class="pg-status" id="dc-status" role="status" aria-live="polite"></p>
+<div id="dc-lite" class="dc-res" hidden><h4>Lite te basta.</h4><p>Quieres un editor rápido y privado para texto y código, y Lite lo tiene: 95 lenguajes, pestañas, buscar y reemplazar, Ir a Cualquier Cosa. Nunca se conecta a una red.</p><p><a class="btn" href="../get.html" data-goatcounter-click="decider-lite" data-goatcounter-title="Decider: Lite download">Descargar Lite (gratis)</a></p></div>
+<div id="dc-full" class="dc-res" hidden><h4>Full encaja con lo que describes.</h4><p>Estas son las partes de Full que coinciden con tus respuestas:</p><ul id="dc-why"></ul><p><a class="btn" href="#waitlist" data-goatcounter-click="decider-waitlist" data-goatcounter-title="Decider: waitlist">Unirme a la lista de espera de Full</a></p></div>
+<p><button type="button" class="btn btn-ghost" id="dc-reset" hidden>Empezar de nuevo</button></p>
+</div>
+<script src="../js/decider.js" defer></script>
     <h3 class="table-title reveal">Lo que añade la versión completa</h3>
     <div class="table-wrap reveal">
       <table class="compare">

@@ -226,6 +226,17 @@
         <div class="actions"><span class="btn btn-soon">Mac App Store · coming soon</span></div>
       </article>
     </div>
+    <div class="decider reveal" id="decider" data-need="Answer all three questions to see the result.">
+<h3>Lite or Full? Three questions</h3><p>Answer honestly. If Lite is enough for you, it is free and that is the right answer.</p>
+<fieldset class="dc-q"><legend>What do you mostly open in your editor?</legend><label class="dc-opt"><input type="radio" name="dc0" value="0" data-full="0"><span>Notes, config files and text</span></label><label class="dc-opt"><input type="radio" name="dc0" value="1" data-full="0"><span>Source code</span></label><label class="dc-opt"><input type="radio" name="dc0" value="2" data-full="1" data-why="SQL on CSV, Excel and SQLite, with results in a table"><span>CSV, Excel or database files I want to query</span></label></fieldset>
+<fieldset class="dc-q"><legend>What do you want from AI in your editor?</legend><label class="dc-opt"><input type="radio" name="dc1" value="0" data-full="0"><span>None, I prefer to write it myself</span></label><label class="dc-opt"><input type="radio" name="dc1" value="1" data-full="1" data-why="An AI assistant that sees your file, with your own key or a local model"><span>An assistant I can ask about my file</span></label><label class="dc-opt"><input type="radio" name="dc1" value="2" data-full="1" data-why="Agent mode: it proposes edits and commands, and you approve each one"><span>An agent that proposes edits I approve</span></label></fieldset>
+<fieldset class="dc-q"><legend>Do you want to run, debug or use Git without leaving the editor?</legend><label class="dc-opt"><input type="radio" name="dc2" value="0" data-full="0"><span>No, I use other tools for that</span></label><label class="dc-opt"><input type="radio" name="dc2" value="1" data-full="1" data-why="Integrated terminal, Git toolbar, Compile and Run, and the Python debugger"><span>Yes, terminal, Git or debugging inside the editor</span></label></fieldset>
+<p class="pg-status" id="dc-status" role="status" aria-live="polite"></p>
+<div id="dc-lite" class="dc-res" hidden><h4>Lite is enough for you.</h4><p>You want a fast, private editor for text and code, and Lite has it: 95 languages, tabs, find and replace, Go to Anything. It never connects to a network.</p><p><a class="btn" href="get.html" data-goatcounter-click="decider-lite" data-goatcounter-title="Decider: Lite download">Download Lite (free)</a></p></div>
+<div id="dc-full" class="dc-res" hidden><h4>Full fits what you described.</h4><p>These are the parts of Full that match your answers:</p><ul id="dc-why"></ul><p><a class="btn" href="#waitlist" data-goatcounter-click="decider-waitlist" data-goatcounter-title="Decider: waitlist">Join the Full waitlist</a></p></div>
+<p><button type="button" class="btn btn-ghost" id="dc-reset" hidden>Start over</button></p>
+</div>
+<script src="js/decider.js" defer></script>
     <h3 class="table-title reveal">What the full version adds</h3>
     <div class="table-wrap reveal">
       <table class="compare">
