@@ -470,6 +470,28 @@ i.value=i.value.trim();document.getElementById("{uid}-after").hidden=false;sent=
 """
 
 
+def playground_html(site, t, root):
+    """SQL on a CSV in the browser (assets/js/playground.js + assets/vendor/sql-wasm.*). Runs locally; nothing is uploaded."""
+    k = t["playground"]
+    live = bool(site.get("app_store_url"))
+    href = escape(site["app_store_url"]) if live else "#waitlist"
+    cta = (f'<a class="btn" href="{href}" rel="noopener" data-goatcounter-click="playground-appstore" data-goatcounter-title="Playground: Mac App Store">{k["cta_live"]}</a>'
+           if live else f'<a class="btn" href="{href}" data-goatcounter-click="playground-waitlist" data-goatcounter-title="Playground: waitlist">{k["cta_soon"]}</a>')
+    msg = escape(json.dumps(k["msg"], ensure_ascii=False), quote=True)
+    return f'''<section class="pg" id="pg" data-root="{root}" data-msg="{msg}">
+<h2>{k["title"]}</h2><p>{k["text"]}</p>
+<div class="pg-load"><label class="btn btn-ghost pg-pick">{k["choose"]}<input type="file" id="pg-file" accept=".csv,.tsv,.txt,text/csv" hidden></label>
+<button type="button" class="btn btn-ghost" id="pg-sample">{k["sample"]}</button><span class="fine">{k["private"]}</span></div>
+<p class="fine" id="pg-cols">{k["empty_table"]}</p>
+<textarea id="pg-sql" class="pg-sql" rows="4" spellcheck="false" aria-label="SQL" disabled placeholder="SELECT region, SUM(revenue) FROM data GROUP BY region;"></textarea>
+<p><button type="button" class="btn" id="pg-run" disabled>{k["run"]}</button> <span class="fine">{k["shortcut"]}</span></p>
+<p class="pg-status" id="pg-status" role="status" aria-live="polite"></p>
+<div class="pg-out" id="pg-out"></div>
+<div class="pg-after" id="pg-after" hidden><p>{k["after"]}</p><p>{cta}</p></div>
+</section>
+<script src="{root}js/playground.js" defer></script>'''
+
+
 def guide_page(site, t, lang, g):
     """A comparison or how-to page in content/guides/."""
     root = "" if lang == LANGS[0] else "../"
@@ -482,6 +504,8 @@ def guide_page(site, t, lang, g):
              f'<p class="lead">{g["lead"]}</p>']
     for sec in g["sections"]:
         parts.append(f'<h2>{sec["h2"]}</h2>\n{fill(sec["html"], site)}')
+    if g.get("playground"):
+        parts.append(playground_html(site, t, root))
     if g["cta"] == "waitlist":
         parts.append(waitlist_form(site, t, lang, g.get("tag", "waitlist-full")))
     elif download:
@@ -948,7 +972,9 @@ def build():
     for src in (ROOT / "assets").rglob("*"):
         if src.is_file() and src.name != ".DS_Store":
             data = src.read_bytes()
-            if src.suffix == ".css":
+            if "vendor" in src.relative_to(ROOT / "assets").parts:
+                pass                                   # third-party files are served exactly as they are
+            elif src.suffix == ".css":
                 data = minify_css(data.decode("utf-8")).encode("utf-8")
             elif src.suffix == ".js":
                 data = minify_js(data.decode("utf-8")).encode("utf-8")

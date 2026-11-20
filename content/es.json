@@ -1034,5 +1034,32 @@
         "a": "jplus2 está hecho con Cocoa para macOS, no con Electron, así que arranca rápido y ocupa poco. El SQL sobre CSV y Excel, GitHub y un agente de IA con aprobación vienen integrados en lugar de depender de extensiones."
       }
     ]
+  },
+  "playground": {
+    "title": "Pruébalo ahora: SQL sobre tu CSV, en esta página",
+    "text": "Suelta un archivo CSV o usa el ejemplo y escribe una consulta. La tabla se llama data. Funciona en tu navegador con SQLite: tu archivo no se sube a ningún sitio.",
+    "choose": "Elegir un archivo CSV…",
+    "sample": "Usar datos de ejemplo",
+    "private": "Nada sale de tu equipo. Archivos de hasta 25 MB.",
+    "empty_table": "Aún no hay datos cargados.",
+    "run": "Ejecutar consulta",
+    "shortcut": "o pulsa ⌘↩ / Ctrl+↩",
+    "after": "Eso fue un CSV y una tabla. En jplus2 completo la misma pestaña SQL también consulta libros de Excel con varias hojas, archivos SQLite, Databricks y Snowflake, y permite exportar los resultados.",
+    "cta_live": "Conseguir jplus2 en la Mac App Store",
+    "cta_soon": "Avísame cuando salga la versión completa",
+    "msg": {
+      "loading": "Cargando SQLite…",
+      "reading": "Leyendo el archivo…",
+      "empty": "El archivo necesita una fila de encabezados y al menos una fila de datos.",
+      "fail": "No se pudo cargar el archivo.",
+      "big": "Ese archivo supera los 25 MB. Prueba con uno menor o usa jplus2.",
+      "table": "Tabla data ({n} filas): {cols}",
+      "ready": "{name} cargado. Edita la consulta y ejecútala.",
+      "sample_name": "Datos de ejemplo",
+      "nothing": "La consulta se ejecutó y no devolvió tabla.",
+      "rows": "{n} filas.",
+      "shown": "Se muestran las primeras {m}.",
+      "error": "Error de SQL:"
+    }
   }
 }
