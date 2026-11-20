@@ -1061,5 +1061,71 @@
       "shown": "Se muestran las primeras {m}.",
       "error": "Error de SQL:"
     }
+  },
+  "decider": {
+    "title": "¿Lite o Full? Tres preguntas",
+    "text": "Responde con sinceridad. Si Lite te basta, es gratis y esa es la respuesta correcta.",
+    "qs": [
+      {
+        "q": "¿Qué abres sobre todo en tu editor?",
+        "o": [
+          {
+            "t": "Notas, archivos de configuración y texto",
+            "f": 0
+          },
+          {
+            "t": "Código fuente",
+            "f": 0
+          },
+          {
+            "t": "Archivos CSV, Excel o de base de datos que quiero consultar",
+            "f": 1,
+            "why": "SQL sobre CSV, Excel y SQLite, con los resultados en una tabla"
+          }
+        ]
+      },
+      {
+        "q": "¿Qué quieres de la IA en tu editor?",
+        "o": [
+          {
+            "t": "Nada, prefiero escribirlo yo",
+            "f": 0
+          },
+          {
+            "t": "Un asistente al que preguntar sobre mi archivo",
+            "f": 1,
+            "why": "Un asistente de IA que ve tu archivo, con tu propia clave o un modelo local"
+          },
+          {
+            "t": "Un agente que propone cambios que yo apruebo",
+            "f": 1,
+            "why": "Modo agente: propone cambios y comandos, y tú apruebas cada uno"
+          }
+        ]
+      },
+      {
+        "q": "¿Quieres ejecutar, depurar o usar Git sin salir del editor?",
+        "o": [
+          {
+            "t": "No, uso otras herramientas para eso",
+            "f": 0
+          },
+          {
+            "t": "Sí, terminal, Git o depuración dentro del editor",
+            "f": 1,
+            "why": "Terminal integrada, barra de Git, Compilar y Ejecutar y el depurador de Python"
+          }
+        ]
+      }
+    ],
+    "lite": "Lite te basta.",
+    "lite_text": "Quieres un editor rápido y privado para texto y código, y Lite lo tiene: 95 lenguajes, pestañas, buscar y reemplazar, Ir a Cualquier Cosa. Nunca se conecta a una red.",
+    "full": "Full encaja con lo que describes.",
+    "full_text": "Estas son las partes de Full que coinciden con tus respuestas:",
+    "cta_lite": "Descargar Lite (gratis)",
+    "cta_full_live": "Conseguir Full en la Mac App Store",
+    "cta_full_soon": "Unirme a la lista de espera de Full",
+    "again": "Empezar de nuevo",
+    "need": "Responde las tres preguntas para ver el resultado."
   }
 }

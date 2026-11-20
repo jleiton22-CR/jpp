@@ -1066,5 +1066,71 @@
       "shown": "Showing the first {m}.",
       "error": "SQL error:"
     }
+  },
+  "decider": {
+    "title": "Lite or Full? Three questions",
+    "text": "Answer honestly. If Lite is enough for you, it is free and that is the right answer.",
+    "qs": [
+      {
+        "q": "What do you mostly open in your editor?",
+        "o": [
+          {
+            "t": "Notes, config files and text",
+            "f": 0
+          },
+          {
+            "t": "Source code",
+            "f": 0
+          },
+          {
+            "t": "CSV, Excel or database files I want to query",
+            "f": 1,
+            "why": "SQL on CSV, Excel and SQLite, with results in a table"
+          }
+        ]
+      },
+      {
+        "q": "What do you want from AI in your editor?",
+        "o": [
+          {
+            "t": "None, I prefer to write it myself",
+            "f": 0
+          },
+          {
+            "t": "An assistant I can ask about my file",
+            "f": 1,
+            "why": "An AI assistant that sees your file, with your own key or a local model"
+          },
+          {
+            "t": "An agent that proposes edits I approve",
+            "f": 1,
+            "why": "Agent mode: it proposes edits and commands, and you approve each one"
+          }
+        ]
+      },
+      {
+        "q": "Do you want to run, debug or use Git without leaving the editor?",
+        "o": [
+          {
+            "t": "No, I use other tools for that",
+            "f": 0
+          },
+          {
+            "t": "Yes, terminal, Git or debugging inside the editor",
+            "f": 1,
+            "why": "Integrated terminal, Git toolbar, Compile and Run, and the Python debugger"
+          }
+        ]
+      }
+    ],
+    "lite": "Lite is enough for you.",
+    "lite_text": "You want a fast, private editor for text and code, and Lite has it: 95 languages, tabs, find and replace, Go to Anything. It never connects to a network.",
+    "full": "Full fits what you described.",
+    "full_text": "These are the parts of Full that match your answers:",
+    "cta_lite": "Download Lite (free)",
+    "cta_full_live": "Get Full on the Mac App Store",
+    "cta_full_soon": "Join the Full waitlist",
+    "again": "Start over",
+    "need": "Answer all three questions to see the result."
   }
 }

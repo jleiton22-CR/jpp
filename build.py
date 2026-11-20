@@ -665,6 +665,31 @@ def store_button(site, label, label_soon, cls):
     return f'<span class="btn btn-soon">{label_soon}</span>'
 
 
+def decider_html(site, t, root):
+    """"Lite or Full?": three questions, answered in the browser (assets/js/decider.js). Lite is a valid answer."""
+    k = t["decider"]
+    live = bool(site.get("app_store_url"))
+    dl = download_link(site, root)
+    qs = ""
+    for i, q in enumerate(k["qs"]):
+        opts = "".join(
+            f'<label class="dc-opt"><input type="radio" name="dc{i}" value="{j}" data-full="{o["f"]}"'
+            + (f' data-why="{escape(o["why"], quote=True)}"' if o.get("why") else "") + f'><span>{o["t"]}</span></label>'
+            for j, o in enumerate(q["o"]))
+        qs += f'<fieldset class="dc-q"><legend>{q["q"]}</legend>{opts}</fieldset>\n'
+    lite_cta = (f'<a class="btn" href="{root}{dl}" data-goatcounter-click="decider-lite" data-goatcounter-title="Decider: Lite download">{k["cta_lite"]}</a>' if dl else "")
+    full_cta = (f'<a class="btn" href="{escape(site["app_store_url"])}" rel="noopener" data-goatcounter-click="decider-appstore" data-goatcounter-title="Decider: Mac App Store">{k["cta_full_live"]}</a>'
+                if live else f'<a class="btn" href="#waitlist" data-goatcounter-click="decider-waitlist" data-goatcounter-title="Decider: waitlist">{k["cta_full_soon"]}</a>')
+    return f'''<div class="decider reveal" id="decider" data-need="{escape(k["need"], quote=True)}">
+<h3>{k["title"]}</h3><p>{k["text"]}</p>
+{qs}<p class="pg-status" id="dc-status" role="status" aria-live="polite"></p>
+<div id="dc-lite" class="dc-res" hidden><h4>{k["lite"]}</h4><p>{k["lite_text"]}</p><p>{lite_cta}</p></div>
+<div id="dc-full" class="dc-res" hidden><h4>{k["full"]}</h4><p>{k["full_text"]}</p><ul id="dc-why"></ul><p>{full_cta}</p></div>
+<p><button type="button" class="btn btn-ghost" id="dc-reset" hidden>{k["again"]}</button></p>
+</div>
+<script src="{root}js/decider.js" defer></script>'''
+
+
 def editions_html(site, t, root, lang):
     e = t["editions"]
     lite, full = e["lite"], e["full"]
@@ -700,6 +725,7 @@ def editions_html(site, t, root, lang):
         <div class="actions">{full_btn}</div>
       </article>
     </div>
+    {decider_html(site, t, root)}
     <h3 class="table-title reveal">{e["table_title"]}</h3>
     <div class="table-wrap reveal">
       <table class="compare">
