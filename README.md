@@ -1,7 +1,7 @@
 # Sitio web de jplus2
 
-Sitio promocional de jplus2, en inglés y español. Es un sitio estático: HTML, CSS y un script pequeño, sin base de
-datos ni programas en el servidor, así que funciona en cualquier servidor web.
+	Sitio promocional de jplus2, en inglés y español. Es un sitio estático: HTML, CSS y un script pequeño, sin base de
+	datos ni programas en el servidor, así que funciona en cualquier servidor web.
 
 ## Qué hay en esta carpeta
 
