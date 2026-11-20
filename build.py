@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Builds the jplus2 website into public/.
 
-    python3 build.py           build the site
+     python3 build.py           build the site
     python3 build.py serve     build it and preview it at http://localhost:8080
 
 Texts are in content/en.json and content/es.json, settings in site.json, and the
