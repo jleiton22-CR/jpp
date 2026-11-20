@@ -42,7 +42,7 @@
     <nav class="nav-links" id="menu" aria-label="Main">
       <a href="#features">Features</a>
       <a href="#compare">Compare</a>
-      <a href="#editions">Lite & Full</a>
+      <a href="#editions">Versions</a>
       <a href="#guides">Guides</a>
       <a href="support.html">Support</a>
       <a class="menu-only" href="get.html">Download Lite</a>
@@ -207,9 +207,9 @@
 
 <section class="section" id="editions">
   <div class="wrap">
-    <p class="eyebrow reveal">Lite & Full</p>
-    <h2 class="reveal">jplus2 Lite (free) vs the full version</h2>
-    <p class="lead reveal">jplus2 Lite is a free download from this page: a light, fast editor for everyday text and code. The full jplus2 is obtained from the Mac App Store, where it is coming soon, and adds the tools that turn an editor into a workshop.</p>
+    <p class="eyebrow reveal">Versions</p>
+    <h2 class="reveal">jplus2 on Mac, iPhone and iPad</h2>
+    <p class="lead reveal">Four versions of the same editor. jplus2 Lite for the Mac is free and downloads from this page. The full jplus2 for the Mac is coming to the Mac App Store. The iPhone and iPad versions are built and being prepared for the App Store: none of the three is in the store yet.</p>
     <div class="editions">
       <article class="edition reveal">
         <p class="tag">Free</p>
@@ -225,7 +225,10 @@
         
         <div class="actions"><span class="btn btn-soon">Mac App Store · coming soon</span></div>
       </article>
+      <article class="edition reveal"><p class="tag">Coming soon · App Store</p><h3>jplus2 for iPhone</h3><p>The editing engine of Lite, built for the phone in your hand, with the tools you need away from your desk.</p><ul><li>Row of code keys above the keyboard, and the space bar as a trackpad</li><li>Pull requests on GitHub: read diffs, comment, approve, merge</li><li>Open CSV, Excel and SQLite files as tables and query them with SQL</li><li>AI agent that proposes changes you approve, with your own key or Apple's on-device model</li></ul><div class="actions"><span class="btn btn-soon">App Store · coming soon</span></div></article>
+      <article class="edition reveal"><p class="tag">Coming soon · App Store</p><h3>jplus2 for iPad</h3><p>The same editor for the big screen: touch, keyboard and the Files app, with the Explorer and minimap beside your code.</p><ul><li>Tabs that remember your session, even text you had not saved</li><li>Explorer, Go to Anything and a command palette</li><li>GitHub pull requests, SQL on tables and the approval-based AI agent</li><li>Version history and recoverable deletes, so a mistake can be undone</li></ul><div class="actions"><span class="btn btn-soon">App Store · coming soon</span></div></article>
     </div>
+    <p class="note reveal">Prices for the iPhone and iPad versions will be shown on their App Store pages when they are published.</p>
     <div class="decider reveal" id="decider" data-need="Answer all three questions to see the result.">
 <h3>Lite or Full? Three questions</h3><p>Answer honestly. If Lite is enough for you, it is free and that is the right answer.</p>
 <fieldset class="dc-q"><legend>What do you mostly open in your editor?</legend><label class="dc-opt"><input type="radio" name="dc0" value="0" data-full="0"><span>Notes, config files and text</span></label><label class="dc-opt"><input type="radio" name="dc0" value="1" data-full="0"><span>Source code</span></label><label class="dc-opt"><input type="radio" name="dc0" value="2" data-full="1" data-why="SQL on CSV, Excel and SQLite, with results in a table"><span>CSV, Excel or database files I want to query</span></label></fieldset>
@@ -295,21 +298,25 @@ i.value=i.value.trim();document.getElementById("wl-waitlist-full-after").hidden=
 
 <section class="section alt" id="ipad">
   <div class="wrap">
-    <p class="eyebrow reveal">Coming soon</p>
-    <h2 class="reveal">jplus2 for iPadOS. Coming soon.</h2>
-    <p class="lead reveal">The next release brings jplus2 to the iPad: the editing engine of jplus2 Lite, built natively for touch, keyboard and the Files app. These are the features it will have.</p>
+    <p class="eyebrow reveal">iPhone and iPad</p>
+    <h2 class="reveal">jplus2 for iPhone and iPad. Coming soon.</h2>
+    <p class="lead reveal">The next release brings jplus2 to the iPhone and the iPad: the editing engine of jplus2 Lite, built natively for touch, keyboard and the Files app, plus tools for review and data. These are the features it has.</p>
     <p class="reveal"><span class="soon-badge">Coming soon</span></p>
-    <p class="note reveal">Planned for the next release. Details may change before it is published.</p>
+    <p class="note reveal">Being prepared for the App Store. Details may change before it is published.</p>
     <div class="ipad-shot reveal"><picture><source srcset="img/ipad-dark.webp" type="image/webp" media="(prefers-color-scheme: dark)"><source srcset="img/ipad-dark.jpg" media="(prefers-color-scheme: dark)"><source srcset="img/ipad-light.webp" type="image/webp"><img class="shot " src="img/ipad-light.jpg" alt="jplus2 on iPad in landscape: the icon bars under the toolbar, the Explorer sidebar with a project&#x27;s folders, a Python file with syntax colouring and the minimap on the right." width="1600" height="1200" loading="lazy" decoding="async"></picture></div>
+    <div class="phone-shot reveal"><picture><source srcset="img/iphone-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot" src="img/iphone-light.jpg" alt="jplus2 on iPhone: a code file with syntax colouring and a row of code keys above the keyboard." width="460" height="1000" loading="lazy" decoding="async"></picture></div>
     <div class="tiles">
       <article class="tile reveal"><h3>Tabs that remember</h3><p>Open several files in tabs. When you come back, every tab is there, even text you had not saved.</p></article>
       <article class="tile reveal"><h3>Find and replace</h3><p>Normal or regular-expression search, match case, whole word and Replace All, in the current tab or in every open tab.</p></article>
       <article class="tile reveal"><h3>Edit faster</h3><p>Duplicate, move, join and delete lines, change case, comment, indent, bookmarks, column editing, and macros you can save by name.</p></article>
-      <article class="tile reveal"><h3>Explorer, Go to File and minimap</h3><p>Open a folder and see it as a tree, jump to any file from a few letters, to a symbol with @ or a line with :, and scroll with a minimap of the whole file.</p></article>
-      <article class="tile reveal"><h3>Command palette</h3><p>Type a few letters to run any command, jump to a line, or compare two tabs as a diff.</p></article>
-      <article class="tile reveal"><h3>Made for iPad</h3><p>Files app, 16 encodings, light, dark or automatic appearance, icon bars you can show or hide, a menu bar with keyboard shortcuts, word wrap, text size, and printing.</p></article>
+      <article class="tile reveal"><h3>Explorer, Go to File and minimap</h3><p>Open a folder and see it as a tree, jump to any file from a few letters, to a symbol with @ or a line with :. The minimap shows on the iPad and on an iPhone turned sideways.</p></article>
+      <article class="tile reveal"><h3>GitHub</h3><p>Browse repositories, review pull requests with diffs, comment, approve and merge, and make small commits. The token stays in the Keychain.</p></article>
+      <article class="tile reveal"><h3>Tables and SQL</h3><p>Open CSV, Excel and SQLite files as tables you can sort and filter, and query them with SQL. The file is never changed.</p></article>
+      <article class="tile reveal"><h3>AI agent with approval</h3><p>Use your own Claude or OpenAI key, or Apple's on-device model on iPhones and iPads that support it. You choose what is sent, and every change is a diff you approve or reject.</p></article>
+      <article class="tile reveal"><h3>A safety net</h3><p>Autosave, version history, deleted files kept for 30 days, and a save that is read back to check it.</p></article>
+      <article class="tile reveal"><h3>Made for touch</h3><p>On the iPhone, a row of code keys and a space bar that moves the cursor. On both: the Files app, 16 encodings, light and dark appearance, Siri and Shortcuts, and widgets.</p></article>
     </div>
-    <p class="note reveal">It is the editing part of jplus2. The tools of the full version (AI assistant, running code, SQL, GitHub) are not promised for iPadOS yet.</p>
+    <p class="note reveal">No compilers and no database connections: running code, the terminal, the debugger and SQL on Databricks, Snowflake and PostgreSQL stay in the full jplus2 for the Mac.</p>
   </div>
 </section>
 

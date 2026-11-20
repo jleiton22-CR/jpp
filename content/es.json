@@ -11,7 +11,7 @@
     "privacy": "Privacidad",
     "support": "Soporte",
     "download": "Descargar Lite",
-    "editions": "Lite y Completa",
+    "editions": "Versiones",
     "donate": "Donar",
     "donate_label": "Donar con PayPal",
     "ipad": "iPadOS",
@@ -371,9 +371,9 @@
     "notify_subject": "Avísame cuando jplus2 esté listo"
   },
   "editions": {
-    "eyebrow": "Lite y Completa",
-    "title": "jplus2 Lite (gratis) frente a la versión completa",
-    "text": "jplus2 Lite es una descarga gratuita desde esta página: un editor ligero y rápido para el texto y el código de todos los días. El jplus2 completo se obtiene en el Mac App Store, adonde llega pronto, y añade las herramientas que convierten un editor en un taller.",
+    "eyebrow": "Versiones",
+    "title": "jplus2 en Mac, iPhone y iPad",
+    "text": "Cuatro versiones del mismo editor. jplus2 Lite para Mac es gratis y se descarga desde esta página. El jplus2 completo para Mac llega al Mac App Store. Las versiones de iPhone y iPad están construidas y en preparación para el App Store: ninguna de las tres está todavía en la tienda.",
     "lite": {
       "name": "jplus2 Lite",
       "tag": "Gratis",
@@ -500,12 +500,37 @@
     "no": "No está en Lite",
     "note": "La versión del App Store funciona en el entorno aislado de Apple, así que Compilar y Ejecutar usan las herramientas que vienen con macOS y Xcode. Puedes tener las dos versiones instaladas a la vez.",
     "chip_both": "Lite y Completa",
-    "chip_full": "Solo versión completa"
+    "chip_full": "Solo versión completa",
+    "iphone": {
+      "name": "jplus2 para iPhone",
+      "tag": "Próximamente · App Store",
+      "text": "El motor de edición de Lite, hecho para el teléfono que llevas en la mano, con las herramientas que necesitas lejos de tu escritorio.",
+      "items": [
+        "Fila de teclas de código sobre el teclado, y la barra espaciadora como trackpad",
+        "Pull requests de GitHub: leer diffs, comentar, aprobar y fusionar",
+        "Abre archivos CSV, Excel y SQLite como tablas y consúltalos con SQL",
+        "Agente de IA que propone cambios que tú apruebas, con tu propia clave o el modelo del propio dispositivo de Apple"
+      ],
+      "button_soon": "App Store · próximamente"
+    },
+    "ipad": {
+      "name": "jplus2 para iPad",
+      "tag": "Próximamente · App Store",
+      "text": "El mismo editor para la pantalla grande: tacto, teclado y la app Archivos, con el explorador y el minimapa junto a tu código.",
+      "items": [
+        "Pestañas que recuerdan tu sesión, incluso el texto sin guardar",
+        "Explorador, Ir a cualquier cosa y paleta de comandos",
+        "Pull requests de GitHub, SQL sobre tablas y el agente de IA con aprobación",
+        "Historial de versiones y borrados recuperables, para poder deshacer un error"
+      ],
+      "button_soon": "App Store · próximamente"
+    },
+    "price_note": "Los precios de las versiones de iPhone y iPad se mostrarán en sus páginas del App Store cuando se publiquen."
   },
   "ipad": {
-    "eyebrow": "Próximamente",
-    "title": "jplus2 para iPadOS. Próximamente.",
-    "text": "La próxima versión lleva jplus2 al iPad: el motor de edición de jplus2 Lite, hecho de forma nativa para el tacto, el teclado y la app Archivos. Estas son las funciones que tendrá.",
+    "eyebrow": "iPhone y iPad",
+    "title": "jplus2 para iPhone y iPad. Próximamente.",
+    "text": "La próxima versión lleva jplus2 al iPhone y al iPad: el motor de edición de jplus2 Lite, hecho de forma nativa para el tacto, el teclado y la app Archivos, más herramientas de revisión y de datos. Estas son las funciones que tiene.",
     "badge": "Próximamente",
     "items": [
       {
@@ -522,20 +547,33 @@
       },
       {
         "title": "Explorador, Ir a archivo y minimapa",
-        "text": "Abre una carpeta y míralo como árbol, salta a cualquier archivo con unas letras, a un símbolo con @ o a una línea con :, y desplázate con un minimapa de todo el archivo."
+        "text": "Abre una carpeta y míralo como árbol, salta a cualquier archivo con unas letras, a un símbolo con @ o a una línea con :. El minimapa se ve en el iPad y en un iPhone en horizontal."
       },
       {
-        "title": "Paleta de comandos",
-        "text": "Escribe unas letras para ejecutar cualquier comando, ir a una línea o comparar dos pestañas como diff."
+        "title": "GitHub",
+        "text": "Explora repositorios, revisa pull requests con diffs, comenta, aprueba y fusiona, y haz commits pequeños. El token se guarda en el llavero."
       },
       {
-        "title": "Hecho para iPad",
-        "text": "App Archivos, 16 codificaciones, apariencia clara, oscura o automática, barras de iconos que puedes mostrar u ocultar, barra de menús con atajos de teclado, ajuste de línea, tamaño de texto e impresión."
+        "title": "Tablas y SQL",
+        "text": "Abre archivos CSV, Excel y SQLite como tablas que puedes ordenar y filtrar, y consúltalos con SQL. El archivo nunca se modifica."
+      },
+      {
+        "title": "Agente de IA con aprobación",
+        "text": "Usa tu propia clave de Claude u OpenAI, o el modelo del propio dispositivo de Apple en los iPhone y iPad que lo admiten. Tú eliges qué se envía, y cada cambio es un diff que apruebas o rechazas."
+      },
+      {
+        "title": "Una red de seguridad",
+        "text": "Autoguardado, historial de versiones, archivos borrados conservados 30 días y un guardado que se vuelve a leer para comprobarlo."
+      },
+      {
+        "title": "Hecho para el tacto",
+        "text": "En el iPhone, una fila de teclas de código y una barra espaciadora que mueve el cursor. En ambos: la app Archivos, 16 codificaciones, apariencia clara y oscura, Siri y Atajos, y widgets."
       }
     ],
-    "note": "Es la parte de edición de jplus2. Las herramientas de la versión completa (asistente de IA, ejecutar código, SQL, GitHub) aún no están prometidas para iPadOS.",
+    "note": "Sin compiladores ni conexiones a bases de datos: ejecutar código, la terminal, el depurador y SQL sobre Databricks, Snowflake y PostgreSQL siguen en el jplus2 completo para Mac.",
     "image_alt": "jplus2 en iPad en horizontal: las barras de iconos bajo la barra de herramientas, el explorador lateral con las carpetas de un proyecto, un archivo de Python con colores de sintaxis y el minimapa a la derecha.",
-    "badge_note": "Planeado para el próximo lanzamiento. Los detalles pueden cambiar antes de publicarlo."
+    "badge_note": "En preparación para el App Store. Los detalles pueden cambiar antes de publicarla.",
+    "image_alt_phone": "jplus2 en iPhone: un archivo de código con colores de sintaxis y una fila de teclas de código sobre el teclado."
   },
   "notfound": {
     "text": "Esa página no existe. Puede que se haya movido, o que la dirección sea incorrecta.",

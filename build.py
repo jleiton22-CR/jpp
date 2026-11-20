@@ -79,6 +79,12 @@ def picture(root, name, alt, w, h, lazy=True, cls=""):
             f'<img class="shot {cls}" src="{root}img/{name}-light.jpg" alt="{escape(alt)}" width="{w}" height="{h}"{loading}></picture>')
 
 
+def picture_jpg(root, name, alt, w, h):
+    """A JPEG-only screenshot that follows the light or dark appearance of the visitor's system."""
+    return (f'<picture><source srcset="{root}img/{name}-dark.jpg" media="(prefers-color-scheme: dark)">'
+            f'<img class="shot" src="{root}img/{name}-light.jpg" alt="{escape(alt)}" width="{w}" height="{h}" loading="lazy" decoding="async"></picture>')
+
+
 def icon_img(root, size, cls="", alt="", lazy=False):
     loading = ' loading="lazy" decoding="async"' if lazy else ""
     return (f'<picture><source srcset="{root}img/icon-dark.png" media="(prefers-color-scheme: dark)">'
@@ -690,6 +696,11 @@ def decider_html(site, t, root):
 <script src="{root}js/decider.js" defer></script>'''
 
 
+def device_card(d, li):
+    return (f'<article class="edition reveal"><p class="tag">{d["tag"]}</p><h3>{d["name"]}</h3><p>{d["text"]}</p>'
+            f'<ul>{li(d["items"])}</ul><div class="actions"><span class="btn btn-soon">{d["button_soon"]}</span></div></article>')
+
+
 def editions_html(site, t, root, lang):
     e = t["editions"]
     lite, full = e["lite"], e["full"]
@@ -724,7 +735,10 @@ def editions_html(site, t, root, lang):
         {"<ul>" + li(full["items"]) + "</ul>" if full["items"] else ""}
         <div class="actions">{full_btn}</div>
       </article>
+      {device_card(e["iphone"], li)}
+      {device_card(e["ipad"], li)}
     </div>
+    <p class="note reveal">{e["price_note"]}</p>
     {decider_html(site, t, root)}
     <h3 class="table-title reveal">{e["table_title"]}</h3>
     <div class="table-wrap reveal">
@@ -754,6 +768,7 @@ def ipad_html(t, root):
     <p class="reveal"><span class="soon-badge">{p["badge"]}</span></p>
     <p class="note reveal">{p["badge_note"]}</p>
     <div class="ipad-shot reveal">{picture(root, "ipad", p["image_alt"], iw, ih)}</div>
+    <div class="phone-shot reveal">{picture_jpg(root, "iphone", p["image_alt_phone"], *image_size("iphone"))}</div>
     <div class="tiles">
 {tiles}    </div>
     <p class="note reveal">{p["note"]}</p>

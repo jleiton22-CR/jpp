@@ -11,7 +11,7 @@
     "privacy": "Privacy",
     "support": "Support",
     "download": "Download Lite",
-    "editions": "Lite & Full",
+    "editions": "Versions",
     "donate": "Donate",
     "donate_label": "Donate with PayPal",
     "ipad": "iPadOS",
@@ -371,9 +371,9 @@
     "notify_subject": "Tell me when jplus2 is ready"
   },
   "editions": {
-    "eyebrow": "Lite & Full",
-    "title": "jplus2 Lite (free) vs the full version",
-    "text": "jplus2 Lite is a free download from this page: a light, fast editor for everyday text and code. The full jplus2 is obtained from the Mac App Store, where it is coming soon, and adds the tools that turn an editor into a workshop.",
+    "eyebrow": "Versions",
+    "title": "jplus2 on Mac, iPhone and iPad",
+    "text": "Four versions of the same editor. jplus2 Lite for the Mac is free and downloads from this page. The full jplus2 for the Mac is coming to the Mac App Store. The iPhone and iPad versions are built and being prepared for the App Store: none of the three is in the store yet.",
     "lite": {
       "name": "jplus2 Lite",
       "tag": "Free",
@@ -505,12 +505,37 @@
     "no": "Not in Lite",
     "note": "The App Store version runs in Apple's sandbox, so Compile and Run use the tools that come with macOS and Xcode. Both versions can be installed side by side.",
     "chip_both": "Lite & Full",
-    "chip_full": "Full version only"
+    "chip_full": "Full version only",
+    "iphone": {
+      "name": "jplus2 for iPhone",
+      "tag": "Coming soon · App Store",
+      "text": "The editing engine of Lite, built for the phone in your hand, with the tools you need away from your desk.",
+      "items": [
+        "Row of code keys above the keyboard, and the space bar as a trackpad",
+        "Pull requests on GitHub: read diffs, comment, approve, merge",
+        "Open CSV, Excel and SQLite files as tables and query them with SQL",
+        "AI agent that proposes changes you approve, with your own key or Apple's on-device model"
+      ],
+      "button_soon": "App Store · coming soon"
+    },
+    "ipad": {
+      "name": "jplus2 for iPad",
+      "tag": "Coming soon · App Store",
+      "text": "The same editor for the big screen: touch, keyboard and the Files app, with the Explorer and minimap beside your code.",
+      "items": [
+        "Tabs that remember your session, even text you had not saved",
+        "Explorer, Go to Anything and a command palette",
+        "GitHub pull requests, SQL on tables and the approval-based AI agent",
+        "Version history and recoverable deletes, so a mistake can be undone"
+      ],
+      "button_soon": "App Store · coming soon"
+    },
+    "price_note": "Prices for the iPhone and iPad versions will be shown on their App Store pages when they are published."
   },
   "ipad": {
-    "eyebrow": "Coming soon",
-    "title": "jplus2 for iPadOS. Coming soon.",
-    "text": "The next release brings jplus2 to the iPad: the editing engine of jplus2 Lite, built natively for touch, keyboard and the Files app. These are the features it will have.",
+    "eyebrow": "iPhone and iPad",
+    "title": "jplus2 for iPhone and iPad. Coming soon.",
+    "text": "The next release brings jplus2 to the iPhone and the iPad: the editing engine of jplus2 Lite, built natively for touch, keyboard and the Files app, plus tools for review and data. These are the features it has.",
     "badge": "Coming soon",
     "items": [
       {
@@ -527,20 +552,33 @@
       },
       {
         "title": "Explorer, Go to File and minimap",
-        "text": "Open a folder and see it as a tree, jump to any file from a few letters, to a symbol with @ or a line with :, and scroll with a minimap of the whole file."
+        "text": "Open a folder and see it as a tree, jump to any file from a few letters, to a symbol with @ or a line with :. The minimap shows on the iPad and on an iPhone turned sideways."
       },
       {
-        "title": "Command palette",
-        "text": "Type a few letters to run any command, jump to a line, or compare two tabs as a diff."
+        "title": "GitHub",
+        "text": "Browse repositories, review pull requests with diffs, comment, approve and merge, and make small commits. The token stays in the Keychain."
       },
       {
-        "title": "Made for iPad",
-        "text": "Files app, 16 encodings, light, dark or automatic appearance, icon bars you can show or hide, a menu bar with keyboard shortcuts, word wrap, text size, and printing."
+        "title": "Tables and SQL",
+        "text": "Open CSV, Excel and SQLite files as tables you can sort and filter, and query them with SQL. The file is never changed."
+      },
+      {
+        "title": "AI agent with approval",
+        "text": "Use your own Claude or OpenAI key, or Apple's on-device model on iPhones and iPads that support it. You choose what is sent, and every change is a diff you approve or reject."
+      },
+      {
+        "title": "A safety net",
+        "text": "Autosave, version history, deleted files kept for 30 days, and a save that is read back to check it."
+      },
+      {
+        "title": "Made for touch",
+        "text": "On the iPhone, a row of code keys and a space bar that moves the cursor. On both: the Files app, 16 encodings, light and dark appearance, Siri and Shortcuts, and widgets."
       }
     ],
-    "note": "It is the editing part of jplus2. The tools of the full version (AI assistant, running code, SQL, GitHub) are not promised for iPadOS yet.",
+    "note": "No compilers and no database connections: running code, the terminal, the debugger and SQL on Databricks, Snowflake and PostgreSQL stay in the full jplus2 for the Mac.",
     "image_alt": "jplus2 on iPad in landscape: the icon bars under the toolbar, the Explorer sidebar with a project's folders, a Python file with syntax colouring and the minimap on the right.",
-    "badge_note": "Planned for the next release. Details may change before it is published."
+    "badge_note": "Being prepared for the App Store. Details may change before it is published.",
+    "image_alt_phone": "jplus2 on iPhone: a code file with syntax colouring and a row of code keys above the keyboard."
   },
   "notfound": {
     "text": "That page does not exist. It may have moved, or the address may be wrong.",
