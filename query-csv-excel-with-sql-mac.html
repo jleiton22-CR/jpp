@@ -69,6 +69,18 @@
 <p>Dedicated apps, some on the Mac App Store, and open source tools such as DuckDB also query files with SQL. Pick the one that fits how often you do this.</p>
 <h2>Is it available now?</h2>
 <p>The SQL features are part of the full version of jplus2, which is coming to the Mac App Store. jplus2 Lite, the free download, is an editor without SQL. Leave your email below and we will tell you the day the full version is available.</p>
+<section class="pg" id="pg" data-root="" data-msg="{&quot;loading&quot;: &quot;Loading SQLite…&quot;, &quot;reading&quot;: &quot;Reading the file…&quot;, &quot;empty&quot;: &quot;The file needs a header row and at least one data row.&quot;, &quot;fail&quot;: &quot;The file could not be loaded.&quot;, &quot;big&quot;: &quot;That file is larger than 25 MB. Try a smaller one, or use jplus2.&quot;, &quot;table&quot;: &quot;Table data ({n} rows): {cols}&quot;, &quot;ready&quot;: &quot;{name} loaded. Edit the query and run it.&quot;, &quot;sample_name&quot;: &quot;Sample data&quot;, &quot;nothing&quot;: &quot;The query ran and returned no table.&quot;, &quot;rows&quot;: &quot;{n} rows.&quot;, &quot;shown&quot;: &quot;Showing the first {m}.&quot;, &quot;error&quot;: &quot;SQL error:&quot;}">
+<h2>Try it now: SQL on your CSV, in this page</h2><p>Drop a CSV file or use the sample, then write a query. The table is called data. This runs in your browser with SQLite: your file is never uploaded.</p>
+<div class="pg-load"><label class="btn btn-ghost pg-pick">Choose a CSV file…<input type="file" id="pg-file" accept=".csv,.tsv,.txt,text/csv" hidden></label>
+<button type="button" class="btn btn-ghost" id="pg-sample">Use sample data</button><span class="fine">Nothing leaves your computer. Files up to 25 MB.</span></div>
+<p class="fine" id="pg-cols">No data loaded yet.</p>
+<textarea id="pg-sql" class="pg-sql" rows="4" spellcheck="false" aria-label="SQL" disabled placeholder="SELECT region, SUM(revenue) FROM data GROUP BY region;"></textarea>
+<p><button type="button" class="btn" id="pg-run" disabled>Run query</button> <span class="fine">or press ⌘↩ / Ctrl+↩</span></p>
+<p class="pg-status" id="pg-status" role="status" aria-live="polite"></p>
+<div class="pg-out" id="pg-out"></div>
+<div class="pg-after" id="pg-after" hidden><p>That was one CSV and one table. In the full jplus2 the same SQL tab also queries Excel workbooks with several sheets, SQLite files, Databricks and Snowflake, and you can export the results.</p><p><a class="btn" href="#waitlist" data-goatcounter-click="playground-waitlist" data-goatcounter-title="Playground: waitlist">Get notified when the full version is out</a></p></div>
+</section>
+<script src="js/playground.js" defer></script>
 <aside class="waitlist" id="waitlist">
   <h2>Get notified when the full version is out</h2>
   <p>The full jplus2, with run and debug, SQL, GitHub and the AI assistant, is coming to the Mac App Store. Leave your email and we will tell you the day it is available.</p>

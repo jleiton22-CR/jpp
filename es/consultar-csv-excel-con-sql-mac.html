@@ -69,6 +69,18 @@
 <p>Hay aplicaciones dedicadas, algunas en el Mac App Store, y herramientas de código abierto como DuckDB que también consultan archivos con SQL. Elige la que encaje con la frecuencia con la que lo haces.</p>
 <h2>¿Está disponible ya?</h2>
 <p>Las funciones de SQL forman parte de la versión completa de jplus2, que llega al Mac App Store. jplus2 Lite, la descarga gratis, es un editor sin SQL. Deja tu correo abajo y te avisamos el día que la versión completa esté disponible.</p>
+<section class="pg" id="pg" data-root="../" data-msg="{&quot;loading&quot;: &quot;Cargando SQLite…&quot;, &quot;reading&quot;: &quot;Leyendo el archivo…&quot;, &quot;empty&quot;: &quot;El archivo necesita una fila de encabezados y al menos una fila de datos.&quot;, &quot;fail&quot;: &quot;No se pudo cargar el archivo.&quot;, &quot;big&quot;: &quot;Ese archivo supera los 25 MB. Prueba con uno menor o usa jplus2.&quot;, &quot;table&quot;: &quot;Tabla data ({n} filas): {cols}&quot;, &quot;ready&quot;: &quot;{name} cargado. Edita la consulta y ejecútala.&quot;, &quot;sample_name&quot;: &quot;Datos de ejemplo&quot;, &quot;nothing&quot;: &quot;La consulta se ejecutó y no devolvió tabla.&quot;, &quot;rows&quot;: &quot;{n} filas.&quot;, &quot;shown&quot;: &quot;Se muestran las primeras {m}.&quot;, &quot;error&quot;: &quot;Error de SQL:&quot;}">
+<h2>Pruébalo ahora: SQL sobre tu CSV, en esta página</h2><p>Suelta un archivo CSV o usa el ejemplo y escribe una consulta. La tabla se llama data. Funciona en tu navegador con SQLite: tu archivo no se sube a ningún sitio.</p>
+<div class="pg-load"><label class="btn btn-ghost pg-pick">Elegir un archivo CSV…<input type="file" id="pg-file" accept=".csv,.tsv,.txt,text/csv" hidden></label>
+<button type="button" class="btn btn-ghost" id="pg-sample">Usar datos de ejemplo</button><span class="fine">Nada sale de tu equipo. Archivos de hasta 25 MB.</span></div>
+<p class="fine" id="pg-cols">Aún no hay datos cargados.</p>
+<textarea id="pg-sql" class="pg-sql" rows="4" spellcheck="false" aria-label="SQL" disabled placeholder="SELECT region, SUM(revenue) FROM data GROUP BY region;"></textarea>
+<p><button type="button" class="btn" id="pg-run" disabled>Ejecutar consulta</button> <span class="fine">o pulsa ⌘↩ / Ctrl+↩</span></p>
+<p class="pg-status" id="pg-status" role="status" aria-live="polite"></p>
+<div class="pg-out" id="pg-out"></div>
+<div class="pg-after" id="pg-after" hidden><p>Eso fue un CSV y una tabla. En jplus2 completo la misma pestaña SQL también consulta libros de Excel con varias hojas, archivos SQLite, Databricks y Snowflake, y permite exportar los resultados.</p><p><a class="btn" href="#waitlist" data-goatcounter-click="playground-waitlist" data-goatcounter-title="Playground: waitlist">Avísame cuando salga la versión completa</a></p></div>
+</section>
+<script src="../js/playground.js" defer></script>
 <aside class="waitlist" id="waitlist">
   <h2>Avísame cuando salga la versión completa</h2>
   <p>El jplus2 completo, con ejecutar y depurar, SQL, GitHub y el asistente de IA, llega al Mac App Store. Deja tu correo y te avisamos el día que esté disponible.</p>
