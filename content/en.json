@@ -272,7 +272,7 @@
   "privacy_page": {
     "title": "Privacy Policy",
     "description": "jplus2 collects no data: no accounts, no analytics, no tracking. See what the app, this website and the Lite download do with your information.",
-    "updated": "Last updated: 13 November 2026",
+    "updated": "Last updated: 21 November 2026",
     "intro": "jplus2 is a code editor for the Mac made by Jason Leiton. It does not collect any data about you.",
     "sections": [
       {
@@ -289,7 +289,7 @@
       },
       {
         "title": "Services you connect",
-        "body": "<p>jplus2 talks to other services only when you set them up and ask for something:</p><ul><li><strong>Databases.</strong> If you add a database connection, your queries go directly from your Mac to the server you entered.</li><li><strong>GitHub.</strong> If you connect a GitHub account, jplus2 uses it to list your repositories and show their folders and files, to create and merge pull requests, to clone, push and pull, and to create gists when you ask. Files you open from GitHub are saved as temporary copies on your Mac.</li><li><strong>AI models.</strong> If you connect a model, the question you type, and the file and selection you chose to include, are sent to that model's provider (for example Anthropic) when you press Send. That provider's own terms and privacy policy apply to what it receives.</li></ul><p>Connection details are stored on your Mac, and passwords, tokens and API keys are stored in the macOS Keychain. None of this passes through the developer of jplus2.</p>"
+        "body": "<p>jplus2 talks to other services only when you set them up and ask for something:</p><ul><li><strong>Databases.</strong> If you add a database connection, your queries go directly from your Mac to the server you entered.</li><li><strong>GitHub.</strong> If you connect a GitHub account, jplus2 uses it to list your repositories and show their folders and files, to create and merge pull requests, to clone, push and pull, and to create gists when you ask. Files you open from GitHub are saved as temporary copies on your Mac.</li><li><strong>AI models.</strong> If you connect a model, the question you type, and the file and selection you chose to include, are sent to that model's provider (for example Anthropic) when you press Send. If you also switch on Inline Suggestions (off unless you turn it on), the code around your cursor (about 100 lines of the file you are editing) is sent to that same model each time you pause typing, to propose the next lines. That provider's own terms and privacy policy apply to what it receives.</li><li><strong>MCP servers.</strong> If you add MCP servers in AI &gt; MCP Servers… and use Agent mode, jplus2 connects to the addresses you listed (to ask which tools they offer) and, after you approve each call, sends the arguments of that call to that server. What the server returns is passed to your AI model. Those servers are run by third parties you chose, and their own terms and privacy policies apply. The list, with any token you put in it, is kept in a private file on your Mac.</li></ul><p>Connection details are stored on your Mac, and passwords, tokens and API keys are stored in the macOS Keychain. None of this passes through the developer of jplus2.</p>"
       },
       {
         "title": "This website",
@@ -1070,7 +1070,7 @@
       },
       {
         "q": "Does jplus2 send my code anywhere?",
-        "a": "No. jplus2 collects no data and has no accounts or ads. Your code goes to GitHub, a database or an AI model only when you ask for it, directly from your Mac with the account you connected."
+        "a": "No. jplus2 collects no data and has no accounts or ads. Your code goes to GitHub, a database or an AI model only when you ask for it (or, for the model, while you have Inline Suggestions switched on), directly from your Mac with the account you connected."
       },
       {
         "q": "Which AI models can I use?",

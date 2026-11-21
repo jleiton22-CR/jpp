@@ -272,7 +272,7 @@
   "privacy_page": {
     "title": "Política de privacidad",
     "description": "jplus2 no recopila datos: sin cuentas, sin analíticas, sin rastreo. Qué hacen la app, este sitio web y la descarga Lite con tu información.",
-    "updated": "Última actualización: 13 de noviembre de 2026",
+    "updated": "Última actualización: 21 de noviembre de 2026",
     "intro": "jplus2 es un editor de código para Mac creado por Jason Leiton. No recopila ningún dato sobre ti.",
     "sections": [
       {
@@ -289,7 +289,7 @@
       },
       {
         "title": "Servicios que conectas",
-        "body": "<p>jplus2 se comunica con otros servicios solo cuando tú los configuras y pides algo:</p><ul><li><strong>Bases de datos.</strong> Si añades una conexión a una base de datos, tus consultas van directamente de tu Mac al servidor que indicaste.</li><li><strong>GitHub.</strong> Si conectas una cuenta de GitHub, jplus2 la usa para mostrar tus repositorios con sus carpetas y archivos, para crear y fusionar pull requests, para clonar, enviar y recibir cambios, y para crear gists cuando lo pides. Los archivos que abres desde GitHub se guardan como copias temporales en tu Mac.</li><li><strong>Modelos de IA.</strong> Si conectas un modelo, la pregunta que escribes, y el archivo y la selección que elegiste incluir, se envían al proveedor de ese modelo (por ejemplo, Anthropic) cuando pulsas Enviar. A lo que ese proveedor recibe se aplican sus propios términos y su política de privacidad.</li></ul><p>Los datos de conexión se guardan en tu Mac, y las contraseñas, los tokens y las claves de API se guardan en el Llavero de macOS. Nada de esto pasa por el desarrollador de jplus2.</p>"
+        "body": "<p>jplus2 se comunica con otros servicios solo cuando tú los configuras y pides algo:</p><ul><li><strong>Bases de datos.</strong> Si añades una conexión a una base de datos, tus consultas van directamente de tu Mac al servidor que indicaste.</li><li><strong>GitHub.</strong> Si conectas una cuenta de GitHub, jplus2 la usa para mostrar tus repositorios con sus carpetas y archivos, para crear y fusionar pull requests, para clonar, enviar y recibir cambios, y para crear gists cuando lo pides. Los archivos que abres desde GitHub se guardan como copias temporales en tu Mac.</li><li><strong>Modelos de IA.</strong> Si conectas un modelo, la pregunta que escribes, y el archivo y la selección que elegiste incluir, se envían al proveedor de ese modelo (por ejemplo, Anthropic) cuando pulsas Enviar. Si además activas las sugerencias en línea (apagadas salvo que las enciendas), el código alrededor del cursor (unas 100 líneas del archivo que editas) se envía a ese mismo modelo cada vez que haces una pausa al escribir, para proponer las líneas siguientes. A lo que ese proveedor recibe se aplican sus propios términos y su política de privacidad.</li><li><strong>Servidores MCP.</strong> Si añades servidores MCP en AI &gt; MCP Servers… y usas el modo Agente, jplus2 se conecta a las direcciones que indicaste (para preguntar qué herramientas ofrecen) y, tras aprobar tú cada llamada, envía los argumentos de esa llamada a ese servidor. Lo que el servidor devuelve se pasa a tu modelo de IA. Esos servidores los gestionan terceros que tú elegiste, y se aplican sus propios términos y políticas de privacidad. La lista, con cualquier token que pongas en ella, se guarda en un archivo privado en tu Mac.</li></ul><p>Los datos de conexión se guardan en tu Mac, y las contraseñas, los tokens y las claves de API se guardan en el Llavero de macOS. Nada de esto pasa por el desarrollador de jplus2.</p>"
       },
       {
         "title": "Este sitio web",
@@ -1065,7 +1065,7 @@
       },
       {
         "q": "¿jplus2 envía mi código a algún sitio?",
-        "a": "No. jplus2 no recopila datos y no tiene cuentas ni anuncios. Tu código va a GitHub, a una base de datos o a un modelo de IA solo cuando tú lo pides, directamente desde tu Mac y con la cuenta que conectaste."
+        "a": "No. jplus2 no recopila datos y no tiene cuentas ni anuncios. Tu código va a GitHub, a una base de datos o a un modelo de IA solo cuando tú lo pides (o, en el caso del modelo, mientras tengas activadas las sugerencias en línea), directamente desde tu Mac y con la cuenta que conectaste."
       },
       {
         "q": "¿Qué modelos de IA puedo usar?",
