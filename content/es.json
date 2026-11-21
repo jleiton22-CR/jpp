@@ -118,6 +118,8 @@
           "Revisa cambios sin confirmar o pull requests, y ejecuta tus propios prompts desde ai-commands.json",
           "Claude con tu propia clave de API, cualquier servicio compatible con OpenAI (incluido un modelo local como Ollama) o un gateway de empresa",
           "Guarda tus conversaciones: reábrelas, búscalas y expórtalas como Markdown. Cambia entre modelos de Claude desde un menú bajo el chat",
+          "Sugerencias en línea (desactivadas por defecto): las siguientes líneas aparecen en gris mientras escribes. Tab las acepta, Option-Derecha toma una palabra y Escape las descarta",
+          "Servidores MCP: conecta el agente a servidores de herramientas por HTTP; cada llamada pide tu aprobación antes",
           "Solo en la versión completa: nada de esto está en jplus2 Lite"
         ],
         "image": "assistant",
@@ -181,7 +183,9 @@
           "Un depurador de Python con puntos de interrupción, ejecución paso a paso, las variables del marco y un campo de expresiones",
           "Comprobaciones integradas para JSON, XML, YAML, TOML, HTML, CSS y más",
           "Manage Compilers muestra lo que está instalado y descarga lo que falta con Homebrew, npm o pip",
-          "Un terminal integrado de verdad (⌃`): tu propio shell, con vim, el REPL de Python y Control-C funcionando, y varios terminales en pestañas. Configure Commands sustituye los comandos de compilar y ejecutar de un lenguaje por los tuyos"
+          "Un terminal integrado de verdad (⌃`): tu propio shell, con vim, el REPL de Python y Control-C funcionando, y varios terminales en pestañas. Configure Commands sustituye los comandos de compilar y ejecutar de un lenguaje por los tuyos",
+          "Buscar en carpeta (⇧⌘F) busca en segundo plano en todos los archivos de texto de una carpeta, con filtros de archivos, palabra completa y expresiones regulares",
+          "Scripts: automatiza ediciones con tu propio JavaScript sobre el documento abierto. Un script no tiene acceso a la red, a archivos ni al shell, y cada ejecución es un solo paso de deshacer"
         ],
         "image": "debug",
         "alt": "El depurador de Python detenido en una línea, con las variables junto a la salida.",
@@ -421,6 +425,11 @@
       [
         "Comparar dos archivos, con las diferencias en formato diff",
         "yes",
+        "yes"
+      ],
+      [
+        "Buscar en carpeta y Scripts en JavaScript",
+        "no",
         "yes"
       ],
       [

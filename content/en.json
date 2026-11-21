@@ -118,6 +118,8 @@
           "Reviews uncommitted changes or pull requests, and runs your own prompts from ai-commands.json",
           "Claude with your own API key, any OpenAI-compatible endpoint (including a local model such as Ollama), or a company gateway",
           "Saves your conversations: reopen, search and export them as Markdown. Switch between Claude models from a menu under the chat",
+          "Inline suggestions (off by default): the next lines appear as grey text while you type. Tab accepts them, Option-Right takes one word, Escape drops them",
+          "MCP servers: connect the agent to tool servers over HTTP, and every call asks for your approval first",
           "Full version only: none of this is in jplus2 Lite"
         ],
         "image": "assistant",
@@ -181,7 +183,9 @@
           "A Python debugger with breakpoints, stepping, the variables of the frame and an expression field",
           "Built-in checks for JSON, XML, YAML, TOML, HTML, CSS and more",
           "Manage Compilers shows what is installed and downloads what is missing with Homebrew, npm or pip",
-          "A real integrated terminal (⌃`): your own shell, with vim, Python's REPL and Control-C working, and several terminals in tabs. Configure Commands replaces a language's build and run commands with yours"
+          "A real integrated terminal (⌃`): your own shell, with vim, Python's REPL and Control-C working, and several terminals in tabs. Configure Commands replaces a language's build and run commands with yours",
+          "Find in Folder (⇧⌘F) searches every text file under a folder in the background, with file filters, whole word and regular expressions",
+          "Scripts: automate edits with your own JavaScript on the open document. A script has no network, file or shell access, and each run is one undo step"
         ],
         "image": "debug",
         "alt": "The Python debugger paused on a line, with the variables listed beside the output.",
@@ -421,6 +425,11 @@
       [
         "Compare Two Files, shown as a unified diff",
         "yes",
+        "yes"
+      ],
+      [
+        "Find in Folder, and Scripts in JavaScript",
+        "no",
         "yes"
       ],
       [
