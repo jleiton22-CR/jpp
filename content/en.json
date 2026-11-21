@@ -253,7 +253,7 @@
     "note": "",
     "requirements": "",
     "store": "The full jplus2 is coming to the Mac App Store",
-    "store_soon": "Full version: Mac App Store, coming soon"
+    "store_soon": "Full version: Mac App Store, in review"
   },
   "footer": {
     "privacy": "Privacy Policy",
@@ -373,7 +373,7 @@
   "editions": {
     "eyebrow": "Versions",
     "title": "jplus2 on Mac, iPhone and iPad",
-    "text": "Four versions of the same editor. jplus2 Lite for the Mac is free and downloads from this page. The full jplus2 for the Mac is coming to the Mac App Store. jplus2 for iPhone is now on the App Store; the iPad version is being prepared.",
+    "text": "Four versions of the same editor. jplus2 Lite for the Mac is free and downloads from this page. The full jplus2 for the Mac is in review at the Mac App Store. jplus2 for iPhone is now on the App Store; the iPad version is being prepared.",
     "lite": {
       "name": "jplus2 Lite",
       "tag": "Free",
@@ -391,7 +391,7 @@
       "text": "The complete jplus2, with everything in Lite plus the features below.",
       "items": [],
       "button": "Get it on the Mac App Store",
-      "button_soon": "Mac App Store · coming soon"
+      "button_soon": "Mac App Store · in review"
     },
     "table_title": "What the full version adds",
     "head": [
