@@ -373,7 +373,7 @@
   "editions": {
     "eyebrow": "Versions",
     "title": "jplus2 on Mac, iPhone and iPad",
-    "text": "Four versions of the same editor. jplus2 Lite for the Mac is free and downloads from this page. The full jplus2 for the Mac is coming to the Mac App Store. The iPhone and iPad versions are built and being prepared for the App Store: none of the three is in the store yet.",
+    "text": "Four versions of the same editor. jplus2 Lite for the Mac is free and downloads from this page. The full jplus2 for the Mac is coming to the Mac App Store. jplus2 for iPhone is now on the App Store; the iPad version is being prepared.",
     "lite": {
       "name": "jplus2 Lite",
       "tag": "Free",
@@ -509,6 +509,8 @@
     "iphone": {
       "name": "jplus2 for iPhone",
       "tag": "Coming soon · App Store",
+      "tag_live": "Available now · App Store",
+      "button": "Get it on the App Store · {iphone_price}",
       "text": "The editing engine of Lite, built for the phone in your hand, with the tools you need away from your desk.",
       "items": [
         "Row of code keys above the keyboard, and the space bar as a trackpad",
@@ -530,13 +532,16 @@
       ],
       "button_soon": "App Store · coming soon"
     },
-    "price_note": "Prices for the iPhone and iPad versions will be shown on their App Store pages when they are published."
+    "price_note": "jplus2 for iPhone costs {iphone_price} on the App Store. The price of the iPad version will be shown on its App Store page when it is published."
   },
   "ipad": {
     "eyebrow": "iPhone and iPad",
-    "title": "jplus2 for iPhone and iPad. Coming soon.",
-    "text": "The next release brings jplus2 to the iPhone and the iPad: the editing engine of jplus2 Lite, built natively for touch, keyboard and the Files app, plus tools for review and data. These are the features it has.",
+    "title": "jplus2 for iPhone is on the App Store. iPad is next.",
+    "text": "jplus2 now runs on the iPhone: the editing engine of jplus2 Lite, built natively for touch, keyboard and the Files app, plus tools for review and data. The iPad version, with the same features, is coming soon.",
     "badge": "Coming soon",
+    "badge_live": "iPhone: available now",
+    "button_live": "Get jplus2 for iPhone · {iphone_price}",
+    "badge_note_live": "The iPad version is being prepared for the App Store. Details may change before it is published.",
     "items": [
       {
         "title": "Tabs that remember",

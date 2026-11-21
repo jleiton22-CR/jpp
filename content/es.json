@@ -373,7 +373,7 @@
   "editions": {
     "eyebrow": "Versiones",
     "title": "jplus2 en Mac, iPhone y iPad",
-    "text": "Cuatro versiones del mismo editor. jplus2 Lite para Mac es gratis y se descarga desde esta página. El jplus2 completo para Mac llega al Mac App Store. Las versiones de iPhone y iPad están construidas y en preparación para el App Store: ninguna de las tres está todavía en la tienda.",
+    "text": "Cuatro versiones del mismo editor. jplus2 Lite para Mac es gratis y se descarga desde esta página. El jplus2 completo para Mac llega al Mac App Store. jplus2 para iPhone ya está en el App Store; la versión de iPad está en preparación.",
     "lite": {
       "name": "jplus2 Lite",
       "tag": "Gratis",
@@ -504,6 +504,8 @@
     "iphone": {
       "name": "jplus2 para iPhone",
       "tag": "Próximamente · App Store",
+      "tag_live": "Disponible ahora · App Store",
+      "button": "Consíguelo en el App Store · {iphone_price}",
       "text": "El motor de edición de Lite, hecho para el teléfono que llevas en la mano, con las herramientas que necesitas lejos de tu escritorio.",
       "items": [
         "Fila de teclas de código sobre el teclado, y la barra espaciadora como trackpad",
@@ -525,13 +527,16 @@
       ],
       "button_soon": "App Store · próximamente"
     },
-    "price_note": "Los precios de las versiones de iPhone y iPad se mostrarán en sus páginas del App Store cuando se publiquen."
+    "price_note": "jplus2 para iPhone cuesta {iphone_price} en el App Store. El precio de la versión de iPad se mostrará en su página del App Store cuando se publique."
   },
   "ipad": {
     "eyebrow": "iPhone y iPad",
-    "title": "jplus2 para iPhone y iPad. Próximamente.",
-    "text": "La próxima versión lleva jplus2 al iPhone y al iPad: el motor de edición de jplus2 Lite, hecho de forma nativa para el tacto, el teclado y la app Archivos, más herramientas de revisión y de datos. Estas son las funciones que tiene.",
+    "title": "jplus2 para iPhone ya está en el App Store. El iPad es lo siguiente.",
+    "text": "jplus2 ya funciona en el iPhone: el motor de edición de jplus2 Lite, hecho de forma nativa para el tacto, el teclado y la app Archivos, más herramientas de revisión y de datos. La versión de iPad, con las mismas funciones, llega pronto.",
     "badge": "Próximamente",
+    "badge_live": "iPhone: disponible ahora",
+    "button_live": "Consigue jplus2 para iPhone · {iphone_price}",
+    "badge_note_live": "La versión de iPad está en preparación para el App Store. Los detalles pueden cambiar antes de publicarla.",
     "items": [
       {
         "title": "Pestañas que recuerdan",

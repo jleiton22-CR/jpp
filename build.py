@@ -40,7 +40,8 @@ def fill(text, site):
     """Replaces the {placeholders} a text may use."""
     return (text.replace("{version}", site["version"]).replace("{size}", site["download_size"])
             .replace("{email}", site["contact_email"]).replace("{year}", site["year"])
-            .replace("{price}", "$" + site.get("full_price", "")))
+            .replace("{price}", "$" + site.get("full_price", ""))
+            .replace("{iphone_price}", "$" + site.get("iphone_price", "")))
 
 
 def file_url(site, root):
@@ -696,9 +697,16 @@ def decider_html(site, t, root):
 <script src="{root}js/decider.js" defer></script>'''
 
 
-def device_card(d, li):
-    return (f'<article class="edition reveal"><p class="tag">{d["tag"]}</p><h3>{d["name"]}</h3><p>{d["text"]}</p>'
-            f'<ul>{li(d["items"])}</ul><div class="actions"><span class="btn btn-soon">{d["button_soon"]}</span></div></article>')
+def device_card(d, li, url="", price=""):
+    if url and d.get("button"):
+        tag = d["tag_live"]
+        btn = (f'<a class="btn" href="{escape(url)}" rel="noopener" data-goatcounter-click="appstore-iphone" '
+               f'data-goatcounter-title="iPhone App Store button">{d["button"].replace("{iphone_price}", "$" + price)}</a>')
+    else:
+        tag = d["tag"]
+        btn = f'<span class="btn btn-soon">{d["button_soon"]}</span>'
+    return (f'<article class="edition reveal"><p class="tag">{tag}</p><h3>{d["name"]}</h3><p>{d["text"]}</p>'
+            f'<ul>{li(d["items"])}</ul><div class="actions">{btn}</div></article>')
 
 
 def editions_html(site, t, root, lang):
@@ -735,10 +743,10 @@ def editions_html(site, t, root, lang):
         {"<ul>" + li(full["items"]) + "</ul>" if full["items"] else ""}
         <div class="actions">{full_btn}</div>
       </article>
-      {device_card(e["iphone"], li)}
+      {device_card(e["iphone"], li, site.get("iphone_store_url", ""), site.get("iphone_price", ""))}
       {device_card(e["ipad"], li)}
     </div>
-    <p class="note reveal">{e["price_note"]}</p>
+    <p class="note reveal">{fill(e["price_note"], site)}</p>
     {decider_html(site, t, root)}
     <h3 class="table-title reveal">{e["table_title"]}</h3>
     <div class="table-wrap reveal">
@@ -754,8 +762,9 @@ def editions_html(site, t, root, lang):
 """
 
 
-def ipad_html(t, root):
+def ipad_html(site, t, root):
     p = t["ipad"]
+    iphone_url = site.get("iphone_store_url", "")
     iw, ih = image_size("ipad")
     tiles = "".join(f'      <article class="tile reveal"><h3>{it["title"]}</h3><p>{it["text"]}</p></article>\n' for it in p["items"])
     return f"""</section>
@@ -765,8 +774,9 @@ def ipad_html(t, root):
     <p class="eyebrow reveal">{p["eyebrow"]}</p>
     <h2 class="reveal">{p["title"]}</h2>
     <p class="lead reveal">{p["text"]}</p>
-    <p class="reveal"><span class="soon-badge">{p["badge"]}</span></p>
-    <p class="note reveal">{p["badge_note"]}</p>
+    <p class="reveal"><span class="soon-badge">{p["badge_live"] if iphone_url and p.get("badge_live") else p["badge"]}</span></p>
+    <p class="note reveal">{p["badge_note_live"] if iphone_url and p.get("badge_note_live") else p["badge_note"]}</p>
+    {('<p class="actions reveal"><a class="btn" href="' + escape(iphone_url) + '" rel="noopener" data-goatcounter-click="appstore-iphone-section" data-goatcounter-title="iPhone App Store (section)">' + p["button_live"].replace("{iphone_price}", "$" + site.get("iphone_price", "")) + '</a></p>') if iphone_url and p.get("button_live") else ""}
     <div class="ipad-shot reveal">{picture(root, "ipad", p["image_alt"], iw, ih)}</div>
     <div class="phone-shot reveal">{picture_jpg(root, "iphone", p["image_alt_phone"], *image_size("iphone"))}</div>
     <div class="tiles">
@@ -943,7 +953,7 @@ def home(site, t, lang):
     out += "  </div>\n"
     out += compare_html(site, t)
     out += editions_html(site, t, root, lang)
-    out += ipad_html(t, root)
+    out += ipad_html(site, t, root)
     out += f"""</section>
 
 {guides_home(site, t, lang)}{faq_home(site, t)}<section class="section cta" id="download">
