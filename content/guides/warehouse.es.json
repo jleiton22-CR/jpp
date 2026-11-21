@@ -1,0 +1,57 @@
+{
+ "lang": "es",
+ "group": "warehouse",
+ "order": 7,
+ "slug": "cliente-sql-databricks-snowflake-mac",
+ "short": "Databricks y Snowflake",
+ "cta": "waitlist",
+ "tag": "waitlist-warehouse",
+ "meta_title": "Cliente SQL de Databricks y Snowflake para Mac | jplus2",
+ "meta_description": "Ejecuta SQL en Databricks (Azure, AWS, GCP) y Snowflake desde un editor de código nativo para Mac, junto a tu código y sin herramientas cliente.",
+ "h1": "Un cliente SQL de Databricks y Snowflake para Mac, dentro de tu editor de código",
+ "lead": "La versión completa de jplus2 se conecta a Databricks y Snowflake mediante sus propias API de SQL. Escribes la consulta junto a tu código, pulsas un atajo y lees los resultados en una tabla.",
+ "card_title": "SQL en Databricks y Snowflake desde un Mac",
+ "card_text": "Conéctate a Databricks en Azure, AWS o GCP y a Snowflake desde un editor nativo para Mac y exporta los resultados como CSV.",
+ "sections": [
+  {
+   "h2": "A qué puedes conectarte",
+   "html": "<ul><li><strong>Databricks</strong> en Azure, AWS y GCP.</li><li><strong>Snowflake</strong>.</li></ul><p>Ambos usan sus propias API de SQL, así que no hay que instalar antes un cliente de línea de comandos. La misma pestaña SQL también funciona con Azure SQL, SQL Server y Synapse, PostgreSQL, MySQL y MariaDB, archivos SQLite y archivos de Excel y CSV.</p>"
+  },
+  {
+   "h2": "Cómo funciona",
+   "html": "<ol><li>Elige <strong>Database ▸ Manage Connections…</strong> (<code>⇧⌘D</code>) y añade una conexión a Databricks o Snowflake.</li><li>Abre una pestaña SQL y escribe tu consulta.</li><li>Pulsa <code>⌘↩</code> para ejecutar la selección o la sentencia donde está el cursor.</li><li>Los resultados aparecen en una tabla bajo tu código. Cópialos o expórtalos como CSV.</li></ol><p>Las contraseñas, los tokens y las claves de API se guardan en el Llavero de macOS.</p>"
+  },
+  {
+   "h2": "Por qué hacerlo desde un editor",
+   "html": "<p>Los cuadernos y las consolas web separan la consulta del script que la usa. En jplus2 el SQL, el código Python o de shell que lo rodea, GitHub y el asistente de IA están en una sola ventana: puedes consultar un almacén de datos, ajustar un script y confirmar el cambio sin cambiar de app.</p>"
+  },
+  {
+   "h2": "¿Ya está disponible?",
+   "html": "<p>Estas conexiones forman parte de la versión completa de jplus2, para Mac. jplus2 Lite, la descarga gratuita, no incluye SQL. Deja tu correo abajo y te avisaremos el día que la versión completa esté disponible.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "¿Necesito instalar una herramienta cliente para Databricks o Snowflake?",
+   "a": "No. jplus2 se conecta mediante sus propias API de SQL."
+  },
+  {
+   "q": "¿Qué nubes de Databricks son compatibles?",
+   "a": "Databricks en Azure, AWS y GCP."
+  },
+  {
+   "q": "¿Puedo exportar los resultados?",
+   "a": "Sí. Copia la tabla o expórtala como CSV."
+  },
+  {
+   "q": "¿Está en la versión Lite gratuita?",
+   "a": "No. El SQL forma parte de la versión completa de jplus2."
+  }
+ ],
+ "related": [
+  "sql",
+  "ai"
+ ],
+ "published": "2026-11-21",
+ "updated": "2026-11-21"
+}

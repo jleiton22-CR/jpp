@@ -1,0 +1,57 @@
+{
+ "lang": "en",
+ "group": "warehouse",
+ "order": 7,
+ "slug": "databricks-snowflake-sql-client-mac",
+ "short": "Databricks and Snowflake",
+ "cta": "waitlist",
+ "tag": "waitlist-warehouse",
+ "meta_title": "Databricks and Snowflake SQL Client for Mac | jplus2",
+ "meta_description": "Run SQL on Databricks (Azure, AWS, GCP) and Snowflake from a native Mac code editor, next to your code, with no client tool to install.",
+ "h1": "A Databricks and Snowflake SQL client for Mac, inside your code editor",
+ "lead": "The full version of jplus2 connects to Databricks and Snowflake through their own SQL APIs. You write the query next to your code, press a shortcut, and read the results in a grid.",
+ "card_title": "Databricks and Snowflake SQL on a Mac",
+ "card_text": "Connect to Databricks on Azure, AWS or GCP and to Snowflake from a native Mac editor, and export the results as CSV.",
+ "sections": [
+  {
+   "h2": "What you can connect to",
+   "html": "<ul><li><strong>Databricks</strong> on Azure, AWS and GCP.</li><li><strong>Snowflake</strong>.</li></ul><p>Both use their own SQL APIs, so there is no command line client to install first. The same SQL tab also works with Azure SQL, SQL Server and Synapse, PostgreSQL, MySQL and MariaDB, SQLite files, and Excel and CSV files.</p>"
+  },
+  {
+   "h2": "How it works",
+   "html": "<ol><li>Choose <strong>Database ▸ Manage Connections…</strong> (<code>⇧⌘D</code>) and add a Databricks or Snowflake connection.</li><li>Open a SQL tab and write your query.</li><li>Press <code>⌘↩</code> to run the selection, or the statement at the caret.</li><li>The results appear in a grid under your code. Copy them, or export them as CSV.</li></ol><p>Passwords, tokens and API keys are kept in the macOS Keychain.</p>"
+  },
+  {
+   "h2": "Why use an editor for this",
+   "html": "<p>Notebooks and web consoles keep the query away from the script that uses it. In jplus2 the SQL, the Python or shell code around it, GitHub and the AI assistant are in one window, so you can query a warehouse, adjust a script and commit the change without switching apps.</p>"
+  },
+  {
+   "h2": "Is it available now?",
+   "html": "<p>These connections are part of the full version of jplus2, for the Mac. jplus2 Lite, the free download, does not include SQL. Leave your email below and we will tell you the day the full version is available.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "Do I need to install a client tool for Databricks or Snowflake?",
+   "a": "No. jplus2 connects through their own SQL APIs."
+  },
+  {
+   "q": "Which Databricks clouds are supported?",
+   "a": "Databricks on Azure, AWS and GCP."
+  },
+  {
+   "q": "Can I export the results?",
+   "a": "Yes. Copy the grid, or export it as CSV."
+  },
+  {
+   "q": "Is it in the free Lite version?",
+   "a": "No. SQL is part of the full version of jplus2."
+  }
+ ],
+ "related": [
+  "sql",
+  "ai"
+ ],
+ "published": "2026-11-21",
+ "updated": "2026-11-21"
+}

@@ -24,7 +24,7 @@
   "hero": {
     "eyebrow": "Versión {version} para macOS",
     "title": "Un editor de código nativo con IA para Mac. <span class=\"grad\">Rápido, completo y privado.</span>",
-    "text": "Un editor Cocoa nativo creado para macOS. Lite, gratis, cubre la edición diaria en 95 lenguajes; la versión completa añade SQL, GitHub y un agente de IA que propone cambios y solo actúa con tu aprobación, con el modelo local o en la nube que elijas.",
+    "text": "Un editor Cocoa nativo creado para macOS. Lite, gratis, cubre la edición diaria en 95 lenguajes; la versión completa añade SQL en Databricks y Snowflake, GitHub y un agente de IA que propone cambios y solo actúa con tu aprobación, con el modelo local o en la nube que elijas.",
     "primary": "jplus2 Lite: gratis, {size}",
     "secondary": "Versión completa: funciones y lista de espera",
     "app_store": "Versión completa en el Mac App Store",
@@ -83,8 +83,8 @@
       },
       {
         "icon": "data",
-        "title": "Tus datos, a una consulta",
-        "text": "Ejecuta SQL en Databricks, Snowflake, PostgreSQL, MySQL, SQL Server y SQLite. Suma GitHub y un agente de IA en la misma ventana, sin extensiones que instalar."
+        "title": "Databricks y Snowflake, a una consulta",
+        "text": "Conéctate a Databricks en Azure, AWS o GCP y a Snowflake, y ejecuta SQL desde la misma ventana que tu código. También Azure SQL, Synapse, Azure SQL, Synapse, PostgreSQL, MySQL y SQLite. Suma GitHub y un agente de IA en la misma ventana, sin extensiones que instalar."
       },
       {
         "icon": "ai",
@@ -190,11 +190,14 @@
       {
         "id": "sql",
         "eyebrow": "Bases de datos",
-        "title": "SQL, justo al lado de tu código.",
-        "text": "Guarda tus conexiones una vez y pulsa ⌘↩ en una pestaña SQL. Los resultados llegan a una tabla que puedes copiar o exportar como CSV.",
+        "title": "Databricks y Snowflake, justo al lado de tu código.",
+        "text": "Guarda una conexión a Databricks o Snowflake una vez y pulsa ⌘↩ en una pestaña SQL. Los resultados llegan a una tabla que puedes copiar o exportar como CSV. Se conectan mediante sus propias API de SQL, así que no hay que instalar ninguna herramienta cliente.",
         "bullets": [
-          "Databricks y Snowflake mediante sus propias API de SQL",
-          "PostgreSQL, MySQL, MariaDB, SQL Server y Azure SQL",
+          "Databricks en Azure, AWS y GCP",
+          "Snowflake",
+          "Azure SQL, SQL Server y Synapse",
+          "PostgreSQL (incluido Azure Database for PostgreSQL)",
+          "MySQL y MariaDB (incluido Azure Database for MySQL)",
           "Archivos SQLite, sin instalar nada",
           "Libros de Excel y archivos CSV: cada hoja se convierte en una tabla"
         ],
@@ -937,7 +940,7 @@
         ]
       ],
       [
-        "Ejecutar SQL en Databricks, Snowflake, PostgreSQL, MySQL, SQL Server y SQLite",
+        "Ejecutar SQL en Databricks, Snowflake, Azure SQL, Synapse, PostgreSQL, MySQL y SQLite",
         [
           "y",
           "n",
@@ -1087,7 +1090,7 @@
     "empty_table": "Aún no hay datos cargados.",
     "run": "Ejecutar consulta",
     "shortcut": "o pulsa ⌘↩ / Ctrl+↩",
-    "after": "Eso fue un CSV y una tabla. En jplus2 completo la misma pestaña SQL también consulta libros de Excel con varias hojas, archivos SQLite, Databricks y Snowflake, y permite exportar los resultados.",
+    "after": "Eso fue un CSV y una tabla. En jplus2 completo la misma pestaña SQL también consulta libros de Excel con varias hojas, archivos SQLite, Databricks, Snowflake, Azure SQL, PostgreSQL y MySQL, y permite exportar los resultados.",
     "cta_live": "Conseguir jplus2 en la Mac App Store",
     "cta_soon": "Avísame cuando salga la versión completa",
     "msg": {
