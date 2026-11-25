@@ -495,7 +495,7 @@ def playground_html(site, t, root):
 <p><button type="button" class="btn" id="pg-run" disabled>{k["run"]}</button> <span class="fine">{k["shortcut"]}</span></p>
 <p class="pg-status" id="pg-status" role="status" aria-live="polite"></p>
 <div class="pg-out" id="pg-out"></div>
-<div class="pg-after" id="pg-after" hidden><p>{k["after"]}</p><p>{cta}</p></div>
+<div class="pg-after" id="pg-after" hidden><p>{k["after"]}</p><p>{cta}</p>{eu_note(site, t)}</div>
 </section>
 <script src="{root}js/playground.js" defer></script>'''
 
@@ -516,7 +516,7 @@ def guide_page(site, t, lang, g):
         parts.append(playground_html(site, t, root))
     if g["cta"] == "waitlist" and site.get("app_store_url"):   # the full version is out: link to the store instead of the waiting list
         k = t["editions"]["full"]
-        parts.append(f'<aside class="gcta"><h2>{t["cta"]["store"]}</h2><p>{store_button(site, k["button"], k["button_soon"], "btn")}</p></aside>')
+        parts.append(f'<aside class="gcta"><h2>{t["cta"]["store"]}</h2><p>{store_button(site, k["button"], k["button_soon"], "btn")}</p>{eu_note(site, t)}</aside>')
     elif g["cta"] == "waitlist":
         parts.append(waitlist_form(site, t, lang, g.get("tag", "waitlist-full")))
     elif download:
@@ -668,6 +668,11 @@ if(navigator.clipboard&&navigator.clipboard.writeText){{navigator.clipboard.writ
                   guide={"file": f"{PRESS[lang]}.html", "pairs": dict(PRESS)})
 
 
+def eu_note(site, t):
+    """Shown next to the store buttons while the apps cannot be sold in the EU. Switch off with "eu_notice" in site.json."""
+    return f'<p class="note eu-note">{t["eu_notice"]}</p>' if site.get("eu_notice") else ""
+
+
 def store_button(site, label, label_soon, cls):
     """The Mac App Store button: a link once app_store_url is set, otherwise a quiet "coming soon" label."""
     url = site.get("app_store_url", "")
@@ -695,7 +700,7 @@ def decider_html(site, t, root):
 <h3>{k["title"]}</h3><p>{k["text"]}</p>
 {qs}<p class="pg-status" id="dc-status" role="status" aria-live="polite"></p>
 <div id="dc-lite" class="dc-res" hidden><h4>{k["lite"]}</h4><p>{k["lite_text"]}</p><p>{lite_cta}</p></div>
-<div id="dc-full" class="dc-res" hidden><h4>{k["full"]}</h4><p>{k["full_text"]}</p><ul id="dc-why"></ul><p>{full_cta}</p></div>
+<div id="dc-full" class="dc-res" hidden><h4>{k["full"]}</h4><p>{k["full_text"]}</p><ul id="dc-why"></ul><p>{full_cta}</p>{eu_note(site, t)}</div>
 <p><button type="button" class="btn btn-ghost" id="dc-reset" hidden>{k["again"]}</button></p>
 </div>
 <script src="{root}js/decider.js" defer></script>'''
@@ -750,6 +755,7 @@ def editions_html(site, t, root, lang):
       {device_card(e["iphone"], li, site.get("iphone_store_url", ""), site.get("iphone_price", ""))}
       {device_card(e["ipad"], li)}
     </div>
+    {eu_note(site, t)}
     <p class="note reveal">{fill(e["price_note"], site)}</p>
     {decider_html(site, t, root)}
     <h3 class="table-title reveal">{e["table_title"]}</h3>
@@ -781,6 +787,7 @@ def ipad_html(site, t, root):
     <p class="reveal"><span class="soon-badge">{p["badge_live"] if iphone_url and p.get("badge_live") else p["badge"]}</span></p>
     <p class="note reveal">{p["badge_note_live"] if iphone_url and p.get("badge_note_live") else p["badge_note"]}</p>
     {('<p class="actions reveal"><a class="btn" href="' + escape(iphone_url) + '" rel="noopener" data-goatcounter-click="appstore-iphone-section" data-goatcounter-title="iPhone App Store (section)">' + p["button_live"].replace("{iphone_price}", "$" + site.get("iphone_price", "")) + '</a></p>') if iphone_url and p.get("button_live") else ""}
+    {eu_note(site, t) if iphone_url else ""}
     <div class="ipad-shot reveal">{picture(root, "ipad", p["image_alt"], iw, ih)}</div>
     <div class="phone-shot reveal">{picture_jpg(root, "iphone", p["image_alt_phone"], *image_size("iphone"))}</div>
     <div class="tiles">
@@ -909,6 +916,7 @@ def home(site, t, lang):
     <p class="tagline reveal">{h["tagline"]}</p>
     <p class="lead reveal">{h["text"]}</p>
     {hero_actions}
+    {eu_note(site, t) if live else ""}
   </div>
   {demo_html(t, root)}
   <div class="wrap">
@@ -968,6 +976,7 @@ def home(site, t, lang):
     {"" if download else f'<div class="actions reveal"><a class="btn btn-large" href="{notify}">{soon["notify"]}</a></div>'}
     {f'<p class="note reveal">{soon["note_soon"]}</p>' if not download else ""}
     <div class="actions reveal">{store_button(site, c["store"], c["store_soon"], "btn btn-ghost")}</div>
+    {eu_note(site, t)}
   </div>
 </section>
 """
