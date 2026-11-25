@@ -73,42 +73,12 @@
 <h2>jplus2 y Nextpad++</h2>
 <div class="guide-table-wrap"><table class="guide-table"><thead><tr><th scope="col">Función</th><th scope="col">jplus2 (completa)</th><th scope="col">Nextpad++</th></tr></thead><tbody><tr><th scope="row">Asistente, agente de IA o terminal integrados</th><td>Sí</td><td>No se describen en su web</td></tr><tr><th scope="row">Licencia</th><td>Propietaria; Lite es gratis</td><td>Gratis y de código abierto (GPL v3)</td></tr><tr><th scope="row">Plugins</th><td>Ninguno</td><td>Plugin Admin, con plugins de Notepad++ para Windows en proceso de portarse</td></tr><tr><th scope="row">Plataformas</th><td>macOS</td><td>macOS y Linux</td></tr></tbody></table></div><p>Nextpad++ es un port de Notepad++ para Mac, no un editor de IA. Si buscas un editor de código abierto y con plugins, encaja bien; si quieres un agente dentro del editor, eso es lo que añade la versión completa de jplus2.</p>
 <h2>¿Está disponible ya?</h2>
-<p>El modo Agente es parte de la versión completa de jplus2, que llegará al Mac App Store. <strong>jplus2 Lite, la descarga gratuita, no incluye el asistente ni el modo Agente.</strong> Deja tu correo abajo y te avisamos el día que esté disponible.</p>
+<p>El modo Agente es parte de la versión completa de jplus2, que está <a href="https://apps.apple.com/app/jplus2/id6834867299">en el Mac App Store</a>. <strong>jplus2 Lite, la descarga gratuita, no incluye el asistente ni el modo Agente.</strong></p>
 <h2>Cómo se comprobó</h2>
 <p>Los datos de otras herramientas salen de su documentación y sus webs públicas, leídas el 16 de noviembre de 2026: Cursor (cursor.com/docs), Windsurf (docs.windsurf.com), VS Code (code.visualstudio.com/docs), Sublime Text (sublimetext.com) y Nextpad++ (nextpad.org). Una función marcada como no listada significa que la web no la describe, no que no exista. Estos productos cambian a menudo, así que consulta sus webs para el estado actual. Todos los nombres son marcas de sus propietarios; jplus2 no está afiliado a ellos. Windsurf ahora se llama Devin Desktop.</p>
-<aside class="waitlist" id="waitlist">
-  <h2>Avísame cuando salga la versión completa</h2>
-  <p>El jplus2 completo, con ejecutar y depurar, SQL, GitHub y el asistente de IA, llega al Mac App Store. Deja tu correo y te avisamos el día que esté disponible.</p>
-  <form class="emailform" id="wl-waitlist-agent" method="post" action="https://buttondown.com/api/emails/embed-subscribe/jason_g" target="_blank" rel="noopener" novalidate>
-    <label for="wl-waitlist-agent-email">Tu correo</label>
-    <input id="wl-waitlist-agent-email" name="email" type="email" required autocomplete="email" inputmode="email" spellcheck="false" autocapitalize="off"
-      pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" aria-describedby="wl-waitlist-agent-hint" placeholder="tu@ejemplo.com">
-    <input type="hidden" name="embed" value="1">
-    <input type="hidden" name="tag" value="waitlist-agent">
-    <p class="hint" id="wl-waitlist-agent-hint" role="status" aria-live="polite" data-empty="Escribe tu correo para activar el botón." data-invalid="Ese correo no parece válido. Debe verse como nombre@ejemplo.com."></p>
-    <button class="btn" type="submit">Avísame</button>
-  </form>
-  <p class="note" id="wl-waitlist-agent-after" hidden>Revisa tu correo para confirmar. Si se abrió una pestaña nueva pidiéndote confirmar, es normal: puedes cerrarla.</p>
-  <p class="note">Usamos tu correo solo para avisarte cuando la versión completa esté disponible, y para novedades ocasionales de jplus2. Cada mensaje trae un enlace para darte de baja con un clic. Detalles en la <a href="privacy.html">política de privacidad</a>.</p>
-</aside>
-<script>(function(){
-var f=document.getElementById("wl-waitlist-agent"),i=document.getElementById("wl-waitlist-agent-email"),b=f&&f.querySelector("button"),h=document.getElementById("wl-waitlist-agent-hint");
-if(!f||!i||!b)return;
-var re=/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/;
-var sent=false;
-function ok(){return re.test(i.value.trim())}
-function sync(){var v=i.value.trim(),good=ok();b.disabled=sent||!good;b.setAttribute("aria-disabled",good?"false":"true");
-h.textContent=good?"":(v?h.dataset.invalid:h.dataset.empty);i.setAttribute("aria-invalid",(!good&&v)?"true":"false")}
-i.addEventListener("input",function(){sent=false});   // editing the address allows another send
-["input","change","keyup","blur","paste"].forEach(function(n){i.addEventListener(n,sync)});
-var last=null;function watch(){if(i.value!==last){last=i.value;sync()}}
-watch();setInterval(watch,400);
-f.addEventListener("submit",function(e){if(!ok()){e.preventDefault();sync();i.focus();return}
-i.value=i.value.trim();document.getElementById("wl-waitlist-agent-after").hidden=false;sent=true;b.disabled=true});
-})();</script>
-
+<aside class="gcta"><h2>Consigue el jplus2 completo en el Mac App Store</h2><p><a class="btn" href="https://apps.apple.com/app/jplus2/id6834867299" rel="noopener" data-goatcounter-click="appstore-button" data-goatcounter-title="Mac App Store button">Consíguelo en el Mac App Store</a></p></aside>
 <h2>Preguntas frecuentes</h2>
-<dl class="faq"><dt>¿El modo Agente está en jplus2 Lite?</dt><dd>No. Es parte de la versión completa, que llegará al Mac App Store.</dd><dt>¿Puede el agente cambiar mis archivos sin preguntar?</dt><dd>No. Cada cambio se abre como diff para aplicar o cancelar, y cada comando espera a que pulses Run.</dd><dt>¿Funciona con un proyecto preparado para Cursor?</dt><dd>Lee archivos .cursorrules y AGENTS.md, así que se usan las instrucciones que ya tiene el proyecto.</dd><dt>¿Mi código se envía a algún sitio?</dt><dd>Solo cuando usas el asistente, y al modelo que elegiste. En modo agente, lo que lee y lo que imprimen tus comandos se envía para que pueda continuar.</dd></dl>
+<dl class="faq"><dt>¿El modo Agente está en jplus2 Lite?</dt><dd>No. Es parte de la versión completa, que está en el Mac App Store.</dd><dt>¿Puede el agente cambiar mis archivos sin preguntar?</dt><dd>No. Cada cambio se abre como diff para aplicar o cancelar, y cada comando espera a que pulses Run.</dd><dt>¿Funciona con un proyecto preparado para Cursor?</dt><dd>Lee archivos .cursorrules y AGENTS.md, así que se usan las instrucciones que ya tiene el proyecto.</dd><dt>¿Mi código se envía a algún sitio?</dt><dd>Solo cuando usas el asistente, y al modelo que elegiste. En modo agente, lo que lee y lo que imprimen tus comandos se envía para que pueda continuar.</dd></dl>
 <h2>Guías relacionadas</h2>
 <ul class="related"><li><a href="editor-de-codigo-con-ia-mac-clave-api-propia.html">Un editor de código con IA para Mac con tu propia clave de API</a></li><li><a href="alternativa-vs-code-mac.html">Una alternativa ligera a VS Code para Mac</a></li><li><a href="alternativa-sublime-text-mac.html">Alternativa a Sublime Text para Mac</a></li><li><a href="alternativa-notepad-plus-plus-mac.html">Notepad++ para Mac: una alternativa nativa</a></li></ul>
 </article>

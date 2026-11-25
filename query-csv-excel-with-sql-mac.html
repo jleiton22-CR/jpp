@@ -68,7 +68,7 @@
 <h2>Other apps</h2>
 <p>Dedicated apps, some on the Mac App Store, and open source tools such as DuckDB also query files with SQL. Pick the one that fits how often you do this.</p>
 <h2>Is it available now?</h2>
-<p>The SQL features are part of the full version of jplus2, which is coming to the Mac App Store. jplus2 Lite, the free download, is an editor without SQL. Leave your email below and we will tell you the day the full version is available.</p>
+<p>The SQL features are part of the full version of jplus2, which is <a href="https://apps.apple.com/app/jplus2/id6834867299">on the Mac App Store</a>. jplus2 Lite, the free download, is an editor without SQL.</p>
 <section class="pg" id="pg" data-root="" data-msg="{&quot;loading&quot;: &quot;Loading SQLite…&quot;, &quot;reading&quot;: &quot;Reading the file…&quot;, &quot;empty&quot;: &quot;The file needs a header row and at least one data row.&quot;, &quot;fail&quot;: &quot;The file could not be loaded.&quot;, &quot;big&quot;: &quot;That file is larger than 25 MB. Try a smaller one, or use jplus2.&quot;, &quot;table&quot;: &quot;Table data ({n} rows): {cols}&quot;, &quot;ready&quot;: &quot;{name} loaded. Edit the query and run it.&quot;, &quot;sample_name&quot;: &quot;Sample data&quot;, &quot;nothing&quot;: &quot;The query ran and returned no table.&quot;, &quot;rows&quot;: &quot;{n} rows.&quot;, &quot;shown&quot;: &quot;Showing the first {m}.&quot;, &quot;error&quot;: &quot;SQL error:&quot;}">
 <h2>Try it now: SQL on your CSV, in this page</h2><p>Drop a CSV file or use the sample, then write a query. The table is called data. This runs in your browser with SQLite: your file is never uploaded.</p>
 <div class="pg-load"><label class="btn btn-ghost pg-pick">Choose a CSV file…<input type="file" id="pg-file" accept=".csv,.tsv,.txt,text/csv" hidden></label>
@@ -78,40 +78,10 @@
 <p><button type="button" class="btn" id="pg-run" disabled>Run query</button> <span class="fine">or press ⌘↩ / Ctrl+↩</span></p>
 <p class="pg-status" id="pg-status" role="status" aria-live="polite"></p>
 <div class="pg-out" id="pg-out"></div>
-<div class="pg-after" id="pg-after" hidden><p>That was one CSV and one table. In the full jplus2 the same SQL tab also queries Excel workbooks with several sheets, SQLite files, Databricks, Snowflake, Azure SQL, PostgreSQL and MySQL, and you can export the results.</p><p><a class="btn" href="#waitlist" data-goatcounter-click="playground-waitlist" data-goatcounter-title="Playground: waitlist">Get notified when the full version is out</a></p></div>
+<div class="pg-after" id="pg-after" hidden><p>That was one CSV and one table. In the full jplus2 the same SQL tab also queries Excel workbooks with several sheets, SQLite files, Databricks, Snowflake, Azure SQL, PostgreSQL and MySQL, and you can export the results.</p><p><a class="btn" href="https://apps.apple.com/app/jplus2/id6834867299" rel="noopener" data-goatcounter-click="playground-appstore" data-goatcounter-title="Playground: Mac App Store">Get jplus2 on the Mac App Store</a></p></div>
 </section>
 <script src="js/playground.js" defer></script>
-<aside class="waitlist" id="waitlist">
-  <h2>Get notified when the full version is out</h2>
-  <p>The full jplus2, with run and debug, SQL, GitHub and the AI assistant, is coming to the Mac App Store. Leave your email and we will tell you the day it is available.</p>
-  <form class="emailform" id="wl-waitlist-sql" method="post" action="https://buttondown.com/api/emails/embed-subscribe/jason_g" target="_blank" rel="noopener" novalidate>
-    <label for="wl-waitlist-sql-email">Your email</label>
-    <input id="wl-waitlist-sql-email" name="email" type="email" required autocomplete="email" inputmode="email" spellcheck="false" autocapitalize="off"
-      pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" aria-describedby="wl-waitlist-sql-hint" placeholder="you@example.com">
-    <input type="hidden" name="embed" value="1">
-    <input type="hidden" name="tag" value="waitlist-sql">
-    <p class="hint" id="wl-waitlist-sql-hint" role="status" aria-live="polite" data-empty="Enter your email to turn on the button." data-invalid="That email does not look right. It should look like name@example.com."></p>
-    <button class="btn" type="submit">Notify me</button>
-  </form>
-  <p class="note" id="wl-waitlist-sql-after" hidden>Check your email to confirm. If a new tab opened asking you to confirm, that is normal: you can close it.</p>
-  <p class="note">We use your email only to tell you when the full version is available, plus occasional jplus2 news. Every message has a one-click unsubscribe link. Details in the <a href="privacy.html">privacy policy</a>.</p>
-</aside>
-<script>(function(){
-var f=document.getElementById("wl-waitlist-sql"),i=document.getElementById("wl-waitlist-sql-email"),b=f&&f.querySelector("button"),h=document.getElementById("wl-waitlist-sql-hint");
-if(!f||!i||!b)return;
-var re=/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/;
-var sent=false;
-function ok(){return re.test(i.value.trim())}
-function sync(){var v=i.value.trim(),good=ok();b.disabled=sent||!good;b.setAttribute("aria-disabled",good?"false":"true");
-h.textContent=good?"":(v?h.dataset.invalid:h.dataset.empty);i.setAttribute("aria-invalid",(!good&&v)?"true":"false")}
-i.addEventListener("input",function(){sent=false});   // editing the address allows another send
-["input","change","keyup","blur","paste"].forEach(function(n){i.addEventListener(n,sync)});
-var last=null;function watch(){if(i.value!==last){last=i.value;sync()}}
-watch();setInterval(watch,400);
-f.addEventListener("submit",function(e){if(!ok()){e.preventDefault();sync();i.focus();return}
-i.value=i.value.trim();document.getElementById("wl-waitlist-sql-after").hidden=false;sent=true;b.disabled=true});
-})();</script>
-
+<aside class="gcta"><h2>Get the full jplus2 on the Mac App Store</h2><p><a class="btn" href="https://apps.apple.com/app/jplus2/id6834867299" rel="noopener" data-goatcounter-click="appstore-button" data-goatcounter-title="Mac App Store button">Get it on the Mac App Store</a></p></aside>
 <h2>Frequently asked questions</h2>
 <dl class="faq"><dt>Do I need to install a database?</dt><dd>No. For Excel and CSV files, jplus2 uses an in-memory SQLite database.</dd><dt>Can I export the results?</dt><dd>Yes. Copy the grid, or export it as CSV.</dd><dt>Does my file leave my Mac?</dt><dd>No. Files stay on your Mac. Only connections you set up yourself, such as Databricks or Snowflake, use the network.</dd></dl>
 <h2>Related guides</h2>
