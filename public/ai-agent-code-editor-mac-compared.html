@@ -73,42 +73,12 @@
 <h2>jplus2 and Nextpad++</h2>
 <div class="guide-table-wrap"><table class="guide-table"><thead><tr><th scope="col">Feature</th><th scope="col">jplus2 (full)</th><th scope="col">Nextpad++</th></tr></thead><tbody><tr><th scope="row">Built-in AI assistant, agent or terminal</th><td>Yes</td><td>Not described on its website</td></tr><tr><th scope="row">License</th><td>Proprietary; Lite is free</td><td>Free and open source (GPL v3)</td></tr><tr><th scope="row">Plugins</th><td>None</td><td>Plugin Admin, with Windows Notepad++ plugins being ported</td></tr><tr><th scope="row">Platforms</th><td>macOS</td><td>macOS and Linux</td></tr></tbody></table></div><p>Nextpad++ is a Mac port of Notepad++, not an AI editor. If you want an open-source, plugin-friendly editor it is a good fit; if you want an agent inside the editor, that is what jplus2's full version adds.</p>
 <h2>Is it available now?</h2>
-<p>Agent mode is part of the full version of jplus2, which is coming to the Mac App Store. <strong>jplus2 Lite, the free download, does not include the assistant or Agent mode.</strong> Leave your email below and we will tell you the day it is available.</p>
+<p>Agent mode is part of the full version of jplus2, which is <a href="https://apps.apple.com/app/jplus2/id6834867299">on the Mac App Store</a>. <strong>jplus2 Lite, the free download, does not include the assistant or Agent mode.</strong></p>
 <h2>How this was checked</h2>
 <p>The facts about other tools come from their public documentation and websites, read on 16 November 2026: Cursor (cursor.com/docs), Windsurf (docs.windsurf.com), VS Code (code.visualstudio.com/docs), Sublime Text (sublimetext.com) and Nextpad++ (nextpad.org). A feature marked as not listed means the site does not describe it, not that it does not exist. These products change often, so check their sites for the current state. All names are trademarks of their owners; jplus2 is not affiliated with them. Windsurf is now called Devin Desktop.</p>
-<aside class="waitlist" id="waitlist">
-  <h2>Get notified when the full version is out</h2>
-  <p>The full jplus2, with run and debug, SQL, GitHub and the AI assistant, is coming to the Mac App Store. Leave your email and we will tell you the day it is available.</p>
-  <form class="emailform" id="wl-waitlist-agent" method="post" action="https://buttondown.com/api/emails/embed-subscribe/jason_g" target="_blank" rel="noopener" novalidate>
-    <label for="wl-waitlist-agent-email">Your email</label>
-    <input id="wl-waitlist-agent-email" name="email" type="email" required autocomplete="email" inputmode="email" spellcheck="false" autocapitalize="off"
-      pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" aria-describedby="wl-waitlist-agent-hint" placeholder="you@example.com">
-    <input type="hidden" name="embed" value="1">
-    <input type="hidden" name="tag" value="waitlist-agent">
-    <p class="hint" id="wl-waitlist-agent-hint" role="status" aria-live="polite" data-empty="Enter your email to turn on the button." data-invalid="That email does not look right. It should look like name@example.com."></p>
-    <button class="btn" type="submit">Notify me</button>
-  </form>
-  <p class="note" id="wl-waitlist-agent-after" hidden>Check your email to confirm. If a new tab opened asking you to confirm, that is normal: you can close it.</p>
-  <p class="note">We use your email only to tell you when the full version is available, plus occasional jplus2 news. Every message has a one-click unsubscribe link. Details in the <a href="privacy.html">privacy policy</a>.</p>
-</aside>
-<script>(function(){
-var f=document.getElementById("wl-waitlist-agent"),i=document.getElementById("wl-waitlist-agent-email"),b=f&&f.querySelector("button"),h=document.getElementById("wl-waitlist-agent-hint");
-if(!f||!i||!b)return;
-var re=/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/;
-var sent=false;
-function ok(){return re.test(i.value.trim())}
-function sync(){var v=i.value.trim(),good=ok();b.disabled=sent||!good;b.setAttribute("aria-disabled",good?"false":"true");
-h.textContent=good?"":(v?h.dataset.invalid:h.dataset.empty);i.setAttribute("aria-invalid",(!good&&v)?"true":"false")}
-i.addEventListener("input",function(){sent=false});   // editing the address allows another send
-["input","change","keyup","blur","paste"].forEach(function(n){i.addEventListener(n,sync)});
-var last=null;function watch(){if(i.value!==last){last=i.value;sync()}}
-watch();setInterval(watch,400);
-f.addEventListener("submit",function(e){if(!ok()){e.preventDefault();sync();i.focus();return}
-i.value=i.value.trim();document.getElementById("wl-waitlist-agent-after").hidden=false;sent=true;b.disabled=true});
-})();</script>
-
+<aside class="gcta"><h2>Get the full jplus2 on the Mac App Store</h2><p><a class="btn" href="https://apps.apple.com/app/jplus2/id6834867299" rel="noopener" data-goatcounter-click="appstore-button" data-goatcounter-title="Mac App Store button">Get it on the Mac App Store</a></p></aside>
 <h2>Frequently asked questions</h2>
-<dl class="faq"><dt>Is Agent mode in jplus2 Lite?</dt><dd>No. It is part of the full version, which is coming to the Mac App Store.</dd><dt>Can the agent change my files without asking?</dt><dd>No. Every file change opens as a diff to apply or cancel, and every command waits for you to press Run.</dd><dt>Does it work with a project set up for Cursor?</dt><dd>It reads .cursorrules and AGENTS.md files, so the instructions already in the project are used.</dd><dt>Is my code sent anywhere?</dt><dd>Only when you use the assistant, and to the model you chose. In agent mode, what it reads and what your commands print is sent so it can continue.</dd></dl>
+<dl class="faq"><dt>Is Agent mode in jplus2 Lite?</dt><dd>No. It is part of the full version, which is on the Mac App Store.</dd><dt>Can the agent change my files without asking?</dt><dd>No. Every file change opens as a diff to apply or cancel, and every command waits for you to press Run.</dd><dt>Does it work with a project set up for Cursor?</dt><dd>It reads .cursorrules and AGENTS.md files, so the instructions already in the project are used.</dd><dt>Is my code sent anywhere?</dt><dd>Only when you use the assistant, and to the model you chose. In agent mode, what it reads and what your commands print is sent so it can continue.</dd></dl>
 <h2>Related guides</h2>
 <ul class="related"><li><a href="ai-code-editor-mac-own-api-key.html">An AI code editor for Mac with your own API key</a></li><li><a href="vs-code-alternative-mac.html">A lightweight VS Code alternative for Mac</a></li><li><a href="sublime-text-alternative-mac.html">Sublime Text alternative for Mac</a></li><li><a href="notepad-plus-plus-alternative-mac.html">Notepad++ for Mac: a native alternative</a></li></ul>
 </article>

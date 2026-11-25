@@ -35,7 +35,7 @@
     },
     {
       "h2": "Is it available now?",
-      "html": "<p>The assistant is part of the full version of jplus2, which is coming to the Mac App Store. jplus2 Lite, the free download, does not include it. Leave your email below and we will tell you the day the full version is available.</p>"
+      "html": "<p>The assistant is part of the full version of jplus2, which is <a href=\"{app_store_url}\">on the Mac App Store</a>. jplus2 Lite, the free download, does not include it.</p>"
     }
   ],
   "faq": [

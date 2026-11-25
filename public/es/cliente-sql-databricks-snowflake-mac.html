@@ -61,44 +61,14 @@
 <p class="fine">Última actualización: <time datetime="2026-11-21">2026-11-21</time></p>
 <p class="lead">La versión completa de jplus2 se conecta a Databricks y Snowflake mediante sus propias API de SQL. Escribes la consulta junto a tu código, pulsas un atajo y lees los resultados en una tabla.</p>
 <h2>A qué puedes conectarte</h2>
-<ul><li><strong>Databricks</strong> en Azure, AWS y GCP.</li><li><strong>Snowflake</strong>.</li></ul><p>Ambos usan sus propias API de SQL, así que no hay que instalar antes un cliente de línea de comandos. La misma pestaña SQL también funciona con Azure SQL, SQL Server y Synapse, PostgreSQL, MySQL y MariaDB, archivos SQLite y archivos de Excel y CSV.</p>
+<ul><li><strong>Databricks</strong> en Azure, AWS y GCP.</li><li><strong>Snowflake</strong>.</li></ul><p>Ambos usan sus propias API de SQL, así que no hay que instalar antes un cliente de línea de comandos. La misma pestaña SQL también funciona con Azure SQL, SQL Server y Synapse, PostgreSQL, MySQL y MariaDB, archivos SQLite y archivos de Excel y CSV. La versión del Mac App Store no ofrece las conexiones a Azure SQL, SQL Server, Synapse, PostgreSQL, MySQL ni MariaDB.</p>
 <h2>Cómo funciona</h2>
 <ol><li>Elige <strong>Database ▸ Manage Connections…</strong> (<code>⇧⌘D</code>) y añade una conexión a Databricks o Snowflake.</li><li>Abre una pestaña SQL y escribe tu consulta.</li><li>Pulsa <code>⌘↩</code> para ejecutar la selección o la sentencia donde está el cursor.</li><li>Los resultados aparecen en una tabla bajo tu código. Cópialos o expórtalos como CSV.</li></ol><p>Las contraseñas, los tokens y las claves de API se guardan en el Llavero de macOS.</p>
 <h2>Por qué hacerlo desde un editor</h2>
 <p>Los cuadernos y las consolas web separan la consulta del script que la usa. En jplus2 el SQL, el código Python o de shell que lo rodea, GitHub y el asistente de IA están en una sola ventana: puedes consultar un almacén de datos, ajustar un script y confirmar el cambio sin cambiar de app.</p>
 <h2>¿Ya está disponible?</h2>
-<p>Estas conexiones forman parte de la versión completa de jplus2, para Mac. jplus2 Lite, la descarga gratuita, no incluye SQL. Deja tu correo abajo y te avisaremos el día que la versión completa esté disponible.</p>
-<aside class="waitlist" id="waitlist">
-  <h2>Avísame cuando salga la versión completa</h2>
-  <p>El jplus2 completo, con ejecutar y depurar, SQL, GitHub y el asistente de IA, llega al Mac App Store. Deja tu correo y te avisamos el día que esté disponible.</p>
-  <form class="emailform" id="wl-waitlist-warehouse" method="post" action="https://buttondown.com/api/emails/embed-subscribe/jason_g" target="_blank" rel="noopener" novalidate>
-    <label for="wl-waitlist-warehouse-email">Tu correo</label>
-    <input id="wl-waitlist-warehouse-email" name="email" type="email" required autocomplete="email" inputmode="email" spellcheck="false" autocapitalize="off"
-      pattern="[^@\s]+@[^@\s]+\.[^@\s]{2,}" aria-describedby="wl-waitlist-warehouse-hint" placeholder="tu@ejemplo.com">
-    <input type="hidden" name="embed" value="1">
-    <input type="hidden" name="tag" value="waitlist-warehouse">
-    <p class="hint" id="wl-waitlist-warehouse-hint" role="status" aria-live="polite" data-empty="Escribe tu correo para activar el botón." data-invalid="Ese correo no parece válido. Debe verse como nombre@ejemplo.com."></p>
-    <button class="btn" type="submit">Avísame</button>
-  </form>
-  <p class="note" id="wl-waitlist-warehouse-after" hidden>Revisa tu correo para confirmar. Si se abrió una pestaña nueva pidiéndote confirmar, es normal: puedes cerrarla.</p>
-  <p class="note">Usamos tu correo solo para avisarte cuando la versión completa esté disponible, y para novedades ocasionales de jplus2. Cada mensaje trae un enlace para darte de baja con un clic. Detalles en la <a href="privacy.html">política de privacidad</a>.</p>
-</aside>
-<script>(function(){
-var f=document.getElementById("wl-waitlist-warehouse"),i=document.getElementById("wl-waitlist-warehouse-email"),b=f&&f.querySelector("button"),h=document.getElementById("wl-waitlist-warehouse-hint");
-if(!f||!i||!b)return;
-var re=/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/;
-var sent=false;
-function ok(){return re.test(i.value.trim())}
-function sync(){var v=i.value.trim(),good=ok();b.disabled=sent||!good;b.setAttribute("aria-disabled",good?"false":"true");
-h.textContent=good?"":(v?h.dataset.invalid:h.dataset.empty);i.setAttribute("aria-invalid",(!good&&v)?"true":"false")}
-i.addEventListener("input",function(){sent=false});   // editing the address allows another send
-["input","change","keyup","blur","paste"].forEach(function(n){i.addEventListener(n,sync)});
-var last=null;function watch(){if(i.value!==last){last=i.value;sync()}}
-watch();setInterval(watch,400);
-f.addEventListener("submit",function(e){if(!ok()){e.preventDefault();sync();i.focus();return}
-i.value=i.value.trim();document.getElementById("wl-waitlist-warehouse-after").hidden=false;sent=true;b.disabled=true});
-})();</script>
-
+<p>Estas conexiones forman parte de la versión completa de jplus2, <a href="https://apps.apple.com/app/jplus2/id6834867299">en el Mac App Store</a>. jplus2 Lite, la descarga gratuita, no incluye SQL.</p>
+<aside class="gcta"><h2>Consigue el jplus2 completo en el Mac App Store</h2><p><a class="btn" href="https://apps.apple.com/app/jplus2/id6834867299" rel="noopener" data-goatcounter-click="appstore-button" data-goatcounter-title="Mac App Store button">Consíguelo en el Mac App Store</a></p></aside>
 <h2>Preguntas frecuentes</h2>
 <dl class="faq"><dt>¿Necesito instalar una herramienta cliente para Databricks o Snowflake?</dt><dd>No. jplus2 se conecta mediante sus propias API de SQL.</dd><dt>¿Qué nubes de Databricks son compatibles?</dt><dd>Databricks en Azure, AWS y GCP.</dd><dt>¿Puedo exportar los resultados?</dt><dd>Sí. Copia la tabla o expórtala como CSV.</dd><dt>¿Está en la versión Lite gratuita?</dt><dd>No. El SQL forma parte de la versión completa de jplus2.</dd></dl>
 <h2>Guías relacionadas</h2>

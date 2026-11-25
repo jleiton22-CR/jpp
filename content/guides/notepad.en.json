@@ -22,7 +22,7 @@
     },
     {
       "h2": "Side by side",
-      "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\"></th><th scope=\"col\">Notepad++</th><th scope=\"col\">jplus2 Lite</th><th scope=\"col\">jplus2 (full version)</th></tr></thead><tbody><tr><th scope=\"row\">Runs on</th><td>Windows</td><td>macOS 12 or later, Apple silicon and Intel</td><td>macOS 12 or later, Apple silicon and Intel</td></tr><tr><th scope=\"row\">Editing core</th><td>Scintilla</td><td>Scintilla 5</td><td>Scintilla 5</td></tr><tr><th scope=\"row\">Cost</th><td>GNU GPL, open source</td><td>Free download, closed source</td><td>Mac App Store, coming soon</td></tr><tr><th scope=\"row\">Plugins</th><td>Yes, in the Windows version</td><td>No: everything is built in</td><td>No: everything is built in</td></tr><tr><th scope=\"row\">Run code, debugger, SQL, GitHub, AI</th><td>Not covered by this comparison</td><td>Not included</td><td>Included</td></tr></tbody></table></div><p class=\"fine\">Notepad++ details come from its website and from Nextpad++'s, checked in November 2026. Check them there before relying on them.</p>"
+      "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\"></th><th scope=\"col\">Notepad++</th><th scope=\"col\">jplus2 Lite</th><th scope=\"col\">jplus2 (full version)</th></tr></thead><tbody><tr><th scope=\"row\">Runs on</th><td>Windows</td><td>macOS 12 or later, Apple silicon and Intel</td><td>macOS 12 or later, Apple silicon and Intel</td></tr><tr><th scope=\"row\">Editing core</th><td>Scintilla</td><td>Scintilla 5</td><td>Scintilla 5</td></tr><tr><th scope=\"row\">Cost</th><td>GNU GPL, open source</td><td>Free download, closed source</td><td>{price}, Mac App Store</td></tr><tr><th scope=\"row\">Plugins</th><td>Yes, in the Windows version</td><td>No: everything is built in</td><td>No: everything is built in</td></tr><tr><th scope=\"row\">Run code, debugger, SQL, GitHub, AI</th><td>Not covered by this comparison</td><td>Not included</td><td>Included</td></tr></tbody></table></div><p class=\"fine\">Notepad++ details come from its website and from Nextpad++'s, checked in November 2026. Check them there before relying on them.</p>"
     },
     {
       "h2": "Where jplus2 is not a replacement",
@@ -34,7 +34,7 @@
     },
     {
       "h2": "When the full version helps",
-      "html": "<p>The full jplus2, coming to the Mac App Store, adds IntelliSense, compile and run, a Python debugger, SQL on databases and on Excel or CSV files, GitHub and an AI assistant in the same window. See <a href=\"index.html#editions\">jplus2 Lite and the full version</a>.</p>"
+      "html": "<p>The full jplus2, on the Mac App Store, adds IntelliSense, compile and run, a Python debugger, SQL on databases and on Excel or CSV files, GitHub and an AI assistant in the same window. See <a href=\"index.html#editions\">jplus2 Lite and the full version</a>.</p>"
     }
   ],
   "faq": [

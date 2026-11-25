@@ -47,7 +47,7 @@
     },
     {
       "h2": "¿Está disponible ya?",
-      "html": "<p>El modo Agente es parte de la versión completa de jplus2, que llegará al Mac App Store. <strong>jplus2 Lite, la descarga gratuita, no incluye el asistente ni el modo Agente.</strong> Deja tu correo abajo y te avisamos el día que esté disponible.</p>"
+      "html": "<p>El modo Agente es parte de la versión completa de jplus2, que está <a href=\"{app_store_url}\">en el Mac App Store</a>. <strong>jplus2 Lite, la descarga gratuita, no incluye el asistente ni el modo Agente.</strong></p>"
     },
     {
       "h2": "Cómo se comprobó",
@@ -57,7 +57,7 @@
   "faq": [
     {
       "q": "¿El modo Agente está en jplus2 Lite?",
-      "a": "No. Es parte de la versión completa, que llegará al Mac App Store."
+      "a": "No. Es parte de la versión completa, que está en el Mac App Store."
     },
     {
       "q": "¿Puede el agente cambiar mis archivos sin preguntar?",

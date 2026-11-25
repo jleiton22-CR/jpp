@@ -35,7 +35,7 @@
     },
     {
       "h2": "¿Está disponible ya?",
-      "html": "<p>El asistente forma parte de la versión completa de jplus2, que llega al Mac App Store. jplus2 Lite, la descarga gratis, no lo incluye. Deja tu correo abajo y te avisamos el día que la versión completa esté disponible.</p>"
+      "html": "<p>El asistente forma parte de la versión completa de jplus2, que está <a href=\"{app_store_url}\">en el Mac App Store</a>. jplus2 Lite, la descarga gratis, no lo incluye.</p>"
     }
   ],
   "faq": [

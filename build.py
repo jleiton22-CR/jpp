@@ -41,6 +41,7 @@ def fill(text, site):
     return (text.replace("{version}", site["version"]).replace("{size}", site["download_size"])
             .replace("{email}", site["contact_email"]).replace("{year}", site["year"])
             .replace("{price}", "$" + site.get("full_price", ""))
+            .replace("{app_store_url}", site.get("app_store_url", ""))
             .replace("{iphone_price}", "$" + site.get("iphone_price", "")))
 
 
@@ -513,7 +514,10 @@ def guide_page(site, t, lang, g):
         parts.append(f'<h2>{sec["h2"]}</h2>\n{fill(sec["html"], site)}')
     if g.get("playground"):
         parts.append(playground_html(site, t, root))
-    if g["cta"] == "waitlist":
+    if g["cta"] == "waitlist" and site.get("app_store_url"):   # the full version is out: link to the store instead of the waiting list
+        k = t["editions"]["full"]
+        parts.append(f'<aside class="gcta"><h2>{t["cta"]["store"]}</h2><p>{store_button(site, k["button"], k["button_soon"], "btn")}</p></aside>')
+    elif g["cta"] == "waitlist":
         parts.append(waitlist_form(site, t, lang, g.get("tag", "waitlist-full")))
     elif download:
         parts.append(f'<aside class="gcta"><h2>{ui["cta_title"]}</h2><p>{fill(ui["cta_text"], site)}</p>'

@@ -47,7 +47,7 @@
     },
     {
       "h2": "Is it available now?",
-      "html": "<p>Agent mode is part of the full version of jplus2, which is coming to the Mac App Store. <strong>jplus2 Lite, the free download, does not include the assistant or Agent mode.</strong> Leave your email below and we will tell you the day it is available.</p>"
+      "html": "<p>Agent mode is part of the full version of jplus2, which is <a href=\"{app_store_url}\">on the Mac App Store</a>. <strong>jplus2 Lite, the free download, does not include the assistant or Agent mode.</strong></p>"
     },
     {
       "h2": "How this was checked",
@@ -57,7 +57,7 @@
   "faq": [
     {
       "q": "Is Agent mode in jplus2 Lite?",
-      "a": "No. It is part of the full version, which is coming to the Mac App Store."
+      "a": "No. It is part of the full version, which is on the Mac App Store."
     },
     {
       "q": "Can the agent change my files without asking?",

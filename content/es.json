@@ -3,7 +3,7 @@
   "lang_name": "Español",
   "meta": {
     "title": "jplus2 — Editor de código nativo para Mac | Lite gratis",
-    "description": "Editor de código rápido y nativo para Mac. jplus2 Lite es gratis para 95 lenguajes; la completa ({price}, pronto) añade ejecutar, depurar, SQL, GitHub e IA."
+    "description": "Editor de código rápido y nativo para Mac. jplus2 Lite es gratis para 95 lenguajes; la completa ({price}, Mac App Store) añade ejecutar, depurar, SQL, GitHub e IA."
   },
   "nav": {
     "why": "Por qué jplus2",
@@ -30,7 +30,7 @@
     "app_store": "Versión completa en el Mac App Store",
     "note": "Gratis · macOS 12 o posterior · Apple Silicon e Intel. Consigue la Lite con el botón «Descargar Lite» de la barra superior.",
     "image_alt": "La ventana de jplus2: un explorador de archivos a la izquierda, pestañas y un archivo de Python con resaltado de sintaxis.",
-    "store_note": "¿Quieres todo lo de esta página? El jplus2 completo viene en camino al Mac App Store.",
+    "store_note": "¿Quieres todo lo de esta página? El jplus2 completo está en el Mac App Store.",
     "tagline": "Todo lo que rodea a tu código. Nada que estorbe.",
     "pillars": [
       [
@@ -255,11 +255,11 @@
   },
   "cta": {
     "title": "Empieza gratis. Pasa a la completa cuando quieras.",
-    "text": "Consigue jplus2 Lite con el botón «Descargar Lite» de la barra superior, o apúntate a la lista de espera de la versión completa en el Mac App Store.",
+    "text": "Consigue jplus2 Lite con el botón «Descargar Lite» de la barra superior, o consigue la versión completa en el Mac App Store.",
     "primary": "Descargar jplus2 Lite {version}",
     "note": "",
     "requirements": "",
-    "store": "El jplus2 completo llega al Mac App Store",
+    "store": "Consigue el jplus2 completo en el Mac App Store",
     "store_soon": "Versión completa: Mac App Store, en revisión"
   },
   "footer": {
@@ -380,7 +380,7 @@
   "editions": {
     "eyebrow": "Versiones",
     "title": "jplus2 en Mac, iPhone y iPad",
-    "text": "Cuatro versiones del mismo editor. jplus2 Lite para Mac es gratis y se descarga desde esta página. El jplus2 completo para Mac está en revisión en el Mac App Store. jplus2 para iPhone ya está en el App Store; la versión de iPad está en preparación.",
+    "text": "Cuatro versiones del mismo editor. jplus2 Lite para Mac es gratis y se descarga desde esta página. El jplus2 completo para Mac ya está en el Mac App Store y jplus2 para iPhone en el App Store; la versión de iPad está en preparación.",
     "lite": {
       "name": "jplus2 Lite",
       "tag": "Gratis",
@@ -394,7 +394,7 @@
     },
     "full": {
       "name": "jplus2",
-      "tag": "Versión completa · Mac App Store · precio previsto {price}",
+      "tag": "Versión completa · Mac App Store · {price}",
       "text": "El jplus2 completo, con todo lo de Lite y las funciones que siguen.",
       "items": [],
       "button": "Consíguelo en el Mac App Store",
@@ -624,7 +624,7 @@
     "next_title": "Y ahora qué",
     "next": [
       [
-        "El jplus2 completo llega al Mac App Store",
+        "El jplus2 completo está en el Mac App Store",
         "SQL, GitHub, el asistente de IA, ejecutar y depurar código y más.",
         "index.html#editions",
         "Ver lo que añade la versión completa"
@@ -713,7 +713,7 @@
       ],
       [
         "Ediciones",
-        "<strong>jplus2 Lite:</strong> descarga gratis, unos {size}, versión {version}.<br><strong>jplus2 (completa):</strong> llega al Mac App Store, precio previsto {price}."
+        "<strong>jplus2 Lite:</strong> descarga gratis, unos {size}, versión {version}.<br><strong>jplus2 (completa):</strong> disponible en el Mac App Store, {price}."
       ],
       [
         "Lenguajes",
@@ -754,11 +754,11 @@
       },
       {
         "label": "Corta (unas 60 palabras)",
-        "text": "jplus2 es un editor de código nativo para macOS, basado en Scintilla 5 para Mac con Apple Silicon e Intel. La versión Lite, gratis, cubre la edición diaria en 95 lenguajes, sin cuenta y sin telemetría. La versión completa, que llega al Mac App Store, añade ejecutar y depurar, SQL sobre archivos CSV y Excel, GitHub y un asistente de IA que usa tu propia clave de API o un modelo local."
+        "text": "jplus2 es un editor de código nativo para macOS, basado en Scintilla 5 para Mac con Apple Silicon e Intel. La versión Lite, gratis, cubre la edición diaria en 95 lenguajes, sin cuenta y sin telemetría. La versión completa, en el Mac App Store, añade ejecutar y depurar, SQL sobre archivos CSV y Excel, GitHub y un asistente de IA que usa tu propia clave de API o un modelo local."
       },
       {
         "label": "Larga (unas 110 palabras)",
-        "text": "jplus2 es un editor de código nativo para macOS, escrito en Cocoa sobre el componente de edición Scintilla 5 y hecho por un solo desarrollador, Jason Leiton. La versión Lite, gratis y de unos {size}, ofrece resaltado de sintaxis y plegado para 95 lenguajes, pestañas con restauración de la sesión, buscar y reemplazar con expresiones regulares, macros, marcadores, un explorador de archivos, Ir a cualquier cosa, una paleta de comandos y un minimapa, sin cuenta y sin telemetría. La versión completa, que llega al Mac App Store, añade IntelliSense, compilar y ejecutar, un depurador de Python, SQL sobre bases de datos y sobre archivos de Excel o CSV, integración con GitHub y un asistente de IA que funciona con tu propia clave de Claude, un servicio compatible con OpenAI o un modelo local. Hay una versión para iPadOS planeada."
+        "text": "jplus2 es un editor de código nativo para macOS, escrito en Cocoa sobre el componente de edición Scintilla 5 y hecho por un solo desarrollador, Jason Leiton. La versión Lite, gratis y de unos {size}, ofrece resaltado de sintaxis y plegado para 95 lenguajes, pestañas con restauración de la sesión, buscar y reemplazar con expresiones regulares, macros, marcadores, un explorador de archivos, Ir a cualquier cosa, una paleta de comandos y un minimapa, sin cuenta y sin telemetría. La versión completa, en el Mac App Store, añade IntelliSense, compilar y ejecutar, un depurador de Python, SQL sobre bases de datos y sobre archivos de Excel o CSV, integración con GitHub y un asistente de IA que funciona con tu propia clave de Claude, un servicio compatible con OpenAI o un modelo local. Hay una versión para iPadOS planeada."
       }
     ],
     "assets_title": "Descarga los materiales",
@@ -806,7 +806,7 @@
     "know_title": "Conviene saber antes de escribir",
     "know": [
       "jplus2 es la versión 1.0 de un solo desarrollador y es de código cerrado. No tiene sistema de complementos.",
-      "La versión completa aún no está en el Mac App Store. Hoy solo se puede descargar jplus2 Lite.",
+      "La versión completa está en el Mac App Store; la versión Lite, gratis, se descarga desde jplus2.com. La versión del Mac App Store no ofrece las conexiones a Azure SQL, SQL Server, Synapse, PostgreSQL, MySQL ni MariaDB.",
       "El instalador de Lite aún no está notarizado por Apple, así que macOS pide confirmar que lo abras: Ajustes del Sistema ▸ Privacidad y seguridad ▸ Abrir igualmente.",
       "Las comparaciones de este sitio citan las páginas de cada fabricante y dicen cuándo se consultaron."
     ],

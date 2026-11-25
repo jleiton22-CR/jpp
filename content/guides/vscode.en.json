@@ -22,7 +22,7 @@
     },
     {
       "h2": "Side by side",
-      "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\"></th><th scope=\"col\">VS Code</th><th scope=\"col\">jplus2</th></tr></thead><tbody><tr><th scope=\"row\">Built with</th><td>Electron</td><td>Native Cocoa (Objective-C++) and Scintilla 5</td></tr><tr><th scope=\"row\">Platforms</th><td>Windows, macOS and Linux</td><td>macOS only, with an iPadOS version planned</td></tr><tr><th scope=\"row\">Extensions</th><td>Extension marketplace</td><td>None: features are built in</td></tr><tr><th scope=\"row\">Telemetry</th><td>On by default, can be turned off</td><td>None, and no account</td></tr><tr><th scope=\"row\">Cost</th><td>Not covered here</td><td>Lite is free; the full version is coming to the Mac App Store</td></tr></tbody></table></div><p class=\"fine\">VS Code details come from its FAQ, checked in November 2026.</p>"
+      "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\"></th><th scope=\"col\">VS Code</th><th scope=\"col\">jplus2</th></tr></thead><tbody><tr><th scope=\"row\">Built with</th><td>Electron</td><td>Native Cocoa (Objective-C++) and Scintilla 5</td></tr><tr><th scope=\"row\">Platforms</th><td>Windows, macOS and Linux</td><td>macOS only, with an iPadOS version planned</td></tr><tr><th scope=\"row\">Extensions</th><td>Extension marketplace</td><td>None: features are built in</td></tr><tr><th scope=\"row\">Telemetry</th><td>On by default, can be turned off</td><td>None, and no account</td></tr><tr><th scope=\"row\">Cost</th><td>Not covered here</td><td>Lite is free; the full version is on the Mac App Store</td></tr></tbody></table></div><p class=\"fine\">VS Code details come from its FAQ, checked in November 2026.</p>"
     },
     {
       "h2": "When VS Code is the better choice",
@@ -52,7 +52,7 @@
     },
     {
       "q": "Is the full version available?",
-      "a": "The full version is coming to the Mac App Store. The free Lite is available now."
+      "a": "Yes. The full version is on the Mac App Store. The free Lite is available now."
     }
   ],
   "related": [

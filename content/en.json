@@ -3,7 +3,7 @@
   "lang_name": "English",
   "meta": {
     "title": "jplus2 — Native Mac Code Editor | Free Lite Download",
-    "description": "A fast, native code editor for Mac. Free jplus2 Lite for 95 languages; the full app ({price}, coming soon) adds run, debug, SQL, GitHub and AI."
+    "description": "A fast, native code editor for Mac. Free jplus2 Lite for 95 languages; the full app ({price}, Mac App Store) adds run, debug, SQL, GitHub and AI."
   },
   "nav": {
     "why": "Why jplus2",
@@ -30,7 +30,7 @@
     "app_store": "Full version on the Mac App Store",
     "note": "Free · macOS 12 or later · Apple silicon and Intel. Get Lite with the “Download Lite” button in the top bar.",
     "image_alt": "The jplus2 window: a file explorer on the left, tabs, and a Python file with syntax colouring.",
-    "store_note": "Want everything on this page? The full jplus2 is on its way to the Mac App Store.",
+    "store_note": "Want everything on this page? The full jplus2 is on the Mac App Store.",
     "tagline": "Everything around your code. Nothing in the way.",
     "pillars": [
       [
@@ -203,7 +203,8 @@
           "PostgreSQL (including Azure Database for PostgreSQL)",
           "MySQL and MariaDB (including Azure Database for MySQL)",
           "SQLite files, with nothing to install",
-          "Excel workbooks and CSV files: every sheet becomes a table"
+          "Excel workbooks and CSV files: every sheet becomes a table",
+          "Mac App Store version: the Azure SQL, SQL Server, Synapse, PostgreSQL, MySQL and MariaDB connections are not offered there"
         ],
         "image": "excel",
         "alt": "A SQL query over an Excel workbook, with the results in a grid under the code.",
@@ -255,11 +256,11 @@
   },
   "cta": {
     "title": "Start free. Go full when you are ready.",
-    "text": "Get jplus2 Lite with the “Download Lite” button in the top bar, or join the waiting list for the complete jplus2 on the Mac App Store.",
+    "text": "Get jplus2 Lite with the “Download Lite” button in the top bar, or get the complete jplus2 on the Mac App Store.",
     "primary": "Download jplus2 Lite {version}",
     "note": "",
     "requirements": "",
-    "store": "The full jplus2 is coming to the Mac App Store",
+    "store": "Get the full jplus2 on the Mac App Store",
     "store_soon": "Full version: Mac App Store, in review"
   },
   "footer": {
@@ -380,7 +381,7 @@
   "editions": {
     "eyebrow": "Versions",
     "title": "jplus2 on Mac, iPhone and iPad",
-    "text": "Four versions of the same editor. jplus2 Lite for the Mac is free and downloads from this page. The full jplus2 for the Mac is in review at the Mac App Store. jplus2 for iPhone is now on the App Store; the iPad version is being prepared.",
+    "text": "Four versions of the same editor. jplus2 Lite for the Mac is free and downloads from this page. The full jplus2 for the Mac is now on the Mac App Store, and jplus2 for iPhone is on the App Store; the iPad version is being prepared.",
     "lite": {
       "name": "jplus2 Lite",
       "tag": "Free",
@@ -394,7 +395,7 @@
     },
     "full": {
       "name": "jplus2",
-      "tag": "Full version · Mac App Store · planned price {price}",
+      "tag": "Full version · Mac App Store · {price}",
       "text": "The complete jplus2, with everything in Lite plus the features below.",
       "items": [],
       "button": "Get it on the Mac App Store",
@@ -629,7 +630,7 @@
     "next_title": "What next",
     "next": [
       [
-        "The full jplus2 is coming to the Mac App Store",
+        "The full jplus2 is on the Mac App Store",
         "SQL, GitHub, the AI assistant, running and debugging code and more.",
         "index.html#editions",
         "See what the full version adds"
@@ -718,7 +719,7 @@
       ],
       [
         "Editions",
-        "<strong>jplus2 Lite:</strong> free download, about {size}, version {version}.<br><strong>jplus2 (full):</strong> coming to the Mac App Store, planned price {price}."
+        "<strong>jplus2 Lite:</strong> free download, about {size}, version {version}.<br><strong>jplus2 (full):</strong> available on the Mac App Store, {price}."
       ],
       [
         "Languages",
@@ -759,11 +760,11 @@
       },
       {
         "label": "Short (about 60 words)",
-        "text": "jplus2 is a native code editor for macOS, built on Scintilla 5 for Apple silicon and Intel Macs. The free Lite version covers everyday editing in 95 languages, with no account and no telemetry. The full version, coming to the Mac App Store, adds run and debug, SQL on CSV and Excel files, GitHub and an AI assistant that uses your own API key or a local model."
+        "text": "jplus2 is a native code editor for macOS, built on Scintilla 5 for Apple silicon and Intel Macs. The free Lite version covers everyday editing in 95 languages, with no account and no telemetry. The full version, on the Mac App Store, adds run and debug, SQL on CSV and Excel files, GitHub and an AI assistant that uses your own API key or a local model."
       },
       {
         "label": "Long (about 110 words)",
-        "text": "jplus2 is a native code editor for macOS, written in Cocoa on top of the Scintilla 5 editing component and made by one developer, Jason Leiton. The free Lite version, a download of about {size}, gives syntax colouring and folding for 95 languages, tabs with session restore, find and replace with regular expressions, macros, bookmarks, a file explorer, Go to Anything, a command palette and a minimap, with no account and no telemetry. The full version, coming to the Mac App Store, adds IntelliSense, compile and run, a Python debugger, SQL on databases and on Excel or CSV files, GitHub integration and an AI assistant that works with your own Claude API key, an OpenAI-compatible service or a local model. An iPadOS version is planned."
+        "text": "jplus2 is a native code editor for macOS, written in Cocoa on top of the Scintilla 5 editing component and made by one developer, Jason Leiton. The free Lite version, a download of about {size}, gives syntax colouring and folding for 95 languages, tabs with session restore, find and replace with regular expressions, macros, bookmarks, a file explorer, Go to Anything, a command palette and a minimap, with no account and no telemetry. The full version, on the Mac App Store, adds IntelliSense, compile and run, a Python debugger, SQL on databases and on Excel or CSV files, GitHub integration and an AI assistant that works with your own Claude API key, an OpenAI-compatible service or a local model. An iPadOS version is planned."
       }
     ],
     "assets_title": "Download the assets",
@@ -811,7 +812,7 @@
     "know_title": "Good to know before you write",
     "know": [
       "jplus2 is version 1.0 from a single developer, and it is closed source. There is no plugin system.",
-      "The full version is not on the Mac App Store yet. Today only jplus2 Lite can be downloaded.",
+      "The full version is on the Mac App Store; the free Lite version downloads from jplus2.com. The Mac App Store version does not offer the Azure SQL, SQL Server, Synapse, PostgreSQL, MySQL or MariaDB connections.",
       "The Lite installer is not yet notarized by Apple, so macOS asks you to confirm opening it: System Settings ▸ Privacy &amp; Security ▸ Open Anyway.",
       "Comparisons on this site cite each vendor's own pages and say when they were checked."
     ],

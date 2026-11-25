@@ -15,7 +15,7 @@
  "sections": [
   {
    "h2": "What you can connect to",
-   "html": "<ul><li><strong>Databricks</strong> on Azure, AWS and GCP.</li><li><strong>Snowflake</strong>.</li></ul><p>Both use their own SQL APIs, so there is no command line client to install first. The same SQL tab also works with Azure SQL, SQL Server and Synapse, PostgreSQL, MySQL and MariaDB, SQLite files, and Excel and CSV files.</p>"
+   "html": "<ul><li><strong>Databricks</strong> on Azure, AWS and GCP.</li><li><strong>Snowflake</strong>.</li></ul><p>Both use their own SQL APIs, so there is no command line client to install first. The same SQL tab also works with Azure SQL, SQL Server and Synapse, PostgreSQL, MySQL and MariaDB, SQLite files, and Excel and CSV files. The Mac App Store version does not offer the Azure SQL, SQL Server, Synapse, PostgreSQL, MySQL or MariaDB connections.</p>"
   },
   {
    "h2": "How it works",
@@ -27,7 +27,7 @@
   },
   {
    "h2": "Is it available now?",
-   "html": "<p>These connections are part of the full version of jplus2, for the Mac. jplus2 Lite, the free download, does not include SQL. Leave your email below and we will tell you the day the full version is available.</p>"
+   "html": "<p>These connections are part of the full version of jplus2, <a href=\"{app_store_url}\">on the Mac App Store</a>. jplus2 Lite, the free download, does not include SQL.</p>"
   }
  ],
  "faq": [

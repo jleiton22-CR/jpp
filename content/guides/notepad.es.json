@@ -22,7 +22,7 @@
     },
     {
       "h2": "Lado a lado",
-      "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\"></th><th scope=\"col\">Notepad++</th><th scope=\"col\">jplus2 Lite</th><th scope=\"col\">jplus2 (versión completa)</th></tr></thead><tbody><tr><th scope=\"row\">Funciona en</th><td>Windows</td><td>macOS 12 o posterior, Apple Silicon e Intel</td><td>macOS 12 o posterior, Apple Silicon e Intel</td></tr><tr><th scope=\"row\">Núcleo de edición</th><td>Scintilla</td><td>Scintilla 5</td><td>Scintilla 5</td></tr><tr><th scope=\"row\">Coste</th><td>GNU GPL, código abierto</td><td>Descarga gratis, código cerrado</td><td>Mac App Store, próximamente</td></tr><tr><th scope=\"row\">Complementos</th><td>Sí, en la versión de Windows</td><td>No: todo viene integrado</td><td>No: todo viene integrado</td></tr><tr><th scope=\"row\">Ejecutar código, depurador, SQL, GitHub, IA</th><td>No se cubre en esta comparación</td><td>No incluido</td><td>Incluido</td></tr></tbody></table></div><p class=\"fine\">Los datos de Notepad++ salen de su sitio y del de Nextpad++, consultados en noviembre de 2026. Compruébalos allí antes de apoyarte en ellos.</p>"
+      "html": "<div class=\"guide-table-wrap\"><table class=\"guide-table\"><thead><tr><th scope=\"col\"></th><th scope=\"col\">Notepad++</th><th scope=\"col\">jplus2 Lite</th><th scope=\"col\">jplus2 (versión completa)</th></tr></thead><tbody><tr><th scope=\"row\">Funciona en</th><td>Windows</td><td>macOS 12 o posterior, Apple Silicon e Intel</td><td>macOS 12 o posterior, Apple Silicon e Intel</td></tr><tr><th scope=\"row\">Núcleo de edición</th><td>Scintilla</td><td>Scintilla 5</td><td>Scintilla 5</td></tr><tr><th scope=\"row\">Coste</th><td>GNU GPL, código abierto</td><td>Descarga gratis, código cerrado</td><td>{price}, Mac App Store</td></tr><tr><th scope=\"row\">Complementos</th><td>Sí, en la versión de Windows</td><td>No: todo viene integrado</td><td>No: todo viene integrado</td></tr><tr><th scope=\"row\">Ejecutar código, depurador, SQL, GitHub, IA</th><td>No se cubre en esta comparación</td><td>No incluido</td><td>Incluido</td></tr></tbody></table></div><p class=\"fine\">Los datos de Notepad++ salen de su sitio y del de Nextpad++, consultados en noviembre de 2026. Compruébalos allí antes de apoyarte en ellos.</p>"
     },
     {
       "h2": "Donde jplus2 no es un reemplazo",
@@ -34,7 +34,7 @@
     },
     {
       "h2": "Cuándo ayuda la versión completa",
-      "html": "<p>El jplus2 completo, que llega al Mac App Store, añade IntelliSense, compilar y ejecutar, un depurador de Python, SQL sobre bases de datos y sobre archivos de Excel o CSV, GitHub y un asistente de IA en la misma ventana. Mira <a href=\"index.html#editions\">jplus2 Lite y la versión completa</a>.</p>"
+      "html": "<p>El jplus2 completo, en el Mac App Store, añade IntelliSense, compilar y ejecutar, un depurador de Python, SQL sobre bases de datos y sobre archivos de Excel o CSV, GitHub y un asistente de IA en la misma ventana. Mira <a href=\"index.html#editions\">jplus2 Lite y la versión completa</a>.</p>"
     }
   ],
   "faq": [
