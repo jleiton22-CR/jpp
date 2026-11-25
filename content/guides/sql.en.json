@@ -19,7 +19,7 @@
   },
   {
    "h2": "Method 2: jplus2, in a code editor",
-   "html": "<p>In the full version of jplus2, an Excel workbook or a CSV file is a database connection. Every sheet becomes a table in an in-memory SQLite database, and you query it from a SQL tab.</p><ol><li>Choose <strong>Database ▸ Manage Connections…</strong> (<code>⇧⌘D</code>) and add a connection of type Excel workbook or CSV file.</li><li>Open a SQL tab and write your query.</li><li>Press <code>⌘↩</code> to run the selection, or the statement at the caret.</li><li>The results appear in a grid. Copy them, or export them as CSV.</li></ol><p>The same SQL tab also works with SQLite files, Databricks and Snowflake.</p>"
+   "html": "<p>In the full version of jplus2, an Excel workbook or a CSV file is a database connection. Every sheet becomes a table in an in-memory SQLite database, and you query it from a SQL tab.</p><ol><li>Choose <strong>Database ▸ Manage Connections…</strong> (<code>⇧⌘D</code>) and add a connection of type Excel workbook or CSV file.</li><li>Open a SQL tab and write your query.</li><li>Press <code>⌘↩</code> to run the selection, or the statement at the caret.</li><li>The results appear in a grid. Copy them, or export them as CSV. From version 1.0.1, <strong>Export…</strong> also saves an Excel workbook (.xlsx) or JSON.</li></ol><p>The same SQL tab also works with SQLite files, Databricks and Snowflake.</p>"
   },
   {
    "h2": "Other apps",
@@ -37,7 +37,7 @@
   },
   {
    "q": "Can I export the results?",
-   "a": "Yes. Copy the grid, or export it as CSV."
+   "a": "Yes. Copy the grid, or export it as CSV. From version 1.0.1 you can also export an Excel workbook or JSON."
   },
   {
    "q": "Does my file leave my Mac?",
@@ -50,6 +50,6 @@
   "vscode"
  ],
  "published": "2026-11-15",
- "updated": "2026-11-15",
+ "updated": "2026-11-25",
  "playground": true
 }

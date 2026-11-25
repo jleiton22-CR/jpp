@@ -119,8 +119,8 @@
           "Reviews uncommitted changes or pull requests, and runs your own prompts from ai-commands.json",
           "Claude with your own API key, any OpenAI-compatible endpoint (including a local model such as Ollama), or a company gateway",
           "Saves your conversations: reopen, search and export them as Markdown. Switch between Claude models from a menu under the chat",
-          "Inline suggestions (off by default): the next lines appear as grey text while you type. Tab accepts them, Option-Right takes one word, Escape drops them",
-          "MCP servers: connect the agent to tool servers over HTTP, and every call asks for your approval first",
+          "New in 1.0.1: inline suggestions (off by default): the next lines appear as grey text while you type. Tab accepts them, Option-Right takes one word, Escape drops them",
+          "New in 1.0.1: MCP servers. Connect the agent to tool servers over HTTP, and every call asks for your approval first",
           "Full version only: none of this is in jplus2 Lite"
         ],
         "image": "assistant",
@@ -185,8 +185,8 @@
           "Built-in checks for JSON, XML, YAML, TOML, HTML, CSS and more",
           "Manage Compilers shows what is installed and downloads what is missing with Homebrew, npm or pip",
           "A real integrated terminal (⌃`): your own shell, with vim, Python's REPL and Control-C working, and several terminals in tabs. Configure Commands replaces a language's build and run commands with yours",
-          "Find in Folder (⇧⌘F) searches every text file under a folder in the background, with file filters, whole word and regular expressions",
-          "Scripts: automate edits with your own JavaScript on the open document. A script has no network, file or shell access, and each run is one undo step"
+          "New in 1.0.1: Find in Folder (⇧⌘F) searches every text file under a folder, with file filters, whole word and regular expressions. Replace All shows what will change first, backs up the files it rewrites, and Undo Last Replace restores them",
+          "New in 1.0.1: Scripts. Automate edits with your own JavaScript on the open document. A script has no network, file or shell access, and each run is one undo step"
         ],
         "image": "debug",
         "alt": "The Python debugger paused on a line, with the variables listed beside the output.",
@@ -196,7 +196,7 @@
         "id": "sql",
         "eyebrow": "Databases",
         "title": "Databricks and Snowflake, right next to your code.",
-        "text": "Save a Databricks or Snowflake connection once, then press ⌘↩ in a SQL tab. The results arrive in a grid you can copy or export as CSV. They connect through their own SQL APIs, so there is no client tool to install.",
+        "text": "Save a Databricks or Snowflake connection once, then press ⌘↩ in a SQL tab. The results arrive in a grid you can copy or export as CSV (from version 1.0.1, also as Excel .xlsx or JSON). They connect through their own SQL APIs, so there is no client tool to install.",
         "bullets": [
           "Databricks on Azure, AWS and GCP",
           "Snowflake",
@@ -205,6 +205,7 @@
           "MySQL and MariaDB (including Azure Database for MySQL)",
           "SQLite files, with nothing to install",
           "Excel workbooks and CSV files: every sheet becomes a table",
+          "New in 1.0.1: Export saves the results as CSV, an Excel workbook or JSON, starting in Downloads with a dated name",
           "Mac App Store version: the Azure SQL, SQL Server, Synapse, PostgreSQL, MySQL and MariaDB connections are not offered there"
         ],
         "image": "excel",
@@ -430,7 +431,7 @@
         "yes"
       ],
       [
-        "Find in Folder, and Scripts in JavaScript",
+        "Find and replace in a folder, and Scripts in JavaScript (1.0.1)",
         "no",
         "yes"
       ],

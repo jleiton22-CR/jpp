@@ -19,7 +19,7 @@
   },
   {
    "h2": "Cómo funciona",
-   "html": "<ol><li>Elige <strong>Database ▸ Manage Connections…</strong> (<code>⇧⌘D</code>) y añade una conexión a Databricks o Snowflake.</li><li>Abre una pestaña SQL y escribe tu consulta.</li><li>Pulsa <code>⌘↩</code> para ejecutar la selección o la sentencia donde está el cursor.</li><li>Los resultados aparecen en una tabla bajo tu código. Cópialos o expórtalos como CSV.</li></ol><p>Las contraseñas, los tokens y las claves de API se guardan en el Llavero de macOS.</p>"
+   "html": "<ol><li>Elige <strong>Database ▸ Manage Connections…</strong> (<code>⇧⌘D</code>) y añade una conexión a Databricks o Snowflake.</li><li>Abre una pestaña SQL y escribe tu consulta.</li><li>Pulsa <code>⌘↩</code> para ejecutar la selección o la sentencia donde está el cursor.</li><li>Los resultados aparecen en una tabla bajo tu código. Cópialos o expórtalos como CSV. Desde la versión 1.0.1, <strong>Export…</strong> también guarda un libro de Excel (.xlsx) o JSON.</li></ol><p>Las contraseñas, los tokens y las claves de API se guardan en el Llavero de macOS.</p>"
   },
   {
    "h2": "Por qué hacerlo desde un editor",
@@ -41,7 +41,7 @@
   },
   {
    "q": "¿Puedo exportar los resultados?",
-   "a": "Sí. Copia la tabla o expórtala como CSV."
+   "a": "Sí. Copia la tabla o expórtala como CSV. Desde la versión 1.0.1 también puedes exportar un libro de Excel o JSON."
   },
   {
    "q": "¿Está en la versión Lite gratuita?",
@@ -53,5 +53,5 @@
   "ai"
  ],
  "published": "2026-11-21",
- "updated": "2026-11-21"
+ "updated": "2026-11-25"
 }

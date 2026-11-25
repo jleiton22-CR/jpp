@@ -119,8 +119,8 @@
           "Revisa cambios sin confirmar o pull requests, y ejecuta tus propios prompts desde ai-commands.json",
           "Claude con tu propia clave de API, cualquier servicio compatible con OpenAI (incluido un modelo local como Ollama) o un gateway de empresa",
           "Guarda tus conversaciones: reábrelas, búscalas y expórtalas como Markdown. Cambia entre modelos de Claude desde un menú bajo el chat",
-          "Sugerencias en línea (desactivadas por defecto): las siguientes líneas aparecen en gris mientras escribes. Tab las acepta, Option-Derecha toma una palabra y Escape las descarta",
-          "Servidores MCP: conecta el agente a servidores de herramientas por HTTP; cada llamada pide tu aprobación antes",
+          "Nuevo en 1.0.1: sugerencias en línea (desactivadas por defecto): las siguientes líneas aparecen en gris mientras escribes. Tab las acepta, Option-Derecha toma una palabra y Escape las descarta",
+          "Nuevo en 1.0.1: servidores MCP. Conecta el agente a servidores de herramientas por HTTP; cada llamada pide tu aprobación antes",
           "Solo en la versión completa: nada de esto está en jplus2 Lite"
         ],
         "image": "assistant",
@@ -185,8 +185,8 @@
           "Comprobaciones integradas para JSON, XML, YAML, TOML, HTML, CSS y más",
           "Manage Compilers muestra lo que está instalado y descarga lo que falta con Homebrew, npm o pip",
           "Un terminal integrado de verdad (⌃`): tu propio shell, con vim, el REPL de Python y Control-C funcionando, y varios terminales en pestañas. Configure Commands sustituye los comandos de compilar y ejecutar de un lenguaje por los tuyos",
-          "Buscar en carpeta (⇧⌘F) busca en segundo plano en todos los archivos de texto de una carpeta, con filtros de archivos, palabra completa y expresiones regulares",
-          "Scripts: automatiza ediciones con tu propio JavaScript sobre el documento abierto. Un script no tiene acceso a la red, a archivos ni al shell, y cada ejecución es un solo paso de deshacer"
+          "Nuevo en 1.0.1: Buscar en carpeta (⇧⌘F) busca en todos los archivos de texto de una carpeta, con filtros, palabra completa y expresiones regulares. Reemplazar todo muestra antes qué va a cambiar, hace copia de los archivos que reescribe, y Undo Last Replace los restaura",
+          "Nuevo en 1.0.1: Scripts. Automatiza ediciones con tu propio JavaScript sobre el documento abierto. Un script no tiene acceso a la red, a archivos ni al shell, y cada ejecución es un solo paso de deshacer"
         ],
         "image": "debug",
         "alt": "El depurador de Python detenido en una línea, con las variables junto a la salida.",
@@ -196,7 +196,7 @@
         "id": "sql",
         "eyebrow": "Bases de datos",
         "title": "Databricks y Snowflake, justo al lado de tu código.",
-        "text": "Guarda una conexión a Databricks o Snowflake una vez y pulsa ⌘↩ en una pestaña SQL. Los resultados llegan a una tabla que puedes copiar o exportar como CSV. Se conectan mediante sus propias API de SQL, así que no hay que instalar ninguna herramienta cliente.",
+        "text": "Guarda una conexión a Databricks o Snowflake una vez y pulsa ⌘↩ en una pestaña SQL. Los resultados llegan a una tabla que puedes copiar o exportar como CSV (desde la versión 1.0.1, también como Excel .xlsx o JSON). Se conectan mediante sus propias API de SQL, así que no hay que instalar ninguna herramienta cliente.",
         "bullets": [
           "Databricks en Azure, AWS y GCP",
           "Snowflake",
@@ -204,7 +204,9 @@
           "PostgreSQL (incluido Azure Database for PostgreSQL)",
           "MySQL y MariaDB (incluido Azure Database for MySQL)",
           "Archivos SQLite, sin instalar nada",
-          "Libros de Excel y archivos CSV: cada hoja se convierte en una tabla"
+          "Libros de Excel y archivos CSV: cada hoja se convierte en una tabla",
+          "Nuevo en 1.0.1: Export guarda los resultados como CSV, libro de Excel o JSON, en Descargas y con un nombre con fecha",
+          "Versión del Mac App Store: no ofrece las conexiones a Azure SQL, SQL Server, Synapse, PostgreSQL, MySQL ni MariaDB"
         ],
         "image": "excel",
         "alt": "Una consulta SQL sobre un libro de Excel, con los resultados en una tabla bajo el código.",
@@ -429,7 +431,7 @@
         "yes"
       ],
       [
-        "Buscar en carpeta y Scripts en JavaScript",
+        "Buscar y reemplazar en carpeta, y Scripts en JavaScript (1.0.1)",
         "no",
         "yes"
       ],
