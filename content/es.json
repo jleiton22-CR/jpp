@@ -324,7 +324,7 @@
     "sections": [
       {
         "title": "Instalar jplus2",
-        "body": "<p>Abre la imagen de disco descargada y arrastra <strong>jplus2 Lite</strong> a tu carpeta Aplicaciones. jplus2 necesita macOS 12 o posterior y funciona en Mac con Apple Silicon e Intel.</p><p>Si macOS dice que no puede comprobar la app la primera vez que la abres, abre <strong>Ajustes del Sistema ▸ Privacidad y seguridad</strong>, busca el mensaje sobre jplus2 Lite y pulsa <strong>Abrir igualmente</strong>. La versión del Mac App Store no muestra este mensaje.</p>"
+        "body": "<p>Abre la imagen de disco descargada y arrastra <strong>jplus2 Lite</strong> a tu carpeta Aplicaciones. jplus2 necesita macOS 12 o posterior y funciona en Mac con Apple Silicon e Intel.</p><p>jplus2 Lite está firmada con un Developer ID y notarizada por Apple (desde la versión 1.0.2). La primera vez, macOS puede pedirte que confirmes que quieres abrir una app descargada de internet: elige <strong>Abrir</strong>.</p>"
       },
       {
         "title": "¿jplus2 Lite o la versión completa?",
@@ -506,7 +506,7 @@
         "yes"
       ],
       [
-        "Se instala y actualiza desde el App Store, sin aviso de “desarrollador no identificado”",
+        "Se instala y actualiza desde el App Store",
         "no",
         "yes"
       ]
@@ -618,7 +618,7 @@
       ],
       [
         "Abre jplus2 Lite",
-        "Ábrela desde Aplicaciones o Launchpad. La primera vez, macOS puede decir que no puede comprobar la app: abre <strong>Ajustes del Sistema ▸ Privacidad y seguridad</strong>, busca el mensaje sobre jplus2 Lite y pulsa <strong>Abrir igualmente</strong>."
+        "Ábrela desde Aplicaciones o Launchpad. La primera vez, macOS puede pedirte que confirmes que quieres abrir una app descargada de internet: elige <strong>Abrir</strong>."
       ]
     ],
     "verify_title": "Comprueba tu descarga (opcional)",
@@ -810,7 +810,7 @@
     "know": [
       "jplus2 es la versión 1.0 de un solo desarrollador y es de código cerrado. No tiene sistema de complementos.",
       "La versión completa está en el Mac App Store; la versión Lite, gratis, se descarga desde jplus2.com. La versión del Mac App Store no ofrece las conexiones a Azure SQL, SQL Server, Synapse, PostgreSQL, MySQL ni MariaDB.",
-      "El instalador de Lite aún no está notarizado por Apple, así que macOS pide confirmar que lo abras: Ajustes del Sistema ▸ Privacidad y seguridad ▸ Abrir igualmente.",
+      "Desde la versión 1.0.2, la descarga de Lite está firmada con un Developer ID y notarizada por Apple.",
       "Las comparaciones de este sitio citan las páginas de cada fabricante y dicen cuándo se consultaron."
     ],
     "contact_title": "Contacto",
@@ -1084,8 +1084,8 @@
         "a": "Tu propia clave de la API de Claude, cualquier servicio compatible con OpenAI o un modelo que se ejecute en tu Mac con Ollama. El agente propone cada edición como diff y cada comando en el panel Terminal, y no ocurre nada hasta que lo apruebas."
       },
       {
-        "q": "¿Por qué macOS avisa de un desarrollador no identificado al abrir Lite?",
-        "a": "La descarga gratuita de Lite no se distribuye por la Mac App Store. Haz Control-clic en la app, elige Abrir una vez y macOS recordará tu decisión. La versión completa de la Mac App Store no muestra ese aviso."
+        "q": "¿Es seguro abrir la descarga gratuita de Lite?",
+        "a": "Desde la versión 1.0.2, jplus2 Lite está firmada con el Developer ID del desarrollador y notarizada por Apple, que comprueba que no contenga software malicioso. La primera vez, macOS puede pedirte que confirmes que quieres abrir una app descargada de internet. La página de descarga muestra el SHA-256 para que verifiques el archivo."
       },
       {
         "q": "¿En qué se diferencia jplus2 de VS Code o Sublime Text?",

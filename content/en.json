@@ -324,7 +324,7 @@
     "sections": [
       {
         "title": "Installing jplus2",
-        "body": "<p>Open the downloaded disk image and drag <strong>jplus2 Lite</strong> to your Applications folder. jplus2 needs macOS 12 or later and runs on Apple silicon and Intel Macs.</p><p>If macOS says it cannot check the app the first time you open it, open <strong>System Settings ▸ Privacy &amp; Security</strong>, find the message about jplus2 Lite and press <strong>Open Anyway</strong>. The Mac App Store version does not show this message.</p>"
+        "body": "<p>Open the downloaded disk image and drag <strong>jplus2 Lite</strong> to your Applications folder. jplus2 needs macOS 12 or later and runs on Apple silicon and Intel Macs.</p><p>jplus2 Lite is signed with a Developer ID and notarized by Apple (since version 1.0.2). The first time, macOS may ask you to confirm that you want to open an app downloaded from the internet: choose <strong>Open</strong>.</p>"
       },
       {
         "title": "jplus2 Lite or the full version?",
@@ -511,7 +511,7 @@
         "yes"
       ],
       [
-        "Installs and updates through the App Store, with no “unidentified developer” warning",
+        "Installs and updates through the App Store",
         "no",
         "yes"
       ]
@@ -623,7 +623,7 @@
       ],
       [
         "Open jplus2 Lite",
-        "Open it from Applications or Launchpad. The first time, macOS may say it cannot check the app: open <strong>System Settings ▸ Privacy &amp; Security</strong>, find the message about jplus2 Lite and press <strong>Open Anyway</strong>."
+        "Open it from Applications or Launchpad. The first time, macOS may ask you to confirm that you want to open an app downloaded from the internet: choose <strong>Open</strong>."
       ]
     ],
     "verify_title": "Check your download (optional)",
@@ -815,7 +815,7 @@
     "know": [
       "jplus2 is version 1.0 from a single developer, and it is closed source. There is no plugin system.",
       "The full version is on the Mac App Store; the free Lite version downloads from jplus2.com. The Mac App Store version does not offer the Azure SQL, SQL Server, Synapse, PostgreSQL, MySQL or MariaDB connections.",
-      "The Lite installer is not yet notarized by Apple, so macOS asks you to confirm opening it: System Settings ▸ Privacy &amp; Security ▸ Open Anyway.",
+      "Since version 1.0.2, the Lite download is signed with a Developer ID and notarized by Apple.",
       "Comparisons on this site cite each vendor's own pages and say when they were checked."
     ],
     "contact_title": "Contact",
@@ -1089,8 +1089,8 @@
         "a": "Your own Claude API key, any OpenAI-compatible service, or a model running on your Mac through Ollama. The agent proposes every edit as a diff and every command in the Terminal panel, and nothing happens until you approve it."
       },
       {
-        "q": "Why does macOS warn about an unidentified developer when I open Lite?",
-        "a": "The free Lite download is not distributed through the Mac App Store. Control-click the app, choose Open once, and macOS remembers your choice. The full version from the Mac App Store has no such warning."
+        "q": "Is the free Lite download safe to open?",
+        "a": "Since version 1.0.2, jplus2 Lite is signed with the developer's Developer ID and notarized by Apple, which checks it for malicious software. The first time, macOS may ask you to confirm that you want to open an app downloaded from the internet. The download page shows the SHA-256 so you can verify the file."
       },
       {
         "q": "How is jplus2 different from VS Code or Sublime Text?",
